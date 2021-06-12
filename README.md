@@ -33,7 +33,7 @@
 * Express
 * React (w/ hooks)
 * Node.Js
-* Tailwind CSS (or something new)
+* Tailwind CSS &&|| react-material-ui (or something new)
 
 ### Desired PWA Functionalities
 * Available offline
