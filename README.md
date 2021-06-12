@@ -1,3 +1,8 @@
+<!--TODO:
+- package json in client
+- where to put invoice form-->
+
+
 # Fleet-Sheets
 ## Progressive Web Application (Mobile/Tablet First)
 
@@ -6,7 +11,7 @@
 
 ### User Story
     AS AN ADMINISTRATOR
-    I WANT to be able to  
+    I WANT to be able to
     - create invoices, that employees can easily fill out
     - receive job information and create jobs
     - assign jobs to employees
@@ -15,10 +20,10 @@
 
 
     AS AN EMPLOYEE
-    I WANT to be able to 
+    I WANT to be able to
     - view assigned jobs for the day
     - access jobsite information (i.e. address, contact information, notes, etc)
-    - complete related jobsite forms/invoices 
+    - complete related jobsite forms/invoices
     - mark jobs completed
     - have the ability to continue to work while remote and offline
     SO THAT I can continue to complete my job expectations in an easy and organized fashion.
@@ -30,7 +35,7 @@
 * Node.Js
 * Tailwind CSS (or something new)
 
-### Desired PWA Functionalities 
+### Desired PWA Functionalities
 * Available offline
 * Downloadable to android + ios homescreen's
 * Device camera functionality / implementation

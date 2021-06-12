@@ -6,6 +6,9 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "express": "^4.17.1",
+    "mongoose": "^5.12.13",
+    "morgan": "^1.10.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
@@ -34,5 +37,17 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "### Extra Information/Resources * [Introduction to PWA's](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Introduction)",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/will98nicholson/FleetSheets.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/will98nicholson/FleetSheets/issues"
+  },
+  "homepage": "https://github.com/will98nicholson/FleetSheets#readme"
 }
