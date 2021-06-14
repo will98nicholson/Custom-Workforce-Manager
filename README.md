@@ -42,3 +42,12 @@
 * Fast load speeds
 * Mobile app look/feel
 * Push Notifications (mobile + desktop)
+
+    "seed": "node scripts/seedDB.js",
+
+      "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
