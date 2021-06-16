@@ -1,6 +1,11 @@
 <!--TODO:
-- package json in client
-- where to put invoice form-->
+- package json in client (DONE: WILL)
+- where to put invoice form
+- figure out back end server and authentication
+- create components
+- connect components + render in App
+-->
+
 
 
 # Fleet-Sheets
