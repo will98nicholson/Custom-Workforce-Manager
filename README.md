@@ -4,6 +4,42 @@
 - figure out back end server and authentication
 - create components
 - connect components + render in App
+
+PAGES:
+  - login
+    - admin dashboard
+        **weather - date and time
+      - job assignment page (when job is clicked - able to edit)
+        **functionality:
+          *create jobs
+          *edit jobs
+          *approve as complete
+
+    - employee dashboard
+        **weather - date and time
+      - specific job page when component is clicked - able to edit)
+        **functionality:
+          *clock in/out
+          *check tasks off list
+          *add tasks/make notes
+          *fill out invoice + mark as complete/{send admin notication}
+
+ASSIGNMENTS:
+- Will:
+  *Password Auth - using passport npm package
+
+- Corrine:
+  *
+
+- Kathryn:
+  *
+
+- Brandon:
+  *
+
+- Michael:
+  *
+
 -->
 
 
