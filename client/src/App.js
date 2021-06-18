@@ -14,8 +14,8 @@ import {
 function App() {
     return (
         <Router>
-            <Route path='/'><Login /></Route>
-            <Route path='/admin'><AdminDash /></Route>
+            <Route exact path='/'><Login /></Route>
+            <Route exact path='/admin'><AdminDash /></Route>
         </Router>
     );
 };
