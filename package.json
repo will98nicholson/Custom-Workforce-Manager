@@ -1,7 +1,7 @@
 {
   "name": "fleets",
   "version": "0.1.0",
-  "private": true,
+  "main": "server.js",
   "devDependencies": {
     "concurrently": "^4.1.0",
     "nodemon": "^1.18.7"
@@ -23,10 +23,5 @@
     "install": "cd client && npm install",
     "build": "cd client && npm run build",
     "heroku-postbuild": "npm run build"
-  },
-  "development": [
-    "last 1 chrome version",
-    "last 1 firefox version",
-    "last 1 safari version"
-  ]
+  }
 }
