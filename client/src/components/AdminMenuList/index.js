@@ -1,72 +1,59 @@
 import React from 'react';
 import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListSubheader from '@material-ui/core/ListSubheader';
-import DashboardIcon from '@material-ui/icons/Dashboard';
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
-import PeopleIcon from '@material-ui/icons/People';
-import BarChartIcon from '@material-ui/icons/BarChart';
-import LayersIcon from '@material-ui/icons/Layers';
-import AssignmentIcon from '@material-ui/icons/Assignment';
+import {
+    Dashboard,
+    People,
+    AddBox,
+    Notifications
+} from '@material-ui/icons';
 
 export const mainListItems = (
     <div>
         <ListItem button>
             <ListItemIcon>
-                <DashboardIcon />
+                <Dashboard />
             </ListItemIcon>
             <ListItemText primary="Dashboard" />
         </ListItem>
         <ListItem button>
             <ListItemIcon>
-                <ShoppingCartIcon />
+                <People />
             </ListItemIcon>
-            <ListItemText primary="Orders" />
+            <ListItemText primary="My Crews" />
         </ListItem>
         <ListItem button>
             <ListItemIcon>
-                <PeopleIcon />
+                <AddBox />
             </ListItemIcon>
-            <ListItemText primary="Customers" />
-        </ListItem>
-        <ListItem button>
-            <ListItemIcon>
-                <BarChartIcon />
-            </ListItemIcon>
-            <ListItemText primary="Reports" />
-        </ListItem>
-        <ListItem button>
-            <ListItemIcon>
-                <LayersIcon />
-            </ListItemIcon>
-            <ListItemText primary="Integrations" />
+            <ListItemText primary="Create A Job" />
         </ListItem>
     </div>
 );
 
 export const secondaryListItems = (
     <div>
-        <ListSubheader inset>Saved reports</ListSubheader>
+        <ListSubheader inset>Notifications</ListSubheader>
         <ListItem button>
             <ListItemIcon>
-                <AssignmentIcon />
+                <Notifications />
             </ListItemIcon>
-            <ListItemText primary="Current month" />
+            <ListItemText primary="4 New Invoices" />
         </ListItem>
         <ListItem button>
             <ListItemIcon>
-                <AssignmentIcon />
+                <Notifications />
             </ListItemIcon>
-            <ListItemText primary="Last quarter" />
+            <ListItemText primary="Crew #3 Clocked In" />
         </ListItem>
         <ListItem button>
             <ListItemIcon>
-                <AssignmentIcon />
+                <Notifications />
             </ListItemIcon>
-            <ListItemText primary="Year-end sale" />
+            <ListItemText primary="Crew #1 En Route" />
         </ListItem>
     </div>
 );
 
-// export {MainListItems, SecondaryListItems}

@@ -18,7 +18,7 @@ import {
 import {
     Menu,
     ChevronLeft,
-    Notifications, 
+
 } from '@material-ui/icons';
 
 import { mainListItems, secondaryListItems } from '../components/AdminMenuList';
@@ -128,20 +128,17 @@ export default function MenuToolbar() {
                         onClick={handleDrawerOpen}
                         className={clsx(classes.menuButton, open && classes.menuButtonHidden)}
                     >
-                        <Menu />
+                        <Badge badgeContent={4} color="secondary">
+                            <Menu />
+                        </Badge>
                     </IconButton>
                     <Typography component="h1" variant="h6" color="inherit" noWrap className={classes.title}>
                         Administrator Dashboard
                     </Typography>
-                    <IconButton color="inherit">
-                        <Badge badgeContent={4} color="secondary">
-                            <Notifications />
-                        </Badge>
-                    </IconButton>
                 </Toolbar>
             </AppBar>
             <Drawer
-                variant="permanent"
+                variant="temporary"
                 classes={{
                     paper: clsx(classes.drawerPaper, !open && classes.drawerPaperClose),
                 }}
@@ -157,12 +154,6 @@ export default function MenuToolbar() {
                 <Divider />
                 <List>{secondaryListItems}</List>
             </Drawer>
-            <main className={classes.content}>
-                <div className={classes.appBarSpacer} />
-                <Container maxWidth="lg" className={classes.container}>
-
-                </Container>
-            </main>
         </div>
     );
 }
