@@ -8,6 +8,7 @@ import {
     Route,
     Link
 } from 'react-router-dom';
+// import Review from '.pages/JobDetail';
 
 
 function App() {
