@@ -9,7 +9,7 @@ import {
 
 import MenuToolbar from '../components/MenuToolbar';
 import Copyright from '../components/Copyright';
-import ActiveJobsList from '../components/ActiveJobsList';
+import JobsList from '../components/JobsList';
 
 const drawerWidth = 240;
 
@@ -46,7 +46,7 @@ export default function AdminDash() {
                     {/* Active Jobs */}
                     <Paper className={classes.paper}>
                         <Typography variant='h5'>Active Jobs</Typography>
-                        <ActiveJobsList />
+                        <JobsList />
                     </Paper>
                     {/* Completed Jobs */}
                     <Paper className={classes.paper}>
