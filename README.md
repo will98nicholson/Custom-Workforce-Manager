@@ -24,21 +24,21 @@ PAGES:
           *add tasks/make notes
           *fill out invoice + mark as complete/{send admin notication}
 
-ASSIGNMENTS:
+CURRENT ASSIGNMENTS:
 - Will:
   *Password Auth - using passport npm package
 
 - Corrine:
-  *
+  * admin dash
 
 - Kathryn:
-  *
+  * emp dash
 
 - Brandon:
-  *
+  * react router
 
 - Michael:
-  *
+  * database up and running
 
 -->
 
