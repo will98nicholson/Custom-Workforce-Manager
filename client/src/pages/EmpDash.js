@@ -25,7 +25,7 @@ function Copyright () {
         <Typography variant="body2" color="textSecondary" align="center">
             {'Copyright © '}
             <Link color="inherit" href="https://material-ui.com/">
-                Your Website
+                FleetSheets
       </Link>{' '}
             {new Date().getFullYear()}
             {'.'}
@@ -188,7 +188,7 @@ export default function Dashboard () {
                     {/* <Orders /> */}
                     {/* </Paper> */}
                     {/* </Grid> */}
-                    {/* </Grid> */} */}
+                    {/* </Grid> */}
                     <Box pt={4}>
                         <Copyright />
                     </Box>
