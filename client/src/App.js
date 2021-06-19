@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Login from './pages/Login';
 import AdminDash from './pages/AdminDash';
+import EmpDash from './pages/EmpDash';
 import {
     BrowserRouter as Router,
     Switch,
@@ -10,13 +11,16 @@ import {
 } from 'react-router-dom';
 // import Review from '.pages/JobDetail';
 
-
+// TODO: get react router working
 function App() {
     return (
-        <Router>
-            <Route path='/'><Login /></Route>
-            <Route path='/admin'><AdminDash /></Route>
-        </Router>
+        // <Router>
+        //     <Route path='/'><Login /></Route>
+        //     <Route path='/admin'><AdminDash /></Route>
+        // </Router>
+        // <Login />
+        // <AdminDash />
+        <EmpDash />
     );
 };
 
