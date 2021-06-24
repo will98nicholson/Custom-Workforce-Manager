@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const jobsController = require('../../controllers/jobsController')
+
 // /api/jobs => find all jobs, create new job
 router.route('/')
     .get(jobsController.findall)

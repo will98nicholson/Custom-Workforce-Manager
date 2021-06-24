@@ -9,6 +9,7 @@ router.use('/auth', authRoutes);
 
 //api routes
 router.use('/api', jobRoutes);
+
 //front end routes
 router.use((req, res) => {
     res.sendFile(path.join(__dirname, '../client/build/index.html'))
