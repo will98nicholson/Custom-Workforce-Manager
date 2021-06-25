@@ -9,7 +9,7 @@ module.exports = {
         .catch(err => console.log(err))
     },
     findById: (req, res)=> {
-        db.Job.find({_id: req.params.id})
+        db.Job.find({id: req.params.id})
         .then((data)=> {
             res.json(data)
         })
@@ -30,12 +30,12 @@ module.exports = {
         .catch(err => console.log(err))
     }, 
     remove: (req, res)=> {
-        db.Job.findOneAndDelete({_id: req.params.id})
+        db.Job.findOneAndDelete({id: req.params.id})
         .then(data => res.json(data))
         .catch(err => console.log(err))
     }, 
     update: (req, res)=> {
-        db.Job.findOneAndUpdate({_id: req.params.id})
+        db.Job.findOneAndUpdate({id: req.params.id})
         .then((data)=> {
             res.json(data)
         })
