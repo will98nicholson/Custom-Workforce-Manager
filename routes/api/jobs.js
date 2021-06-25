@@ -3,7 +3,7 @@ const jobsController = require('../../controllers/jobsController')
 
 // /api/jobs => find all jobs, create new job
 router.route('/')
-    .get(jobsController.findall)
+    .get(jobsController.findAll)
     .post(jobsController.create)
 
 // /api/jobs/:id => find/delete specific job (admin only), update job (emp & admin)
