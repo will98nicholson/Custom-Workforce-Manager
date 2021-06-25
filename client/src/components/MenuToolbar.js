@@ -11,7 +11,6 @@ import {
     Divider,
     IconButton,
     Badge,
-    Link
 } from '@material-ui/core'
 
 import {

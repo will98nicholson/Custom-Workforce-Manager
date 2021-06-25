@@ -4,14 +4,13 @@ import {
     CssBaseline,
     Container,
     Typography,
-    Paper
+    Paper,
+    Button,
 } from '@material-ui/core';
 
 import MenuToolbar from '../components/MenuToolbar';
 import Copyright from '../components/Copyright';
 import JobsList from '../components/JobsList';
-
-const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -23,13 +22,21 @@ const useStyles = makeStyles((theme) => ({
         height: '100vh',
         overflow: 'auto',
     },
+    container: {
+        margin: '3rem 0rem'
+    },
+    button: {
+        margin: theme.spacing(2)
+    },
     paper: {
+        margin: theme.spacing(2),
         padding: theme.spacing( 2 ),
         display: 'flex',
         overflow: 'auto',
         flexDirection: 'column',
     }
 }));
+
 
 export default function AdminDash() {
     const classes = useStyles();
@@ -43,6 +50,9 @@ export default function AdminDash() {
                 <Container maxWidth="lg" className={classes.container}>
                     {/* Time and Weather */}
                     {/* Button to Create New Job */}
+                    <Button variant="contained" color="primary" onClick={() => { window.open('/createjob') }}>
+                        Create New Job
+                    </Button>
                     {/* Active Jobs */}
                     <Paper className={classes.paper}>
                         <Typography variant='h5'>Active Jobs</Typography>
