@@ -36,6 +36,10 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
+function Auth() {
+    
+}
+
 
 export default function AdminDash() {
     const classes = useStyles();
