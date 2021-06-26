@@ -53,7 +53,7 @@ function Row(props) {
                 <TableCell align="right">{row.crew}</TableCell>
                 <TableCell align="right">{row.jobnumber}</TableCell>
                 <TableCell component="th" scope="row">
-                    <IconButton aria-label='edit job' size='small' onClick={() => { window.open('/editjob') }}>
+                    <IconButton aria-label='edit job' size='small' onClick={() => { window.location.replace('/editjob') }}>
                         <Edit />
                     </IconButton>
                 </TableCell>
