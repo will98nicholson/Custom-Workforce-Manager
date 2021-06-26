@@ -46,9 +46,16 @@ const Job = new Schema({
         type: String, 
         required: false, 
     },
-    // clock:{
-        // TODO: include a date and time for both clocking in and out
-    // }
+//     clock:{
+//         TODO: include a date and time for both clocking in and out
+//     },
+//     forms: {
+//         workOrderPath:{
+//             TODO: Figure out how to save a file path to retrieve completed job / workorder forms
+//             type: string,
+//             required: false,
+//         },
+//     }
 });
 
 
