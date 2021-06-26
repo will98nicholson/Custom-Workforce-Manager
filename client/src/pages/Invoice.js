@@ -4,7 +4,7 @@ import Table from "../components/Invoice/Table"
 import Notes from "../components/Invoice/Notes"
 
 function Invoice() { 
-
+    
     return(
         <>
             <Header />
