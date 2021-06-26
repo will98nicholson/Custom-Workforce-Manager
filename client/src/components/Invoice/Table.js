@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import TableRows from "./TableRows";
-import Calculator from "./Calulator";
+import Calculator from "./Calculator";
 
 
 function Table() {

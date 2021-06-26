@@ -6,11 +6,11 @@ import Notes from "../components/Invoice/Notes"
 function Invoice() { 
 
     return(
-    <>
-        <Header />
-        <Table />
-        <Notes />
-    </>
+        <>
+            <Header />
+            <Table />
+            <Notes />
+        </>
     );
 };
 
