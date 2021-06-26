@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Login from './pages/Login';
 import AdminDash from './pages/AdminDash';
+// import EmpDash from './pages/EmpDash';
 import CreateJob from './pages/CreateJob';
 import EditJob from './pages/EditJob';
 import {
