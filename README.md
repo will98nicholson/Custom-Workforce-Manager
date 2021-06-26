@@ -30,20 +30,54 @@ PAGES:
   -mini components for emp dash vs employee dash
 
 CURRENT ASSIGNMENTS:
+
 - Will:
-  *Password Auth - using passport npm package
+  *Password Auth - using passport npm package[done]
+  *login functionality [by tues]
 
 - Corrine:
-  * admin dash
+  * emp and admin dash with if/else functionality
+  * styling
 
 - Kathryn:
-  * emp dash
+  * job detail page
+  * put address + button in jobs list - link to job details page
+  * job assignment page
+  * weather and time
 
 - Brandon:
-  * react router
+  * react router [done]
+  * seed data [done]
+  * database seeded [done]
+  * PWA functionality
 
 - Michael:
-  * database up and running
+  * database up and running [done]
+  * invoice - employee fill out and pdf download [by tues]
+
+
+- Later:
+  - define company we're making this for
+  - create an acct functionality
+  - images and styling
+  - offline functionality [Brandon]
+  - new title of proj
+  - weather and time of day
+
+- FINAL PRESENTATION:
+  - login as admin
+  - create job
+  - assign job
+  - logout
+  - login as employee
+  - complete job
+  - fill out invoice
+  - send to admin
+  - logout employee
+  - login admin
+  - approve completed job
+  - download completed invoice as pdf + send out to client
+  *** PWA
 
 -->
 
