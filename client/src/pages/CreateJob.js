@@ -3,14 +3,14 @@ import { makeStyles } from '@material-ui/core/styles';
 import {
     CssBaseline,
     Container,
-    Typography,
     Paper,
-    Button,
+    Typography,
+    Button
 } from '@material-ui/core';
 
 import MenuToolbar from '../components/MenuToolbar';
 import Copyright from '../components/Copyright';
-import JobsList from '../components/JobsList';
+import JobsForm from '../components/JobsForm';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -26,44 +26,40 @@ const useStyles = makeStyles((theme) => ({
         margin: theme.spacing(2)
     },
     button: {
-        margin: theme.spacing(2)
+        margin: theme.spacing(2),
+        width: '7rem'
     },
     paper: {
-        padding: theme.spacing( 2 ),
+        padding: theme.spacing(2),
         display: 'flex',
         overflow: 'auto',
         flexDirection: 'column',
     }
 }));
 
+function handleSubmit() {
+    console.log('submit')
+}
 
-export default function AdminDash() {
-    const classes = useStyles();
-
+export default function CreateJob() {
+    const classes = useStyles()
     return (
         <div className={classes.root}>
             <CssBaseline />
             <MenuToolbar />
             <main className={classes.content}>
                 <div className={classes.appBarSpacer} />
-                <Container maxWidth="lg" className={classes.container} >
-                    {/* Time and Weather */}
-                    {/* Button to Create New Job */}
-                    <Button variant="contained" color="primary" onClick={() => { window.location.replace('/createjob') }}>
-                        Create New Job
-                    </Button>
-                    {/* Active Jobs */}
+                <Container maxWidth="lg" className={classes.container}>
                     <Paper className={classes.paper}>
-                        <Typography variant='h5'>Active Jobs</Typography>
-                        <JobsList />
-                    </Paper>
-                    {/* Completed Jobs */}
-                    <Paper className={classes.paper}>
-                        <Typography variant='h5'>Completed Jobs</Typography>
+                        <Typography variant='h5'>Create New Job</Typography>
+                        <JobsForm />
+                        <Button className={classes.button} variant="contained" color="primary" onClick={handleSubmit}>
+                            Submit
+                        </Button>
                     </Paper>
                     <Copyright />
                 </Container>
             </main>
-        </div>
-    );
-}
+        </div >
+    )
+};
