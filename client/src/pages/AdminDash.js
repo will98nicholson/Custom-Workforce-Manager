@@ -36,9 +36,15 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-function Auth() {
-    
-}
+// auth() {
+//     if req.session.id 
+// }
+
+// jobs() {
+//     req.session.id 
+// }
+
+// auth(type);
 
 
 export default function AdminDash() {
@@ -53,10 +59,13 @@ export default function AdminDash() {
                 <Container maxWidth="lg" className={classes.container} >
                     {/* Time and Weather */}
                     {/* Button to Create New Job */}
+                    { this.auth !== "Employee" ? 
                     <Button variant="contained" color="primary" onClick={() => { window.location.replace('/createjob') }}>
                         Create New Job
-                    </Button>
+                    </Button> :
+                    ""}
                     {/* Active Jobs */}
+                    
                     <Paper className={classes.paper}>
                         <Typography variant='h5'>Active Jobs</Typography>
                         <JobsList />
