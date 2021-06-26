@@ -33,17 +33,22 @@ const Job = new Schema({
         },
         phone: { 
             type: Number, 
-            required: true, 
+            required: true,
+            // TODO: validator 
         },
         email: { 
             type: String, 
             required: true, 
+            // TODO: validator
         },        
     },
     notes: { 
         type: String, 
         required: false, 
-    }
+    },
+    // clock:{
+        // TODO: include a date and time for both clocking in and out
+    // }
 });
 
 
