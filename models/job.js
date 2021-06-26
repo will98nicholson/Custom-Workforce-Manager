@@ -18,7 +18,7 @@ const Job = new Schema({
         type: { 
             type: String, 
             enum: {
-                values:['Residential', 'Commerical'],
+                values:['Residential', 'Commercial'],
                 message: '{VALUE} is not supported.'
             },
             required: false,
@@ -47,11 +47,11 @@ const Job = new Schema({
         required: false, 
     },
 //     clock:{
-//         TODO: include a date and time for both clocking in and out
+//          //TODO: include a date and time for both clocking in and out
 //     },
 //     forms: {
 //         workOrderPath:{
-//             TODO: Figure out how to save a file path to retrieve completed job / workorder forms
+//           //TODO: Figure out how to save a file path to retrieve completed job / workorder forms
 //             type: string,
 //             required: false,
 //         },
@@ -60,4 +60,4 @@ const Job = new Schema({
 
 
 
-module.exports = mongoose.model('Jobs', Job);
+module.exports = mongoose.model('Job', Job);
