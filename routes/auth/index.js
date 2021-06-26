@@ -7,6 +7,7 @@ router.post('/login',
     passport.authenticate('local', { failureRedirect: '/login' }),
     function (req, res) {
         console.log(req.user);
+        // admin(req.user);
         res.json(req.user);
     }
 );
@@ -15,11 +16,11 @@ router.post('/login',
 router.post('/register',
     function (req, res) {
         db.User.create(req.body)
-        .then(userDoc => {
-            console.log(userDoc);
-            res.json(userDoc);
-        })
-   }
+            .then(userDoc => {
+                console.log(userDoc);
+                res.json(userDoc);
+            })
+    }
 );
 
 router.get('/logout',
@@ -35,5 +36,5 @@ router.get('/user',
         res.json(req.user);
     }
 );
-
+// function admin(userObj);
 module.exports = router;
