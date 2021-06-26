@@ -3,22 +3,12 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListSubheader from '@material-ui/core/ListSubheader';
-<<<<<<< HEAD
-import DashboardIcon from '@material-ui/icons/Dashboard';
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
-import PeopleIcon from '@material-ui/icons/People';
-import BarChartIcon from '@material-ui/icons/BarChart';
-import LayersIcon from '@material-ui/icons/Layers';
-import AssignmentIcon from '@material-ui/icons/Assignment';
-import FilterIcon from '@material-ui/icons/Filter';
-=======
 import {
     Dashboard,
     People,
     AddBox,
     Notifications
 } from '@material-ui/icons';
->>>>>>> bc0fcbb838dbbfbadf4d05d01a5d91a4c8d28401
 
 export const mainListItems = (
     <div>
@@ -66,4 +56,3 @@ export const secondaryListItems = (
         </ListItem>
     </div>
 );
-

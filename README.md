@@ -24,6 +24,11 @@ PAGES:
           *add tasks/make notes
           *fill out invoice + mark as complete/{send admin notication}
 
+- auth util: declare logged in user sessionid/user is + type (admin or employee)
+- import to evey page
+- implement turnary operator / if else to the dashboard
+  -mini components for emp dash vs employee dash
+
 CURRENT ASSIGNMENTS:
 - Will:
   *Password Auth - using passport npm package
