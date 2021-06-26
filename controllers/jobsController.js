@@ -35,10 +35,8 @@ module.exports = {
         .catch(err => console.log(err))
     }, 
     update: (req, res)=> {
-        db.Job.findOneAndUpdate({id: req.params.id})
-        .then((data)=> {
-            res.json(data)
-        })
+        db.Job.findOneAndUpdate({id: req.params.id}, req.body)
+        .then((data) =>res.json(data))
         .catch(err => console.log(err))
     },
 }

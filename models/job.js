@@ -18,7 +18,7 @@ const Job = new Schema({
         type: { 
             type: String, 
             enum: {
-                values:['Residential', 'Commerical'],
+                values:['Residential', 'Commercial'],
                 message: '{VALUE} is not supported.'
             },
             required: false,
