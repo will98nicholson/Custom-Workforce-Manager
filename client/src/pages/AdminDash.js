@@ -23,13 +23,12 @@ const useStyles = makeStyles((theme) => ({
         overflow: 'auto',
     },
     container: {
-        margin: '3rem 0rem'
+        margin: theme.spacing(2)
     },
     button: {
         margin: theme.spacing(2)
     },
     paper: {
-        margin: theme.spacing(2),
         padding: theme.spacing( 2 ),
         display: 'flex',
         overflow: 'auto',
@@ -47,10 +46,10 @@ export default function AdminDash() {
             <MenuToolbar />
             <main className={classes.content}>
                 <div className={classes.appBarSpacer} />
-                <Container maxWidth="lg" className={classes.container}>
+                <Container maxWidth="lg" className={classes.container} >
                     {/* Time and Weather */}
                     {/* Button to Create New Job */}
-                    <Button variant="contained" color="primary" onClick={() => { window.open('/createjob') }}>
+                    <Button variant="contained" color="primary" onClick={() => { window.location.replace('/createjob') }}>
                         Create New Job
                     </Button>
                     {/* Active Jobs */}
