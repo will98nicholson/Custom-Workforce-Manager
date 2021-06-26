@@ -12,7 +12,7 @@ const User = new Schema({
         required: true,
     },
     type: {
-        type: string,
+        type: String,
         enum: {
             values: ["Administrator", "Employee"],
             message: "{VALUE} is not a valid user type."
