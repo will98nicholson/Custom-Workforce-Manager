@@ -5,6 +5,7 @@ import AdminDash from './pages/AdminDash';
 // import EmpDash from './pages/EmpDash';
 import CreateJob from './pages/CreateJob';
 import EditJob from './pages/EditJob';
+import JobDetail from './pages/JobDetail';
 import {
     BrowserRouter as Router,
     Switch,
@@ -22,6 +23,7 @@ function App() {
             {/* <Route exact path='/employee'><EmpDash /></Route> */}
             <Route path='/createjob'><CreateJob /></Route>
             <Route path='/editjob'><EditJob /></Route>
+            <Route path='/jobdetail'><JobDetail /></Route>
         </Router>
     );
 };

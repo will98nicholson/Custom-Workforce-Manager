@@ -1,9 +1,4 @@
-<!--TODO:
-- package json in client (DONE: WILL)
-- where to put invoice form
-- figure out back end server and authentication
-- create components
-- connect components + render in App
+<!--
 
 PAGES:
   - login
@@ -24,19 +19,32 @@ PAGES:
           *add tasks/make notes
           *fill out invoice + mark as complete/{send admin notication}
 
-- auth util: declare logged in user sessionid/user is + type (admin or employee)
-- import to evey page
-- implement turnary operator / if else to the dashboard
-  -mini components for emp dash vs employee dash
+TODO:
+- where to put invoice form
+- authentication
+- create components
+  -
+  -
+- connect components + render in App
+
+FIX:
+- edit job page - render information already stored in job page if there is any + make editable
 
 CURRENT ASSIGNMENTS:
 
 - Will:
   *Password Auth - using passport npm package[done]
   *login functionality [by tues]
+  - auth util:
+  - declare logged in user sessionid/user is + type (admin or employee)
+
 
 - Corrine:
   * emp and admin dash with if/else functionality
+    - import to evey page
+    - implement turnary operator / if else to the dashboard
+    - mini components for emp dash vs employee dash
+  * fix open drawer
   * styling
 
 - Kathryn:
