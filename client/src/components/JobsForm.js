@@ -115,7 +115,7 @@ export default function JobsForm () {
                     <OutlinedInput id="Contact Email" name="contact_email" className={classes.input} variant="outlined" label="Contact Email" />
                 </FormControl>
                 <div className={classes.break} />
-                <Typography variant="body1">Scope of Work:</Typography>
+                <Typography variant="body1">Job Description:</Typography>
                 <FormControl variant="outlined">
                     <TextField
                         id="scope-of-work"

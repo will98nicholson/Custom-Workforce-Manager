@@ -1,4 +1,9 @@
 <!--
+MODELS:
+  - jobs [done/inprogress] - needs refactored: divide info b/w job and customer models
+      *add site info (site address, site contact, site phone, site email)
+  - users [done/inprogress]
+  - customers [TODO: id, cust name, company name, cust address, work phone, home phone, email, payment info(?)]
 
 PAGES:
   - login
@@ -51,7 +56,6 @@ CURRENT ASSIGNMENTS:
   - auth util:
   - declare logged in user sessionid/user is + type (admin or employee)
 
-
 - Corrine:
   * emp and admin dash with if/else functionality
     - import to evey page
@@ -75,7 +79,6 @@ CURRENT ASSIGNMENTS:
 - Michael:
   * database up and running [done]
   * invoice - employee fill out and pdf download [by tues]
-
 
 - Later:
   - define company we're making this for
@@ -101,8 +104,6 @@ CURRENT ASSIGNMENTS:
   *** PWA
 
 -->
-
-
 
 # Fleet-Sheets
 ## Progressive Web Application (Mobile/Tablet First)
