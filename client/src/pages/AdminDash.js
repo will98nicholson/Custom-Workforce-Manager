@@ -59,7 +59,7 @@ export default function AdminDash() {
                 <Container maxWidth="lg" className={classes.container} >
                     {/* Time and Weather */}
                     {/* Button to Create New Job */}
-                    {/* this.auth !== "Employee" */}
+                    {/* { this.auth !== "Employee" ?  */}
                     <Button variant="contained" color="primary" onClick={() => { window.location.replace('/createjob') }}>
                         Create New Job
                     </Button>
