@@ -92,7 +92,7 @@ export default function StickyHeadTable () {
                                         );
                                     } )}
                                     <TableCell>
-                                        <Button variant="contained">Detail</Button>
+                                        <Button onClick={() => { window.location.replace( '/jobdetail' ); }} variant="contained">Detail</Button>
                                     </TableCell>
                                 </TableRow>
                             );

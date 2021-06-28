@@ -18,6 +18,17 @@ PAGES:
           *check tasks off list
           *add tasks/make notes
           *fill out invoice + mark as complete/{send admin notication}
+    - job detail
+      - client name
+      - full address
+      - full job description
+      - start date
+      - est goal end date
+      - edit button
+      - assigned crew
+      - notes
+      - button to mark as complete
+      - ** ADMIN: button to approve job complete + generate invoice
 
 TODO:
 - where to put invoice form
