@@ -1,4 +1,9 @@
 <!--
+MODELS:
+  - jobs [done/inprogress] - needs refactored: divide info b/w job and customer models
+      *add site info (site address, site contact, site phone, site email)
+  - users [done/inprogress]
+  - customers [TODO: id, cust name, company name, cust address, work phone, home phone, email, payment info(?)]
 
 PAGES:
   - login
@@ -18,6 +23,27 @@ PAGES:
           *check tasks off list
           *add tasks/make notes
           *fill out invoice + mark as complete/{send admin notication}
+    - job detail
+      - client name
+      - full address
+      - full job description
+      - start date
+      - est goal end date
+      - edit button
+      - assigned crew
+      - notes
+      - button to mark as complete
+      - ** ADMIN: button to approve job complete + generate invoice
+
+TODO:
+- where to put invoice form
+- authentication
+- create components
+  -
+  -
+- connect components + render in App
+- working links in popout menu
+- put button for edit job on job details page + render edit details for that specific job
 
 TODO:
 - where to put invoice form
@@ -37,7 +63,6 @@ CURRENT ASSIGNMENTS:
   *login functionality [by tues]
   - auth util:
   - declare logged in user sessionid/user is + type (admin or employee)
-
 
 - Corrine:
   * emp and admin dash with if/else functionality
@@ -62,7 +87,6 @@ CURRENT ASSIGNMENTS:
 - Michael:
   * database up and running [done]
   * invoice - employee fill out and pdf download [by tues]
-
 
 - Later:
   - define company we're making this for
@@ -89,15 +113,15 @@ CURRENT ASSIGNMENTS:
 
 -->
 
-
-
 # Fleet-Sheets
 ## Progressive Web Application (Mobile/Tablet First)
 
 ### Extra Information/Resources
+
 * [Introduction to PWA's](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Introduction)
 
 ### User Story
+
     AS AN ADMINISTRATOR
     I WANT to be able to
     - create invoices, that employees can easily fill out
@@ -117,6 +141,7 @@ CURRENT ASSIGNMENTS:
     SO THAT I can continue to complete my job expectations in an easy and organized fashion.
 
 ### Technology To Use (MERN Stack)
+
 * MongoDb
 * Express
 * React (w/ hooks)
@@ -124,6 +149,7 @@ CURRENT ASSIGNMENTS:
 * Tailwind CSS &&|| react-material-ui (or something new)
 
 ### Desired PWA Functionalities
+
 * Available offline
 * Downloadable to android + ios homescreen's
 * Device camera functionality / implementation

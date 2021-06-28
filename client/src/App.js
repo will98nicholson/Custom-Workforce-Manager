@@ -22,7 +22,6 @@ function App() {
             <Route exact path='/admin'><AdminDash /></Route>
             {/* <Route exact path='/employee'><EmpDash /></Route> */}
             <Route path='/createjob'><CreateJob /></Route>
-            <Route path='/editjob'><EditJob /></Route>
             <Route path='/jobdetail'><JobDetail /></Route>
         </Router>
     );
