@@ -61,7 +61,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const Login = () => {
+const Login = ({ setUser }) => {
     const classes = useStyles();
 
     const [username, setUsername] = useState("");
@@ -77,9 +77,9 @@ const Login = () => {
             },
             withCredentials: true,
             url: '/auth/login'
-        }).then(res => console.log(res.data))
-        .then(document.location.replace('/dashboard'))
-        .catch(err => console.log(err));
+        }).then(res => setUser(res.data))
+
+            .catch(err => console.log(err));
     }
 
     return (
