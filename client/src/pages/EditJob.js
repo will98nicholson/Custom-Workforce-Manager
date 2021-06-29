@@ -26,17 +26,18 @@ const useStyles = makeStyles((theme) => ({
         margin: theme.spacing(2)
     },
     button: {
-        margin: theme.spacing(2)
+        margin: theme.spacing(2),
+        width: '7rem'
     },
     paper: {
-        padding: theme.spacing( 2 ),
+        padding: theme.spacing(2),
         display: 'flex',
         overflow: 'auto',
         flexDirection: 'column',
     }
 }));
 
-function handleSubmit(){
+function handleSubmit() {
     console.log('submit')
 }
 
@@ -46,16 +47,19 @@ export default function CreateJob() {
         <div className={classes.root}>
             <CssBaseline />
             <MenuToolbar />
-            <Container maxWidth="lg" className={classes.container}>
-                <Paper className={classes.paper}>
-                    <Typography variant='h5'>Create New Job</Typography>
-                    <JobsForm />
-                </Paper>
-                <Button variant="contained" color="primary" onClick={handleSubmit}>
-                    Submit
-                </Button>
-                <Copyright />
-            </Container>
-        </div>
+            <main className={classes.content}>
+                <div className={classes.appBarSpacer} />
+                <Container maxWidth="lg" className={classes.container}>
+                    <Paper className={classes.paper}>
+                        <Typography variant='h5'>Edit Job Details</Typography>
+                        <JobsForm />
+                        <Button className={classes.button} variant="contained" color="primary" onClick={handleSubmit}>
+                            Submit
+                        </Button>
+                    </Paper>
+                    <Copyright />
+                </Container>
+            </main>
+        </div >
     )
 };

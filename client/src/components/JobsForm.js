@@ -8,36 +8,36 @@ import {
     TextField,
     Grid
 } from '@material-ui/core';
-const useStyles = makeStyles( ( theme ) => ( {
+const useStyles = makeStyles((theme) => ({
     root: {
         display: 'flex',
         flexDirection: 'row',
         '& > *': {
-            margin: theme.spacing( 1 ),
+            margin: theme.spacing(1),
         },
     },
     input: {
         width: '60vw',
-        margin: theme.spacing( 1, 2, 1, 0 ),
-        [ theme.breakpoints.up( 'md' ) ]: {
+        margin: theme.spacing(1, 2, 1, 0),
+        [theme.breakpoints.up('md')]: {
             width: '40vw'
         },
-        [ theme.breakpoints.up( 'lg' ) ]: {
+        [theme.breakpoints.up('lg')]: {
             width: '20vw'
         }
     },
     TextField: {
         width: '60vw',
-        margin: theme.spacing( 1, 2, 1, 0 )
+        margin: theme.spacing(1, 2, 1, 0)
     },
     container: {
-        margin: theme.spacing( 2 )
+        margin: theme.spacing(2)
     },
     break: {
         flexBasis: '100%',
         height: 0
     }
-} ) );
+}));
 
 /// *** NOTES: ***
 /// - auto increment job number
@@ -48,7 +48,7 @@ const useStyles = makeStyles( ( theme ) => ( {
 ///         * maybe ability to send request for job to be edited
 
 
-export default function JobsForm () {
+export default function JobsForm() {
     const classes = useStyles();
     return (
         <div className={classes.root}>
@@ -58,48 +58,29 @@ export default function JobsForm () {
                     <OutlinedInput id="jobNumber" name="job_number" className={classes.input} variant="outlined" label="Job Number" />
                 </FormControl>
                 <FormControl variant="outlined">
-                    <InputLabel htmlFor="jobName">Job Name</InputLabel>
-                    <OutlinedInput id="jobName" name="job_name" className={classes.input} variant="outlined" label="Job Name" />
-                </FormControl>
-                <FormControl variant="outlined">
-                    <TextField variant="outlined"
+                    {/* <InputLabel htmlFor="quoteDate">Quote Date</InputLabel>
+                        <OutlinedInput id="quoteDate" name="quote_date" className={classes.input} variant="outlined" label="Quote Date" /> */}
+                    <TextField
                         id="date"
                         label="Quote Date"
                         type="date"
                         defaultValue={new Date}
-                        className={classes.textField, classes.input}
+                        className={classes.textField}
                         InputLabelProps={{
                             shrink: true,
                         }}
                     />
                 </FormControl>
-                <div className={classes.break} />
-                <FormControl>
-                    <TextField variant="outlined"
+                <TextField
                     id="datetime-local"
-                    label="Job Start"
+                    label="Appointment Date"
                     type="datetime-local"
                     defaultValue={new Date}
-                        className={classes.textField, classes.input}
+                    className={classes.textField}
                     InputLabelProps={{
                         shrink: true,
                     }}
-                    />
-                </FormControl>
-                <div className={classes.break} />
-                <FormControl>
-                    <TextField variant="outlined"
-                        id="datetime-local"
-                        label="Job End"
-                        type="datetime-local"
-                        defaultValue={new Date}
-                        className={classes.textField, classes.input}
-                        InputLabelProps={{
-                            shrink: true,
-                        }}
-                    />
-                </FormControl>
-
+                />
                 <div className={classes.break} />
                 <Typography variant="body1">Contact Information:</Typography>
                 <FormControl variant="outlined">
@@ -115,7 +96,7 @@ export default function JobsForm () {
                     <OutlinedInput id="Contact Email" name="contact_email" className={classes.input} variant="outlined" label="Contact Email" />
                 </FormControl>
                 <div className={classes.break} />
-                <Typography variant="body1">Job Description:</Typography>
+                <Typography variant="body1">Scope of Work:</Typography>
                 <FormControl variant="outlined">
                     <TextField
                         id="scope-of-work"
