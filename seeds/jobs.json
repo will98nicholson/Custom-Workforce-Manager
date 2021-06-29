@@ -1,7 +1,7 @@
 [{
     "name": "Doors, Frames & Hardware",
     "id": 88,
-    "description": "In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.",
+    "services_id": ["mow only", "mulch"],
     "client": {
       "type": "Residential",
       "name": "Edgetag",
@@ -14,7 +14,7 @@
   }, {
     "name": "Prefabricated Aluminum Metal Canopies",
     "id": 98,
-    "description": "Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue.",
+    "services_id": ["mow & trim", "mulch"],
     "client": {
       "type": "Commercial",
       "name": "Twimm",
@@ -27,7 +27,7 @@
   }, {
     "name": "Overhead Doors",
     "id": 92,
-    "description": "Curabitur in libero ut massa volutpat convallis.",
+    "services_id": ["mow only", "mulch"],
     "client": {
       "type": "Residential",
       "name": "Fivebridge",
@@ -40,7 +40,7 @@
   }, {
     "name": "Roofing (Metal)",
     "id": 31,
-    "description": "Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.",
+    "services_id": ["mow only", "mulch"],
     "client": {
       "type": "Residential",
       "name": "Jaxworks",
@@ -53,7 +53,7 @@
   }, {
     "name": "Construction Clean and Final Clean",
     "id": 26,
-    "description": "Curabitur gravida nisi at nibh. In hac habitasse platea dictumst.",
+    "services_id": ["mow only", "mulch"],
     "client": {
       "type": "Commercial",
       "name": "Skiptube",
@@ -66,7 +66,7 @@
   }, {
     "name": "Masonry",
     "id": 97,
-    "description": "Vivamus vel nulla eget eros elementum pellentesque.",
+    "services_id": ["mow only", "mulch"],
     "client": {
       "type": "Commercial",
       "name": "Fivespan",
@@ -79,7 +79,7 @@
   }, {
     "name": "Waterproofing & Caulking",
     "id": 81,
-    "description": "Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl.",
+    "services_id": ["mow only", "mulch"],
     "client": {
       "type": "Commercial",
       "name": "Rhynoodle",
@@ -92,7 +92,7 @@
   }, {
     "name": "Electrical",
     "id": 100,
-    "description": "Sed sagittis.",
+    "services_id": ["mow only", "mulch"],
     "client": {
       "type": "Commercial",
       "name": "Blogpad",
@@ -105,7 +105,7 @@
   }, {
     "name": "RF Shielding",
     "id": 31,
-    "description": "Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.",
+    "services_id": ["mow only", "mulch"],
     "client": {
       "type": "Commercial",
       "name": "Flashpoint",
@@ -118,7 +118,7 @@
   }, {
     "name": "Waterproofing & Caulking",
     "id": 52,
-    "description": "In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante.",
+    "services_id": ["mow only", "mulch"],
     "client": {
       "type": "Residential",
       "name": "Meevee",
@@ -131,7 +131,7 @@
   }, {
     "name": "Epoxy Flooring",
     "id": 100,
-    "description": "Sed accumsan felis. Ut at dolor quis odio consequat varius.",
+    "services_id": ["mow only", "mulch"],
     "client": {
       "type": "Commercial",
       "name": "Buzzbean",
@@ -144,7 +144,7 @@
   }, {
     "name": "Curb & Gutter",
     "id": 32,
-    "description": "Aenean fermentum. Donec ut mauris eget massa tempor convallis.",
+    "services_id": ["mow only", "mulch"],
     "client": {
       "type": "Residential",
       "name": "Youfeed",
@@ -157,7 +157,7 @@
   }, {
     "name": "Electrical",
     "id": 22,
-    "description": "Donec ut mauris eget massa tempor convallis.",
+    "services_id": ["mow only", "mulch"],
     "client": {
       "type": "Residential",
       "name": "Blognation",
@@ -170,7 +170,7 @@
   }, {
     "name": "Glass & Glazing",
     "id": 4,
-    "description": "Vestibulum sed magna at nunc commodo placerat. Praesent blandit.",
+    "services_id": ["mow only", "mulch"],
     "client": {
       "type": "Residential",
       "name": "Fivechat",
@@ -183,7 +183,7 @@
   }, {
     "name": "Hard Tile & Stone",
     "id": 57,
-    "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin interdum mauris non ligula pellentesque ultrices.",
+    "services_id": ["mow only", "mulch"],
     "client": {
       "type": "Residential",
       "name": "Yabox",
@@ -196,7 +196,7 @@
   }, {
     "name": "Soft Flooring and Base",
     "id": 20,
-    "description": "In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
+    "services_id": ["mow only", "mulch"],
     "client": {
       "type": "Commercial",
       "name": "Twimm",
@@ -209,7 +209,7 @@
   }, {
     "name": "Elevator",
     "id": 30,
-    "description": "Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.",
+    "services_id": ["mow only", "mulch"],
     "client": {
       "type": "Residential",
       "name": "Viva",
@@ -222,7 +222,7 @@
   }, {
     "name": "Doors, Frames & Hardware",
     "id": 41,
-    "description": "Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.",
+    "services_id": ["mow only", "mulch"],
     "client": {
       "type": "Commercial",
       "name": "Leenti",
@@ -235,7 +235,7 @@
   }, {
     "name": "Framing (Steel)",
     "id": 45,
-    "description": "Sed accumsan felis. Ut at dolor quis odio consequat varius.",
+    "services_id": ["mow only", "mulch"],
     "client": {
       "type": "Commercial",
       "name": "Fanoodle",
@@ -248,7 +248,7 @@
   }, {
     "name": "Retaining Wall and Brick Pavers",
     "id": 85,
-    "description": "Nulla nisl. Nunc nisl.",
+    "services_id": ["mow only", "mulch"],
     "client": {
       "type": "Residential",
       "name": "Twitterlist",
