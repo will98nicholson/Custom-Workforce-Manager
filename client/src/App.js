@@ -33,7 +33,8 @@ function App() {
 
             .catch(err => console.log(err));
     }
-    console.log(user);
+    console.log( user );
+    // console.log(user.type)
     return (
         <Router>
             {!user &&
@@ -45,7 +46,7 @@ function App() {
                 <Switch>
                     <Route exact path={['/', '/dashboard']}>{user.type === "Administrator" ? <Dashboard /> : <EmpDash user={user} />}</Route>
                     {/* <Route exact path='/employee'><EmpDash /></Route> */}
-                    <Route path='/createjob'><CreateJob /></Route>
+                    <Route path='/createjob'>{user.type === "Administrator" ? <CreateJob /> : ""} </Route>
                     <Route path='/jobdetail'><JobDetail /></Route><Redirect to="/"></Redirect>
                 </Switch>}
         </Router>
@@ -53,3 +54,6 @@ function App() {
 };
 
 export default App;
+
+//switch statement - if not logged in, redirect to login page
+//
