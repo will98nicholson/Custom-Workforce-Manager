@@ -16,6 +16,7 @@ import {
     TablePagination,
     Button
 } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 import { KeyboardArrowDown, KeyboardArrowUp, Edit } from '@material-ui/icons';
 
 const columns = [
@@ -92,7 +93,11 @@ export default function StickyHeadTable () {
                                         );
                                     } )}
                                     <TableCell>
-                                        <Button onClick={() => { window.location.replace( '/jobdetail' ); }} variant="contained">Detail</Button>
+                                        <Link to='/jobdetail'>
+                                            <Button variant="contained" color="primary">
+                                                DETAIL
+                                            </Button>
+                                        </Link>
                                     </TableCell>
                                 </TableRow>
                             );
