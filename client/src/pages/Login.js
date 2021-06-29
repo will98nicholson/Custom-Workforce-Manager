@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -13,21 +13,24 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 
+import axios from 'axios';
+import API from '../utils/API'
+
 //TODO: find photos to add to rotating side photos on signin page
-function Copyright () {
+function Copyright() {
     return (
         <Typography variant="body2" color="textSecondary" align="center">
             {'Copyright © '}
             <Link color="inherit" href="https://material-ui.com/">
                 FleetSheets
-      </Link>{' '}
+            </Link>{' '}
             {new Date().getFullYear()}
             {'.'}
         </Typography>
     );
 }
 
-const useStyles = makeStyles( ( theme ) => ( {
+const useStyles = makeStyles((theme) => ({
     root: {
         height: '100vh',
     },
@@ -35,37 +38,51 @@ const useStyles = makeStyles( ( theme ) => ( {
         backgroundImage: 'url(https://source.unsplash.com/random)',
         backgroundRepeat: 'no-repeat',
         backgroundColor:
-            theme.palette.type === 'light' ? theme.palette.grey[ 50 ] : theme.palette.grey[ 900 ],
+            theme.palette.type === 'light' ? theme.palette.grey[50] : theme.palette.grey[900],
         backgroundSize: 'cover',
         backgroundPosition: 'center',
     },
     paper: {
-        margin: theme.spacing( 8, 4 ),
+        margin: theme.spacing(8, 4),
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
     },
     avatar: {
-        margin: theme.spacing( 1 ),
+        margin: theme.spacing(1),
         backgroundColor: theme.palette.secondary.main,
     },
     form: {
         width: '100%', // Fix IE 11 issue.
-        marginTop: theme.spacing( 1 ),
+        marginTop: theme.spacing(1),
     },
     submit: {
-        margin: theme.spacing( 3, 0, 2 ),
+        margin: theme.spacing(3, 0, 2),
     },
-} ) );
+}));
 
 const Login = () => {
     const classes = useStyles();
+
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+
+    const handleLogin = async (event) => {
+        event.preventDefault();
+        await axios({
+            method: "POST",
+            data: {
+                username: username,
+                password: password
+            },
+            withCredentials: true,
+            url: '/auth/login'
+        }).then(res => console.log(res.data))
+        .then(document.location.replace('/admin'))
+        .catch(err => console.log(err));
+    }
+
     return (
-        // <form>
-        //     <input placeholder="username"></input>
-        //     <input placeholder="password"></input>
-        //     <button type="submit">Submit</button>
-        // </form>
         <Grid container component="main" className={classes.root}>
             <CssBaseline />
             <Grid item xs={false} sm={4} md={7} className={classes.image} />
@@ -76,18 +93,19 @@ const Login = () => {
                     </Avatar>
                     <Typography component="h1" variant="h5">
                         Sign in
-          </Typography>
+                    </Typography>
                     <form className={classes.form} noValidate>
                         <TextField
                             variant="outlined"
                             margin="normal"
                             required
                             fullWidth
-                            id="email"
-                            label="Email Address"
-                            name="email"
-                            autoComplete="email"
+                            id="username"
+                            label="Username"
+                            name="username"
+                            autoComplete="username"
                             autoFocus
+                            onChange={e => setUsername(e.target.value)}
                         />
                         <TextField
                             variant="outlined"
@@ -99,6 +117,7 @@ const Login = () => {
                             type="password"
                             id="password"
                             autoComplete="current-password"
+                            onChange={e => setPassword(e.target.value)}
                         />
                         <FormControlLabel
                             control={<Checkbox value="remember" color="primary" />}
@@ -109,15 +128,16 @@ const Login = () => {
                             fullWidth
                             variant="contained"
                             color="primary"
+                            onClick={handleLogin}
                             className={classes.submit}
                         >
                             Sign In
-            </Button>
+                        </Button>
                         <Grid container>
                             <Grid item xs>
                                 <Link href="#" variant="body2">
                                     Forgot password?
-                </Link>
+                                </Link>
                             </Grid>
                             <Grid item>
                                 <Link href="#" variant="body2">
