@@ -42,11 +42,11 @@ function Row(props) {
     return (
         <React.Fragment>
             <TableRow className={classes.root}>
-                <TableCell>
+                {/* <TableCell>
                     <IconButton aria-label="expand row" size="small" onClick={() => setOpen(!open)}>
                         {open ? <KeyboardArrowUp /> : <KeyboardArrowDown />}
                     </IconButton>
-                </TableCell>
+                </TableCell> */}
                 <TableCell component="th" scope="row">
                     {row.name}
                 </TableCell>

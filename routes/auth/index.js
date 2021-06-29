@@ -4,7 +4,7 @@ const db = require('../../models');
 const passport = require('../../middleware/passport');
 
 router.post('/login',
-    passport.authenticate('local', { failureRedirect: '/login' }),
+    passport.authenticate('local', { failureRedirect: '/' }),
     function (req, res) {
         console.log(req.user);
         // admin(req.user);
@@ -12,6 +12,11 @@ router.post('/login',
     }
 );
 
+router.get('/login',
+    function (req, res) {
+        req.login;
+    }
+);
 
 router.post('/register',
     function (req, res) {
@@ -36,5 +41,5 @@ router.get('/user',
         res.json(req.user);
     }
 );
-// function admin(userObj);
+
 module.exports = router;

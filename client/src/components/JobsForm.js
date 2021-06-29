@@ -50,8 +50,6 @@ export default function JobsForm() {
                     <OutlinedInput id="jobNumber" name="job_number" className={classes.input} variant="outlined" label="Job Number" />
                 </FormControl>
                 <FormControl variant="outlined">
-                    {/* <InputLabel htmlFor="quoteDate">Quote Date</InputLabel>
-                        <OutlinedInput id="quoteDate" name="quote_date" className={classes.input} variant="outlined" label="Quote Date" /> */}
                     <TextField
                         id="date"
                         label="Quote Date"

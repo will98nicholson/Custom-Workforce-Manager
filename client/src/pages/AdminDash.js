@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from "react";
 import { makeStyles } from '@material-ui/core/styles';
 import {
     CssBaseline,
@@ -11,6 +11,8 @@ import {
 import MenuToolbar from '../components/MenuToolbar';
 import Copyright from '../components/Copyright';
 import JobsList from '../components/JobsList';
+
+import API from '../utils/API'
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -29,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
         margin: theme.spacing(2)
     },
     paper: {
-        padding: theme.spacing( 2 ),
+        padding: theme.spacing(2),
         display: 'flex',
         overflow: 'auto',
         flexDirection: 'column',
@@ -45,10 +47,28 @@ const useStyles = makeStyles((theme) => ({
 // }
 
 // auth(type);
+// function isAdmin() {
+//     const [user, setUser] = useState({})
 
+// }
 
 export default function AdminDash() {
     const classes = useStyles();
+
+    const [user, setUser] = ({});
+
+    useEffect(() => {
+        loadUser()
+    }, []);
+
+    function loadUser() {
+        API.getUser()
+            .then(res =>
+                setUser(res.data)
+            )
+            .catch(err => console.log(err));
+    };
+
 
     return (
         <div className={classes.root}>
@@ -59,13 +79,16 @@ export default function AdminDash() {
                 <Container maxWidth="lg" className={classes.container} >
                     {/* Time and Weather */}
                     {/* Button to Create New Job */}
-                    { this.auth !== "Employee" ? 
+                    {/* { this.auth !== "Employee" ?  */}
+                    <Button hidden={!(user.type === "Administrator")} variant="contained" color="primary" onClick={() => { window.location.replace('/createjob') }}>
+                        Create New Job
+                    </Button>
+                    {/* ""} */}
+                    {/* Active Jobs */}
                     <Button variant="contained" color="primary" onClick={() => { window.location.replace('/createjob') }}>
                         Create New Job
-                    </Button> :
-                    ""}
-                    {/* Active Jobs */}
-                    
+                    </Button>
+
                     <Paper className={classes.paper}>
                         <Typography variant='h5'>Active Jobs</Typography>
                         <JobsList />
