@@ -12,9 +12,18 @@ router.post('/login',
     }
 );
 
+router.get('/user',
+    function (req, res) {
+        console.log(req.user);
+        if (req.user) { res.json(req.user); }
+        else { res.json(null); }
+
+    }
+);
 router.get('/login',
     function (req, res) {
-        req.login;
+
+        req.user;
     }
 );
 
