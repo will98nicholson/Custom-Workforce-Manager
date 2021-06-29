@@ -2,7 +2,11 @@ const db = require('../models');
 
 module.exports = {
     findCurrent: (req, res) => {
-        db.User.find({ id: req.session.id })
+        db.User.find({ id: req.session.user.id })
+        .then((data) => {
+            res.json(data)
+        })
+        .catch(err => console.log(err))
     },
     // findAll: (req, res) => {
     //     db.Job.find(req.query)

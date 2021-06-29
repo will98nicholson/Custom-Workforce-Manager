@@ -3,9 +3,6 @@ import axios from "axios";
 export default {
     //gets current user for use in Admin verification
     getUser: function() {
-        return axios.get("/api/user")
+        return axios.get("/api/user/current")
     },
-    login: function() {
-        return axios.post("/auth/login")
-    }
 }
