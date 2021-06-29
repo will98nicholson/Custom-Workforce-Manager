@@ -5,13 +5,12 @@ import {
     Container,
     Typography,
     Paper,
-    Button,
+    Button
 } from '@material-ui/core';
-
+import { Link } from 'react-router-dom';
 import MenuToolbar from '../components/MenuToolbar';
 import Copyright from '../components/Copyright';
 import JobsList from '../components/JobsList';
-
 import API from '../utils/API'
 
 const useStyles = makeStyles((theme) => ({
@@ -39,11 +38,11 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 // auth() {
-//     if req.session.id 
+//     if req.session.id
 // }
 
 // jobs() {
-//     req.session.id 
+//     req.session.id
 // }
 
 // auth(type);
@@ -56,7 +55,7 @@ export default function Dashboard() {
     const classes = useStyles();
 
     const [user, setUser] = useState({});
-  
+
     useEffect(() => {
       getUser();
     }, []);
@@ -78,9 +77,12 @@ export default function Dashboard() {
                     {/* Time and Weather */}
                     {/* Button to Create New Job */}
                     {/* { this.auth !== "Employee" ?  */}
-                    <Button variant="contained" color="primary" onClick={() => { window.location.replace('/createjob') }}>
-                        Create New Job
-                    </Button>
+                    <Link to='/createjob'>
+                        <Button variant="contained" color="primary">
+                            Create New Job
+                        </Button>
+                    </Link>
+
                     {/* ""} */}
                     {/* Active Jobs */}
                     {/* <Button variant="contained" color="primary" onClick={() => { window.location.replace('/createjob') }}>

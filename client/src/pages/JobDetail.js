@@ -41,7 +41,7 @@ function handleSubmit () {
     console.log( 'submit' );
 }
 
-export default function CreateJob () {
+export default function JobDetail () {
     const classes = useStyles();
     return (
         <div className={classes.root}>
