@@ -1,9 +1,9 @@
-<!--TODO:
-- package json in client (DONE: WILL)
-- where to put invoice form
-- figure out back end server and authentication
-- create components
-- connect components + render in App
+<!--
+MODELS:
+  - jobs [done/inprogress] - needs refactored: divide info b/w job and customer models
+      *add site info (site address, site contact, site phone, site email)
+  - users [done/inprogress]
+  - customers [TODO: id, cust name, company name, cust address, work phone, home phone, email, payment info(?)]
 
 PAGES:
   - login
@@ -23,39 +23,105 @@ PAGES:
           *check tasks off list
           *add tasks/make notes
           *fill out invoice + mark as complete/{send admin notication}
+    - job detail
+      - client name
+      - full address
+      - full job description
+      - start date
+      - est goal end date
+      - edit button
+      - assigned crew
+      - notes
+      - button to mark as complete
+      - ** ADMIN: button to approve job complete + generate invoice
 
-- auth util: declare logged in user sessionid/user is + type (admin or employee)
-- import to evey page
-- implement turnary operator / if else to the dashboard
-  -mini components for emp dash vs employee dash
+TODO:
+- where to put invoice form
+- authentication
+- create components
+  -
+  -
+- connect components + render in App
+- working links in popout menu
+- put button for edit job on job details page + render edit details for that specific job
+
+TODO:
+- where to put invoice form
+- authentication
+- create components
+  -
+  -
+- connect components + render in App
+
+FIX:
+- edit job page - render information already stored in job page if there is any + make editable
 
 CURRENT ASSIGNMENTS:
+
 - Will:
-  *Password Auth - using passport npm package
+  *Password Auth - using passport npm package[done]
+  *login functionality [by tues]
+  - auth util:
+  - declare logged in user sessionid/user is + type (admin or employee)
 
 - Corrine:
-  * admin dash
+  * emp and admin dash with if/else functionality
+    - import to evey page
+    - implement turnary operator / if else to the dashboard
+    - mini components for emp dash vs employee dash
+  * fix open drawer
+  * styling
 
 - Kathryn:
-  * emp dash
+  * job detail page
+  * put address + button in jobs list - link to job details page
+  * job assignment page
+  * weather and time
 
 - Brandon:
-  * react router
+  * react router [done]
+  * seed data [done]
+  * database seeded [done]
+  * PWA functionality
 
 - Michael:
-  * database up and running
+  * database up and running [done]
+  * invoice - employee fill out and pdf download [by tues]
+
+- Later:
+  - define company we're making this for
+  - create an acct functionality
+  - images and styling
+  - offline functionality [Brandon]
+  - new title of proj
+  - weather and time of day
+
+- FINAL PRESENTATION:
+  - login as admin
+  - create job
+  - assign job
+  - logout
+  - login as employee
+  - complete job
+  - fill out invoice
+  - send to admin
+  - logout employee
+  - login admin
+  - approve completed job
+  - download completed invoice as pdf + send out to client
+  *** PWA
 
 -->
-
-
 
 # Fleet-Sheets
 ## Progressive Web Application (Mobile/Tablet First)
 
 ### Extra Information/Resources
+
 * [Introduction to PWA's](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Introduction)
 
 ### User Story
+
     AS AN ADMINISTRATOR
     I WANT to be able to
     - create invoices, that employees can easily fill out
@@ -75,6 +141,7 @@ CURRENT ASSIGNMENTS:
     SO THAT I can continue to complete my job expectations in an easy and organized fashion.
 
 ### Technology To Use (MERN Stack)
+
 * MongoDb
 * Express
 * React (w/ hooks)
@@ -82,6 +149,7 @@ CURRENT ASSIGNMENTS:
 * Tailwind CSS &&|| react-material-ui (or something new)
 
 ### Desired PWA Functionalities
+
 * Available offline
 * Downloadable to android + ios homescreen's
 * Device camera functionality / implementation
