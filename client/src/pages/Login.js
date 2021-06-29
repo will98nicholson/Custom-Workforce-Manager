@@ -78,7 +78,7 @@ const Login = () => {
             withCredentials: true,
             url: '/auth/login'
         }).then(res => console.log(res.data))
-        .then(document.location.replace('/admin'))
+        .then(document.location.replace('/dashboard'))
         .catch(err => console.log(err));
     }
 
