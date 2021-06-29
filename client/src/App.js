@@ -45,7 +45,7 @@ function App() {
                 <Switch>
                     <Route exact path={['/', '/dashboard']}>{user.type === "Administrator" ? <Dashboard /> : <EmpDash user={user} />}</Route>
                     {/* <Route exact path='/employee'><EmpDash /></Route> */}
-                    <Route path='/createjob'><CreateJob /></Route>
+                    <Route path='/createjob'>{user.type === "Administrator" ? <CreateJob /> : ""}</Route>
                     <Route path='/jobdetail'><JobDetail /></Route><Redirect to="/"></Redirect>
                 </Switch>}
         </Router>
