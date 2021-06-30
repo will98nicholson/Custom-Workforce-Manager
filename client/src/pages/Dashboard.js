@@ -57,14 +57,14 @@ export default function Dashboard() {
     const [user, setUser] = useState({});
 
     useEffect(() => {
-      getUser();
+        getUser();
     }, []);
 
     function getUser() {
-      API.getUser()
-        .then(res => setUser(res.data))
-        .then(console.log(user))
-        .catch(err=>console.log(err))
+        API.getUser()
+            .then(res => setUser(res.data))
+            .then(console.log(user))
+            .catch(err => console.log(err))
     }
 
     return (
