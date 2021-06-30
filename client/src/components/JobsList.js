@@ -18,6 +18,7 @@ import {
 } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import { KeyboardArrowDown, KeyboardArrowUp, Edit } from '@material-ui/icons';
+import DetailButton from '../assets/icons/right-arrow.png';
 
 const columns = [
     { id: 'client', label: 'Client', minWidth: 170 },
@@ -61,13 +62,13 @@ export default function StickyHeadTable () {
     };
 
     return (
-        <Paper className={classes.root}>
+        <Paper className={classes.root} id='jobslist'>
             <TableContainer className={classes.container}>
                 <Table stickyHeader aria-label="sticky table">
                     <TableHead>
-                        <TableRow>
+                        {/* <TableRow>
                             {columns.map( ( column ) => (
-                                <TableCell
+                                <TableCell className='transparent module-sub-head'
                                     key={column.id}
                                     align={column.align}
                                     style={{ minWidth: column.minWidth }}
@@ -75,8 +76,8 @@ export default function StickyHeadTable () {
                                     {column.label}
                                 </TableCell>
                             ) )}
-                            <TableCell>Detail</TableCell>
-                        </TableRow>
+                            <TableCell className='transparent module-sub-head'>Detail</TableCell>
+                        </TableRow> */}
                     </TableHead>
                     <TableBody>
                         {rows.slice( page * rowsPerPage, page * rowsPerPage + rowsPerPage ).map( ( row ) => {
@@ -94,9 +95,9 @@ export default function StickyHeadTable () {
                                     } )}
                                     <TableCell>
                                         <Link to='/jobdetail'>
-                                            <Button variant="contained" color="primary">
-                                                DETAIL
-                                            </Button>
+                                            {/* <Button variant="contained" color="primary"> */}
+                                                <img alt='' src={DetailButton} className='detail-button' />
+                                            {/* </Button> */}
                                         </Link>
                                     </TableCell>
                                 </TableRow>
@@ -105,7 +106,7 @@ export default function StickyHeadTable () {
                     </TableBody>
                 </Table>
             </TableContainer>
-            <TablePagination
+            {/* <TablePagination
                 rowsPerPageOptions={[ 10, 25, 100 ]}
                 component="div"
                 count={rows.length}
@@ -113,7 +114,7 @@ export default function StickyHeadTable () {
                 page={page}
                 onChangePage={handleChangePage}
                 onChangeRowsPerPage={handleChangeRowsPerPage}
-            />
+            /> */}
         </Paper>
     );
 }

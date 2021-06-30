@@ -57,18 +57,17 @@ export default function Dashboard() {
     return (
         <div className={classes.root}>
             <CssBaseline />
-            <MenuToolbar />
+            <MenuToolbar className="topToolbar"/>
             <main className={classes.content}>
                 <div className={classes.appBarSpacer} />
                 <Container maxWidth="lg" className={classes.container} >
                     {/* Time and Weather */}
-                    {/* Button to Create New Job */}
-                    {/* { this.auth !== "Employee" ?  */}
-                    <Link to='/createjob'>
+
+                    {/* <Link to='/createjob'>
                         <Button variant="contained" color="primary">
                             Create New Job
                         </Button>
-                    </Link>
+                    </Link> */}
 
                     {/* ""} */}
                     {/* Active Jobs */}
@@ -76,12 +75,12 @@ export default function Dashboard() {
                         Create New Job
                     </Button> */}
 
-                    <Paper className={classes.paper}>
+                    <Paper className={classes.paper} id='module1'>
                         <Typography variant='h5'>Active Jobs</Typography>
                         <JobsList />
                     </Paper>
                     {/* Completed Jobs */}
-                    <Paper className={classes.paper}>
+                    <Paper className={classes.paper} id='module2'>
                         <Typography variant='h5'>Completed Jobs</Typography>
                     </Paper>
                     <Copyright />
