@@ -33,7 +33,9 @@ function App() {
             .catch(err => console.log(err));
     }
 
-    console.log(user)
+    console.log(user);
+    // console.log(user.type)
+
     return (
         <Router>
             {!user &&
