@@ -4,9 +4,12 @@ import {
     OutlinedInput,
     InputLabel,
     FormControl,
+    MenuItem,
+    Select,
     Typography,
     TextField,
-    Button
+    Button,
+    InputAdornment
 } from '@material-ui/core';
 
 import { Redirect } from 'react-router-dom';
@@ -61,25 +64,33 @@ export default function JobsForm(props) {
     const [formObject, setFormObject] = useState({})
 
     const handleInputChange = (event) => {
-        const { name, value} = event.target;
-        setFormObject({...formObject, [name]: value})
+        const { name, value } = event.target;
+        setFormObject({ ...formObject, [name]: value })
     }
 
     function handleSubmit(event) {
         event.preventDefault()
         props.APIFunction({
-            name: formObject.name,
-            quote: formObject.quote,
-            start: formObject.start,
-            end: formObject.end,
-            contact: formObject.contact,
-            phone: formObject.phone,
-            email: formObject.email,
-            work: formObject.work,
+            client: {
+                type: formObject.type,
+                name: formObject.name,
+                location: formObject.address,
+                contact: formObject.contact,
+                phone: formObject.phone,
+                email: formObject.email,
+            },
+
+            quote_date: formObject.quote,
+            quote_price: formObject.price,
+            start_date: formObject.start,
+            end_date: formObject.end,
+
+            description: formObject.work,
             notes: formObject.notes
         })
-            .then(alert("Job created successfully!"))
-            .then(<Redirect to="/admin"></Redirect>)
+            .then((res) => console.log(res))
+            // .then(<Redirect to="/admin"></Redirect>)
+            .catch((err) => console.log(err))
     }
 
     return (
@@ -90,15 +101,35 @@ export default function JobsForm(props) {
                     <OutlinedInput id="jobNumber" name="job_number" className={classes.input} variant="outlined" placeholder={jobNumber} />
                 </FormControl> */}
                 <FormControl>
-                    <InputLabel htmlFor="jobName">Job Name</InputLabel>
-                    <OutlinedInput 
-                        id="jobName"
+                    <InputLabel htmlFor="clientName">Client Name</InputLabel>
+                    <OutlinedInput
+                        id="clientName"
                         name="name"
                         onChange={handleInputChange}
                         className={classes.input}
                         variant="outlined"
-                        label="Job Name" />
+                        label="Client Name" />
                 </FormControl>
+
+                <FormControl variant="outlined" className={classes.formControl}>
+                    <InputLabel id="clientType">Client Type</InputLabel>
+                    <Select
+                        labelId="clientType"
+                        id="clientType"
+                        name="type"
+                        onChange={handleInputChange}
+                        label="Client Type"
+                    >
+                        <MenuItem value="">
+                            <em>None</em>
+                        </MenuItem>
+                        <MenuItem value={"Residential"}>Residential</MenuItem>
+                        <MenuItem value={"Commercial"}>Commercial</MenuItem>
+                    </Select>
+                </FormControl>
+
+                <div className={classes.break} />
+
                 <FormControl>
                     <TextField variant="outlined"
                         id="quoteDate"
@@ -113,7 +144,21 @@ export default function JobsForm(props) {
                         }}
                     />
                 </FormControl>
+
+                <FormControl>
+                    <InputLabel htmlFor="quotePrice">Quote Price</InputLabel>
+                    <OutlinedInput
+                        id="quotePrice"
+                        name="price"
+                        onChange={handleInputChange}
+                        className={classes.input}
+                        variant="outlined"
+                        startAdornment={<InputAdornment position="start">$</InputAdornment>}
+                        label="Quote Price" />
+                </FormControl>
+
                 <div className={classes.break} />
+
                 <FormControl>
                     <TextField variant="outlined"
                         id="startDate"
@@ -128,6 +173,7 @@ export default function JobsForm(props) {
                         }}
                     />
                 </FormControl>
+
                 <FormControl>
                     <TextField variant="outlined"
                         id="endDate"
@@ -144,39 +190,61 @@ export default function JobsForm(props) {
                 </FormControl>
 
                 <div className={classes.break} />
+
                 <Typography variant="body1">Contact Information:</Typography>
+
                 <FormControl>
                     <InputLabel htmlFor="contactName">Point of Contact</InputLabel>
                     <OutlinedInput
-                        id="contactName" 
-                        name="contact" 
+                        id="contactName"
+                        name="contact"
                         onChange={handleInputChange}
-                        className={classes.input} 
-                        variant="outlined" 
+                        className={classes.input}
+                        variant="outlined"
                         label="Point of Contact" />
                 </FormControl>
+
                 <FormControl>
                     <InputLabel htmlFor="contactPhone">Contact Phone</InputLabel>
-                    <OutlinedInput 
+                    <OutlinedInput
                         id="contactPhone"
                         name="phone"
                         onChange={handleInputChange}
                         className={classes.input}
-                        variant="outlined" 
+                        variant="outlined"
                         label="Contact Phone" />
                 </FormControl>
+
                 <FormControl>
                     <InputLabel htmlFor="contactEmail">Contact Email</InputLabel>
-                    <OutlinedInput 
-                        id="contactEmail" 
-                        name="email" 
+                    <OutlinedInput
+                        id="contactEmail"
+                        name="email"
                         onChange={handleInputChange}
                         className={classes.input}
                         variant="outlined"
                         label="Contact Email" />
                 </FormControl>
+
                 <div className={classes.break} />
+
+                <Typography variant="body1">Job Location:</Typography>
+
+                <FormControl>
+                    <TextField
+                        id="jobLocation"
+                        name="address"
+                        onChange={handleInputChange}
+                        className={classes.TextField}
+                        placeholder="123 Lawncare Lane, Greenville, OH 45331"
+                        variant="outlined"
+                    />
+                </FormControl>
+
+                <div className={classes.break} />
+
                 <Typography variant="body1">Scope of Work:</Typography>
+
                 <FormControl>
                     <TextField
                         id="workDescription"
@@ -189,8 +257,11 @@ export default function JobsForm(props) {
                         variant="outlined"
                     />
                 </FormControl>
+
                 <div className={classes.break} />
+
                 <Typography variant="body1">Notes:</Typography>
+                
                 <FormControl>
                     <TextField
                         id="notes"
@@ -203,6 +274,9 @@ export default function JobsForm(props) {
                         variant="outlined"
                     />
                 </FormControl>
+
+                <div className={classes.break} />
+
                 <Button className={classes.button} variant="contained" color="primary" onClick={handleSubmit}>
                     Submit
                 </Button>

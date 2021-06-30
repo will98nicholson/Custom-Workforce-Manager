@@ -23,6 +23,7 @@ module.exports = {
             .catch(err => console.log(err))
     },
     create: (req, res) => {
+        console.log('route hit')
         db.Job.create(req.body)
             .then((data) => {
                 res.json(data)

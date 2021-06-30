@@ -14,12 +14,6 @@ import JobsForm from '../components/JobsForm';
 
 import API from '../utils/API';
 
-//TODO: handleSubmit
-            //write API.createJob (post request to api/jobs) x
-            //write function to access form data from JobsForm.js ?
-            //clickEvent to send data & redirect to Admin dashboard x
-    //go to JobsForm.js for next steps
-
 const useStyles = makeStyles((theme) => ({
     root: {
         display: 'flex',
@@ -57,6 +51,8 @@ export default function CreateJob() {
                 <Container maxWidth="lg" className={classes.container}>
                     <Paper className={classes.paper}>
                         <Typography variant='h5'>Create New Job</Typography>
+                        {/* pass createJob API to JobsForm via props */}
+                        {/* Other pages using JobsForm component will pass different API functions */}
                         <JobsForm APIFunction={API.createJob} />
                     </Paper>
                     <Copyright />
