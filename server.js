@@ -38,7 +38,16 @@ if (!isProduction) {
 }
 
 //Configure Mongoose
-mongoose.connect('mongodb://localhost/fleetsheets');
+mongoose.connect(
+    process.env.MONGODB_URI || 'mongodb://localhost/fleetsheets',
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      useCreateIndex: true,
+      useFindAndModify: false
+    }
+)
+
 mongoose.set('debug', true);
 
 //Error handlers & middlewares
