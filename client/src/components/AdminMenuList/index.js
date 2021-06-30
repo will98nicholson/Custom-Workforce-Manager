@@ -9,27 +9,32 @@ import {
     AddBox,
     Notifications
 } from '@material-ui/icons';
+import { Link } from 'react-router-dom';
 
 export const mainListItems = (
     <div>
-        <ListItem button>
-            <ListItemIcon>
-                <Dashboard />
-            </ListItemIcon>
-            <ListItemText primary="Dashboard" />
-        </ListItem>
-        <ListItem button>
-            <ListItemIcon>
-                <People />
-            </ListItemIcon>
-            <ListItemText primary="My Crews" />
-        </ListItem>
-        <ListItem button>
-            <ListItemIcon>
-                <AddBox />
-            </ListItemIcon>
-            <ListItemText primary="Create A Job" />
-        </ListItem>
+        <Link to='/dashboard'>
+            <ListItem button>
+                <ListItemIcon>
+                    <Dashboard />
+                </ListItemIcon>
+                <ListItemText primary="Dashboard" />
+            </ListItem>
+        </Link>
+            <ListItem button>
+                <ListItemIcon>
+                    <People />
+                </ListItemIcon>
+                <ListItemText primary="My Crews" />
+            </ListItem>
+        <Link to='/createjob'>
+            <ListItem button>
+                <ListItemIcon>
+                    <AddBox />
+                </ListItemIcon>
+                <ListItemText primary="Create A Job" />
+            </ListItem>
+        </Link>
     </div>
 );
 
