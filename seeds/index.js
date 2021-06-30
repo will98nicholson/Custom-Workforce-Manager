@@ -1,5 +1,5 @@
 // TODO: find a generator to generate fake yet realistic client / job information!
-const jobSeeds = require('./jobs.json')
+const jobSeeds = require('./job.json')
 const userSeeds = require('./users.json')
 const serviceSeeds = require('./services.json')
 const mongoose = require('mongoose');
@@ -10,6 +10,7 @@ mongoose.connect('mongodb://localhost/fleetsheets', {
     useFindAndModify: false,
     useUnifiedTopology: true,
 });
+
 
 db.Service.deleteMany({})
     .then(() => db.Service.collection.insertMany(serviceSeeds))
@@ -27,8 +28,10 @@ db.Service.deleteMany({})
                     })
             })
 
+
     })
     .catch((err) => {
         console.log(err)
         process.exit(1)
+
     })
