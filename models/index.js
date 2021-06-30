@@ -7,6 +7,3 @@ module.exports = {
 // User.hasMany(Job, {
 //     foreignKey: 'user_id'
 // })
-
-
-
