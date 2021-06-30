@@ -6,7 +6,6 @@ import {
     FormControl,
     Typography,
     TextField,
-    Grid
 } from '@material-ui/core';
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -85,22 +84,22 @@ export default function JobsForm() {
                 <div className={classes.break} />
                 <Typography variant="body1">Contact Information:</Typography>
                 <FormControl variant="outlined">
-                    <InputLabel htmlFor="PointofContact">Point of Contact</InputLabel>
-                    <OutlinedInput id="PointofContact" name="point_of_contact" className={classes.input} variant="outlined" label="Point of Contact" />
+                    <InputLabel htmlFor="contact">Point of Contact</InputLabel>
+                    <OutlinedInput id="contact" name="point_of_contact" className={classes.input} variant="outlined" label="Point of Contact" />
                 </FormControl>
                 <FormControl variant="outlined">
-                    <InputLabel htmlFor="ContactPhone">Contact Phone</InputLabel>
-                    <OutlinedInput id="ContactPhone" name="contact_phone" className={classes.input} variant="outlined" label="Contact Phone" />
+                    <InputLabel htmlFor="phone">Contact Phone</InputLabel>
+                    <OutlinedInput id="phone" name="contact_phone" className={classes.input} variant="outlined" label="Contact Phone" />
                 </FormControl>
                 <FormControl variant="outlined">
-                    <InputLabel htmlFor="Contact Email">Contact Email</InputLabel>
-                    <OutlinedInput id="Contact Email" name="contact_email" className={classes.input} variant="outlined" label="Contact Email" />
+                    <InputLabel htmlFor="email">Contact Email</InputLabel>
+                    <OutlinedInput id="email" name="contact_email" className={classes.input} variant="outlined" label="Contact Email" />
                 </FormControl>
                 <div className={classes.break} />
                 <Typography variant="body1">Scope of Work:</Typography>
                 <FormControl variant="outlined">
                     <TextField
-                        id="scope-of-work"
+                        id="work"
                         className={classes.TextField}
                         multiline
                         rows={4}
@@ -112,7 +111,7 @@ export default function JobsForm() {
                 <Typography variant="body1">Notes:</Typography>
                 <FormControl variant="outlined">
                     <TextField
-                        id="scope-of-work"
+                        id="notes"
                         className={classes.TextField}
                         multiline
                         rows={4}
