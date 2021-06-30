@@ -8,7 +8,7 @@ export default {
 
     getJob: function () {
         return axios.get("/api/job")
-    }
+    },
 
     //post data from CreateJob.js to api/jobs
     createJob: function (jobData) {
