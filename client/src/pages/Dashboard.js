@@ -37,20 +37,6 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-// auth() {
-//     if req.session.id
-// }
-
-// jobs() {
-//     req.session.id
-// }
-
-// auth(type);
-// function isAdmin() {
-//     const [user, setUser] = useState({})
-
-// }
-
 export default function Dashboard() {
     const classes = useStyles();
 
