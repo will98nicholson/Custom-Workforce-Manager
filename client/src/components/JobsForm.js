@@ -108,16 +108,20 @@ export default function JobsForm(props) {
                         onChange={handleInputChange}
                         className={classes.input}
                         variant="outlined"
+                        disabled={props.setDisable}
+                        defaultValue={props.setDefaultValue}
                         label="Client Name" />
                 </FormControl>
 
-                <FormControl variant="outlined" className={classes.formControl}>
+                <FormControl variant="outlined" className={classes.input}>
                     <InputLabel id="clientType">Client Type</InputLabel>
                     <Select
                         labelId="clientType"
                         id="clientType"
                         name="type"
                         onChange={handleInputChange}
+                        disabled={props.setDisable}
+                        defaultValue={props.setDefaultValue}
                         label="Client Type"
                     >
                         <MenuItem value="">
@@ -137,7 +141,8 @@ export default function JobsForm(props) {
                         onChange={handleInputChange}
                         label="Quote Date"
                         type="date"
-                        defaultValue={new Date}
+                        disabled={props.setDisable}
+                        defaultValue={props.setDefaultValue}
                         className={classes.textField, classes.input}
                         InputLabelProps={{
                             shrink: true,
@@ -154,6 +159,8 @@ export default function JobsForm(props) {
                         className={classes.input}
                         variant="outlined"
                         startAdornment={<InputAdornment position="start">$</InputAdornment>}
+                        disabled={props.setDisable}
+                        defaultValue={props.setDefaultValue}
                         label="Quote Price" />
                 </FormControl>
 
@@ -166,7 +173,8 @@ export default function JobsForm(props) {
                         onChange={handleInputChange}
                         label="Job Start"
                         type="datetime-local"
-                        defaultValue={new Date}
+                        disabled={props.setDisable}
+                        defaultValue={props.setDefaultValue}
                         className={classes.textField, classes.input}
                         InputLabelProps={{
                             shrink: true,
@@ -181,7 +189,8 @@ export default function JobsForm(props) {
                         onChange={handleInputChange}
                         label="Job End"
                         type="datetime-local"
-                        defaultValue={new Date}
+                        disabled={props.setDisable}
+                        defaultValue={props.setDefaultValue}
                         className={classes.textField, classes.input}
                         InputLabelProps={{
                             shrink: true,
@@ -201,6 +210,8 @@ export default function JobsForm(props) {
                         onChange={handleInputChange}
                         className={classes.input}
                         variant="outlined"
+                        disabled={props.setDisable}
+                        defaultValue={props.setDefaultValue}
                         label="Point of Contact" />
                 </FormControl>
 
@@ -212,6 +223,8 @@ export default function JobsForm(props) {
                         onChange={handleInputChange}
                         className={classes.input}
                         variant="outlined"
+                        disabled={props.setDisable}
+                        defaultValue={props.setDefaultValue}
                         label="Contact Phone" />
                 </FormControl>
 
@@ -223,6 +236,8 @@ export default function JobsForm(props) {
                         onChange={handleInputChange}
                         className={classes.input}
                         variant="outlined"
+                        disabled={props.setDisable}
+                        defaultValue={props.setDefaultValue}
                         label="Contact Email" />
                 </FormControl>
 
@@ -236,6 +251,8 @@ export default function JobsForm(props) {
                         name="address"
                         onChange={handleInputChange}
                         className={classes.TextField}
+                        disabled={props.setDisable}
+                        defaultValue={props.setDefaultValue}
                         placeholder="123 Lawncare Lane, Greenville, OH 45331"
                         variant="outlined"
                     />
@@ -254,6 +271,8 @@ export default function JobsForm(props) {
                         multiline
                         rows={4}
                         placeholder="Describe Approved Work"
+                        disabled={props.setDisable}
+                        defaultValue={props.setDefaultValue}
                         variant="outlined"
                     />
                 </FormControl>
@@ -271,6 +290,8 @@ export default function JobsForm(props) {
                         multiline
                         rows={4}
                         placeholder="Directions, special considerations, etc."
+                        disabled={props.setDisable}
+                        defaultValue={props.setDefaultValue}
                         variant="outlined"
                     />
                 </FormControl>
