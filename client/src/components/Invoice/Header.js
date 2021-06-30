@@ -1,71 +1,43 @@
 import React, { Component } from "react";
-
+import { View, Text } from "@react-pdf/renderer"
 // TODO: figure out how to model, seed and then retrieve neccessary information, then style!
 
-function Header() {
+function Header(invoiceData) {
 
-    companyInformation = [
-        {
-            "company": "",
-            "name": "",
-            "address": {
-                "streetAddress": "",
-                "city": "",
-                "state": "",
-                "zipcode":""
-            }
-        }
-    ];
-
-    billingInformation = [
-       {
-           "client": {
-               "name": "",
-               "address": {
-                "streetAddress": "",
-                "city": "",
-                "state": "",
-                "zipcode":""
-            }
-          }
-       }
-    ];
-
-    invoiceInformation = [
-        {
-            "number": "",
-            "dateCreated":"",
-            "dateDue":""
-        }
-    ]
-
+    const styles = StyleSheet.create({
+        companyInfo: {},
+        invoiceHeader: {},
+        billingInfo:{},
+        invoiceInfo:{}
+    });
+    
     return(
-        <>
-            <div className="companyInfo">
-                <h2>{companyInformation.company}</h2>
-                <h4>{companyInformation.address.streetAddress}</h4>
-                <h4>{companyInformation.address.city}, {companyInformation.address.state} {companyInformation.address.zipcode}</h4>
-                <h4>United States</h4>
-            </div>
+        <View>
+            <View style={styles.companyInfo}>
+                <Text>ThreeLeaves Co.</Text>
+                <Text>123 Landscaping Way</Text>
+                <Text>Grandview Heights, OH 43212</Text>
+                <Text>United States</Text>
+            </View>
 
-            <div className="invoiceHeader">
-                <h1>INVOICE</h1>
-            </div>
+            <View style={styles.invoiceHeader}>
+                <Text>INVOICE</Text>
+            </View>
 
-            <div className="billingInfo">
-                <h3>Bill To:</h3>
-                <h4>{billingInformation.client.name}</h4>
-                <h4>{billingInformation.client.address.streetAddress}</h4>
-                <h4>{billingInformation.client.address.city}, {billingInformation.client.address.state} {billingInformation.client.address.zipcode}</h4>
-            </div>
+            <View style={styles.billingInfo}>
+                <Text>Bill To:</Text>
+                <Text>{invoiceData.client.name}</Text>
+                <Text>{invoiceData.client.address.streetAddress}</Text>
+                <Text>{invoiceData.client.address.city}, {invoiceData.client.address.state} {invoiceData.client.address.zipcode}</Text>
+            </View>
 
-            <div>
-                <h4>Invoice # {invoiceInformation.number}</h4>
-                <h4>Date Issued: {invoiceInformation.dateCreated}</h4>
-                <h4>Due Date: {invoiceInformation.dateDue}</h4>
-            </div>
-        </>
-   ) 
+            <View style={styles.invoiceInfo}>
+                <Text>Invoice # {invoiceData.number}</Text>
+                <Text>Date Issued: {invoiceData.dateCreated}</Text>
+                <Text>Due Date: {invoiceData.dateDue}</Text>
+            </View>
+        </View>
+    ) 
 };
 
 export default Header;
