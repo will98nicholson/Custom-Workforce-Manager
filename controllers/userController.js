@@ -2,7 +2,7 @@ const db = require('../models');
 
 module.exports = {
     findCurrent: (req, res) => {
-        db.User.find({ id: req.session.user.id })
+        db.User.find({ _id: req.session.passport.user })
         .then((data) => {
             res.json(data)
         })
