@@ -114,6 +114,9 @@ export default function MenuToolbar() {
     };
     const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
 
+    // NOTES: Menu is wrapped in a badge which is how the notifications were rendering
+    // - badgecontent was set at 4 and is now set to 0 in order to remove notifications
+
     return (
         <div className={classes.root}>
             <CssBaseline />
@@ -124,9 +127,8 @@ export default function MenuToolbar() {
                         color="inherit"
                         aria-label="open drawer"
                         onClick={handleDrawerOpen}
-                        className={clsx(classes.menuButton, open && classes.menuButtonHidden)}
-                    >
-                        <Badge badgeContent={4} color="secondary">
+                        className={clsx(classes.menuButton, open && classes.menuButtonHidden)}>
+                        <Badge badgeContent={0} color="secondary">
                             <Menu />
                         </Badge>
                     </IconButton>
