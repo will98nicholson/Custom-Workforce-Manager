@@ -5,7 +5,7 @@ import {
     Container,
     Paper,
     Typography,
-    Button
+    // Button
 } from '@material-ui/core';
 
 import MenuToolbar from '../components/MenuToolbar';
@@ -35,10 +35,10 @@ const useStyles = makeStyles((theme) => ({
     container: {
         margin: theme.spacing(2)
     },
-    button: {
-        margin: theme.spacing(2),
-        width: '7rem'
-    },
+    // button: {
+    //     margin: theme.spacing(2),
+    //     width: '7rem'
+    // },
     paper: {
         padding: theme.spacing(2),
         display: 'flex',
@@ -56,6 +56,9 @@ export default function CreateJob() {
     function handleSubmit(event) {
         event.preventDefault()
         API.createJob({
+            quote: formObject.quote,
+            start: formObject.start,
+            end: formObject.end,
             contact: formObject.contact,
             phone: formObject.phone,
             email: formObject.email,
@@ -69,6 +72,9 @@ export default function CreateJob() {
     //access formData from child component(JobsForm)
     const getFormData = (formData) => {
         setFormObject({...formObject,
+            quote: formData.quote,
+            start: formData.start,
+            end: formData.end,
             contact: formData.contact,
             phone: formData.phone,
             email: formData.email,
@@ -87,9 +93,9 @@ export default function CreateJob() {
                     <Paper className={classes.paper}>
                         <Typography variant='h5'>Create New Job</Typography>
                         <JobsForm dataRequest = {getFormData}/>
-                        <Button className={classes.button} variant="contained" color="primary" onClick={handleSubmit}>
+                        {/* <Button className={classes.button} variant="contained" color="primary" onClick={handleSubmit}>
                             Submit
-                        </Button>
+                        </Button> */}
                     </Paper>
                     <Copyright />
                 </Container>
