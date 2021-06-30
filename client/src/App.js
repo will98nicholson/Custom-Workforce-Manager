@@ -7,6 +7,7 @@ import EditJob from './pages/EditJob';
 import JobDetail from './pages/JobDetail';
 import EmpDash from './pages/EmpDash';
 import Crews from './pages/Crews';
+import API from '.utils/API';
 import axios from 'axios';
 
 import {
@@ -21,7 +22,9 @@ import {
 // TODO: get react router working
 function App() {
     const [user, setUser] = useState(null);
+    // const [job, setJob] = useState([]);
     useEffect(() => { getUser() }, [])
+
     const getUser = async () => {
         await axios({
             method: "GET",
@@ -32,9 +35,17 @@ function App() {
         })
 
             .catch(err => console.log(err));
-    }
 
-    console.log(user);
+    };
+    // API.getJob()
+    //     .then((res) => {
+    //         console.log(res)
+    //         setJob(res.data)
+    //     })
+    //     .catch(err => console.log(err));
+
+    // console.log(user);
+
     // console.log(user.type)
 
     return (

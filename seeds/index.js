@@ -11,8 +11,9 @@ mongoose.connect('mongodb://localhost/fleetsheets', {
     useUnifiedTopology: true,
 });
 
+
 db.Service.deleteMany({})
-    .then(() => db.User.collection.insertMany(serviceSeeds))
+    .then(() => db.Service.collection.insertMany(serviceSeeds))
     .then((data) => {
         console.log(data.result.n + ' services inserted')
         db.Job.deleteMany({})
@@ -27,8 +28,10 @@ db.Service.deleteMany({})
                     })
             })
 
+
     })
     .catch((err) => {
         console.log(err)
         process.exit(1)
+
     })
