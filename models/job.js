@@ -10,8 +10,8 @@ const Job = new Schema({
         type: Number, 
         required: true, 
     },
-    description: {
-        type: String,
+    services_id: {
+        type: mongoose.Schema.Types.ObjectId, ref: 'Service',
         required: true, 
     },
     client: {
