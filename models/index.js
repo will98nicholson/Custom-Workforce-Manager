@@ -1,6 +1,7 @@
 module.exports = {
     User: require('./user'),
-    Job: require('./job')
+    Job: require('./job'),
+    Service: require('./service'),
 };
 
 // User.hasMany(Job, {

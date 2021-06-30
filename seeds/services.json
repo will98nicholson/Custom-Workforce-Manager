@@ -1,0 +1,26 @@
+[
+    {
+       "_id": "mow only",
+       "price": 35.00 
+    },
+    {
+        "_id": "mow & trim",
+        "price": 55.00 
+     },
+     {
+        "_id": "mulch",
+        "price": 75.00 
+     },
+     {
+        "_id": "weeding",
+        "price": 25.00 
+     }, 
+     {
+         "_id": "aeration",
+         "price": 100.00
+     },
+     {
+         "_id": "sod",
+         "price": 500.00
+     }
+]

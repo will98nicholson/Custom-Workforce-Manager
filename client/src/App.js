@@ -27,14 +27,15 @@ function App() {
 
             url: '/auth/user'
         }).then(res => {
-            console.log(res.data)
             setUser(res.data)
         })
 
             .catch(err => console.log(err));
     }
+
     console.log(user);
     // console.log(user.type)
+
     return (
         <Router>
             {!user &&
