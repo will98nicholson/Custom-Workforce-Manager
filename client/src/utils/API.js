@@ -11,8 +11,8 @@ export default {
     }
 
     //post data from CreateJob.js to api/jobs
-    createJob: function(jobData) {
-        return axios.post("api/jobs", jobData)
+    createJob: function (jobData) {
+        return axios.post("api/job", jobData)
     }
     //get jobs from api/jobs for display in JobsList.js
 
