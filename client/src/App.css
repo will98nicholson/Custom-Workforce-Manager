@@ -4,7 +4,7 @@
 
 /* BODY */
 body {
-  background-image: url(./assets/images/background-leaves.PNG);
+  background-image: url(./assets/images/03-background.JPG);
   background-size: cover;
 }
 
@@ -15,14 +15,19 @@ header {
 
 /* ACTIVE JOBS MODULE */
 #module1 {
-  background-color: rgba(0, 255, 225, 0.519);
+  background-color: rgba(9, 11, 25, 0.718)!important;
   color: whitesmoke;
-  margin: 10px;
-  width: 60vw;
+  margin: auto;
+  margin-bottom: 5px;
+  width: 85vw;
+
 }
 #jobslist,
 .transparent {
-  background-color: rgba(238, 251, 250, 0.498)!important;
+  background-color: rgba(64, 65, 66, 0.505)!important;
+}
+.white-text {
+    color: rgba(245, 245, 245, 0.765)!important;
 }
 /* .module-sub-head {
   font-family:
@@ -35,8 +40,9 @@ header {
 
 /* COMPLETED JOBS MODULE */
 #module2 {
-  background-color: rgba(0, 140, 255, 0.519);
+  background-color: rgba(9, 11, 25, 0.718);
   color: whitesmoke;
-  margin: 10px;
-  width: 60vw;
+  margin: auto;
+  margin-bottom: 5px;
+  width: 85vw;
 }

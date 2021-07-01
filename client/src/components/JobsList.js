@@ -18,7 +18,7 @@ import {
 } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import { KeyboardArrowDown, KeyboardArrowUp, Edit } from '@material-ui/icons';
-import DetailButton from '../assets/icons/right-arrow.png';
+import DetailButton from '../assets/icons/view-details.PNG';
 
 const columns = [
     { id: 'client', label: 'Client', minWidth: 170 },
@@ -87,7 +87,7 @@ export default function StickyHeadTable () {
                                         const value = row[ column.id ];
                                         return (
                                             <>
-                                                <TableCell key={column.id} align={column.align}>
+                                                <TableCell className='white-text' key={column.id} align={column.align}>
                                                     {column.format && typeof value === 'number' ? column.format( value ) : value}
                                                 </TableCell>
                                             </>
@@ -106,7 +106,7 @@ export default function StickyHeadTable () {
                     </TableBody>
                 </Table>
             </TableContainer>
-            {/* <TablePagination
+            <TablePagination className='white-text'
                 rowsPerPageOptions={[ 10, 25, 100 ]}
                 component="div"
                 count={rows.length}
@@ -114,7 +114,7 @@ export default function StickyHeadTable () {
                 page={page}
                 onChangePage={handleChangePage}
                 onChangeRowsPerPage={handleChangeRowsPerPage}
-            /> */}
+            />
         </Paper>
     );
 }
