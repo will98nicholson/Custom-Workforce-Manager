@@ -4,7 +4,7 @@ import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import EmpDash from './pages/EmpDash';
 import CreateJob from './pages/CreateJob';
-import EditJob from './pages/EditJob';
+// import EditJob from './pages/EditJob';
 import JobDetail from './pages/JobDetail';
 // import EmpJobDetail from './pages/EmpJobDetail';
 import Crews from './pages/Crews';

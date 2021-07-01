@@ -13,7 +13,10 @@ header {
   background-color: rgba(9, 11, 25, 0.848)!important;
 }
 
-/*
+/* global module styling */
+.module-header {
+  margin: 0 5px 10px 5px !important;
+}
 
 /* ACTIVE JOBS MODULE */
 #module1 {
@@ -50,3 +53,16 @@ header {
 }
 
 /* JOB DETAIL - employee */
+
+/* JOB FORM */
+.form-flex {
+  display: flex;
+  flex-direction: column;
+}
+.form-input-positioning {
+ margin-bottom: 10px;
+ padding-left: 10px;
+}
+ /* {
+
+} */

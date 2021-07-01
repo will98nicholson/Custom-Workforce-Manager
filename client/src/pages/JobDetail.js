@@ -84,9 +84,9 @@ export default function JobDetail () {
                         {/* props.rows.map[1] :: try to get customer name */}
                         <Typography variant='h5'>Job Detail</Typography>
                         <JobsForm />
-                        <Button className={classes.button} variant="contained" color="primary" onClick={handleSubmit}>
+                        {/* <Button className={classes.button} variant="contained" color="primary" onClick={handleSubmit}>
                             Submit
-                        </Button>
+                        </Button> */}
                     </Paper>
                     <Copyright />
                 </Container>

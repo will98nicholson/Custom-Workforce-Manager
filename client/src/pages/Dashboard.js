@@ -5,9 +5,9 @@ import {
     Container,
     Typography,
     Paper,
-    Button
+    // Button
 } from '@material-ui/core';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import MenuToolbar from '../components/MenuToolbar';
 import Copyright from '../components/Copyright';
 import JobsList from '../components/JobsList';
@@ -40,18 +40,18 @@ const useStyles = makeStyles((theme) => ({
 export default function Dashboard() {
     const classes = useStyles();
 
-    const [user, setUser] = useState({});
+    // const [user, setUser] = useState({});
 
-    useEffect(() => {
-        getUser();
-    }, []);
+    // useEffect(() => {
+    //     getUser();
+    // }, []);
 
-    function getUser() {
-        API.getUser()
-            .then(res => setUser(res.data))
-            .catch(err => console.log(err))
+    // function getUser() {
+    //     API.getUser()
+    //         .then(res => setUser(res.data))
+    //         .catch(err => console.log(err))
 
-    }
+    // }
 
     return (
         <div className={classes.root}>

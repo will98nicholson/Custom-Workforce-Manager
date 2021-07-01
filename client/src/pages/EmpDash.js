@@ -5,9 +5,9 @@ import {
     Container,
     Typography,
     Paper,
-    Button
+    // Button
 } from '@material-ui/core';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import MenuToolbar from '../components/MenuToolbar';
 import Copyright from '../components/Copyright';
 import JobsList from '../components/JobsList';
@@ -42,18 +42,18 @@ function EmpDash(props) {
 
     const classes = useStyles();
 
-    const [ user, setUser ] = useState( {} );
+    // const [ user, setUser ] = useState( {} );
 
-    useEffect( () => {
-        getUser();
-    }, [] );
+    // useEffect( () => {
+    //     getUser();
+    // }, [] );
 
-    function getUser () {
-        API.getUser()
-            .then( res => setUser( res.data ) )
-            .catch( err => console.log( err ) );
+    // function getUser () {
+    //     API.getUser()
+    //         .then( res => setUser( res.data ) )
+    //         .catch( err => console.log( err ) );
 
-    }
+    // }
 
     return (
         <div className={classes.root}>
@@ -77,14 +77,14 @@ function EmpDash(props) {
                     </Button> */}
 
                     <Paper className={classes.paper} id='module1'>
-                        <Typography variant='h5'>Assigned Jobs</Typography>
+                        <Typography className='module-header' variant='h5'>Assigned Jobs</Typography>
                         <JobsList />
                         {/*TODO: pass props through jobs list to render assigned jobs for specific crew or employee */}
 
                     </Paper>
                     {/* Completed Jobs */}
                     <Paper className={classes.paper} id='module2'>
-                        <Typography variant='h5'>Schedule</Typography>
+                        <Typography className='module-header' variant='h5'>Schedule</Typography>
                     </Paper>
                     <Copyright />
                 </Container>

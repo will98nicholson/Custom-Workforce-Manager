@@ -1,26 +1,26 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import {
-    Box,
-    Collapse,
-    IconButton,
+    // Box,
+    // Collapse,
+    // IconButton,
     Table,
     TableBody,
     TableCell,
     TableContainer,
     TableHead,
     TableRow,
-    Typography,
+    // Typography,
     Paper,
     TablePagination,
-    Button
+    // Button
 } from '@material-ui/core';
 import { Link } from 'react-router-dom';
-import { KeyboardArrowDown, KeyboardArrowUp, Edit } from '@material-ui/icons';
+// import { KeyboardArrowDown, KeyboardArrowUp, Edit } from '@material-ui/icons';
 import DetailButton from '../assets/icons/view-details.PNG';
-import JobDetail from '../pages/JobDetail';
-import EmpJobDetail from '../pages/EmpJobDetail';
+// import JobDetail from '../pages/JobDetail';
+// import EmpJobDetail from '../pages/EmpJobDetail';
 
 const columns = [
     { id: 'client', label: 'Client', minWidth: 170 },
@@ -69,8 +69,8 @@ export default function JobsList (props) {
             <TableContainer className={classes.container}>
                 <Table stickyHeader aria-label="sticky table">
                     <TableHead>
-                        {/* <TableRow>
-                            {columns.map( ( column ) => (
+                        <TableRow>
+                            {/* {columns.map( ( column ) => (
                                 <TableCell className='transparent module-sub-head'
                                     key={column.id}
                                     align={column.align}
@@ -79,8 +79,8 @@ export default function JobsList (props) {
                                     {column.label}
                                 </TableCell>
                             ) )}
-                            <TableCell className='transparent module-sub-head'>Detail</TableCell>
-                        </TableRow> */}
+                            <TableCell className='transparent module-sub-head'>Detail</TableCell> */}
+                        </TableRow>
                     </TableHead>
                     <TableBody>
                         {rows.slice( page * rowsPerPage, page * rowsPerPage + rowsPerPage ).map( ( row ) => {

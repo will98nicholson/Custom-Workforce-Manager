@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         flexDirection: 'row',
         '& > *': {
-            margin: theme.spacing(1),
+            margin: theme.spacing(2),
         },
     },
     input: {
@@ -95,21 +95,24 @@ export default function JobsForm(props) {
 
     return (
         <div className={classes.root}>
-            <form name="job-details">
+            <form className='form-flex' name="job-details">
 
                 {/* <FormControl disabled>
                     <InputLabel htmlFor="jobNumber">Job Number</InputLabel>
                     <OutlinedInput id="jobNumber" name="job_number" className={classes.input} variant="outlined" placeholder={jobNumber} />
                 </FormControl> */}
-                <FormControl>
-                    <InputLabel htmlFor="clientName">Client Name</InputLabel>
+                <FormControl className={classes.formControl}>
+                    <InputLabel className={classes.formControl} htmlFor="clientName"> Client Name</InputLabel>
                     <OutlinedInput
                         id="clientName"
                         name="name"
                         onChange={handleInputChange}
                         className={classes.input}
                         variant="outlined"
-                        label="Client Name" />
+                        label="Client Name"
+                        className='form-input-positioning'
+
+                    />
                 </FormControl>
 
                 <FormControl variant="outlined" className={classes.formControl}>
@@ -120,6 +123,7 @@ export default function JobsForm(props) {
                         name="type"
                         onChange={handleInputChange}
                         label="Client Type"
+                        className='form-input-positioning'
                     >
                         <MenuItem value="">
                             <em>None</em>
