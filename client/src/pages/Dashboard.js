@@ -49,7 +49,6 @@ export default function Dashboard() {
     function getUser() {
         API.getUser()
             .then(res => setUser(res.data))
-            .then(console.log(user))
             .catch(err => console.log(err))
 
     }
