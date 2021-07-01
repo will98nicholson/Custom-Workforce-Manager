@@ -53,7 +53,9 @@ export default function CreateJob() {
                         <Typography variant='h5'>Create New Job</Typography>
                         {/* pass createJob API to JobsForm via props */}
                         {/* Other pages using JobsForm component will pass different API functions */}
-                        <JobsForm APIFunction={API.createJob} />
+                        {/* pass a blank defaultvalue to JobsForm (default value will be used in view/edit job) */}
+                        <JobsForm APIFunction={API.createJob} setDisable={false} setDefaultValue={""} route={"/admin"} />
+                    
                     </Paper>
                     <Copyright />
                 </Container>
