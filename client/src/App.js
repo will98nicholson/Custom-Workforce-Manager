@@ -4,6 +4,7 @@ import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import CreateJob from './pages/CreateJob';
 import EditJob from './pages/EditJob';
+import Form from './pages/Form'
 import JobDetail from './pages/JobDetail';
 import EmpDash from './pages/EmpDash';
 import Crews from './pages/Crews';
@@ -61,11 +62,13 @@ function App() {
                     {/* <Route exact path='/employee'><EmpDash /></Route> */}
                     <Route path='/createjob'>{user.type === "Administrator" ? <CreateJob /> : ""} </Route>
                     <Route path='/crews'>{user.type === "Administrator" ? <Crews /> : ""} </Route>
+                    <Route path='/form'><Form /></Route>
                     <Route path='/jobdetail'><JobDetail /></Route><Redirect to="/"></Redirect>
                 </Switch>}
         </Router>
     );
 };
+
 
 export default App;
 
