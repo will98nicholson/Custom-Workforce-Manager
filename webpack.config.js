@@ -12,7 +12,7 @@ module.exports = function(_env, argv) {
 
     return {
         devtool: isDevelopment && 'cheap-module-source-map',
-        entry: './src/index.js',
+        entry: './client/src/index.js',
         output: {
             path: path.resolve(__dirname, 'dist'),
             filename: "assets/js/[name].[contenthash:8].js",
@@ -111,6 +111,12 @@ module.exports = function(_env, argv) {
                 }
             },
             runtimeChunk: 'single'
+        },
+        devserver: {
+            compress: true,
+            historyApiFallback: true,
+            open: true,
+            overlay: true
         }
     };
 };
