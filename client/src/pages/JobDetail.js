@@ -81,6 +81,7 @@ export default function JobDetail () {
                 <div className={classes.appBarSpacer} />
                 <Container maxWidth="lg" className={classes.container}>
                     <Paper className={classes.paper}>
+                        {/* props.rows.map[1] :: try to get customer name */}
                         <Typography variant='h5'>Job Detail</Typography>
                         <JobsForm />
                         <Button className={classes.button} variant="contained" color="primary" onClick={handleSubmit}>
