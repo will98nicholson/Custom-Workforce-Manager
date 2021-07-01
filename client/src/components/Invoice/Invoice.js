@@ -6,9 +6,9 @@ import { Page, Document, Image, StyleSheet } from '@react-pdf/renderer';
 
 
 
-function Invoice(invoiceData) { 
+function Invoice({invoiceData}) { 
 
-    const styles=""
+    const styles=StyleSheet.create({});
 
     return(
         <Document>

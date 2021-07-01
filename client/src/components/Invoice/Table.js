@@ -1,25 +1,25 @@
-import React, { Component } from "react";
-import EditAbleTextArea from "./EditAbleTextArea"
+import React from "react";
+import {Text, View, StyleSheet } from '@react-pdf/renderer';
 import TableRows from "./TableRows";
 import Calculator from "./Calculator";
 
 
+function Table( {invoiceData} ) {
+    const styles = StyleSheet.create({
 
-function Table() {
+    })
+
+//    console.log(invoiceData)
+
     return (
         <>
-            <tr>
-                <th>Item Description</th>
-                <th>Qty</th>
-                <th>Rate</th>
-                <th>Amount</th>
-            </tr>
-            <tr>
-                <td><EditAbleTextArea /></td>
-                <td><EditAbleTextArea /></td>
-                <td><EditAbleTextArea /></td>
-                <td></td>
-            </tr>
+            <View>
+                <Text>Item Description</Text>
+                <Text>Qty</Text>
+                <Text>Rate</Text>
+                <Text>Amount</Text>
+            </View>
+            <TableRows items={invoiceData.items} rows={3} />
             <Calculator />
         </>
     )

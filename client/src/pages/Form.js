@@ -1,9 +1,10 @@
 import React, { Component, Fragment } from 'react';
 import {PDFViewer} from '@react-pdf/renderer'
 import Invoice from '../components/Invoice/Invoice'
-import invoiceData from './utils/invoiceData'
+import invoiceData from '../utils/invoiceData'
 // import logo from './logo.svg';
-import './App.css';
+// import './App.css';
+console.log(invoiceData)
 
 class Form extends Component {
   render() {
