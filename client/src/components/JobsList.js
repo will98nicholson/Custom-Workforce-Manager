@@ -19,6 +19,8 @@ import {
 import { Link } from 'react-router-dom';
 import { KeyboardArrowDown, KeyboardArrowUp, Edit } from '@material-ui/icons';
 import DetailButton from '../assets/icons/view-details.PNG';
+import JobDetail from '../pages/JobDetail';
+import EmpJobDetail from '../pages/EmpJobDetail';
 
 const columns = [
     { id: 'client', label: 'Client', minWidth: 170 },
@@ -47,10 +49,11 @@ const rows = [
     createData( "Dublin Golf Club", "789 Dublic Rd")
 ];
 
-export default function StickyHeadTable () {
+export default function JobsList (props) {
     const classes = useStyles();
     const [ page, setPage ] = React.useState( 0 );
     const [ rowsPerPage, setRowsPerPage ] = React.useState( 10 );
+    // const [ user, setUser ] = React.useState(null);
 
     const handleChangePage = ( event, newPage ) => {
         setPage( newPage );
@@ -95,6 +98,7 @@ export default function StickyHeadTable () {
                                     } )}
                                     <TableCell>
                                         <Link to='/jobdetail'>
+                                            {/* {props.type === "Administrator" ? <JobDetail /> : <EmpJobDetail />} */}
                                         {/* <Link to='/empjobdetail'> */}
                                             {/* <Button variant="contained" color="primary"> */}
                                                 <img alt='' src={DetailButton} className='detail-button' />

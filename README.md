@@ -52,7 +52,7 @@ TODO:
   -
   -
 - connect components + render in App
-- logout (?)
+- logout (?) / back button
 
 FIX:
 - edit job page - render information already stored in job page if there is any + make editable

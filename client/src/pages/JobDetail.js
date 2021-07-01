@@ -41,10 +41,40 @@ function handleSubmit () {
     console.log( 'submit' );
 }
 
+
+// ORIG JOB DETAIL //
+
+// export default function JobDetail () {
+//     const classes = useStyles();
+//     return (
+//         <div className={classes.root} id='job-detail-page'>
+//             <CssBaseline />
+//             <MenuToolbar />
+//             <main className={classes.content}>
+//                 <div className={classes.appBarSpacer} />
+//                 <Container maxWidth="lg" className={classes.container}>
+//                     <Paper className={classes.paper}>
+//                         <Typography variant='h5'>Job Detail</Typography>
+//                         <JobsForm />
+//                         <Button className={classes.button} variant="contained" color="primary" onClick={handleSubmit}>
+//                             Submit
+//                         </Button>
+//                     </Paper>
+//                     <Copyright />
+//                 </Container>
+//             </main>
+//         </div >
+//     );
+// };
+
+// add assigned crew text area
+
+
+// EMP JOB DETAIL: development //
 export default function JobDetail () {
     const classes = useStyles();
     return (
-        <div className={classes.root}>
+        <div className={classes.root} id='job-detail-page'>
             <CssBaseline />
             <MenuToolbar />
             <main className={classes.content}>
@@ -63,5 +93,3 @@ export default function JobDetail () {
         </div >
     );
 };
-
-// add assigned crew text area
