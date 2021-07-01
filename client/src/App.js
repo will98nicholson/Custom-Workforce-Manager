@@ -69,7 +69,7 @@ function App() {
                     {/* <Route path='/empjobdetail'>{user.type === "Employee" ? <EmpJobDetail /> : ""} </Route> */}
 
                     <Route path='/form'><Form /></Route>
-                    {/* <Route path='/jobdetail'><JobDetail /></Route><Redirect to="/"></Redirect> */}
+                    <Route path='/jobdetail'><JobDetail /></Route><Redirect to="/"></Redirect>
                 </Switch>}
         </Router>
     );
