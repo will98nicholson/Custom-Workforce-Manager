@@ -80,9 +80,13 @@ const Job = new Schema({
 //             type: string,
 //             required: false,
 //         },
-//     }
+//      },
+        // services: {
+            // services/products sold get appended here including, quantity, price
+        // }
 });
 
-
+// add user_id to pair jobs with employees
+// use user_id / job_id to complete pdf form
 
 module.exports = mongoose.model('Job', Job);

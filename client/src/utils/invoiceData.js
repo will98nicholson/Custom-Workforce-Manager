@@ -42,4 +42,27 @@ const invoiceData = {
     ]
   }
 
+//   const invoiceData = {
+//     "client": {
+//         "name": "",
+//         "address": {
+//         "streetAddress": "",
+//         "city": "",
+//         "state": "",
+//         "zipcode":""
+//         },
+//     },
+//     "number": "",
+//     "dateCreated":"",
+//     "dateDue":"",
+//     "items":{
+
+//     }
+//   }
+
+//   TODO: API call that selects required information from a single job
+//   router.get, before request evaluate authentication, if loggedIn = true run api/jobs/:id, ifElse => redirect to login 
+
+//   invoiceData.client.name
+
 export default invoiceData;
