@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import {
     OutlinedInput,
@@ -13,6 +13,8 @@ import {
 } from '@material-ui/core';
 
 import { Redirect } from 'react-router-dom';
+import axios from 'axios';
+
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -67,7 +69,24 @@ export default function JobsForm(props) {
         const { name, value } = event.target;
         setFormObject({ ...formObject, [name]: value })
     }
+    useEffect( () => { getJob(); }, [] );
 
+    const getJob = async () => {
+        await axios( {
+            method: "GET",
+
+            url: `/api/jobs/${ props.id }`
+        } ).then( res => {
+            console.log( res.data );
+            setFormObject( {
+                name: res.data[0].client.name,
+                location: res.data[0].client.location,
+            } );
+        } )
+
+            .catch( err => console.log( err ) );
+
+    };
     function handleSubmit(event) {
         event.preventDefault()
         props.APIFunction({
@@ -109,9 +128,10 @@ export default function JobsForm(props) {
                         onChange={handleInputChange}
                         className={classes.input}
                         variant="outlined"
-                        label="Client Name"
+                        placeholder="Client Name"
                         className='form-input-positioning'
-
+                        value={formObject.name}
+                        label='clientName'
                     />
                 </FormControl>
 
@@ -124,6 +144,7 @@ export default function JobsForm(props) {
                         onChange={handleInputChange}
                         label="Client Type"
                         className='form-input-positioning'
+                        placeholder='Client Type'
                     >
                         <MenuItem value="">
                             <em>None</em>
@@ -142,8 +163,9 @@ export default function JobsForm(props) {
                         onChange={handleInputChange}
                         label="Quote Date"
                         type="date"
-                        defaultValue={new Date}
-                        className={classes.textField, classes.input}
+                        defaultValue={new Date()}
+                        className={classes.textField}
+                        className={classes.input}
                         InputLabelProps={{
                             shrink: true,
                         }}
@@ -171,8 +193,9 @@ export default function JobsForm(props) {
                         onChange={handleInputChange}
                         label="Job Start"
                         type="datetime-local"
-                        defaultValue={new Date}
-                        className={classes.textField, classes.input}
+                        defaultValue={new Date()}
+                        className={classes.textField}
+                        className={classes.input}
                         InputLabelProps={{
                             shrink: true,
                         }}
@@ -186,8 +209,9 @@ export default function JobsForm(props) {
                         onChange={handleInputChange}
                         label="Job End"
                         type="datetime-local"
-                        defaultValue={new Date}
-                        className={classes.textField, classes.input}
+                        defaultValue={new Date()}
+                        className={classes.textField}
+                        className={classes.input}
                         InputLabelProps={{
                             shrink: true,
                         }}
@@ -243,6 +267,7 @@ export default function JobsForm(props) {
                         className={classes.TextField}
                         placeholder="123 Lawncare Lane, Greenville, OH 45331"
                         variant="outlined"
+                        value={formObject.location}
                     />
                 </FormControl>
 

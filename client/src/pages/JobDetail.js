@@ -5,9 +5,9 @@ import {
     Container,
     Paper,
     Typography,
-    Button
+    // Button
 } from '@material-ui/core';
-
+import { useParams } from 'react-router-dom';
 import MenuToolbar from '../components/MenuToolbar';
 import Copyright from '../components/Copyright';
 import JobsForm from '../components/JobsForm';
@@ -37,9 +37,9 @@ const useStyles = makeStyles( ( theme ) => ( {
     }
 } ) );
 
-function handleSubmit () {
-    console.log( 'submit' );
-}
+// function handleSubmit () {
+//     console.log( 'submit' );
+// }
 
 
 // ORIG JOB DETAIL //
@@ -73,6 +73,11 @@ function handleSubmit () {
 // EMP JOB DETAIL: development //
 export default function JobDetail () {
     const classes = useStyles();
+
+    //hook to access specific job
+    const { id } = useParams();
+    console.log( id );
+
     return (
         <div className={classes.root} id='job-detail-page'>
             <CssBaseline />
@@ -83,7 +88,7 @@ export default function JobDetail () {
                     <Paper className={classes.paper}>
                         {/* props.rows.map[1] :: try to get customer name */}
                         <Typography variant='h5'>Job Detail</Typography>
-                        <JobsForm />
+                        <JobsForm id={id}/>
                         {/* <Button className={classes.button} variant="contained" color="primary" onClick={handleSubmit}>
                             Submit
                         </Button> */}

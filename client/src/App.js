@@ -16,7 +16,7 @@ import {
     Switch,
     Redirect,
     Route,
-    Link
+    // Link
 } from 'react-router-dom';
 // import Review from '.pages/JobDetail';
 
@@ -62,7 +62,7 @@ function App() {
                     {/* <Route exact path='/employee'><EmpDash /></Route> */}
                     <Route path='/createjob'>{user.type === "Administrator" ? <CreateJob /> : ""} </Route>
                     <Route path='/crews'>{user.type === "Administrator" ? <Crews /> : ""} </Route>
-                    <Route path='/jobdetail'><JobDetail /></Route><Redirect to="/"></Redirect>
+                    <Route path='/jobdetail/:id'><JobDetail /></Route><Redirect to="/"></Redirect>
 
                     {/* NOTE: empjobdetail page is for testing + development - figure out logic + props for rendering differently based on user-type */}
                     {/* <Route path='/empjobdetail'>{user.type === "Employee" ? <EmpJobDetail /> : ""} </Route> */}

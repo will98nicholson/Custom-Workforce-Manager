@@ -36,17 +36,18 @@ const useStyles = makeStyles({
   },
 });
 
-function createData ( client, address ) {
+function createData ( id, client, address ) {
     return {
+        id,
         client,
         address
     };
 };
 
 const rows = [
-    createData( "Cafe Istanbul", "123 Riverside Dr"),
-    createData( "Mill Creek Cemetery", "456 Cemetary Rd"),
-    createData( "Dublin Golf Club", "789 Dublic Rd")
+    createData( 26, "Cafe Istanbul", "123 Riverside Dr"),
+    createData( 88, "Mill Creek Cemetery", "456 Cemetary Rd"),
+    createData( 31, "Dublin Golf Club", "789 Dublic Rd")
 ];
 
 export default function JobsList (props) {
@@ -84,10 +85,13 @@ export default function JobsList (props) {
                     </TableHead>
                     <TableBody>
                         {rows.slice( page * rowsPerPage, page * rowsPerPage + rowsPerPage ).map( ( row ) => {
+                            console.log( row );
+
                             return (
                                 <TableRow hover role="checkbox" tabIndex={-1} key={row.code}>
                                     {columns.map( ( column ) => {
                                         const value = row[ column.id ];
+                                        // console.log( value );
                                         return (
                                             <>
                                                 <TableCell className='white-text' key={column.id} align={column.align}>
@@ -97,7 +101,7 @@ export default function JobsList (props) {
                                         );
                                     } )}
                                     <TableCell>
-                                        <Link to='/jobdetail'>
+                                        <Link to={'/jobdetail/'+ row.id}>
                                             {/* {props.type === "Administrator" ? <JobDetail /> : <EmpJobDetail />} */}
                                         {/* <Link to='/empjobdetail'> */}
                                             {/* <Button variant="contained" color="primary"> */}
