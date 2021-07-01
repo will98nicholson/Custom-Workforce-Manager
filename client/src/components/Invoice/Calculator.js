@@ -1,11 +1,10 @@
 import React, { Component } from "react";
 
-function Notes() {
-    return (
+function Calculator() {
+    return(
         <>
-           
         </>
     )
 };
 
-export default Notes;
+export default Calculator;
