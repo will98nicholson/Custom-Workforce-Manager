@@ -12,6 +12,8 @@ import MenuToolbar from '../components/MenuToolbar';
 import Copyright from '../components/Copyright';
 import JobsForm from '../components/JobsForm';
 
+import API from '../utils/API';
+
 const useStyles = makeStyles((theme) => ({
     root: {
         display: 'flex',
@@ -37,12 +39,9 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-function handleSubmit() {
-    console.log('submit')
-}
-
 export default function CreateJob() {
     const classes = useStyles()
+
     return (
         <div className={classes.root}>
             <CssBaseline />
@@ -52,10 +51,9 @@ export default function CreateJob() {
                 <Container maxWidth="lg" className={classes.container}>
                     <Paper className={classes.paper}>
                         <Typography variant='h5'>Create New Job</Typography>
-                        <JobsForm />
-                        <Button className={classes.button} variant="contained" color="primary" onClick={handleSubmit}>
-                            Submit
-                        </Button>
+                        {/* pass createJob API to JobsForm via props */}
+                        {/* Other pages using JobsForm component will pass different API functions */}
+                        <JobsForm APIFunction={API.createJob} />
                     </Paper>
                     <Copyright />
                 </Container>
@@ -63,3 +61,4 @@ export default function CreateJob() {
         </div >
     )
 };
+

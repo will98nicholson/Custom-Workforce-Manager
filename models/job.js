@@ -2,18 +2,18 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const Job = new Schema({
-    name: {
-        type: String, 
-        required: true, 
-    },
-    id: {
-        type: Number, 
-        required: true, 
-    },
-    description: {
-        type: String,
-        required: true, 
-    },
+    // name: {
+    //     type: String, 
+    //     required: true, 
+    // },
+    // _id: {
+    //     type: Number, 
+    //     required: true, 
+    // },
+    // services_id: {
+    //     type: mongoose.Schema.Types.ObjectId, ref: 'Service',
+    //     required: true, 
+    // },
     client: {
         type: { 
             type: String, 
@@ -27,12 +27,16 @@ const Job = new Schema({
             type: String, 
             required: true, 
         },
+        contact: { 
+            type: String, 
+            required: true, 
+        },
         location: { 
             type: String, 
             required: true, 
         },
         phone: { 
-            type: Number, 
+            type: String, 
             required: true,
             // TODO: validator 
         },
@@ -41,6 +45,27 @@ const Job = new Schema({
             required: true, 
             // TODO: validator
         },        
+    },
+    quote_date: {
+        type: Date,
+        required: true
+    },
+    quote_price: {
+        type: Number,
+        required: true
+    },
+    start_date: {
+        type: Date,
+        required: true
+    },
+    end_date: {
+        type: Date,
+        required: true
+    },
+
+    description: { 
+        type: String, 
+        required: false, 
     },
     notes: { 
         type: String, 

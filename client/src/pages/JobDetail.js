@@ -1,86 +1,67 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
-import Grid from '@material-ui/core/Grid';
-// STILL TEMPLATED FROM MATERIAL UI DEFAULT, NOT COMPLETE
-const products = [
-    { name: 'Product 1', desc: 'A nice thing', price: '$9.99' },
-    { name: 'Product 2', desc: 'Another thing', price: '$3.45' },
-    { name: 'Product 3', desc: 'Something else', price: '$6.51' },
-    { name: 'Product 4', desc: 'Best thing of all', price: '$14.11' },
-    { name: 'Shipping', desc: '', price: 'Free' },
-];
-const addresses = ['1 Material-UI Drive', 'Reactville', 'Anytown', '99999', 'USA'];
-const payments = [
-    { name: 'Card type', detail: 'Visa' },
-    { name: 'Card holder', detail: 'Mr John Smith' },
-    { name: 'Card number', detail: 'xxxx-xxxx-xxxx-1234' },
-    { name: 'Expiry date', detail: '04/2024' },
-];
+import {
+    CssBaseline,
+    Container,
+    Paper,
+    Typography,
+    Button
+} from '@material-ui/core';
 
-const useStyles = makeStyles((theme) => ({
-    listItem: {
-        padding: theme.spacing(1, 0),
-    },
-    total: {
-        fontWeight: 700,
-    },
-    title: {
-        marginTop: theme.spacing(2),
-    },
-}));
+import MenuToolbar from '../components/MenuToolbar';
+import Copyright from '../components/Copyright';
+import JobsForm from '../components/JobsForm';
 
-export default function Review() {
-    const classes = useStyles();
+const useStyles = makeStyles( ( theme ) => ( {
+    root: {
+        display: 'flex',
+    },
+    appBarSpacer: theme.mixins.toolbar,
+    content: {
+        flexGrow: 1,
+        height: '100vh',
+        overflow: 'auto',
+    },
+    container: {
+        margin: theme.spacing( 2 )
+    },
+    button: {
+        margin: theme.spacing( 2 ),
+        width: '7rem'
+    },
+    paper: {
+        padding: theme.spacing( 2 ),
+        display: 'flex',
+        overflow: 'auto',
+        flexDirection: 'column',
+    }
+} ) );
 
-    return (
-        <React.Fragment>
-            <Typography variant="h6" gutterBottom>
-                Job summary
-            </Typography>
-            <List disablePadding>
-                {products.map((product) => (
-                    <ListItem className={classes.listItem} key={product.name}>
-                        <ListItemText primary={product.name} secondary={product.desc} />
-                        <Typography variant="body2">{product.price}</Typography>
-                    </ListItem>
-                ))}
-                <ListItem className={classes.listItem}>
-                    <ListItemText primary="Total" />
-                    <Typography variant="subtitle1" className={classes.total}>
-                        $34.06
-                    </Typography>
-                </ListItem>
-            </List>
-            <Grid container spacing={2}>
-                <Grid item xs={12} sm={6}>
-                    <Typography variant="h6" gutterBottom className={classes.title}>
-                        Shipping
-                    </Typography>
-                    <Typography gutterBottom>John Smith</Typography>
-                    <Typography gutterBottom>{addresses.join(', ')}</Typography>
-                </Grid>
-                <Grid item container direction="column" xs={12} sm={6}>
-                    <Typography variant="h6" gutterBottom className={classes.title}>
-                        Payment details
-                    </Typography>
-                    <Grid container>
-                        {payments.map((payment) => (
-                            <React.Fragment key={payment.name}>
-                                <Grid item xs={6}>
-                                    <Typography gutterBottom>{payment.name}</Typography>
-                                </Grid>
-                                <Grid item xs={6}>
-                                    <Typography gutterBottom>{payment.detail}</Typography>
-                                </Grid>
-                            </React.Fragment>
-                        ))}
-                    </Grid>
-                </Grid>
-            </Grid>
-        </React.Fragment>
-    );
+function handleSubmit () {
+    console.log( 'submit' );
 }
+
+export default function JobDetail () {
+    const classes = useStyles();
+    return (
+        <div className={classes.root}>
+            <CssBaseline />
+            <MenuToolbar />
+            <main className={classes.content}>
+                <div className={classes.appBarSpacer} />
+                <Container maxWidth="lg" className={classes.container}>
+                    <Paper className={classes.paper}>
+                        <Typography variant='h5'>Job Detail</Typography>
+                        <JobsForm />
+                        <Button className={classes.button} variant="contained" color="primary" onClick={handleSubmit}>
+                            Submit
+                        </Button>
+                    </Paper>
+                    <Copyright />
+                </Container>
+            </main>
+        </div >
+    );
+};
+
+// add assigned crew text area

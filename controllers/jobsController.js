@@ -16,13 +16,14 @@ module.exports = {
             .catch(err => console.log(err))
     },
     findByName: (req, res) => {
-        db.Job.find(req.params.name)
+        db.Job.find(req.params.user)
             .then((data) => {
                 res.json(data)
             })
             .catch(err => console.log(err))
     },
     create: (req, res) => {
+        console.log('route hit')
         db.Job.create(req.body)
             .then((data) => {
                 res.json(data)
