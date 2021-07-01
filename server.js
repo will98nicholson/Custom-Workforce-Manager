@@ -30,7 +30,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(require('cookie-parser')());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(session({ secret: 'passport-tutorial', cookie: { maxAge: 60000 }, resave: false, saveUninitialized: false }));
+app.use(session({ secret: 'passport-tutorial', cookie: { maxAge: 600000 }, resave: false, saveUninitialized: false }));
 app.use(passport.initialize());
 app.use(passport.session());
 if (!isProduction) {
