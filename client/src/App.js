@@ -72,6 +72,7 @@ function App() {
     );
 };
 
+
 export default App;
 
 //switch statement - if not logged in, redirect to login page
