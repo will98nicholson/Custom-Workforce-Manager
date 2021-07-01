@@ -96,6 +96,7 @@ export default function JobsForm(props) {
     return (
         <div className={classes.root}>
             <form name="job-details">
+
                 {/* <FormControl disabled>
                     <InputLabel htmlFor="jobNumber">Job Number</InputLabel>
                     <OutlinedInput id="jobNumber" name="job_number" className={classes.input} variant="outlined" placeholder={jobNumber} />
@@ -261,7 +262,7 @@ export default function JobsForm(props) {
                 <div className={classes.break} />
 
                 <Typography variant="body1">Notes:</Typography>
-                
+
                 <FormControl>
                     <TextField
                         id="notes"

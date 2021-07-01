@@ -95,9 +95,11 @@ export default function StickyHeadTable () {
                                     } )}
                                     <TableCell>
                                         <Link to='/jobdetail'>
+                                        {/* <Link to='/empjobdetail'> */}
                                             {/* <Button variant="contained" color="primary"> */}
                                                 <img alt='' src={DetailButton} className='detail-button' />
                                             {/* </Button> */}
+                                            {/*TODO: pass props through detail button to render different buttons and form editing functionality */}
                                         </Link>
                                     </TableCell>
                                 </TableRow>

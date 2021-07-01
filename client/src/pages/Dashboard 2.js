@@ -5,15 +5,16 @@ import {
     Container,
     Typography,
     Paper,
-    Button
+    Button,
 } from '@material-ui/core';
-import { Link } from 'react-router-dom';
+
 import MenuToolbar from '../components/MenuToolbar';
 import Copyright from '../components/Copyright';
 import JobsList from '../components/JobsList';
-import API from '../utils/API';
 
-const useStyles = makeStyles( ( theme ) => ( {
+import API from '../utils/API'
+
+const useStyles = makeStyles((theme) => ({
     root: {
         display: 'flex',
     },
@@ -24,73 +25,79 @@ const useStyles = makeStyles( ( theme ) => ( {
         overflow: 'auto',
     },
     container: {
-        margin: theme.spacing( 2 )
+        margin: theme.spacing(2)
     },
     button: {
-        margin: theme.spacing( 2 )
+        margin: theme.spacing(2)
     },
     paper: {
-        padding: theme.spacing( 2 ),
+        padding: theme.spacing(2),
         display: 'flex',
         overflow: 'auto',
         flexDirection: 'column',
     }
-} ) );
+}));
 
-function EmpDash(props) {
-    console.log( props );
+// auth() {
+//     if req.session.id 
+// }
 
+// jobs() {
+//     req.session.id 
+// }
+
+// auth(type);
+// function isAdmin() {
+//     const [user, setUser] = useState({})
+
+// }
+
+export default function Dashboard() {
     const classes = useStyles();
 
-    const [ user, setUser ] = useState( {} );
+    const [user, setUser] = useState({});
+  
+    useEffect(() => {
+      getUser();
+    }, []);
 
-    useEffect( () => {
-        getUser();
-    }, [] );
-
-    function getUser () {
-        API.getUser()
-            .then( res => setUser( res.data ) )
-            .catch( err => console.log( err ) );
-
+    function getUser() {
+      API.getUser()
+        .then(res => setUser(res.data))
+        .then(console.log(user))
+        .catch(err=>console.log(err))
     }
 
     return (
         <div className={classes.root}>
             <CssBaseline />
-            <MenuToolbar className="topToolbar" />
+            <MenuToolbar />
             <main className={classes.content}>
                 <div className={classes.appBarSpacer} />
                 <Container maxWidth="lg" className={classes.container} >
                     {/* Time and Weather */}
-
-                    {/* <Link to='/createjob'>
-                        <Button variant="contained" color="primary">
-                            Create New Job
-                        </Button>
-                    </Link> */}
-
+                    {/* Button to Create New Job */}
+                    {/* { this.auth !== "Employee" ?  */}
+                    <Button variant="contained" color="primary" onClick={() => { window.location.replace('/createjob') }}>
+                        Create New Job
+                    </Button>
                     {/* ""} */}
                     {/* Active Jobs */}
                     {/* <Button variant="contained" color="primary" onClick={() => { window.location.replace('/createjob') }}>
                         Create New Job
                     </Button> */}
 
-                    <Paper className={classes.paper} id='module1'>
-                        <Typography variant='h5'>Assigned Jobs</Typography>
+                    <Paper className={classes.paper}>
+                        <Typography variant='h5'>Active Jobs</Typography>
                         <JobsList />
-                        {/*TODO: pass props through jobs list to render assigned jobs for specific crew or employee */}
-
                     </Paper>
                     {/* Completed Jobs */}
-                    <Paper className={classes.paper} id='module2'>
-                        <Typography variant='h5'>Schedule</Typography>
+                    <Paper className={classes.paper}>
+                        <Typography variant='h5'>Completed Jobs</Typography>
                     </Paper>
                     <Copyright />
                 </Container>
             </main>
         </div>
     );
-};
-
-export default EmpDash;
+}

@@ -2,10 +2,11 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
+import EmpDash from './pages/EmpDash';
 import CreateJob from './pages/CreateJob';
 import EditJob from './pages/EditJob';
 import JobDetail from './pages/JobDetail';
-import EmpDash from './pages/EmpDash';
+// import EmpJobDetail from './pages/EmpJobDetail';
 import Crews from './pages/Crews';
 // import API from '.utils/API';
 import axios from 'axios';
@@ -62,6 +63,10 @@ function App() {
                     <Route path='/createjob'>{user.type === "Administrator" ? <CreateJob /> : ""} </Route>
                     <Route path='/crews'>{user.type === "Administrator" ? <Crews /> : ""} </Route>
                     <Route path='/jobdetail'><JobDetail /></Route><Redirect to="/"></Redirect>
+
+                    {/* NOTE: empjobdetail page is for testing + development - figure out logic + props for rendering differently based on user-type */}
+                    {/* <Route path='/empjobdetail'>{user.type === "Employee" ? <EmpJobDetail /> : ""} </Route> */}
+
                 </Switch>}
         </Router>
     );
