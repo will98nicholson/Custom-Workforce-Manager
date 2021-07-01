@@ -12,11 +12,7 @@ export default {
 
     //post data from CreateJob.js to api/jobs
     createJob: function (jobData) {
-        return axios.post("/api/jobs", jobData, {
-            headers: {
-                "Content-Type": "application/json; charset=utf-8"
-            }
-        })
+        return axios.post("/api/jobs", jobData)
     }
     //get jobs from api/jobs for display in JobsList.js
 

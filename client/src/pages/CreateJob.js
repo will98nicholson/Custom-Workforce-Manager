@@ -14,8 +14,6 @@ import JobsForm from '../components/JobsForm';
 
 import API from '../utils/API';
 
-//TODO: create form control props and pass to JobsForm
-
 const useStyles = makeStyles((theme) => ({
     root: {
         display: 'flex',
@@ -56,7 +54,8 @@ export default function CreateJob() {
                         {/* pass createJob API to JobsForm via props */}
                         {/* Other pages using JobsForm component will pass different API functions */}
                         {/* pass a blank defaultvalue to JobsForm (default value will be used in view/edit job) */}
-                        <JobsForm APIFunction={API.createJob} setDisable={false} setDefaultValue={""} />
+                        <JobsForm APIFunction={API.createJob} setDisable={false} setDefaultValue={""} route={"/admin"} />
+                    
                     </Paper>
                     <Copyright />
                 </Container>

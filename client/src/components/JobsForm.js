@@ -9,10 +9,12 @@ import {
     Typography,
     TextField,
     Button,
-    InputAdornment
+    InputAdornment,
 } from '@material-ui/core';
-
-import { Redirect } from 'react-router-dom';
+//for redirect on form submit
+import { useHistory } from 'react-router-dom';
+//phone number formatting
+import TextMaskCustom from './TextMaskCustom'
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -24,6 +26,7 @@ const useStyles = makeStyles((theme) => ({
     },
     input: {
         width: '60vw',
+        minHeight: "4rem",
         margin: theme.spacing(1, 2, 1, 0),
         [theme.breakpoints.up('md')]: {
             width: '40vw'
@@ -38,7 +41,8 @@ const useStyles = makeStyles((theme) => ({
     },
     button: {
         margin: theme.spacing(2),
-        width: '7rem'
+        width: '7rem',
+        color: '#ffffff'
     },
     container: {
         margin: theme.spacing(2)
@@ -57,9 +61,13 @@ const useStyles = makeStyles((theme) => ({
 ///     * employee - edit in job details: notes, job desc, action taken
 ///         * maybe ability to send request for job to be edited
 
-
 export default function JobsForm(props) {
     const classes = useStyles();
+
+    const history = useHistory();
+
+    //redirect route defined in parent page
+    const route= props.route
 
     const [formObject, setFormObject] = useState({})
 
@@ -88,8 +96,12 @@ export default function JobsForm(props) {
             description: formObject.work,
             notes: formObject.notes
         })
-            .then((res) => console.log(res))
-            // .then(<Redirect to="/admin"></Redirect>)
+            .then((res) => {
+                console.log(res.data);
+                //use react-router-dom history to generate route
+                let url= res.data.id + {route}
+                history.push(url)
+            })
             .catch((err) => console.log(err))
     }
 
@@ -225,6 +237,7 @@ export default function JobsForm(props) {
                         variant="outlined"
                         disabled={props.setDisable}
                         defaultValue={props.setDefaultValue}
+                        inputComponent={TextMaskCustom}
                         label="Contact Phone" />
                 </FormControl>
 
@@ -280,7 +293,7 @@ export default function JobsForm(props) {
                 <div className={classes.break} />
 
                 <Typography variant="body1">Notes:</Typography>
-                
+
                 <FormControl>
                     <TextField
                         id="notes"
@@ -297,10 +310,9 @@ export default function JobsForm(props) {
                 </FormControl>
 
                 <div className={classes.break} />
-
-                <Button className={classes.button} variant="contained" color="primary" onClick={handleSubmit}>
-                    Submit
-                </Button>
+                    <Button className={classes.button} variant="contained" color="primary" onClick={handleSubmit}>
+                        Submit
+                    </Button>
             </form>
         </div>
     );
