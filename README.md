@@ -52,6 +52,7 @@ TODO:
   -
   -
 - connect components + render in App
+- logout (?) / back button
 
 FIX:
 - edit job page - render information already stored in job page if there is any + make editable
@@ -77,6 +78,7 @@ CURRENT ASSIGNMENTS:
   * put address + button in jobs list - link to job details page
   * job assignment page
   * weather and time
+  * employee dashboard
 
 - Brandon:
   * react router [done]

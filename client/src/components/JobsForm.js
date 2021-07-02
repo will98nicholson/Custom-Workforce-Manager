@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import {
     OutlinedInput,
@@ -13,13 +13,15 @@ import {
 } from '@material-ui/core';
 
 import { Redirect } from 'react-router-dom';
+import axios from 'axios';
+
 
 const useStyles = makeStyles((theme) => ({
     root: {
         display: 'flex',
         flexDirection: 'row',
         '& > *': {
-            margin: theme.spacing(1),
+            margin: theme.spacing(2),
         },
     },
     input: {
@@ -67,7 +69,24 @@ export default function JobsForm(props) {
         const { name, value } = event.target;
         setFormObject({ ...formObject, [name]: value })
     }
+    useEffect( () => { getJob(); }, [] );
 
+    const getJob = async () => {
+        await axios( {
+            method: "GET",
+
+            url: `/api/jobs/${ props.id }`
+        } ).then( res => {
+            console.log( res.data );
+            setFormObject( {
+                name: res.data[0].client.name,
+                location: res.data[0].client.location,
+            } );
+        } )
+
+            .catch( err => console.log( err ) );
+
+    };
     function handleSubmit(event) {
         event.preventDefault()
         props.APIFunction({
@@ -95,20 +114,25 @@ export default function JobsForm(props) {
 
     return (
         <div className={classes.root}>
-            <form name="job-details">
+            <form className='form-flex' name="job-details">
+
                 {/* <FormControl disabled>
                     <InputLabel htmlFor="jobNumber">Job Number</InputLabel>
                     <OutlinedInput id="jobNumber" name="job_number" className={classes.input} variant="outlined" placeholder={jobNumber} />
                 </FormControl> */}
-                <FormControl>
-                    <InputLabel htmlFor="clientName">Client Name</InputLabel>
+                <FormControl className={classes.formControl}>
+                    <InputLabel className={classes.formControl} htmlFor="clientName"> Client Name</InputLabel>
                     <OutlinedInput
                         id="clientName"
                         name="name"
                         onChange={handleInputChange}
                         className={classes.input}
                         variant="outlined"
-                        label="Client Name" />
+                        placeholder="Client Name"
+                        className='form-input-positioning'
+                        value={formObject.name}
+                        label='clientName'
+                    />
                 </FormControl>
 
                 <FormControl variant="outlined" className={classes.formControl}>
@@ -119,6 +143,8 @@ export default function JobsForm(props) {
                         name="type"
                         onChange={handleInputChange}
                         label="Client Type"
+                        className='form-input-positioning'
+                        placeholder='Client Type'
                     >
                         <MenuItem value="">
                             <em>None</em>
@@ -137,8 +163,9 @@ export default function JobsForm(props) {
                         onChange={handleInputChange}
                         label="Quote Date"
                         type="date"
-                        defaultValue={new Date}
-                        className={classes.textField, classes.input}
+                        defaultValue={new Date()}
+                        className={classes.textField}
+                        className={classes.input}
                         InputLabelProps={{
                             shrink: true,
                         }}
@@ -166,8 +193,9 @@ export default function JobsForm(props) {
                         onChange={handleInputChange}
                         label="Job Start"
                         type="datetime-local"
-                        defaultValue={new Date}
-                        className={classes.textField, classes.input}
+                        defaultValue={new Date()}
+                        className={classes.textField}
+                        className={classes.input}
                         InputLabelProps={{
                             shrink: true,
                         }}
@@ -181,8 +209,9 @@ export default function JobsForm(props) {
                         onChange={handleInputChange}
                         label="Job End"
                         type="datetime-local"
-                        defaultValue={new Date}
-                        className={classes.textField, classes.input}
+                        defaultValue={new Date()}
+                        className={classes.textField}
+                        className={classes.input}
                         InputLabelProps={{
                             shrink: true,
                         }}
@@ -238,6 +267,7 @@ export default function JobsForm(props) {
                         className={classes.TextField}
                         placeholder="123 Lawncare Lane, Greenville, OH 45331"
                         variant="outlined"
+                        value={formObject.location}
                     />
                 </FormControl>
 
@@ -261,7 +291,7 @@ export default function JobsForm(props) {
                 <div className={classes.break} />
 
                 <Typography variant="body1">Notes:</Typography>
-                
+
                 <FormControl>
                     <TextField
                         id="notes"
