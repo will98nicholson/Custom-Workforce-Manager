@@ -79,8 +79,20 @@ export default function JobsForm(props) {
         } ).then( res => {
             console.log( res.data );
             setFormObject( {
-                name: res.data[0].client.name,
-                location: res.data[0].client.location,
+                name: res.data[ 0 ].client.name,
+                type: res.data[ 0 ].client.type,
+                location: res.data[ 0 ].client.location,
+                contact: res.data[ 0 ].client.contact,
+                phone: res.data[ 0 ].client.phone,
+                email: res.data[ 0 ].client.email,
+
+                quote_date: res.data[ 0 ].quote,
+                quote_price: res.data[ 0 ].price,
+                start_date: res.data[ 0 ].start,
+                end_date: res.data[ 0 ].end,
+
+                description: res.data[0].work,
+                notes: res.data[0].notes
             } );
         } )
 
@@ -93,7 +105,7 @@ export default function JobsForm(props) {
             client: {
                 type: formObject.type,
                 name: formObject.name,
-                location: formObject.address,
+                location: formObject.location,
                 contact: formObject.contact,
                 phone: formObject.phone,
                 email: formObject.email,
@@ -145,6 +157,7 @@ export default function JobsForm(props) {
                         label="Client Type"
                         className='form-input-positioning'
                         placeholder='Client Type'
+                        value={formObject.type}
                     >
                         <MenuItem value="">
                             <em>None</em>
@@ -166,6 +179,7 @@ export default function JobsForm(props) {
                         defaultValue={new Date()}
                         className={classes.textField}
                         className={classes.input}
+                        value={formObject.quote}
                         InputLabelProps={{
                             shrink: true,
                         }}
@@ -181,7 +195,9 @@ export default function JobsForm(props) {
                         className={classes.input}
                         variant="outlined"
                         startAdornment={<InputAdornment position="start">$</InputAdornment>}
-                        label="Quote Price" />
+                        label="Quote Price"
+                        value={formObject.price}
+                    />
                 </FormControl>
 
                 <div className={classes.break} />
@@ -196,6 +212,7 @@ export default function JobsForm(props) {
                         defaultValue={new Date()}
                         className={classes.textField}
                         className={classes.input}
+                        value={formObject.start}
                         InputLabelProps={{
                             shrink: true,
                         }}
@@ -212,6 +229,7 @@ export default function JobsForm(props) {
                         defaultValue={new Date()}
                         className={classes.textField}
                         className={classes.input}
+                        value={formObject.end}
                         InputLabelProps={{
                             shrink: true,
                         }}
@@ -262,7 +280,7 @@ export default function JobsForm(props) {
                 <FormControl>
                     <TextField
                         id="jobLocation"
-                        name="address"
+                        name="location"
                         onChange={handleInputChange}
                         className={classes.TextField}
                         placeholder="123 Lawncare Lane, Greenville, OH 45331"

@@ -44,7 +44,9 @@ header {
 }
 
 /* COMPLETED JOBS MODULE */
-#module2 {
+#module2,
+#module3,
+#module4 {
   background-color: rgba(9, 11, 25, 0.718);
   color: whitesmoke;
   margin: auto;
