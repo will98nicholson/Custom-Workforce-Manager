@@ -2,18 +2,17 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const Job = new Schema({
-    // name: {
-    //     type: String, 
-    //     required: true, 
-    // },
-    // _id: {
-    //     type: Number, 
-    //     required: true, 
-    // },
-    // services_id: {
-    //     type: mongoose.Schema.Types.ObjectId, ref: 'Service',
-    //     required: true, 
-    // },
+    
+    singleService:[{
+        services_id: {
+            type: mongoose.Schema.Types.ObjectId, ref: 'Service',
+            required: true, 
+        },
+        quantity: {
+            type:Number,
+            required:true,
+        },
+    }],
     client: {
         type: { 
             type: String, 
