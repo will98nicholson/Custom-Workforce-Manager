@@ -77,7 +77,7 @@ export default function JobsForm(props) {
         const { name, value } = event.target;
         setFormObject({ ...formObject, [name]: value })
     }
-    
+
     useEffect( () => { getJob(); }, [] );
 
     const getJob = async () => {
@@ -295,7 +295,7 @@ export default function JobsForm(props) {
                         disabled={props.setDisable}
                         defaultValue={props.setDefaultValue}
                         inputComponent={TextMaskCustom}
-                        label="Contact Phone" />
+                        label="Contact Phone"
                         value={formObject.phone}
                     />
                 </FormControl>
@@ -311,7 +311,7 @@ export default function JobsForm(props) {
                         variant="outlined"
                         disabled={props.setDisable}
                         defaultValue={props.setDefaultValue}
-                        label="Contact Email" 
+                        label="Contact Email"
                         value={formObject.email}
                     />
                 </FormControl>
@@ -361,7 +361,7 @@ export default function JobsForm(props) {
                 <div className={classes.break} />
 
                 <Typography variant="body1">Notes:</Typography>
-                
+
                 {/* JOB NOTES */}
                 <FormControl>
                     <TextField
