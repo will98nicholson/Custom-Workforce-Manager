@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const authRoutes = require('./auth');
-const jobRoutes = require('./api')
+const jobRoutes = require('./api');
 const path = require('path');
 
 //
