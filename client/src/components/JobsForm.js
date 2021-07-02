@@ -77,6 +77,36 @@ export default function JobsForm(props) {
         const { name, value } = event.target;
         setFormObject({ ...formObject, [name]: value })
     }
+    
+    useEffect( () => { getJob(); }, [] );
+
+    const getJob = async () => {
+        await axios( {
+            method: "GET",
+            url: `/api/jobs/${ props.id }`
+        } ).then( res => {
+            console.log( res.data );
+            setFormObject( {
+                name: res.data[ 0 ].client.name,
+                type: res.data[ 0 ].client.type,
+                location: res.data[ 0 ].client.location,
+                contact: res.data[ 0 ].client.contact,
+                phone: res.data[ 0 ].client.phone,
+                email: res.data[ 0 ].client.email,
+
+                quote_date: res.data[ 0 ].quote,
+                quote_price: res.data[ 0 ].price,
+                start_date: res.data[ 0 ].start,
+                end_date: res.data[ 0 ].end,
+
+                description: res.data[0].work,
+                notes: res.data[0].notes
+            } );
+        } )
+
+            .catch( err => console.log( err ) );
+
+    };
 
     function handleSubmit(event) {
         event.preventDefault()
@@ -84,7 +114,7 @@ export default function JobsForm(props) {
             client: {
                 type: formObject.type,
                 name: formObject.name,
-                location: formObject.address,
+                location: formObject.location,
                 contact: formObject.contact,
                 phone: formObject.phone,
                 email: formObject.email,
@@ -114,8 +144,12 @@ export default function JobsForm(props) {
                     <InputLabel htmlFor="jobNumber">Job Number</InputLabel>
                     <OutlinedInput id="jobNumber" name="job_number" className={classes.input} variant="outlined" placeholder={jobNumber} />
                 </FormControl> */}
-                <FormControl>
-                    <InputLabel htmlFor="clientName">Client Name</InputLabel>
+
+
+                {/* CLIENT NAME */}
+                <FormControl className={classes.input}>
+                    <InputLabel className={classes.formControl} htmlFor="clientName"> Client Name</InputLabel>
+
                     <OutlinedInput
                         id="clientName"
                         name="name"
@@ -127,7 +161,9 @@ export default function JobsForm(props) {
                         label="Client Name" />
                 </FormControl>
 
+                {/* CLIENT TYPE */}
                 <FormControl variant="outlined" className={classes.input}>
+
                     <InputLabel id="clientType">Client Type</InputLabel>
                     <Select
                         labelId="clientType"
@@ -137,6 +173,9 @@ export default function JobsForm(props) {
                         disabled={props.setDisable}
                         defaultValue={props.setDefaultValue}
                         label="Client Type"
+                        className='form-input-positioning'
+                        placeholder='Client Type'
+                        value={formObject.type}
                     >
                         <MenuItem value="">
                             <em>None</em>
@@ -148,6 +187,7 @@ export default function JobsForm(props) {
 
                 <div className={classes.break} />
 
+                {/* QUOTE DATE */}
                 <FormControl>
                     <TextField variant="outlined"
                         id="quoteDate"
@@ -158,12 +198,17 @@ export default function JobsForm(props) {
                         disabled={props.setDisable}
                         defaultValue={props.setDefaultValue}
                         className={classes.textField, classes.input}
+                        defaultValue={new Date()}
+                        className={classes.textField}
+                        className={classes.input}
+                        value={formObject.quote_date}
                         InputLabelProps={{
                             shrink: true,
                         }}
                     />
                 </FormControl>
 
+                {/* QUOTE PRICE */}
                 <FormControl>
                     <InputLabel htmlFor="quotePrice">Quote Price</InputLabel>
                     <OutlinedInput
@@ -174,12 +219,14 @@ export default function JobsForm(props) {
                         variant="outlined"
                         startAdornment={<InputAdornment position="start">$</InputAdornment>}
                         disabled={props.setDisable}
-                        defaultValue={props.setDefaultValue}
-                        label="Quote Price" />
+                        label="Quote Price"
+                        value={formObject.quote_price}
+                    />
                 </FormControl>
 
                 <div className={classes.break} />
 
+                {/* JOB START */}
                 <FormControl>
                     <TextField variant="outlined"
                         id="startDate"
@@ -190,12 +237,14 @@ export default function JobsForm(props) {
                         disabled={props.setDisable}
                         defaultValue={props.setDefaultValue}
                         className={classes.textField, classes.input}
+                        value={formObject.start_date}
                         InputLabelProps={{
                             shrink: true,
                         }}
                     />
                 </FormControl>
 
+                {/* JOB END */}
                 <FormControl>
                     <TextField variant="outlined"
                         id="endDate"
@@ -206,6 +255,7 @@ export default function JobsForm(props) {
                         disabled={props.setDisable}
                         defaultValue={props.setDefaultValue}
                         className={classes.textField, classes.input}
+                        value={formObject.end_date}
                         InputLabelProps={{
                             shrink: true,
                         }}
@@ -214,8 +264,10 @@ export default function JobsForm(props) {
 
                 <div className={classes.break} />
 
+                {/* CONTACT INFO */}
                 <Typography variant="body1">Contact Information:</Typography>
 
+                {/* CONTACT NAME*/}
                 <FormControl>
                     <InputLabel htmlFor="contactName">Point of Contact</InputLabel>
                     <OutlinedInput
@@ -226,9 +278,12 @@ export default function JobsForm(props) {
                         variant="outlined"
                         disabled={props.setDisable}
                         defaultValue={props.setDefaultValue}
-                        label="Point of Contact" />
+                        label="Point of Contact"
+                        value={formObject.contact}
+                    />
                 </FormControl>
 
+                {/* CONTACT PHONE */}
                 <FormControl>
                     <InputLabel htmlFor="contactPhone">Contact Phone</InputLabel>
                     <OutlinedInput
@@ -241,8 +296,11 @@ export default function JobsForm(props) {
                         defaultValue={props.setDefaultValue}
                         inputComponent={TextMaskCustom}
                         label="Contact Phone" />
+                        value={formObject.phone}
+                    />
                 </FormControl>
 
+                {/* CONTACT EMAIL */}
                 <FormControl>
                     <InputLabel htmlFor="contactEmail">Contact Email</InputLabel>
                     <OutlinedInput
@@ -253,17 +311,21 @@ export default function JobsForm(props) {
                         variant="outlined"
                         disabled={props.setDisable}
                         defaultValue={props.setDefaultValue}
-                        label="Contact Email" />
+                        label="Contact Email" 
+                        value={formObject.email}
+                    />
                 </FormControl>
 
                 <div className={classes.break} />
 
+                {/* JOB LOCATION INFO */}
                 <Typography variant="body1">Job Location:</Typography>
 
+                {/* JOB LOCATION / ADDRESS */}
                 <FormControl>
                     <TextField
                         id="jobLocation"
-                        name="address"
+                        name="location"
                         onChange={handleInputChange}
                         className={classes.TextField}
                         disabled={props.setDisable}
@@ -277,6 +339,9 @@ export default function JobsForm(props) {
 
                 <Typography variant="body1">Select Services:</Typography>
                   {/* Change to checklist with service names */}
+
+
+                {/* JOB DESCRIPTION */}
                 <FormControl>
                     <FormSelect
                         id="workDescription"
@@ -289,13 +354,15 @@ export default function JobsForm(props) {
                         disabled={props.setDisable}
                         defaultValue={props.setDefaultValue}
                         variant="outlined"
+                        value={formObject.description}
                     />
                 </FormControl>
 
                 <div className={classes.break} />
 
                 <Typography variant="body1">Notes:</Typography>
-
+                
+                {/* JOB NOTES */}
                 <FormControl>
                     <TextField
                         id="notes"
@@ -308,13 +375,22 @@ export default function JobsForm(props) {
                         disabled={props.setDisable}
                         defaultValue={props.setDefaultValue}
                         variant="outlined"
+                        value={formObject.notes}
                     />
                 </FormControl>
 
                 <div className={classes.break} />
-                    <Button className={classes.button} variant="contained" color="primary" onClick={handleSubmit}>
-                        Submit
-                    </Button>
+
+                {/* SAVE / SUBMIT BUTTON */}
+                <Button className={classes.button} variant="contained" color="primary" onClick={handleSubmit}>
+                    Submit
+                </Button>
+                {/* TODO: if employee, only NOTES are editable and should be saved and updated in db */}
+                {/* TODO: if employee, maybe only render a "save" button until job is marked as "completed" */}
+                {/* TODO: maybe a "job status" in job model w 3 options - todo, in progress, completed + once emp clicks
+                the completed button, either the submit button renders so send to admin,
+                or the form is submitted when the complete status is met and the button is clicked */}
+
             </form>
         </div>
     );
