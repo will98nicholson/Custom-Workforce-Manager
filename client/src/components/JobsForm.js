@@ -134,7 +134,7 @@ export default function JobsForm(props) {
                 </FormControl> */}
 
                 {/* CLIENT NAME */}
-                <FormControl className={classes.formControl}>
+                <FormControl className={classes.input}>
                     <InputLabel className={classes.formControl} htmlFor="clientName"> Client Name</InputLabel>
                     <OutlinedInput
                         id="clientName"
@@ -150,7 +150,7 @@ export default function JobsForm(props) {
                 </FormControl>
 
                 {/* CLIENT TYPE */}
-                <FormControl variant="outlined" className={classes.formControl}>
+                <FormControl variant="outlined" className={classes.input}>
                     <InputLabel id="clientType">Client Type</InputLabel>
                     <Select
                         labelId="clientType"
