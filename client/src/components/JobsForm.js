@@ -351,6 +351,13 @@ export default function JobsForm(props) {
                 <Button className={classes.button} variant="contained" color="primary" onClick={handleSubmit}>
                     Submit
                 </Button>
+                {/* TODO: if employee, only NOTES are editable and should be saved and updated in db */}
+                {/* TODO: if employee, maybe only render a "save" button until job is marked as "completed" */}
+                {/* TODO: maybe a "job status" in job model w 3 options - todo, in progress, completed + once emp clicks
+                the completed button, either the submit button renders so send to admin,
+                or the form is submitted when the complete status is met and the button is clicked */}
+
+
             </form>
         </div>
     );
