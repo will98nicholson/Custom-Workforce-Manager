@@ -5,7 +5,7 @@ import {
     Container,
     Paper,
     Typography,
-    Button
+    // Button
 } from '@material-ui/core';
 
 import MenuToolbar from '../components/MenuToolbar';
@@ -64,4 +64,3 @@ export default function CreateJob() {
         </div >
     )
 };
-
