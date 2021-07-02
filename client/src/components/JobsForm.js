@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import {
     OutlinedInput,
@@ -17,6 +17,9 @@ import { useHistory } from 'react-router-dom';
 import TextMaskCustom from './TextMaskCustom';
 //multi-select for services
 import FormSelect from './FormSelect';
+
+import { Redirect } from 'react-router-dom';
+import axios from 'axios';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -77,7 +80,7 @@ export default function JobsForm(props) {
         const { name, value } = event.target;
         setFormObject({ ...formObject, [name]: value })
     }
-    
+
     useEffect( () => { getJob(); }, [] );
 
     const getJob = async () => {
@@ -158,6 +161,7 @@ export default function JobsForm(props) {
                         variant="outlined"
                         disabled={props.setDisable}
                         defaultValue={props.setDefaultValue}
+                        value={formObject.name}
                         label="Client Name" />
                 </FormControl>
 
@@ -198,7 +202,7 @@ export default function JobsForm(props) {
                         disabled={props.setDisable}
                         defaultValue={props.setDefaultValue}
                         className={classes.textField, classes.input}
-                        defaultValue={new Date()}
+                        // defaultValue={new Date()}
                         className={classes.textField}
                         className={classes.input}
                         value={formObject.quote_date}
@@ -295,7 +299,7 @@ export default function JobsForm(props) {
                         disabled={props.setDisable}
                         defaultValue={props.setDefaultValue}
                         inputComponent={TextMaskCustom}
-                        label="Contact Phone" />
+                        label="Contact Phone"
                         value={formObject.phone}
                     />
                 </FormControl>
@@ -311,7 +315,7 @@ export default function JobsForm(props) {
                         variant="outlined"
                         disabled={props.setDisable}
                         defaultValue={props.setDefaultValue}
-                        label="Contact Email" 
+                        label="Contact Email"
                         value={formObject.email}
                     />
                 </FormControl>
@@ -332,6 +336,7 @@ export default function JobsForm(props) {
                         defaultValue={props.setDefaultValue}
                         placeholder="123 Lawncare Lane, Greenville, OH 45331"
                         variant="outlined"
+                        value={formObject.location}
                     />
                 </FormControl>
 
@@ -361,7 +366,7 @@ export default function JobsForm(props) {
                 <div className={classes.break} />
 
                 <Typography variant="body1">Notes:</Typography>
-                
+
                 {/* JOB NOTES */}
                 <FormControl>
                     <TextField
