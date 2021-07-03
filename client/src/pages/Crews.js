@@ -13,7 +13,7 @@ import Copyright from '../components/Copyright';
 import JobsList from '../components/JobsList';
 import API from '../utils/API';
 
-const useStyles = makeStyles( ( theme ) => ( {
+const useStyles = makeStyles((theme) => ({
     root: {
         display: 'flex',
     },
@@ -24,20 +24,20 @@ const useStyles = makeStyles( ( theme ) => ( {
         overflow: 'auto',
     },
     container: {
-        margin: theme.spacing( 2 )
+        margin: theme.spacing(2)
     },
     button: {
-        margin: theme.spacing( 2 )
+        margin: theme.spacing(2)
     },
     paper: {
-        padding: theme.spacing( 2 ),
+        padding: theme.spacing(2),
         display: 'flex',
         overflow: 'auto',
         flexDirection: 'column',
     }
-} ) );
-export default function Crews ( props ) {
-    console.log( props );
+}));
+export default function Crews(props) {
+    console.log(props);
     const classes = useStyles();
 
     return (
@@ -64,12 +64,12 @@ export default function Crews ( props ) {
                     <Paper className={classes.paper} id='module3'>
                         <Typography variant='h5'>Module 3</Typography>
                         {/* <JobsList /> */}
-                        
+
                     </Paper>
                     {/* Completed Jobs */}
                     <Paper className={classes.paper} id='module4'>
                         <Typography variant='h5'>Module 4</Typography>
-                        <Component data={} />
+                        {/* <Component data={} /> */}
                     </Paper>
                     <Copyright />
                 </Container>
