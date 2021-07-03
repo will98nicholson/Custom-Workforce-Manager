@@ -1,23 +1,26 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import {
-    Box,
-    Collapse,
-    IconButton,
+    // Box,
+    // Collapse,
+    // IconButton,
     Table,
     TableBody,
     TableCell,
     TableContainer,
     TableHead,
     TableRow,
-    Typography,
+    // Typography,
     Paper,
     TablePagination,
-    Button
+    // Button
 } from '@material-ui/core';
 import { Link } from 'react-router-dom';
-import { KeyboardArrowDown, KeyboardArrowUp, Edit } from '@material-ui/icons';
+// import { KeyboardArrowDown, KeyboardArrowUp, Edit } from '@material-ui/icons';
+import DetailButton from '../assets/icons/view-details.PNG';
+// import JobDetail from '../pages/JobDetail';
+// import EmpJobDetail from '../pages/EmpJobDetail';
 
 const columns = [
     { id: 'client', label: 'Client', minWidth: 170 },
@@ -33,23 +36,25 @@ const useStyles = makeStyles({
   },
 });
 
-function createData ( client, address ) {
+function createData ( id, client, address ) {
     return {
+        id,
         client,
         address
     };
 };
 
 const rows = [
-    createData( "Cafe Istanbul", "123 Riverside Dr"),
-    createData( "Mill Creek Cemetery", "456 Cemetary Rd"),
-    createData( "Dublin Golf Club", "789 Dublic Rd")
+    createData( 26, "Cafe Istanbul", "123 Riverside Dr"),
+    createData( 88, "Mill Creek Cemetery", "456 Cemetary Rd"),
+    createData( 31, "Dublin Golf Club", "789 Dublic Rd")
 ];
 
-export default function StickyHeadTable () {
+export default function JobsList (props) {
     const classes = useStyles();
     const [ page, setPage ] = React.useState( 0 );
     const [ rowsPerPage, setRowsPerPage ] = React.useState( 10 );
+    // const [ user, setUser ] = React.useState(null);
 
     const handleChangePage = ( event, newPage ) => {
         setPage( newPage );
@@ -61,13 +66,13 @@ export default function StickyHeadTable () {
     };
 
     return (
-        <Paper className={classes.root}>
+        <Paper className={classes.root} id='jobslist'>
             <TableContainer className={classes.container}>
                 <Table stickyHeader aria-label="sticky table">
                     <TableHead>
                         <TableRow>
-                            {columns.map( ( column ) => (
-                                <TableCell
+                            {/* {columns.map( ( column ) => (
+                                <TableCell className='transparent module-sub-head'
                                     key={column.id}
                                     align={column.align}
                                     style={{ minWidth: column.minWidth }}
@@ -75,28 +80,34 @@ export default function StickyHeadTable () {
                                     {column.label}
                                 </TableCell>
                             ) )}
-                            <TableCell>Detail</TableCell>
+                            <TableCell className='transparent module-sub-head'>Detail</TableCell> */}
                         </TableRow>
                     </TableHead>
                     <TableBody>
                         {rows.slice( page * rowsPerPage, page * rowsPerPage + rowsPerPage ).map( ( row ) => {
+                            console.log( row );
+
                             return (
                                 <TableRow hover role="checkbox" tabIndex={-1} key={row.code}>
                                     {columns.map( ( column ) => {
                                         const value = row[ column.id ];
+                                        // console.log( value );
                                         return (
                                             <>
-                                                <TableCell key={column.id} align={column.align}>
+                                                <TableCell className='white-text' key={column.id} align={column.align}>
                                                     {column.format && typeof value === 'number' ? column.format( value ) : value}
                                                 </TableCell>
                                             </>
                                         );
                                     } )}
                                     <TableCell>
-                                        <Link to='/jobdetail'>
-                                            <Button variant="contained" color="primary">
-                                                DETAIL
-                                            </Button>
+                                        <Link to={'/jobdetail/'+ row.id}>
+                                            {/* {props.type === "Administrator" ? <JobDetail /> : <EmpJobDetail />} */}
+                                        {/* <Link to='/empjobdetail'> */}
+                                            {/* <Button variant="contained" color="primary"> */}
+                                                <img alt='' src={DetailButton} className='detail-button' />
+                                            {/* </Button> */}
+                                            {/*TODO: pass props through detail button to render different buttons and form editing functionality */}
                                         </Link>
                                     </TableCell>
                                 </TableRow>
@@ -105,7 +116,7 @@ export default function StickyHeadTable () {
                     </TableBody>
                 </Table>
             </TableContainer>
-            <TablePagination
+            <TablePagination className='white-text'
                 rowsPerPageOptions={[ 10, 25, 100 ]}
                 component="div"
                 count={rows.length}

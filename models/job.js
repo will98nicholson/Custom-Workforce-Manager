@@ -2,18 +2,17 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const Job = new Schema({
-    // name: {
-    //     type: String, 
-    //     required: true, 
-    // },
-    // _id: {
-    //     type: Number, 
-    //     required: true, 
-    // },
-    // services_id: {
-    //     type: mongoose.Schema.Types.ObjectId, ref: 'Service',
-    //     required: true, 
-    // },
+    
+    services:[{
+        service_id: {
+            type: mongoose.Schema.Types.ObjectId, ref: 'Service',
+            required: true, 
+        },
+        quantity: {
+            type:Number,
+            required:true,
+        },
+    }],
     client: {
         type: { 
             type: String, 
@@ -31,9 +30,23 @@ const Job = new Schema({
             type: String, 
             required: true, 
         },
-        location: { 
-            type: String, 
-            required: true, 
+        location: {
+            // streetAddress:{
+                type: String, 
+                required: true, 
+            // },
+            // city: {
+            //     type: String, 
+            //     required: true, 
+            // },
+            // state:{
+            //     type: String, 
+            //     required: true, 
+            // },
+            // zipcode:{
+            //     type: Number,
+            //     required: true, 
+            // } 
         },
         phone: { 
             type: String, 
@@ -71,18 +84,35 @@ const Job = new Schema({
         type: String, 
         required: false, 
     },
-//     clock:{
-//          //TODO: include a date and time for both clocking in and out
-//     },
-//     forms: {
-//         workOrderPath:{
-//           //TODO: Figure out how to save a file path to retrieve completed job / workorder forms
-//             type: string,
-//             required: false,
-//         },
-//     }
+    crewAssignedToo:{
+        type: String,
+        required: true,
+        default: "unassigned"
+    },
+    dailyPosition:{ 
+        type: Number,
+        required: false,
+    },
+    lastUpdated:{
+        type: String,
+        required: false,
+    }
+    // clock:{
+    // TODO: include a date and time for both clocking in and out
+    // },
+    // forms: {
+    //     workOrderPath:{
+    // TODO: Figure out how to save a file path to retrieve completed job / workorder forms
+    //         type: string,
+    //         required: false,
+    //     },
+    //  },
+    //  services {
+    //         services/products sold get appended here including, quantity, price
+    //  }
 });
 
-
+// add user_id to pair jobs with employees
+// use user_id / job_id to complete pdf form
 
 module.exports = mongoose.model('Job', Job);
