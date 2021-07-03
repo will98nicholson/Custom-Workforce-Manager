@@ -12,7 +12,7 @@ import MenuToolbar from '../components/MenuToolbar';
 import Copyright from '../components/Copyright';
 import JobsForm from '../components/JobsForm';
 
-import API from '../utils/API';
+import API from '../utils/api';
 
 //TODO: create form control props and pass to JobsForm
 

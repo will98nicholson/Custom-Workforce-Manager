@@ -1,5 +1,5 @@
 import React, { useEffect, MenuProps } from 'react';
-import { 
+import {
     Select,
     Checkbox,
     Input,
@@ -7,7 +7,7 @@ import {
     ListItemText
 } from '@material-ui/core';
 
-import API from '../utils/API'
+import API from '../utils/api'
 
 //TODO: API.getAll for services
 //function to push services from db to an array

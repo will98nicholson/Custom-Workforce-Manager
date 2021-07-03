@@ -13,7 +13,7 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import axios from 'axios';
-import API from '../utils/API';
+import API from '../utils/api';
 
 //TODO: find photos to add to rotating side photos on signin page
 function Copyright() {
