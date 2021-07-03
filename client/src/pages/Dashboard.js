@@ -5,13 +5,14 @@ import {
     Container,
     Typography,
     Paper,
-    Button
+    // Button
 } from '@material-ui/core';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import MenuToolbar from '../components/MenuToolbar';
 import Copyright from '../components/Copyright';
 import JobsList from '../components/JobsList';
-import API from '../utils/API'
+import API from '../utils/API';
+import TimeWeather from '../components/TimeWeather';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -40,34 +41,33 @@ const useStyles = makeStyles((theme) => ({
 export default function Dashboard() {
     const classes = useStyles();
 
-    const [user, setUser] = useState({});
+    // const [user, setUser] = useState({});
 
-    useEffect(() => {
-        getUser();
-    }, []);
+    // useEffect(() => {
+    //     getUser();
+    // }, []);
 
-    function getUser() {
-        API.getUser()
-            .then(res => setUser(res.data))
-            .catch(err => console.log(err))
+    // function getUser() {
+    //     API.getUser()
+    //         .then(res => setUser(res.data))
+    //         .catch(err => console.log(err))
 
-    }
+    // }
 
     return (
         <div className={classes.root}>
             <CssBaseline />
-            <MenuToolbar />
+            <MenuToolbar className="topToolbar"/>
             <main className={classes.content}>
                 <div className={classes.appBarSpacer} />
                 <Container maxWidth="lg" className={classes.container} >
-                    {/* Time and Weather */}
-                    {/* Button to Create New Job */}
-                    {/* { this.auth !== "Employee" ?  */}
-                    <Link to='/createjob'>
+                    <TimeWeather />
+
+                    {/* <Link to='/createjob'>
                         <Button variant="contained" color="primary">
                             Create New Job
                         </Button>
-                    </Link>
+                    </Link> */}
 
                     {/* ""} */}
                     {/* Active Jobs */}
@@ -75,12 +75,12 @@ export default function Dashboard() {
                         Create New Job
                     </Button> */}
 
-                    <Paper className={classes.paper}>
+                    <Paper className={classes.paper} id='module1'>
                         <Typography variant='h5'>Active Jobs</Typography>
                         <JobsList />
                     </Paper>
                     {/* Completed Jobs */}
-                    <Paper className={classes.paper}>
+                    <Paper className={classes.paper} id='module2'>
                         <Typography variant='h5'>Completed Jobs</Typography>
                     </Paper>
                     <Copyright />

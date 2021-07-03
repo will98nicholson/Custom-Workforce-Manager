@@ -4,6 +4,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListSubheader from '@material-ui/core/ListSubheader';
 import LibraryBooksIcon from '@material-ui/icons/LibraryBooks';
+import ChatBubbleIcon from '@material-ui/icons/ChatBubble';
 import {
     Dashboard,
     People,
@@ -37,9 +38,9 @@ export const mainListItems = (
 
         <ListItem button>
             <ListItemIcon>
-                <Assessment />
+                <ChatBubbleIcon />
             </ListItemIcon>
-            <ListItemText primary="Reports" />
+            <ListItemText primary="Chat" />
         </ListItem>
     </div>
 );
@@ -71,16 +72,22 @@ export const mainListItems = (
 export const secondaryListItems = (
     <div>
         <ListSubheader inset>Reports</ListSubheader>
-        
-        <Link to='/form'>
-            <ListItem button>
-                <ListItemIcon>
-                    <AttachMoney />
-                </ListItemIcon>
-                <ListItemText primary="Invoices" />
-            </ListItem>
-        </Link>
+        <ListItem button>
+            <ListItemIcon>
+                <Assessment />
+            </ListItemIcon>
+            <ListItemText primary="Reports" />
+        </ListItem>
 
+        <Link to='/form'>
+                    <ListItem button>
+                        <ListItemIcon>
+                            <AttachMoney />
+                        </ListItemIcon>
+                        <ListItemText primary="Invoices" />
+                    </ListItem>
+                </Link>
+                
         <Link to='/crews'>
             <ListItem button>
                 <ListItemIcon>
