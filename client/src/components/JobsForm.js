@@ -264,7 +264,6 @@ export default function JobsForm(props) {
                     <TextField
                         id="jobLocation"
                         name="address"
-                        onChange={handleInputChange}
                         className={classes.TextField}
                         disabled={props.setDisable}
                         defaultValue={props.setDefaultValue}
@@ -279,11 +278,7 @@ export default function JobsForm(props) {
                 {/* Change to checklist with service names */}
                 {/* TODO: conditional render:  selector on create/edit job, list on job details */}
                 <FormSelect
-                    onChange={handleInputChange}
                     className={classes.input}
-                    multiline
-                    rows={4}
-                    placeholder="Describe Approved Work"
                     disabled={props.setDisable}
                     defaultValue={props.setDefaultValue}
                     variant="outlined"

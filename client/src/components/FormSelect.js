@@ -40,7 +40,7 @@ const MenuProps = {
 };
 
 
-export default function FormSelect() {
+export default function FormSelect(props) {
     const classes = useStyles();
     const [services, setServices] = useState([])
     const [selectedService, setSelectedService] = useState([]);
@@ -75,6 +75,10 @@ export default function FormSelect() {
                     multiple
                     value={selectedService}
                     onChange={handleChange}
+                    className={props.className}
+                    disabled={props.disabled}
+                    defaultValue={props.defaultValue}
+                    variant={props.variant}
                     input={<Input />}
                     renderValue={(selected) => selected.join(', ')}
                     MenuProps={MenuProps}
