@@ -7,7 +7,7 @@ import {
     ListItemText
 } from '@material-ui/core';
 
-import API from '../utils/api'
+import API from '../utils/API'
 
 //TODO: API.getAll for services
 //function to push services from db to an array

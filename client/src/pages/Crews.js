@@ -11,7 +11,7 @@ import {
 import MenuToolbar from '../components/MenuToolbar';
 import Copyright from '../components/Copyright';
 import JobsList from '../components/JobsList';
-import API from '../utils/api';
+import API from '../utils/API';
 
 const useStyles = makeStyles( ( theme ) => ( {
     root: {
