@@ -42,7 +42,9 @@ const MenuProps = {
 
 export default function FormSelect(props) {
     const classes = useStyles();
+    //stores services retrieved from the API
     const [services, setServices] = useState([])
+    //stores user selected services
     const [selectedService, setSelectedService] = useState([]);
 
 
@@ -62,7 +64,9 @@ export default function FormSelect(props) {
     }, []);
 
     const handleChange = (event) => {
+        event.preventDefault();
         setSelectedService(event.target.value);
+        console.log(selectedService)
     };
 
     return (
@@ -74,7 +78,7 @@ export default function FormSelect(props) {
                     id="service-selector"
                     multiple
                     value={selectedService}
-                    onChange={handleChange}
+                    onChange={handleChange, props.onChange}
                     className={props.className}
                     disabled={props.disabled}
                     defaultValue={props.defaultValue}
@@ -88,11 +92,12 @@ export default function FormSelect(props) {
                     {services.map((service) => (
                         <div>
                             <MenuItem key={service._id} value={service._id}>
-                                <Checkbox checked={selectedService.indexOf(service) > -1} />
+                                <Checkbox color="default" />
                                 <ListItemText primary={service._id} />
                             </MenuItem>
                         </div>
                     ))}
+                    {console.log(selectedService)}
                 </Select>
             </FormControl>
         </div>
