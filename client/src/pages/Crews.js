@@ -64,10 +64,12 @@ export default function Crews ( props ) {
                     <Paper className={classes.paper} id='module3'>
                         <Typography variant='h5'>Module 3</Typography>
                         {/* <JobsList /> */}
+                        
                     </Paper>
                     {/* Completed Jobs */}
                     <Paper className={classes.paper} id='module4'>
                         <Typography variant='h5'>Module 4</Typography>
+                        <Component data={} />
                     </Paper>
                     <Copyright />
                 </Container>
