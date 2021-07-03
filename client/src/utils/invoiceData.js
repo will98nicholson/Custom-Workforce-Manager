@@ -52,7 +52,7 @@ const invoiceData = {
 //         "zipcode":""
 //         },
 //     },
-//     "number": "",
+//     "invoiceNumber": "",
 //     "dateCreated":"",
 //     "dateDue":"",
 //     "items":{

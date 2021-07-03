@@ -3,8 +3,8 @@ const Schema = mongoose.Schema;
 
 const Job = new Schema({
     
-    singleService:[{
-        services_id: {
+    services:[{
+        service_id: {
             type: mongoose.Schema.Types.ObjectId, ref: 'Service',
             required: true, 
         },
