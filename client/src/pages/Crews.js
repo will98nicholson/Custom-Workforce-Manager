@@ -10,8 +10,8 @@ import {
 // import { Link } from 'react-router-dom';
 import MenuToolbar from '../components/MenuToolbar';
 import Copyright from '../components/Copyright';
-import JobsList from '../components/JobsList';
-import API from '../utils/API';
+import List from '../components/Crews/List'
+
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -39,6 +39,14 @@ const useStyles = makeStyles((theme) => ({
 export default function Crews(props) {
     console.log(props);
     const classes = useStyles();
+    const crews = ["Crew #1", "Crew #2", "Crew #3", "Crew #4", "Unassigned Jobs"];
+
+    const crewLists = crews.map( crew =>
+    <>
+        <Typography variant='h5'>{crew}</Typography>
+        <List crew={crew}/>
+    </>
+    )
 
     return (
         <div className={classes.root}>
@@ -47,30 +55,24 @@ export default function Crews(props) {
             <main className={classes.content}>
                 <div className={classes.appBarSpacer} />
                 <Container maxWidth="lg" className={classes.container} >
-
-
-                    {/* <Link to='/createjob'>
-                        <Button variant="contained" color="primary">
-                            Create New Job
-                        </Button>
-                    </Link> */}
-
-                    {/* ""} */}
-                    {/* Active Jobs */}
-                    {/* <Button variant="contained" color="primary" onClick={() => { window.location.replace('/createjob') }}>
+                {/* <Link to='/createjob'>
+                    <Button variant="contained" color="primary">
                         Create New Job
-                    </Button> */}
+                    </Button>
+                </Link> */}
+
+                {/* ""} */}
+                {/* Active Jobs */}
+                {/* <Button variant="contained" color="primary" onClick={() => { window.location.replace('/createjob') }}>
+                    Create New Job
+                </Button> */}
+
+                    
 
                     <Paper className={classes.paper} id='module3'>
-                        <Typography variant='h5'>Module 3</Typography>
-                        {/* <JobsList /> */}
-
+                        {crewLists}                        
                     </Paper>
-                    {/* Completed Jobs */}
-                    <Paper className={classes.paper} id='module4'>
-                        <Typography variant='h5'>Module 4</Typography>
-                        {/* <Component data={} /> */}
-                    </Paper>
+                    
                     <Copyright />
                 </Container>
             </main>
