@@ -277,7 +277,7 @@ export default function JobsForm(props) {
 
                 <Typography variant="body1">Select Services:</Typography>
                 {/* Change to checklist with service names */}
-                {/* conditional render:  */}
+                {/* TODO: conditional render:  selector on create/edit job, list on job details */}
                 <FormSelect
                     onChange={handleInputChange}
                     className={classes.input}

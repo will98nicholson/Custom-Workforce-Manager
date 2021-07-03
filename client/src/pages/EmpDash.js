@@ -12,6 +12,7 @@ import MenuToolbar from '../components/MenuToolbar';
 import Copyright from '../components/Copyright';
 import JobsList from '../components/JobsList';
 import API from '../utils/API';
+import TimeWeather from '../components/TimeWeather';
 
 const useStyles = makeStyles( ( theme ) => ( {
     root: {
@@ -62,7 +63,7 @@ function EmpDash(props) {
             <main className={classes.content}>
                 <div className={classes.appBarSpacer} />
                 <Container maxWidth="lg" className={classes.container} >
-                    {/* Time and Weather */}
+                    <TimeWeather />
 
                     {/* <Link to='/createjob'>
                         <Button variant="contained" color="primary">
