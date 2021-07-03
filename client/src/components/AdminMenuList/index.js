@@ -71,20 +71,23 @@ export const mainListItems = (
 
 export const secondaryListItems = (
     <div>
-        <ListSubheader inset></ListSubheader>
+        <ListSubheader inset>Reports</ListSubheader>
         <ListItem button>
             <ListItemIcon>
                 <Assessment />
             </ListItemIcon>
             <ListItemText primary="Reports" />
         </ListItem>
-        <ListItem button>
-            <ListItemIcon>
-                <AttachMoney />
-            </ListItemIcon>
-            <ListItemText primary="Invoices" />
-        </ListItem>
 
+        <Link to='/form'>
+                    <ListItem button>
+                        <ListItemIcon>
+                            <AttachMoney />
+                        </ListItemIcon>
+                        <ListItemText primary="Invoices" />
+                    </ListItem>
+                </Link>
+                
         <Link to='/crews'>
             <ListItem button>
                 <ListItemIcon>
