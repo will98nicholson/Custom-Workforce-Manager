@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from 'react';
+import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import {
     OutlinedInput,
@@ -17,9 +17,6 @@ import { useHistory } from 'react-router-dom';
 import TextMaskCustom from './TextMaskCustom';
 //multi-select for services
 import FormSelect from './FormSelect';
-
-import { Redirect } from 'react-router-dom';
-import axios from 'axios';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -72,7 +69,7 @@ export default function JobsForm(props) {
     const history = useHistory();
 
     //redirect route defined in parent page
-    const route= props.route
+    const route = props.route
 
     const [formObject, setFormObject] = useState({})
 
@@ -81,43 +78,13 @@ export default function JobsForm(props) {
         setFormObject({ ...formObject, [name]: value })
     }
 
-    useEffect( () => { getJob(); }, [] );
-
-    const getJob = async () => {
-        await axios( {
-            method: "GET",
-            url: `/api/jobs/${ props.id }`
-        } ).then( res => {
-            console.log( res.data );
-            setFormObject( {
-                name: res.data[ 0 ].client.name,
-                type: res.data[ 0 ].client.type,
-                location: res.data[ 0 ].client.location,
-                contact: res.data[ 0 ].client.contact,
-                phone: res.data[ 0 ].client.phone,
-                email: res.data[ 0 ].client.email,
-
-                quote_date: res.data[ 0 ].quote,
-                quote_price: res.data[ 0 ].price,
-                start_date: res.data[ 0 ].start,
-                end_date: res.data[ 0 ].end,
-
-                description: res.data[0].work,
-                notes: res.data[0].notes
-            } );
-        } )
-
-            .catch( err => console.log( err ) );
-
-    };
-
     function handleSubmit(event) {
         event.preventDefault()
         props.APIFunction({
             client: {
                 type: formObject.type,
                 name: formObject.name,
-                location: formObject.location,
+                location: formObject.address,
                 contact: formObject.contact,
                 phone: formObject.phone,
                 email: formObject.email,
@@ -134,7 +101,7 @@ export default function JobsForm(props) {
             .then((res) => {
                 console.log(res.data);
                 //use react-router-dom history to generate route
-                let url= res.data.id + {route}
+                let url = res.data.id + { route }
                 history.push(url)
             })
             .catch((err) => console.log(err))
@@ -147,12 +114,8 @@ export default function JobsForm(props) {
                     <InputLabel htmlFor="jobNumber">Job Number</InputLabel>
                     <OutlinedInput id="jobNumber" name="job_number" className={classes.input} variant="outlined" placeholder={jobNumber} />
                 </FormControl> */}
-
-
-                {/* CLIENT NAME */}
-                <FormControl className={classes.input}>
-                    <InputLabel className={classes.formControl} htmlFor="clientName"> Client Name</InputLabel>
-
+                <FormControl>
+                    <InputLabel htmlFor="clientName">Client Name</InputLabel>
                     <OutlinedInput
                         id="clientName"
                         name="name"
@@ -161,13 +124,10 @@ export default function JobsForm(props) {
                         variant="outlined"
                         disabled={props.setDisable}
                         defaultValue={props.setDefaultValue}
-                        value={formObject.name}
                         label="Client Name" />
                 </FormControl>
 
-                {/* CLIENT TYPE */}
                 <FormControl variant="outlined" className={classes.input}>
-
                     <InputLabel id="clientType">Client Type</InputLabel>
                     <Select
                         labelId="clientType"
@@ -177,9 +137,6 @@ export default function JobsForm(props) {
                         disabled={props.setDisable}
                         defaultValue={props.setDefaultValue}
                         label="Client Type"
-                        className='form-input-positioning'
-                        placeholder='Client Type'
-                        value={formObject.type}
                     >
                         <MenuItem value="">
                             <em>None</em>
@@ -191,7 +148,6 @@ export default function JobsForm(props) {
 
                 <div className={classes.break} />
 
-                {/* QUOTE DATE */}
                 <FormControl>
                     <TextField variant="outlined"
                         id="quoteDate"
@@ -202,17 +158,12 @@ export default function JobsForm(props) {
                         disabled={props.setDisable}
                         defaultValue={props.setDefaultValue}
                         className={classes.textField, classes.input}
-                        // defaultValue={new Date()}
-                        className={classes.textField}
-                        className={classes.input}
-                        value={formObject.quote_date}
                         InputLabelProps={{
                             shrink: true,
                         }}
                     />
                 </FormControl>
 
-                {/* QUOTE PRICE */}
                 <FormControl>
                     <InputLabel htmlFor="quotePrice">Quote Price</InputLabel>
                     <OutlinedInput
@@ -223,14 +174,12 @@ export default function JobsForm(props) {
                         variant="outlined"
                         startAdornment={<InputAdornment position="start">$</InputAdornment>}
                         disabled={props.setDisable}
-                        label="Quote Price"
-                        value={formObject.quote_price}
-                    />
+                        defaultValue={props.setDefaultValue}
+                        label="Quote Price" />
                 </FormControl>
 
                 <div className={classes.break} />
 
-                {/* JOB START */}
                 <FormControl>
                     <TextField variant="outlined"
                         id="startDate"
@@ -241,14 +190,12 @@ export default function JobsForm(props) {
                         disabled={props.setDisable}
                         defaultValue={props.setDefaultValue}
                         className={classes.textField, classes.input}
-                        value={formObject.start_date}
                         InputLabelProps={{
                             shrink: true,
                         }}
                     />
                 </FormControl>
 
-                {/* JOB END */}
                 <FormControl>
                     <TextField variant="outlined"
                         id="endDate"
@@ -259,7 +206,6 @@ export default function JobsForm(props) {
                         disabled={props.setDisable}
                         defaultValue={props.setDefaultValue}
                         className={classes.textField, classes.input}
-                        value={formObject.end_date}
                         InputLabelProps={{
                             shrink: true,
                         }}
@@ -268,10 +214,8 @@ export default function JobsForm(props) {
 
                 <div className={classes.break} />
 
-                {/* CONTACT INFO */}
                 <Typography variant="body1">Contact Information:</Typography>
 
-                {/* CONTACT NAME*/}
                 <FormControl>
                     <InputLabel htmlFor="contactName">Point of Contact</InputLabel>
                     <OutlinedInput
@@ -282,12 +226,9 @@ export default function JobsForm(props) {
                         variant="outlined"
                         disabled={props.setDisable}
                         defaultValue={props.setDefaultValue}
-                        label="Point of Contact"
-                        value={formObject.contact}
-                    />
+                        label="Point of Contact" />
                 </FormControl>
 
-                {/* CONTACT PHONE */}
                 <FormControl>
                     <InputLabel htmlFor="contactPhone">Contact Phone</InputLabel>
                     <OutlinedInput
@@ -299,12 +240,9 @@ export default function JobsForm(props) {
                         disabled={props.setDisable}
                         defaultValue={props.setDefaultValue}
                         inputComponent={TextMaskCustom}
-                        label="Contact Phone"
-                        value={formObject.phone}
-                    />
+                        label="Contact Phone" />
                 </FormControl>
 
-                {/* CONTACT EMAIL */}
                 <FormControl>
                     <InputLabel htmlFor="contactEmail">Contact Email</InputLabel>
                     <OutlinedInput
@@ -315,59 +253,46 @@ export default function JobsForm(props) {
                         variant="outlined"
                         disabled={props.setDisable}
                         defaultValue={props.setDefaultValue}
-                        label="Contact Email"
-                        value={formObject.email}
-                    />
+                        label="Contact Email" />
                 </FormControl>
 
                 <div className={classes.break} />
 
-                {/* JOB LOCATION INFO */}
                 <Typography variant="body1">Job Location:</Typography>
 
-                {/* JOB LOCATION / ADDRESS */}
                 <FormControl>
                     <TextField
                         id="jobLocation"
-                        name="location"
+                        name="address"
                         onChange={handleInputChange}
                         className={classes.TextField}
                         disabled={props.setDisable}
                         defaultValue={props.setDefaultValue}
                         placeholder="123 Lawncare Lane, Greenville, OH 45331"
                         variant="outlined"
-                        value={formObject.location}
                     />
                 </FormControl>
 
                 <div className={classes.break} />
 
                 <Typography variant="body1">Select Services:</Typography>
-                  {/* Change to checklist with service names */}
-
-
-                {/* JOB DESCRIPTION */}
-                <FormControl>
-                    <FormSelect
-                        id="workDescription"
-                        name="work"
-                        onChange={handleInputChange}
-                        className={classes.input}
-                        multiline
-                        rows={4}
-                        placeholder="Describe Approved Work"
-                        disabled={props.setDisable}
-                        defaultValue={props.setDefaultValue}
-                        variant="outlined"
-                        value={formObject.description}
-                    />
-                </FormControl>
+                {/* Change to checklist with service names */}
+                {/* TODO: conditional render:  selector on create/edit job, list on job details */}
+                <FormSelect
+                    onChange={handleInputChange}
+                    className={classes.input}
+                    multiline
+                    rows={4}
+                    placeholder="Describe Approved Work"
+                    disabled={props.setDisable}
+                    defaultValue={props.setDefaultValue}
+                    variant="outlined"
+                />
 
                 <div className={classes.break} />
 
                 <Typography variant="body1">Notes:</Typography>
 
-                {/* JOB NOTES */}
                 <FormControl>
                     <TextField
                         id="notes"
@@ -380,22 +305,13 @@ export default function JobsForm(props) {
                         disabled={props.setDisable}
                         defaultValue={props.setDefaultValue}
                         variant="outlined"
-                        value={formObject.notes}
                     />
                 </FormControl>
 
                 <div className={classes.break} />
-
-                {/* SAVE / SUBMIT BUTTON */}
                 <Button className={classes.button} variant="contained" color="primary" onClick={handleSubmit}>
                     Submit
                 </Button>
-                {/* TODO: if employee, only NOTES are editable and should be saved and updated in db */}
-                {/* TODO: if employee, maybe only render a "save" button until job is marked as "completed" */}
-                {/* TODO: maybe a "job status" in job model w 3 options - todo, in progress, completed + once emp clicks
-                the completed button, either the submit button renders so send to admin,
-                or the form is submitted when the complete status is met and the button is clicked */}
-
             </form>
         </div>
     );
