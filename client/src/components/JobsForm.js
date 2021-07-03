@@ -69,7 +69,7 @@ export default function JobsForm(props) {
     const history = useHistory();
 
     //redirect route defined in parent page
-    const route= props.route
+    const route = props.route
 
     const [formObject, setFormObject] = useState({})
 
@@ -101,7 +101,7 @@ export default function JobsForm(props) {
             .then((res) => {
                 console.log(res.data);
                 //use react-router-dom history to generate route
-                let url= res.data.id + {route}
+                let url = res.data.id + { route }
                 history.push(url)
             })
             .catch((err) => console.log(err))
@@ -276,21 +276,18 @@ export default function JobsForm(props) {
                 <div className={classes.break} />
 
                 <Typography variant="body1">Select Services:</Typography>
-                  {/* Change to checklist with service names */}
-                <FormControl>
-                    <FormSelect
-                        id="workDescription"
-                        name="work"
-                        onChange={handleInputChange}
-                        className={classes.input}
-                        multiline
-                        rows={4}
-                        placeholder="Describe Approved Work"
-                        disabled={props.setDisable}
-                        defaultValue={props.setDefaultValue}
-                        variant="outlined"
-                    />
-                </FormControl>
+                {/* Change to checklist with service names */}
+                {/* conditional render:  */}
+                <FormSelect
+                    onChange={handleInputChange}
+                    className={classes.input}
+                    multiline
+                    rows={4}
+                    placeholder="Describe Approved Work"
+                    disabled={props.setDisable}
+                    defaultValue={props.setDefaultValue}
+                    variant="outlined"
+                />
 
                 <div className={classes.break} />
 
@@ -312,9 +309,9 @@ export default function JobsForm(props) {
                 </FormControl>
 
                 <div className={classes.break} />
-                    <Button className={classes.button} variant="contained" color="primary" onClick={handleSubmit}>
-                        Submit
-                    </Button>
+                <Button className={classes.button} variant="contained" color="primary" onClick={handleSubmit}>
+                    Submit
+                </Button>
             </form>
         </div>
     );
