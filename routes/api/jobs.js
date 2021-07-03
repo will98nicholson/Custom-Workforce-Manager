@@ -18,6 +18,4 @@ router.route('/:id')
 router.route('/:user')
     .get(jobsController.findByName)
 
-
-
 module.exports = router;

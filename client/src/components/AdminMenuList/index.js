@@ -71,7 +71,7 @@ export const mainListItems = (
 
 export const secondaryListItems = (
     <div>
-        <ListSubheader inset></ListSubheader>
+        <ListSubheader inset>Reports</ListSubheader>
         <ListItem button>
             <ListItemIcon>
                 <Assessment />
