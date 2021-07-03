@@ -28,12 +28,12 @@ export const mainListItems = (
         </Link>
 
         {/* <Link to='/createjob'> */}
-            <ListItem button>
-                <ListItemIcon>
-                    <EventNote />
-                </ListItemIcon>
-                <ListItemText primary="Schedule" />
-            </ListItem>
+        <ListItem button>
+            <ListItemIcon>
+                <EventNote />
+            </ListItemIcon>
+            <ListItemText primary="Schedule" />
+        </ListItem>
         {/* </Link> */}
 
         <ListItem button>
@@ -78,12 +78,15 @@ export const secondaryListItems = (
             </ListItemIcon>
             <ListItemText primary="Reports" />
         </ListItem>
-        <ListItem button>
-            <ListItemIcon>
-                <AttachMoney />
-            </ListItemIcon>
-            <ListItemText primary="Invoices" />
-        </ListItem>
+
+        <Link to='/form'>
+            <ListItem button>
+                <ListItemIcon>
+                    <AttachMoney />
+                </ListItemIcon>
+                <ListItemText primary="Invoices" />
+            </ListItem>
+        </Link>
 
         <Link to='/crews'>
             <ListItem button>
