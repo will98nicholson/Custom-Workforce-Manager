@@ -1,14 +1,14 @@
 const express = require('express');
 const router = express.Router();
 const authRoutes = require('./auth');
-const jobRoutes = require('./api')
+const APIRoutes = require('./api');
 const path = require('path');
 
 //
 router.use('/auth', authRoutes);
 
 //api routes
-router.use('/api', jobRoutes);
+router.use('/api', APIRoutes);
 
 //front end routes
 router.use((req, res) => {

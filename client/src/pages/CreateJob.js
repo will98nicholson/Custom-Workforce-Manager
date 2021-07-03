@@ -5,7 +5,7 @@ import {
     Container,
     Paper,
     Typography,
-    Button
+    // Button
 } from '@material-ui/core';
 
 import MenuToolbar from '../components/MenuToolbar';
@@ -13,6 +13,8 @@ import Copyright from '../components/Copyright';
 import JobsForm from '../components/JobsForm';
 
 import API from '../utils/API';
+
+//TODO: create form control props and pass to JobsForm
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -53,7 +55,8 @@ export default function CreateJob() {
                         <Typography variant='h5'>Create New Job</Typography>
                         {/* pass createJob API to JobsForm via props */}
                         {/* Other pages using JobsForm component will pass different API functions */}
-                        <JobsForm APIFunction={API.createJob} />
+                        {/* pass a blank defaultvalue to JobsForm (default value will be used in view/edit job) */}
+                        <JobsForm APIFunction={API.createJob} setDisable={false} setDefaultValue={""} />
                     </Paper>
                     <Copyright />
                 </Container>
@@ -61,4 +64,3 @@ export default function CreateJob() {
         </div >
     )
 };
-

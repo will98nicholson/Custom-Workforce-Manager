@@ -2,14 +2,15 @@ const db = require('../models');
 
 module.exports = {
     findAll: (req, res) => {
-        db.Job.find(req.query)
+        db.Job.find()
             .then((data) => {
                 res.json(data)
             })
             .catch(err => console.log(err))
     },
-    findById: (req, res) => {
-        db.Job.find({ id: req.params.id })
+    findById: ( req, res ) => {
+        console.log( req.params );
+        db.Job.find({ id: parseInt(req.params.id) }) //convert to string to get param
             .then((data) => {
                 res.json(data)
             })
