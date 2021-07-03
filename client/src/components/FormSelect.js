@@ -52,7 +52,11 @@ export default function FormSelect() {
                 if (res.data.status === "error") {
                     throw new Error(res.data.message);
                 }
-                setServices(res.data.forEach(service => services.push(service._id)))
+
+                if (res.data.length > 0) {
+                    setServices(res.data)
+                    // console.log(services)
+                }
             })
             .catch((err) => console.log(err))
     }, []);
@@ -76,12 +80,12 @@ export default function FormSelect() {
                     MenuProps={MenuProps}
                 >
 
-                    {console.log(services)}
+                    {/* {console.log(services)} */}
                     {services.map((service) => (
                         <div>
-                            <MenuItem key={service} value={service}>
+                            <MenuItem key={service._id} value={service._id}>
                                 <Checkbox checked={selectedService.indexOf(service) > -1} />
-                                <ListItemText primary={service} />
+                                <ListItemText primary={service._id} />
                             </MenuItem>
                         </div>
                     ))}
