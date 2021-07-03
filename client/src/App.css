@@ -44,7 +44,10 @@ header {
 }
 
 /* COMPLETED JOBS MODULE */
-#module2 {
+#module2,
+#module3,
+#module4,
+#module5 {
   background-color: rgba(9, 11, 25, 0.718);
   color: whitesmoke;
   margin: auto;
@@ -61,8 +64,60 @@ header {
 }
 .form-input-positioning {
  margin-bottom: 10px;
- padding-left: 10px;
+ /* padding-left: 10px; */
 }
  /* {
 
 } */
+.Stopwatch {
+  margin-left: 30px;
+  margin-right: 30px;
+  border: 2px solid grey;
+  border-radius: 4px;
+  padding: 20px;
+  width: 400px;
+  background-color: rgb(22, 27, 31);
+  box-shadow: 0 3px 6px rgb(12, 12, 12);
+}
+.Stopwatch-header {
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+}
+button {
+  background-color: #202b33;
+  border: solid 1px transparent;
+  border-radius: 4px;
+  padding: 10px 20px;
+  color: #ffffff;
+  font-size: 16px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #106ba3;
+}
+.Stopwatch button {
+  padding: 12px 32px;
+  font-size: 20px;
+}
+.Stopwatch-display {
+  padding: 40px 0;
+  font-size: 48px;
+  color: white;
+}
+.Stopwatch-text {
+  color: white;
+}
+@media (max-width: 900px) {
+  .Timers {
+    flex-direction: column;
+
+    align-items: center;
+  }
+}
+@media (max-width: 900px) {
+  .Stopwatch {
+    margin-bottom: 40px;
+  }
+}

@@ -17,7 +17,9 @@ export default {
                 "Content-Type": "application/json; charset=utf-8"
             }
         })
+    },
+    //get services for display in selector menu
+    getServices: function () {
+        return axios.get("/api/services")
     }
-    //get jobs from api/jobs for display in JobsList.js
-
 }
