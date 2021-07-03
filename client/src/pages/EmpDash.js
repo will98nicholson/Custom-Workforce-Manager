@@ -53,13 +53,13 @@ function EmpDash(props) {
         API.getUser()
             .then( res => setUser( res.data ) )
             .catch( err => console.log( err ) );
-
     }
+
 
     return (
         <div className={classes.root}>
             <CssBaseline />
-            <MenuToolbar className="topToolbar" />
+            <MenuToolbar className="topToolbar" linkHidden='true'/>
             <main className={classes.content}>
                 <div className={classes.appBarSpacer} />
                 <Container maxWidth="lg" className={classes.container} >

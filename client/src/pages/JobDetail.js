@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import {
     CssBaseline,
@@ -11,8 +11,10 @@ import { useParams } from 'react-router-dom';
 import MenuToolbar from '../components/MenuToolbar';
 import Copyright from '../components/Copyright';
 import JobsForm from '../components/JobsForm';
+import ClockIn from '../components/ClockIn';
+import moment from 'moment';
 
-const useStyles = makeStyles( ( theme ) => ( {
+const useStyles = makeStyles((theme) => ({
     root: {
         display: 'flex',
     },
@@ -23,19 +25,20 @@ const useStyles = makeStyles( ( theme ) => ( {
         overflow: 'auto',
     },
     container: {
-        margin: theme.spacing( 2 )
+        margin: theme.spacing(2)
     },
     button: {
-        margin: theme.spacing( 2 ),
+        margin: theme.spacing(2),
         width: '7rem'
     },
     paper: {
-        padding: theme.spacing( 2 ),
+        padding: theme.spacing(2),
         display: 'flex',
         overflow: 'auto',
         flexDirection: 'column',
     }
-} ) );
+}));
+
 
 // function handleSubmit () {
 //     console.log( 'submit' );
@@ -71,12 +74,14 @@ const useStyles = makeStyles( ( theme ) => ( {
 
 
 // EMP JOB DETAIL: development //
-export default function JobDetail () {
+export default function JobDetail() {
     const classes = useStyles();
 
     //hook to access specific job
     const { id } = useParams();
-    console.log( id );
+    console.log(id);
+    const time = moment().format('h:mm:ss a');
+
 
     return (
         <div className={classes.root} id='job-detail-page'>
@@ -88,7 +93,9 @@ export default function JobDetail () {
                     <Paper className={classes.paper}>
                         {/* props.rows.map[1] :: try to get customer name */}
                         <Typography variant='h5'>Job Detail</Typography>
-                        <JobsForm id={id}/>
+                        <p className="App-clock">The time is {time}</p>
+                        < ClockIn />
+                        <JobsForm id={id} />
                         {/* <Button className={classes.button} variant="contained" color="primary" onClick={handleSubmit}>
                             Submit
                         </Button> */}

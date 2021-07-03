@@ -6,9 +6,8 @@ import {
     Drawer,
     AppBar,
     Toolbar,
-    List,
+    // List,
     Typography,
-    Divider,
     IconButton,
     Badge,
 } from '@material-ui/core'
@@ -19,7 +18,7 @@ import {
 
 } from '@material-ui/icons';
 
-import { mainListItems, secondaryListItems } from '../components/AdminMenuList';
+import MenuList from './MenuList';
 
 
 const drawerWidth = 240;
@@ -103,7 +102,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function MenuToolbar() {
+export default function MenuToolbar( props ) {
     const classes = useStyles();
     const [open, setOpen] = React.useState(false);
     const handleDrawerOpen = () => {
@@ -149,10 +148,7 @@ export default function MenuToolbar() {
                         <ChevronLeft />
                     </IconButton>
                 </div>
-                <Divider />
-                <List>{mainListItems}</List>
-                <Divider />
-                <List>{secondaryListItems}</List>
+                <MenuList linkHidden={props.linkHidden} />
             </Drawer>
         </div>
     );

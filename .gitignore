@@ -1,3 +1,7 @@
+#Personal
+_DS.Store
+node_modules
+
 # Logs
 logs
 *.log

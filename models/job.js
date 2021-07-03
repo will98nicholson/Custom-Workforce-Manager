@@ -2,7 +2,6 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const Job = new Schema({
-    
     singleService:[{
         services_id: {
             type: mongoose.Schema.Types.ObjectId, ref: 'Service',
@@ -84,6 +83,19 @@ const Job = new Schema({
         type: String, 
         required: false, 
     },
+    crewAssignedToo:{
+        type: String,
+        required: true,
+        default: "unassigned"
+    },
+    dailyPosition:{ 
+        type: Number,
+        required: false,
+    },
+    lastUpdated:{
+        type: String,
+        required: false,
+    }
     // clock:{
     // TODO: include a date and time for both clocking in and out
     // },

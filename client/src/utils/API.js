@@ -22,5 +22,4 @@ export default {
     getServices: function () {
         return axios.get("/api/services")
     }
-
 }
