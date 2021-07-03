@@ -1,9 +1,21 @@
 <!--
+Job Details Page:
+(Admin)
+  - Switch to be able to edit, starts at employee view-only 
+  - Clock in, Clock Out, Complete 
+  - Services + Products sold/completed/used 
+
+
+
+
+
+
 MODELS:
   - jobs [done/inprogress] - needs refactored: divide info b/w job and customer models
       *add site info (site address, site contact, site phone, site email)
   - users [done/inprogress]
   - customers [TODO: id, cust name, company name, cust address, work phone, home phone, email, payment info(?)]
+
 
 PAGES:
   - login
