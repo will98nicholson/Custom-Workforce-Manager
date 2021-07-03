@@ -13,7 +13,7 @@ import Copyright from '../components/Copyright';
 import List from '../components/Crews/List'
 
 
-const useStyles = makeStyles( ( theme ) => ( {
+const useStyles = makeStyles((theme) => ({
     root: {
         display: 'flex',
     },
@@ -24,20 +24,20 @@ const useStyles = makeStyles( ( theme ) => ( {
         overflow: 'auto',
     },
     container: {
-        margin: theme.spacing( 2 )
+        margin: theme.spacing(2)
     },
     button: {
-        margin: theme.spacing( 2 )
+        margin: theme.spacing(2)
     },
     paper: {
-        padding: theme.spacing( 2 ),
+        padding: theme.spacing(2),
         display: 'flex',
         overflow: 'auto',
         flexDirection: 'column',
     }
-} ) );
-export default function Crews ( props ) {
-    console.log( props );
+}));
+export default function Crews(props) {
+    console.log(props);
     const classes = useStyles();
     const crews = ["Crew #1", "Crew #2", "Crew #3", "Crew #4", "Unassigned Jobs"];
 
