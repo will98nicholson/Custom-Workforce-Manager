@@ -112,7 +112,7 @@ button:hover {
 
 .MuiTableCell-root:nth-child(last){
  border-bottom: none;
-};
+}
 
 
 @media (max-width: 900px) {

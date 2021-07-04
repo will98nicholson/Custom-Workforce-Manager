@@ -18,7 +18,7 @@ const Purchased = new Schema({
         type: mongoose.Schema.Types.ObjectId, ref: 'Job',
         required: true, 
     }
-})
+});
 
 module.exports = mongoose.model('Purchased', Purchased);
 
