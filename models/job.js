@@ -3,16 +3,6 @@ const Schema = mongoose.Schema;
 
 const Job = new Schema({
     
-    services:[{
-        service_id: {
-            type: mongoose.Schema.Types.ObjectId, ref: 'Service',
-            required: true, 
-        },
-        quantity: {
-            type:Number,
-            required:true,
-        },
-    }],
     client: {
         type: { 
             type: String, 
@@ -28,25 +18,25 @@ const Job = new Schema({
         },
         contact: { 
             type: String, 
-            required: true, 
+            required: false,
         },
         location: {
-            // streetAddress:{
+            streetAddress:{
                 type: String, 
                 required: true, 
-            // },
-            // city: {
-            //     type: String, 
-            //     required: true, 
-            // },
-            // state:{
-            //     type: String, 
-            //     required: true, 
-            // },
-            // zipcode:{
-            //     type: Number,
-            //     required: true, 
-            // } 
+            },
+            city: {
+                type: String, 
+                required: true, 
+            },
+            state:{
+                type: String, 
+                required: true, 
+            },
+            zipcode:{
+                type: Number,
+                required: true, 
+            } 
         },
         phone: { 
             type: String, 
