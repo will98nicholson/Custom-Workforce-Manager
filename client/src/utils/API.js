@@ -18,7 +18,7 @@ export default {
         return axios.get("/api/services")
     },
     //post selected services to purchased.db
-    postPurchase: function() {
-        return axios.get("/api/purchased")
+    postPurchase: function (purchaseData) {
+        return axios.post("/api/purchased", purchaseData)
     }
 }
