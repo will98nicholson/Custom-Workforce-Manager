@@ -109,6 +109,12 @@ button:hover {
 .Stopwatch-text {
   color: white;
 }
+
+.MuiTableCell-root:nth-child(last){
+ border-bottom: none;
+};
+
+
 @media (max-width: 900px) {
   .Timers {
     flex-direction: column;
