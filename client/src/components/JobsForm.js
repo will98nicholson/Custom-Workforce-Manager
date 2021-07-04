@@ -16,7 +16,7 @@ import { useHistory } from 'react-router-dom';
 //phone number formatting
 import TextMaskCustom from './TextMaskCustom';
 //multi-select for services
-import FormSelect from './FormSelect';
+// import FormSelect from './FormSelect';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -76,7 +76,7 @@ export default function JobsForm(props) {
     const handleInputChange = (event) => {
         const { name, value } = event.target;
         setFormObject({ ...formObject, [name]: value })
-        console.log(formObject)
+        // console.log(formObject)
     }
 
     function handleSubmit(event) {
@@ -276,10 +276,24 @@ export default function JobsForm(props) {
 
                 <div className={classes.break} />
 
-                <Typography variant="body1">Select Services:</Typography>
-                {/* Change to checklist with service names */}
-                {/* TODO: conditional render:  selector on create/edit job, list on job details */}
-                <FormSelect
+                <Typography variant="body1">Scope of Work:</Typography>
+
+                <FormControl>
+                    <TextField
+                        id="notes"
+                        name="notes"
+                        onChange={handleInputChange}
+                        className={classes.TextField}
+                        multiline
+                        rows={4}
+                        placeholder="Describe work needed."
+                        disabled={props.setDisable}
+                        defaultValue={props.setDefaultValue}
+                        variant="outlined"
+                    />
+                </FormControl>
+
+                {/* <FormSelect
                     id="work"
                     name="work"
                     className={classes.input}
@@ -287,7 +301,7 @@ export default function JobsForm(props) {
                     disabled={props.setDisable}
                     defaultValue={props.setDefaultValue}
                     variant="outlined"
-                />
+                /> */}
 
                 <div className={classes.break} />
 
