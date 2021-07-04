@@ -76,6 +76,7 @@ export default function JobsForm(props) {
     const handleInputChange = (event) => {
         const { name, value } = event.target;
         setFormObject({ ...formObject, [name]: value })
+        console.log(formObject)
     }
 
     function handleSubmit(event) {
@@ -84,7 +85,7 @@ export default function JobsForm(props) {
             client: {
                 type: formObject.type,
                 name: formObject.name,
-                location: formObject.address,
+                location: formObject.location,
                 contact: formObject.contact,
                 phone: formObject.phone,
                 email: formObject.email,
@@ -263,7 +264,7 @@ export default function JobsForm(props) {
                 <FormControl>
                     <TextField
                         id="jobLocation"
-                        name="address"
+                        name="location"
                         onChange={handleInputChange}
                         className={classes.TextField}
                         disabled={props.setDisable}
@@ -279,11 +280,10 @@ export default function JobsForm(props) {
                 {/* Change to checklist with service names */}
                 {/* TODO: conditional render:  selector on create/edit job, list on job details */}
                 <FormSelect
-                    onChange={handleInputChange}
+                    id="work"
+                    name="work"
                     className={classes.input}
-                    multiline
-                    rows={4}
-                    placeholder="Describe Approved Work"
+                    onChange={handleInputChange}
                     disabled={props.setDisable}
                     defaultValue={props.setDefaultValue}
                     variant="outlined"
