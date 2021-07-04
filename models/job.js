@@ -46,7 +46,7 @@ const Job = new Schema({
         email: { 
             type: String, 
             required: true, 
-            // TODO: validator
+            match: /.+\@.+\..+/,
         },        
     },
     quote_date: {
