@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const serviceSchema = require('./service')
 
 const Purchased = new Schema({
 
