@@ -11,8 +11,9 @@ function List(crew) {
     // in case jobs have the same position after updating 
 
     // API call to find all jobs
-    const data = API.getJob();
-    console.log(data);
+    const data = API.getJob().then(response => {
+        console.log(response.data)
+    })
 
     // // filtering API results by crew
     // const filteredJobs = data.filter( dataObjs => dataObjs.crewAssignedToo === crew);
