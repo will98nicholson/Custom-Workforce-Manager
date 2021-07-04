@@ -116,7 +116,7 @@ export default function JobsList (props) {
                     </TableBody>
                 </Table>
             </TableContainer>
-            <TablePagination className='white-text'
+            {/* <TablePagination className='white-text'
                 rowsPerPageOptions={[ 10, 25, 100 ]}
                 component="div"
                 count={rows.length}
@@ -124,7 +124,7 @@ export default function JobsList (props) {
                 page={page}
                 onChangePage={handleChangePage}
                 onChangeRowsPerPage={handleChangeRowsPerPage}
-            />
+            /> */}
         </Paper>
     );
 }
