@@ -7,3 +7,6 @@ router.route('/')
 
 router.route('/:id')
     .get(purchaseController.findPoById)
+    .put(purchaseController.updatePo)
+
+module.exports = router;

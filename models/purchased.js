@@ -3,20 +3,19 @@ const Schema = mongoose.Schema;
 
 const Purchased = new Schema({
 
-    items: [{
-        service_id: {
+    service_id: {
         type: mongoose.Schema.Types.ObjectId, ref: 'Service'
-        },
-        quantity: {
-            type: Number,
-            required: true
-        }
-    }],
+    },
+    quantity: {
+        type: Number,
+        required: true
+    },
     job_id: {
-    type: mongoose.Schema.Types.ObjectId, ref: 'Job',
-    required: true,
-}}
-    );
+        type: mongoose.Schema.Types.ObjectId, ref: 'Job',
+        required: true,
+    }
+}
+);
 
 module.exports = mongoose.model('Purchased', Purchased);
 
