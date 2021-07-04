@@ -12,7 +12,7 @@ import MenuToolbar from '../components/MenuToolbar';
 import Copyright from '../components/Copyright';
 import JobsForm from '../components/JobsForm';
 import ClockIn from '../components/ClockIn';
-import AddServices from '../components/AddServices';
+import ServiceTable from '../components/ServiceTable';
 import moment from 'moment';
 
 const useStyles = makeStyles((theme) => ({
@@ -97,7 +97,8 @@ export default function JobDetail() {
                         <p className="App-clock">The time is {time}</p>
                         < ClockIn />
                         <JobsForm id={id} />
-                        <AddServices />
+                        {/* <ServiceTable /> */}
+                        <ServiceTable />
                     </Paper>
                     <Copyright />
                 </Container>
