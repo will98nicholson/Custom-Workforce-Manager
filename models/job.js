@@ -95,6 +95,11 @@ const Job = new Schema({
     lastUpdated:{
         type: String,
         required: false,
+    },
+    assigned:{
+        type: Boolean,
+        default:false,
+        required:true,
     }
     // clock:{
     // TODO: include a date and time for both clocking in and out
