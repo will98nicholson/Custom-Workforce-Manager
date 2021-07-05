@@ -79,7 +79,7 @@ function EmpDash(props) {
 
                     <Paper className={classes.paper} id='module1'>
                         <Typography className='module-header' variant='h5'>Assigned Jobs</Typography>
-                        <JobsList />
+                        <JobsList inputDisabled='true'/>
                         {/*TODO: pass props through jobs list to render assigned jobs for specific crew or employee */}
 
                     </Paper>

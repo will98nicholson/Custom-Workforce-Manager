@@ -5,9 +5,9 @@ import {
     Container,
     Paper,
     Typography,
-    // Button
+    Button
 } from '@material-ui/core';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import MenuToolbar from '../components/MenuToolbar';
 import Copyright from '../components/Copyright';
 import JobsForm from '../components/JobsForm';
@@ -75,7 +75,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 // EMP JOB DETAIL: development //
-export default function JobDetail() {
+export default function JobDetail(props) {
     const classes = useStyles();
 
     //hook to access specific job
@@ -96,7 +96,7 @@ export default function JobDetail() {
                         <Typography variant='h5'>Job Detail</Typography>
                         <p className="App-clock">The time is {time}</p>
                         < ClockIn />
-                        <JobsForm id={id} />
+                        <JobsForm id={id} {...props}/>
                         {/* <ServiceTable /> */}
                         <ServiceTable />
                     </Paper>
