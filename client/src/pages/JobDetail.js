@@ -83,11 +83,13 @@ export default function JobDetail(props) {
     console.log(id);
     const time = moment().format('h:mm:ss a');
 
+    //NOTES: links in menu are not hidden for employee from job details page
+    //       passed props.linkHidden in menu toolbar - not sure if useState would help
 
     return (
         <div className={classes.root} id='job-detail-page'>
             <CssBaseline />
-            <MenuToolbar />
+            <MenuToolbar linkHidden={props.linkHidden }/>
             <main className={classes.content}>
                 <div className={classes.appBarSpacer} />
                 <Container maxWidth="lg" className={classes.container}>
