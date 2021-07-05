@@ -130,7 +130,7 @@ export default function JobsForm ( props ) {
             start_date: formObject.start,
             end_date: formObject.end,
 
-            description: formObject.work,
+            description: formObject.description,
             notes: formObject.notes
         } )
             .then( ( res ) => console.log( res ) )
@@ -149,31 +149,32 @@ export default function JobsForm ( props ) {
 
                 {/* CLIENT NAME */}
                 <FormControl className={classes.formControl}>
-                    <InputLabel className={classes.formControl} htmlFor="clientName"> Client Name</InputLabel>
+                    <InputLabel shrink className={classes.formControl} htmlFor="clientName"> Client Name</InputLabel>
                     <OutlinedInput
                         id="clientName"
                         name="name"
                         onChange={handleInputChange}
                         className={classes.input}
                         variant="outlined"
-                        placeholder="Client Name"
-                        className='form-input-positioning'
+                        // placeholder="Client Name"
+                        // className='form-input-positioning'
                         value={formObject.name}
                         label='clientName'
                         disabled={props.inputDisabled}
+
                     />
                 </FormControl>
 
                 {/* CLIENT TYPE */}
                 <FormControl variant="outlined" className={classes.formControl}>
-                    <InputLabel id="clientType">Client Type</InputLabel>
+                    <InputLabel shrink variant='outlined' id="clientType">Client Type</InputLabel>
                     <Select
                         labelId="clientType"
                         id="clientType"
                         name="type"
                         onChange={handleInputChange}
                         label="Client Type"
-                        className='form-input-positioning'
+                        // className='form-input-positioning'
                         placeholder='Client Type'
                         value={formObject.type}
                         disabled={props.inputDisabled}
@@ -200,6 +201,7 @@ export default function JobsForm ( props ) {
                         className={classes.textField}
                         className={classes.input}
                         value={formObject.quote_date}
+                        disabled={props.inputDisabled}
                         InputLabelProps={{
                             shrink: true,
                         }}
@@ -208,7 +210,7 @@ export default function JobsForm ( props ) {
 
                 {/* QUOTE PRICE */}
                 <FormControl>
-                    <InputLabel htmlFor="quotePrice">Quote Price</InputLabel>
+                    <InputLabel shrink htmlFor="quotePrice">Quote Price</InputLabel>
                     <OutlinedInput
                         id="quotePrice"
                         name="price"
@@ -218,6 +220,7 @@ export default function JobsForm ( props ) {
                         startAdornment={<InputAdornment position="start">$</InputAdornment>}
                         label="Quote Price"
                         value={formObject.quote_price}
+                        disabled={props.inputDisabled}
                     />
                 </FormControl>
 
@@ -266,7 +269,7 @@ export default function JobsForm ( props ) {
 
                 {/* CONTACT NAME*/}
                 <FormControl>
-                    <InputLabel htmlFor="contactName">Point of Contact</InputLabel>
+                    <InputLabel shrink htmlFor="contactName">Point of Contact</InputLabel>
                     <OutlinedInput
                         id="contactName"
                         name="contact"
@@ -275,12 +278,13 @@ export default function JobsForm ( props ) {
                         variant="outlined"
                         label="Point of Contact"
                         value={formObject.contact}
+                        disabled={props.inputDisabled}
                     />
                 </FormControl>
 
                 {/* CONTACT PHONE */}
                 <FormControl>
-                    <InputLabel htmlFor="contactPhone">Contact Phone</InputLabel>
+                    <InputLabel shrink htmlFor="contactPhone">Contact Phone</InputLabel>
                     <OutlinedInput
                         id="contactPhone"
                         name="phone"
@@ -289,12 +293,13 @@ export default function JobsForm ( props ) {
                         variant="outlined"
                         label="Contact Phone"
                         value={formObject.phone}
+                        disabled={props.inputDisabled}
                     />
                 </FormControl>
 
                 {/* CONTACT EMAIL */}
                 <FormControl>
-                    <InputLabel htmlFor="contactEmail">Contact Email</InputLabel>
+                    <InputLabel shrink htmlFor="contactEmail">Contact Email</InputLabel>
                     <OutlinedInput
                         id="contactEmail"
                         name="email"
@@ -303,6 +308,7 @@ export default function JobsForm ( props ) {
                         variant="outlined"
                         label="Contact Email"
                         value={formObject.email}
+                        disabled={props.inputDisabled}
                     />
                 </FormControl>
 
@@ -321,6 +327,7 @@ export default function JobsForm ( props ) {
                         placeholder="123 Lawncare Lane, Greenville, OH 45331"
                         variant="outlined"
                         value={formObject.location}
+                        disabled={props.inputDisabled}
                     />
                 </FormControl>
 
@@ -331,8 +338,8 @@ export default function JobsForm ( props ) {
                 {/* JOB DESCRIPTION */}
                 <FormControl>
                     <TextField
-                        id="workDescription"
-                        name="work"
+                        id="Description"
+                        name="description"
                         onChange={handleInputChange}
                         className={classes.TextField}
                         multiline
@@ -340,6 +347,7 @@ export default function JobsForm ( props ) {
                         placeholder="Describe Approved Work"
                         variant="outlined"
                         value={formObject.description}
+                        disabled={props.inputDisabled}
                     />
                 </FormControl>
 
@@ -364,7 +372,7 @@ export default function JobsForm ( props ) {
                 <div className={classes.break} />
 
                 {/* SAVE / SUBMIT BUTTON */} {/* for create job */}
-                <Button className={classes.button} variant="contained" color="primary" onClick={handleSubmit}>
+                <Button display="none" className={classes.button} variant="contained" color="primary" onClick={handleSubmit}>
                     Add Job
                 </Button>
                 {/* if create job submit to database - if job detail create invoice */}
