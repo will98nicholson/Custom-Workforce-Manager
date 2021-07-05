@@ -21,5 +21,10 @@ module.exports = {
         db.Purchased.findOneAndUpdate({ _id: req.params.id}, req.body)
         .then(data => res.json(data))
         .catch(err => console.log(err))
+    },
+    delete: (req, res)=> {
+        db.Purchased.findByIdAndDelete({_id: req.params.id})
+        .then(data => res.json(data))
+        .catch(err => console.log(err))
     }
 }

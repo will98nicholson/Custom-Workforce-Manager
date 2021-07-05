@@ -8,5 +8,6 @@ router.route('/')
 router.route('/:id')
     .get(purchaseController.findPoById)
     .put(purchaseController.updatePo)
+    .delete(purchaseController.delete)
 
 module.exports = router;
