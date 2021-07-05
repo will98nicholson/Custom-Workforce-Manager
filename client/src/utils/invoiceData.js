@@ -1,3 +1,5 @@
+// map data to match jobs form
+
 const invoiceData = {
   "id": "5df3180a09ea16dc4b95f910",
   "invoice_no": "201906-28",
@@ -61,7 +63,7 @@ const invoiceData = {
 //   }
 
 //   TODO: API call that selects required information from a single job
-//   router.get, before request evaluate authentication, if loggedIn = true run api/jobs/:id, ifElse => redirect to login 
+//   router.get, before request evaluate authentication, if loggedIn = true run api/jobs/:id, ifElse => redirect to login
 
 //   invoiceData.client.name
 

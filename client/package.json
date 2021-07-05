@@ -21,6 +21,7 @@
         "react-dom": "^16.13.1",
         "react-router-dom": "^5.1.2",
         "react-scripts": "3.4.3",
+        "react-spring": "^9.2.3",
         "react-text-mask": "^5.4.3"
     },
     "scripts": {
