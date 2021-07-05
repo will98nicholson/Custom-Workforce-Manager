@@ -84,20 +84,20 @@ export default function JobsList (props) {
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {rows.slice( page * rowsPerPage, page * rowsPerPage + rowsPerPage ).map( ( row ) => {
+                        {rows.slice( page * rowsPerPage, page * rowsPerPage + rowsPerPage ).map( ( row, i ) => {
                             console.log( row );
 
                             return (
-                                <TableRow hover role="checkbox" tabIndex={-1} key={row.code}>
+                                <TableRow hover role="checkbox" tabIndex={-1} key={i}>
                                     {columns.map( ( column ) => {
                                         const value = row[ column.id ];
                                         // console.log( value );
                                         return (
-                                            <>
-                                                <TableCell className='white-text' key={column.id} align={column.align}>
-                                                    {column.format && typeof value === 'number' ? column.format( value ) : value}
-                                                </TableCell>
-                                            </>
+
+                                            <TableCell className='white-text' key={column.id} align={column.align}>
+                                                {column.format && typeof value === 'number' ? column.format( value ) : value}
+                                            </TableCell>
+
                                         );
                                     } )}
                                     <TableCell>

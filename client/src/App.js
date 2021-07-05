@@ -46,7 +46,7 @@ function App() {
     //     })
     //     .catch(err => console.log(err));
 
-    // console.log(user);
+    console.log(user);
 
     // console.log(user.type)
 
@@ -61,15 +61,16 @@ function App() {
                 <Switch>
                     <Route exact path={['/', '/dashboard']}>{user.type === "Administrator" ? <Dashboard /> : <EmpDash user={user} />}</Route>
                     {/* <Route exact path='/employee'><EmpDash /></Route> */}
-                    <Route path='/createjob'>{user.type === "Administrator" ? <CreateJob /> : ""} </Route>
-                    <Route path='/crews'>{user.type === "Administrator" ? <Crews /> : ""} </Route>
-                    <Route path='/jobdetail/:id'><JobDetail /></Route><Redirect to="/"></Redirect>
+                    <Route exact path='/createjob'>{user.type === "Administrator" ? <CreateJob /> : ""} </Route>
+                    <Route exact path='/crews'>{user.type === "Administrator" ? <Crews /> : ""} </Route>
+                <Route exact path='/jobdetail/:id'><JobDetail inputDisabled={ user.type === "Employee" ? true : false }/></Route>
 
                     {/* NOTE: empjobdetail page is for testing + development - figure out logic + props for rendering differently based on user-type */}
                     {/* <Route path='/empjobdetail'>{user.type === "Employee" ? <EmpJobDetail /> : ""} </Route> */}
 
-                    <Route path='/form'><Form /></Route>
-                    <Route path='/jobdetail'><JobDetail /></Route><Redirect to="/"></Redirect>
+                <Route exact path='/form'><Form /></Route>
+                <Route exact path='/jobdetail'><JobDetail /></Route>
+                <Redirect to="/"></Redirect>
                 </Switch>}
         </Router>
     );
