@@ -45,15 +45,15 @@ function EmpDash(props) {
 
     const [ user, setUser ] = useState( {} );
 
-    useEffect( () => {
-        getUser();
-    }, [] );
+    // useEffect( () => {
+    //     getUser();
+    // }, [] );
 
-    function getUser () {
-        API.getUser()
-            .then( res => setUser( res.data ) )
-            .catch( err => console.log( err ) );
-    }
+    // function getUser () {
+    //     API.getUser()
+    //         .then( res => setUser( res.data ) )
+    //         .catch( err => console.log( err ) );
+    // }
 
 
     return (

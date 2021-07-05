@@ -9,7 +9,7 @@ import Select from '@material-ui/core/Select';
 import Checkbox from '@material-ui/core/Checkbox';
 
 
-import API from '../utils/API'
+import API from './client/src/utils/API'
 
 const useStyles = makeStyles((theme) => ({
     formControl: {
