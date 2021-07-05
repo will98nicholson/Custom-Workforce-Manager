@@ -10,4 +10,8 @@ router.route('/:id')
     .put(purchaseController.updatePo)
     .delete(purchaseController.delete)
 
+router.route('/:jobid')
+    .get(purchaseController.findByJob)
+    .delete(purchaseController.deleteByJob)
+
 module.exports = router;
