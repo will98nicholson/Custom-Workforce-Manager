@@ -1,26 +1,26 @@
 [
     {
-       "_id": "mow only",
+       "name": "Mowing (hourly)",
        "price": 35.00 
     },
     {
-        "_id": "mow & trim",
+        "name": "Weeding (hourly)",
         "price": 55.00 
      },
      {
-        "_id": "mulch",
+        "name": "Mulch (per bag)",
         "price": 75.00 
      },
      {
-        "_id": "weeding",
+        "name": "Trimming (hourly)",
         "price": 25.00 
      }, 
      {
-         "_id": "aeration",
+         "name": "Aeration (flat rate)",
          "price": 100.00
      },
      {
-         "_id": "sod",
+         "name": "Sod (flat rate)",
          "price": 500.00
      }
 ]

@@ -2,16 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const Job = new Schema({
-    singleService:[{
-        services_id: {
-            type: mongoose.Schema.Types.ObjectId, ref: 'Service',
-            required: true, 
-        },
-        quantity: {
-            type:Number,
-            required:true,
-        },
-    }],
+    
     client: {
         type: { 
             type: String, 
@@ -27,25 +18,25 @@ const Job = new Schema({
         },
         contact: { 
             type: String, 
-            required: true, 
+            required: false,
         },
         location: {
-            // streetAddress:{
+            streetAddress:{
                 type: String, 
                 required: true, 
-            // },
-            // city: {
-            //     type: String, 
-            //     required: true, 
-            // },
-            // state:{
-            //     type: String, 
-            //     required: true, 
-            // },
-            // zipcode:{
-            //     type: Number,
-            //     required: true, 
-            // } 
+            },
+            city: {
+                type: String, 
+                required: true, 
+            },
+            state:{
+                type: String, 
+                required: true, 
+            },
+            zipcode:{
+                type: Number,
+                required: true, 
+            } 
         },
         phone: { 
             type: String, 
@@ -55,7 +46,7 @@ const Job = new Schema({
         email: { 
             type: String, 
             required: true, 
-            // TODO: validator
+            match: /.+\@.+\..+/,
         },        
     },
     quote_date: {
@@ -95,6 +86,16 @@ const Job = new Schema({
     lastUpdated:{
         type: String,
         required: false,
+    },
+    assigned:{
+        type: Boolean,
+        default:false,
+        required:true,
+    },
+    completed:{
+        type: Boolean,
+        default:false,
+        required:true,
     }
     // clock:{
     // TODO: include a date and time for both clocking in and out
