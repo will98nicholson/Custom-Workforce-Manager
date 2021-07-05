@@ -1,4 +1,5 @@
-import React from "react"
+import { keys } from "@material-ui/core/styles/createBreakpoints";
+import React, { useState, useEffect } from "react"
 import API from "../../utils/API";
 import Jobs from "./Jobs";
 
@@ -7,31 +8,32 @@ function List({ crew }) {
     // then we need to filter them by crewAssignedToo
     // and give an option for "unnassigned"
     // then we need to map the filtered jobs list through the Jobs component
-    // while sorting by position, adding the conditional of comparing lastUpdatedTime
-    // in case jobs have the same position after updating
+    // TODO :while sorting by position, adding the conditional of comparing lastUpdatedTime
+    // TODO :in case jobs have the same position after updating
 
-    // API call to find all jobs
-    const data = API.getJob().then(response => {
-        console.log(response.data)
-    })
+    const [jobs, setJobs] = useState([])
 
-    // // filtering API results by crew
-    // const filteredJobs = data.filter( dataObjs => dataObjs.crewAssignedToo === crew);
+    useEffect(() => {
+        loadJobs()
+    }, [])
 
-    // // sorting filtered jobs in order assigned to render
-    // const sortedJobs = filteredJobs.sort()
-
-
-    // const jobs = data.map( job =>
-    //     <Jobs job={job}/>
-    // );
-
-
+    // API call to find and sort all jobs
+    function loadJobs(){ API.getJob()
+        .then(response => {
+        setJobs(response.data)   
+        }).catch(err => console.log(err));
+    }
+  
     return(
         <>
-            <div className={data.crewName}>
+            <div className={"list"}>
                 <h2>{crew}</h2>
-                {/* {jobs} */}
+                    {jobs
+                    .filter( dataObjs => dataObjs.crewAssignedToo === crew)
+                    .sort((a, b) => (a.dailyPosition > b.dailyPosition) ? 1 : -1)
+                    .map( (job, key) => (
+                        <Jobs job={job} id={key}/>
+                    ))}
             </div>
         </>
 

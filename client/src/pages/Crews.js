@@ -36,14 +36,15 @@ const useStyles = makeStyles((theme) => ({
         flexDirection: 'column',
     }
 }));
+
 export default function Crews(props) {
-    console.log(props);
+    // console.log(props);
     const classes = useStyles();
-    const crews = ["Crew #1", "Crew #2", "Crew #3", "Crew #4", "Unassigned Jobs"];
+    const crews = ["Crew #1", "Crew #2", "Crew #3", "Crew #4", "unassigned"];
 
     const crewLists = crews.map( crew => (<>
         <Typography variant='h5'>{crew}</Typography>
-        {/* <List crew={crew}/> */}
+        <List crew={crew}/>
     </>
     ))
 

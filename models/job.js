@@ -65,7 +65,6 @@ const Job = new Schema({
         type: Date,
         required: true
     },
-
     description: { 
         type: String, 
         required: false, 
