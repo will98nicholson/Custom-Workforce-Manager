@@ -100,7 +100,15 @@ export default function MenuList( props ) {
                         </ListItemIcon>
                         <ListItemText primary="New Job" />
                     </ListItem>
-                </Link>
+                    </Link>
+                    <Link to='/'>
+                        <ListItem >
+                            <ListItemIcon>
+                                <AddBox />
+                            </ListItemIcon>
+                            <ListItemText primary="Log Out" />
+                        </ListItem>
+                    </Link>
                 </div>
             </List>
         </div>

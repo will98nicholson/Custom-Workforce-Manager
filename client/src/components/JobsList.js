@@ -21,6 +21,7 @@ import { Link } from 'react-router-dom';
 import DetailButton from '../assets/icons/view-details.PNG';
 // import JobDetail from '../pages/JobDetail';
 // import EmpJobDetail from '../pages/EmpJobDetail';
+import API from '../utils/API';
 
 const columns = [
     { id: 'client', label: 'Client', minWidth: 170 },
@@ -35,6 +36,15 @@ const useStyles = makeStyles({
     maxHeight: 440,
   },
 });
+
+
+const getAssignedJob = API.getJobByUser().then( response => {
+    console.log(response.data)
+})
+
+
+
+;
 
 function createData ( id, client, address ) {
     return {
@@ -71,16 +81,7 @@ export default function JobsList (props) {
                 <Table stickyHeader aria-label="sticky table">
                     <TableHead>
                         <TableRow>
-                            {/* {columns.map( ( column ) => (
-                                <TableCell className='transparent module-sub-head'
-                                    key={column.id}
-                                    align={column.align}
-                                    style={{ minWidth: column.minWidth }}
-                                >
-                                    {column.label}
-                                </TableCell>
-                            ) )}
-                            <TableCell className='transparent module-sub-head'>Detail</TableCell> */}
+                        {/* extra row - columns headers go here if needed*/}
                         </TableRow>
                     </TableHead>
                     <TableBody>
@@ -91,7 +92,7 @@ export default function JobsList (props) {
                                 <TableRow hover role="checkbox" tabIndex={-1} key={i}>
                                     {columns.map( ( column ) => {
                                         const value = row[ column.id ];
-                                        // console.log( value );
+                                        // console.log( value ); // TESTING
                                         return (
 
                                             <TableCell className='white-text' key={column.id} align={column.align}>
