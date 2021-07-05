@@ -41,12 +41,11 @@ export default function Crews(props) {
     const classes = useStyles();
     const crews = ["Crew #1", "Crew #2", "Crew #3", "Crew #4", "Unassigned Jobs"];
 
-    const crewLists = crews.map( crew =>
-    <>
+    const crewLists = crews.map( crew => (<>
         <Typography variant='h5'>{crew}</Typography>
-        <List crew={crew}/>
+        {/* <List crew={crew}/> */}
     </>
-    )
+    ))
 
     return (
         <div className={classes.root}>
@@ -67,12 +66,12 @@ export default function Crews(props) {
                     Create New Job
                 </Button> */}
 
-                    
+
 
                     <Paper className={classes.paper} id='module3'>
-                        {crewLists}                        
+                        {crewLists}
                     </Paper>
-                    
+
                     <Copyright />
                 </Container>
             </main>
