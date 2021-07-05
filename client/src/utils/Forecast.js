@@ -18,14 +18,14 @@ const Forecast = () => {
                 setResponseObj (response)
             })
     };
-
+    getForecast();
     return (
         <div>
             <h2>Find Current Weather Conditions</h2>
             <div>
                 {JSON.stringify( responseObj )}
             </div>
-            <button onClick={getForecast}>Get Forecast</button>
+            {/* <button onClick={getForecast}>Get Forecast</button> */}
         </div>
 
     )
