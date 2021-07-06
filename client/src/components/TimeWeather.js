@@ -73,15 +73,17 @@ export default function TimeWeather ( props ) {
     return (
 
         <Paper elevation={3} className={classes.paper} id='module5'>
-            <Typography variant='h5'><Moment format='ll, h:MM:ss a'>{currentDateTime}</Moment></Typography>
-            <br /><br />
-            <p>{responseObj.temp}</p>
-            <p>{responseObj.feelslike}</p>
-            <p>{responseObj.descr}</p>
+            <Typography id='current-time' variant='h5'><Moment format='ll, h:MM:ss a'>{currentDateTime}</Moment></Typography>
+            {/* <br /> */}
+
             <img src={iconImgSrc} alt='' className='weatherIcon' />
 
-            <p>{  }</p>
-
+            <div className='weatherDescr'>{responseObj.descr}</div>
+            <Typography id='current-weather' variant='h6'>
+                Currently {responseObj.temp}&nbsp;&#8457;
+                <br />
+                Feels like {responseObj.feelslike}&nbsp;&#8457;
+            </Typography>
         </Paper>
     );
 }
