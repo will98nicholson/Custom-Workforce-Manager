@@ -4,6 +4,10 @@ export default {
     getJob: function () {
         return axios.get("/api/jobs")
     },
+    //
+    getJobByUser: function () {
+        return axios.get("/api/jobs/:user")
+    },
 
     //post data from CreateJob.js to api/jobs
     createJob: function (jobData) {
