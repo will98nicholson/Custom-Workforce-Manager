@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import Login from './pages/Login';
+import MenuToolbar from './components/MenuToolbar';
 import Dashboard from './pages/Dashboard';
 import EmpDash from './pages/EmpDash';
 import CreateJob from './pages/CreateJob';
@@ -19,6 +20,7 @@ import {
     Route,
     // Link
 } from 'react-router-dom';
+import { useRadioGroup } from '@material-ui/core';
 // import Review from '.pages/JobDetail';
 
 // TODO: get react router working
@@ -58,6 +60,8 @@ function App() {
                     <Redirect to="/"></Redirect>
                 </Switch>}
             {user &&
+                <>
+                <MenuToolbar linkHidden={ user.type === "Administrator" ? false : true}/>
                 <Switch>
                     <Route exact path={['/', '/dashboard']}>{user.type === "Administrator" ? <Dashboard /> : <EmpDash user={user} />}</Route>
                     {/* <Route exact path='/employee'><EmpDash /></Route> */}
@@ -69,9 +73,12 @@ function App() {
                     {/* <Route path='/empjobdetail'>{user.type === "Employee" ? <EmpJobDetail /> : ""} </Route> */}
 
                 <Route exact path='/form'><Form /></Route>
-                <Route exact path='/jobdetail'><JobDetail /></Route>
+                    <Route exact path='/jobdetail' component={() => <JobDetail user={user} />}></Route>
                 <Redirect to="/"></Redirect>
-                </Switch>}
+                </Switch>
+            </>
+            }
+
         </Router>
     );
 };
