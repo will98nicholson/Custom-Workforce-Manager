@@ -10,7 +10,6 @@ import moment from 'moment';
 import Moment from 'react-moment';
 import weatherAPI from '../utils/weatherAPI';
 
-
 const useStyles = makeStyles( ( theme ) => ( {
     root: {
         display: 'flex',
@@ -41,10 +40,33 @@ export default function TimeWeather ( props ) {
                 feelslike: res.current.feels_like,
                 wind: res.current.wind_speed,
                 descr: res.current.weather[ 0 ].description,
-                icon: res.current.weather[0].icon
+                icon: res.current.weather[ 0 ].icon,
+                // hourly_datetime: res.hourly[0].dt,
+                hourly: res.hourly,
+                // alert_name: res.alerts[0].event,
+                // alert_start: res.alerts[0].start,
+                // alert_end: res.alerts[0].end,
+                // alert_descr: res.alerts[0].description
+
             } ) );
-        console.log( responseObj );
     };
+
+    console.log( responseObj.hourly );
+    // function renderWeatherUpdate() {
+    //     let myDate = new Date( this.state.responseObj.hourly_datetime * 1000 );
+    //     document.write( myDate.toString() );
+    //     return;
+    // };
+
+    // console.log( myDate );
+
+        //EFFORT TO CONVERT HOURLY EPOCH TIMESTAMP TO READABLE DATE
+        // function readableDate () => {
+        //     let responseObj;
+        //     const convertEpoch = new Date( responseObj.hourly * 1000.0 );
+        //     document.write( convertEpoch.toLocaleString() );
+        // };
+        // console.log( readableDate );
 
     const iconImgSrc = `http://openweathermap.org/img/w/${ responseObj.icon }.png`;
 
@@ -56,7 +78,9 @@ export default function TimeWeather ( props ) {
             <p>{responseObj.temp}</p>
             <p>{responseObj.feelslike}</p>
             <p>{responseObj.descr}</p>
-            <img src={iconImgSrc} alt='' className='weatherIcon'/>
+            <img src={iconImgSrc} alt='' className='weatherIcon' />
+
+            <p>{  }</p>
 
         </Paper>
     );
