@@ -1,81 +1,17 @@
 [{
-    "username": "adillintone0",
+    "username": "Crew #1",
     "password": "4CfkVBoxV",
     "type": "Administrator"
   }, {
-    "username": "msurcomb1",
+    "username": "Crew #2",
     "password": "Ggjz4t1",
     "type": "Employee"
   }, {
-    "username": "jmowsdale2",
-    "password": "dtffY7EqkMs",
-    "type": "Administrator"
-  }, {
-    "username": "eshobbrook3",
-    "password": "2un1SD1hSyG",
-    "type": "Administrator"
-  }, {
-    "username": "mdoneld4",
+    "username": "Crew #3",
     "password": "Ux9zkgntI",
     "type": "Employee"
   }, {
-    "username": "spawel5",
+    "username": "Crew #4",
     "password": "DSCefj7FOI",
-    "type": "Administrator"
-  }, {
-    "username": "doppery6",
-    "password": "TZ5GXh",
-    "type": "Administrator"
-  }, {
-    "username": "nbosson7",
-    "password": "77S28t4AY",
-    "type": "Administrator"
-  }, {
-    "username": "mhoneyghan8",
-    "password": "O0GLM3",
     "type": "Employee"
-  }, {
-    "username": "fbazek9",
-    "password": "O8Ban2",
-    "type": "Administrator"
-  }, {
-    "username": "weaglea",
-    "password": "iKJkUU0U",
-    "type": "Employee"
-  }, {
-    "username": "cwitheridgeb",
-    "password": "FxkC37Orq0",
-    "type": "Administrator"
-  }, {
-    "username": "yyounglovec",
-    "password": "1zfMPe6",
-    "type": "Employee"
-  }, {
-    "username": "ufairsd",
-    "password": "00Pdq4Ac",
-    "type": "Employee"
-  }, {
-    "username": "osmittone",
-    "password": "8Z0aCzPr",
-    "type": "Administrator"
-  }, {
-    "username": "hhenburyf",
-    "password": "mYoT9g",
-    "type": "Employee"
-  }, {
-    "username": "rcancellariog",
-    "password": "ECtjlZJ",
-    "type": "Employee"
-  }, {
-    "username": "rgostykeh",
-    "password": "EEb7Mnd9iH",
-    "type": "Administrator"
-  }, {
-    "username": "fdoolani",
-    "password": "VJarOH0tzz",
-    "type": "Administrator"
-  }, {
-    "username": "hbraybrooksj",
-    "password": "DqnM8x",
-    "type": "Administrator"
-  }]  
+  }]
