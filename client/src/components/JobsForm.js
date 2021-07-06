@@ -66,7 +66,6 @@ export default function JobsForm ( props ) {
 
     const [ formObject, setFormObject ] = useState( {} );
     const location = useLocation();
-    console.log( location.pathname );
     const handleInputChange = ( event ) => {
         const { name, value } = event.target;
         setFormObject( { ...formObject, [ name ]: value } );
