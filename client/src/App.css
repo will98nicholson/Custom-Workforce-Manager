@@ -1,10 +1,12 @@
 .App {
   text-align: center;
+  font-family: 'Oxygen', sans-serif;
+  font-smooth: subpixel-antialiased;
 }
 
 /* BODY */
 body {
-  background-image: url(./assets/images/03-background.JPG);
+  background-color: rgb(53, 53, 76)!important;
   background-size: cover;
 }
 
@@ -12,27 +14,106 @@ body {
 header {
   background-color: rgba(9, 11, 25, 0.848)!important;
 }
+#menu-icon {
+  color: rgb(209, 217, 227);
+}
+#current-date {
+  margin: 0 55px 0 70px;
+  color: rgb(188, 195, 205);
+}
+
+#current-time {
+  margin: 0 0 0 0;
+  color:  rgb(188, 195, 205);
+}
 
 /* global module styling */
 .module-header {
   margin: 0 5px 10px 5px !important;
 }
 
-/* ACTIVE JOBS MODULE */
-#module1 {
-  background-color: rgba(9, 11, 25, 0.718)!important;
+/* ALL Dashboard MODULES */
+#module1,
+#module2,
+#module3,
+#module4,
+#module5 {
+  background-color: rgba(9, 11, 25, 0.718);
   color: whitesmoke;
   margin: auto;
   margin-bottom: 5px;
   width: 85vw;
-
-}
-#jobslist,
-.transparent {
-  background-color: rgba(64, 65, 66, 0.505)!important;
+  position: static;
 }
 .white-text {
     color: rgba(245, 245, 245, 0.765)!important;
+}
+
+/* TIME + WEATHER MODULE */
+#module5 {
+  display: flex;
+  flex-direction: column;
+}
+.weather-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: rgb(142, 204, 255);
+}
+#feels-like {
+  display: flex;
+  justify-content: center;
+}
+#main-temp-disp {
+  display: flex;
+  justify-content: center;
+  font-size: 60px;
+  text-shadow: -5px 5px 0  rgba(15, 147, 255, 0.409);
+}
+#weather-summary {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: auto;
+}
+.weatherIcon {
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+.weatherDescr {
+  font-size: 1px;
+  /* text-transform: capitalize; */
+  /* position: relative;
+  top: -30px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#current-weather {
+  /* margin-top: 10px; */
+  display: flex;
+  justify-content: center;
+}
+#high-low {
+  display: flex;
+  justify-content: center;
+  font-size: 20px;
+  margin-bottom: 3px;
+}
+.weather-params {
+  display: flex;
+  font-size: 14px;
+  justify-content: center;
+}
+
+
+/* ASSIGNED / ACTIVE JOBS MODULES */
+#jobslist,
+.transparent {
+  background-color: rgba(64, 65, 66, 0.505)!important;
 }
 /* .module-sub-head {
   font-family:
@@ -44,18 +125,8 @@ header {
 }
 
 /* COMPLETED JOBS MODULE */
-#module2,
-#module3,
-#module4,
-#module5 {
-  background-color: rgba(9, 11, 25, 0.718);
-  color: whitesmoke;
-  margin: auto;
-  margin-bottom: 5px;
-  width: 85vw;
-}
 
-/* JOB DETAIL - employee */
+/* JOB DETAIL PAGE */
 
 /* JOB FORM */
 .form-flex {
@@ -66,21 +137,21 @@ header {
  margin-bottom: 10px;
  /* padding-left: 10px; */
 }
- /* {
 
-} */
+
+/* PUNCH CLOCK */
 .Stopwatch {
   margin-left: 30px;
   margin-right: 30px;
   border: 2px solid grey;
   border-radius: 4px;
   padding: 20px;
-  width: 400px;
+  width: 200px;
   background-color: rgb(22, 27, 31);
   box-shadow: 0 3px 6px rgb(12, 12, 12);
 }
 .Stopwatch-header {
-  font-size: 40px;
+  font-size: 20px;
   font-weight: bold;
   color: white;
 }
@@ -96,6 +167,7 @@ button {
 }
 button:hover {
   background-color: #106ba3;
+  transition-duration: 1s;
 }
 .Stopwatch button {
   padding: 12px 32px;
@@ -103,7 +175,7 @@ button:hover {
 }
 .Stopwatch-display {
   padding: 40px 0;
-  font-size: 48px;
+  font-size: 25px;
   color: white;
 }
 .Stopwatch-text {

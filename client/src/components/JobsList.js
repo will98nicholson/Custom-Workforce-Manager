@@ -18,7 +18,7 @@ import {
 } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 // import { KeyboardArrowDown, KeyboardArrowUp, Edit } from '@material-ui/icons';
-import DetailButton from '../assets/icons/view-details.PNG';
+import DetailButton from '../assets/icons/view-details-color-vibrant.PNG';
 // import JobDetail from '../pages/JobDetail';
 // import EmpJobDetail from '../pages/EmpJobDetail';
 import API from '../utils/API';
@@ -33,15 +33,16 @@ const useStyles = makeStyles({
     width: '100%',
   },
   container: {
-    maxHeight: 440,
+    maxHeight: 400,
   },
 });
 
 
 const getAssignedJob = API.getJobByUser().then( response => {
     console.log(response.data)
-})
-
+} );
+// get username from who's logged in - maybe from session
+// connect crews and users in database
 
 function createData ( id, client, address ) {
     return {

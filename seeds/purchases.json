@@ -1,0 +1,26 @@
+[
+    {
+        "service_id": "60e36476a5329456c47398e5",
+        "quantity": 2,
+        "job_id": "60e36476a5329456c47398ed"
+    },
+    {
+        "service_id": "60e36476a5329456c47398e6",
+        "quantity": 2,
+        "job_id": "60e36476a5329456c47398ed"
+    },
+    {
+        "service_id": "60e36476a5329456c47398e8",
+        "quantity": 2,
+        "job_id": "60e36476a5329456c47398fc"
+    }, {
+        "service_id": "60e36476a5329456c47398e8",
+        "quantity": 2,
+        "job_id": "60e36476a5329456c47398fc"
+    },
+    {
+        "service_id": "60e36476a5329456c47398e6",
+        "quantity": 2,
+        "job_id": "60e36476a5329456c47398fc"
+    }
+]

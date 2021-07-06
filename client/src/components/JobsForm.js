@@ -94,7 +94,7 @@ export default function JobsForm ( props ) {
             setFormObject( {
                 name: res.data[ 0 ].client.name,
                 type: res.data[ 0 ].client.type,
-                location: res.data[ 0 ].client.location,
+                location: res.data[ 0 ].client.location.streetAddress,
                 contact: res.data[ 0 ].client.contact,
                 phone: res.data[ 0 ].client.phone,
                 email: res.data[ 0 ].client.email,
@@ -371,9 +371,10 @@ export default function JobsForm ( props ) {
                 <div className={classes.break} />
 
                 {/* SAVE / SUBMIT BUTTON */} {/* for create job */}
-                <Button display="none" className={classes.button} variant="contained" color="primary" onClick={handleSubmit}>
+                {/* passing user status to add job button - '&&' is a way to short circut and escape the turnary operator as we don't want to render anything in it's place */}
+                {props.user === 'Employee' && <Button display="none" className={classes.button} variant="contained" color="primary" onClick={handleSubmit}>
                     Add Job
-                </Button>
+                </Button>}
                 {/* if create job submit to database - if job detail create invoice */}
                 <Button className={classes.button} variant="contained" color="primary" onClick={ handleOpen }>
                     Create Invoice
