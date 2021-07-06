@@ -372,9 +372,10 @@ export default function JobsForm ( props ) {
                 <div className={classes.break} />
 
                 {/* SAVE / SUBMIT BUTTON */} {/* for create job */}
-                <Button display="none" className={classes.button} variant="contained" color="primary" onClick={handleSubmit}>
+                {/* passing user status to add job button - '&&' is a way to short circut and escape the turnary operator as we don't want to render anything in it's place */}
+                {props.user === 'Employee' && <Button display="none" className={classes.button} variant="contained" color="primary" onClick={handleSubmit}>
                     Add Job
-                </Button>
+                </Button>}
                 {/* if create job submit to database - if job detail create invoice */}
                 <Button className={classes.button} variant="contained" color="primary" onClick={ handleOpen }>
                     Create Invoice
