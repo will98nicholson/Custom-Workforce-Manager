@@ -40,11 +40,9 @@ const useStyles = makeStyles({
 
 const getAssignedJob = API.getJobByUser().then( response => {
     console.log(response.data)
-})
-
-
-
-;
+} );
+// get username from who's logged in - maybe from session
+// connect crews and users in database
 
 function createData ( id, client, address ) {
     return {

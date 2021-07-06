@@ -11,14 +11,14 @@ import {
     IconButton,
     Badge,
 } from '@material-ui/core'
-
 import {
     Menu,
     ChevronLeft,
-
 } from '@material-ui/icons';
-
+import '../App.css';
 import MenuList from './MenuList';
+import moment from 'moment';
+import Moment from 'react-moment';
 
 
 const drawerWidth = 240;
@@ -29,6 +29,7 @@ const useStyles = makeStyles((theme) => ({
     },
     toolbar: {
         paddingRight: 24, // keep right padding when drawer closed
+        display: 'flex',
     },
     toolbarIcon: {
         display: 'flex',
@@ -102,7 +103,8 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function MenuToolbar( props ) {
+export default function MenuToolbar ( props ) {
+
     const classes = useStyles();
     const [open, setOpen] = React.useState(false);
     const handleDrawerOpen = () => {
@@ -113,9 +115,9 @@ export default function MenuToolbar( props ) {
     };
     const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
 
+    const currentDateTime = moment();
     // NOTES: Menu is wrapped in a badge which is how the notifications were rendering
     // - badgecontent was set at 4 and is now set to 0 in order to remove notifications
-
     return (
         <div className={classes.root}>
             <CssBaseline />
@@ -126,14 +128,16 @@ export default function MenuToolbar( props ) {
                         color="inherit"
                         aria-label="open drawer"
                         onClick={handleDrawerOpen}
+                        id='menu-icon'
                         className={clsx(classes.menuButton, open && classes.menuButtonHidden)}>
                         <Badge badgeContent={0} color="secondary">
                             <Menu />
                         </Badge>
                     </IconButton>
-                    <Typography component="h1" variant="h6" color="inherit" noWrap className={classes.title}>
-
-                    </Typography>
+                    {/* <Typography component="h1" variant="h6" color="inherit" noWrap className={classes.title}>
+                    </Typography> */}
+                    <Typography className='app-bar-items' id='current-date' variant='h9'><Moment format='ll'>{currentDateTime}</Moment></Typography>
+                    <Typography className='app-bar-items' id='current-time' variant='h9'><Moment format='h:MM:ssa'>{currentDateTime}</Moment></Typography>
                 </Toolbar>
             </AppBar>
             <Drawer
