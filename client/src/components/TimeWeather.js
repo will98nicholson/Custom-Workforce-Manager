@@ -6,8 +6,8 @@ import {
     Container
     // Button
 } from '@material-ui/core';
-import moment from 'moment';
-import Moment from 'react-moment';
+// import moment from 'moment';
+// import Moment from 'react-moment';
 import weatherAPI from '../utils/weatherAPI';
 
 const useStyles = makeStyles( ( theme ) => ( {
@@ -24,7 +24,7 @@ const useStyles = makeStyles( ( theme ) => ( {
 export default function TimeWeather ( props ) {
 
     const classes = useStyles();
-    const currentDateTime = moment();
+    // const currentDateTime = moment();
     let [ responseObj, setResponseObj ] = useState( {} );
 
     useEffect( () => {
@@ -39,10 +39,13 @@ export default function TimeWeather ( props ) {
                 temp: res.current.temp,
                 feelslike: res.current.feels_like,
                 wind: res.current.wind_speed,
+                uvi: res.current.uvi,
                 descr: res.current.weather[ 0 ].description,
                 icon: res.current.weather[ 0 ].icon,
                 // hourly_datetime: res.hourly[0].dt,
                 hourly: res.hourly,
+                main: res.current.weather[0].main,
+                humidity: res.current.humidity
                 // alert_name: res.alerts[0].event,
                 // alert_start: res.alerts[0].start,
                 // alert_end: res.alerts[0].end,
@@ -73,17 +76,26 @@ export default function TimeWeather ( props ) {
     return (
 
         <Paper elevation={3} className={classes.paper} id='module5'>
-            <Typography id='current-time' variant='h5'><Moment format='ll, h:MM:ss a'>{currentDateTime}</Moment></Typography>
+            {/* <Typography id='current-time' variant='h5'><Moment format='ll, h:MM:ss a'>{currentDateTime}</Moment></Typography> */}
             {/* <br /> */}
+            <div className='weather-text' id=''>
+                <span id='feels-like'>Feels like</span>
+                <span id='main-temp-disp'>{responseObj.feelslike}&#176;</span>
+            </div>
+            <div className='weather-text' id='weather-summary'>
+                <img src={iconImgSrc} alt='' className='weatherIcon' />
 
-            <img src={iconImgSrc} alt='' className='weatherIcon' />
+                <div className='weatherDescr'>
+                    <span className='weather-params' id='high-low'>{responseObj.feelslike}&#176;/{responseObj.temp}&#176;</span><br />
+                    <div className='weather-params'>Humidity: {responseObj.humidity}%<br />
+                        Wind: {responseObj.wind}m/h<br />
+                        UV index: {responseObj.uvi}
+                    </div>
+                    {/* {responseObj.descr} */}
+                </div>
 
-            <div className='weatherDescr'>{responseObj.descr}</div>
-            <Typography id='current-weather' variant='h6'>
-                Currently {responseObj.temp}&nbsp;&#8457;
-                <br />
-                Feels like {responseObj.feelslike}&nbsp;&#8457;
-            </Typography>
+            </div>
+
         </Paper>
     );
 }
