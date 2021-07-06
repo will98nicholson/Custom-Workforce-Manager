@@ -8,7 +8,7 @@ import {
     Button
 } from '@material-ui/core';
 import { useParams, Link } from 'react-router-dom';
-import MenuToolbar from '../components/MenuToolbar';
+// import MenuToolbar from '../components/MenuToolbar';
 import Copyright from '../components/Copyright';
 import JobsForm from '../components/JobsForm';
 import ClockIn from '../components/ClockIn';
@@ -89,7 +89,7 @@ export default function JobDetail(props) {
     return (
         <div className={classes.root} id='job-detail-page'>
             <CssBaseline />
-            <MenuToolbar linkHidden={props.linkHidden }/>
+            {/* <MenuToolbar linkHidden={props.linkHidden }/> */}
             <main className={classes.content}>
                 <div className={classes.appBarSpacer} />
                 <Container maxWidth="lg" className={classes.container}>
