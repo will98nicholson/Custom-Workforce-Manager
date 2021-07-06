@@ -8,7 +8,7 @@ import {
     Button
 } from '@material-ui/core';
 
-import MenuToolbar from '../components/MenuToolbar';
+// import MenuToolbar from '../components/MenuToolbar';
 import Copyright from '../components/Copyright';
 import JobsForm from '../components/JobsForm';
 
@@ -46,7 +46,7 @@ export default function CreateJob() {
     return (
         <div className={classes.root}>
             <CssBaseline />
-            <MenuToolbar />
+            {/* <MenuToolbar /> */}
             <main className={classes.content}>
                 <div className={classes.appBarSpacer} />
                 <Container maxWidth="lg" className={classes.container}>

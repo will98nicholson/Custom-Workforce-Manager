@@ -8,7 +8,7 @@ import {
     // Button
 } from '@material-ui/core';
 // import { Link } from 'react-router-dom';
-import MenuToolbar from '../components/MenuToolbar';
+// import MenuToolbar from '../components/MenuToolbar';
 import Copyright from '../components/Copyright';
 import JobsList from '../components/JobsList';
 import API from '../utils/API';
@@ -59,7 +59,7 @@ function EmpDash(props) {
     return (
         <div className={classes.root}>
             <CssBaseline />
-            <MenuToolbar className="topToolbar" linkHidden='true'/>
+            {/* <MenuToolbar className="topToolbar" linkHidden='true'/> */}
             <main className={classes.content}>
                 <div className={classes.appBarSpacer} />
                 <Container maxWidth="lg" className={classes.container} >
@@ -81,7 +81,6 @@ function EmpDash(props) {
                         <Typography className='module-header' variant='h5'>Assigned Jobs</Typography>
                         <JobsList inputDisabled='true'/>
                         {/*TODO: pass props through jobs list to render assigned jobs for specific crew or employee */}
-
                     </Paper>
                     {/* Completed Jobs */}
                     <Paper className={classes.paper} id='module2'>
