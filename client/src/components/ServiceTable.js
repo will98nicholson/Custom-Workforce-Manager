@@ -34,8 +34,13 @@ function ServiceTableRow({ row, handleDataChange, deleteRow }) {
     const classes = useStyles();
 
     const index = row.index
-    const [service, setService] = useState(row.service);
-    const [quantity, setQuantity] = useState(row.quantity);
+    // const [service, setService] = useState(row.service);
+    // const [quantity, setQuantity] = useState(row.quantity);
+
+    const [data, setData] = useState({
+        service: {},
+        quantity: 0
+    })
 
     //used in api call to get service options
     const [options, setOptions] = useState([])
@@ -46,7 +51,6 @@ function ServiceTableRow({ row, handleDataChange, deleteRow }) {
             .then(res => {
                 if (res.data.length > 0) {
                     setOptions(res.data)
-                    console.log(options)
                 }
             })
             .catch((err) => console.log(err))
@@ -55,16 +59,19 @@ function ServiceTableRow({ row, handleDataChange, deleteRow }) {
     const updateValues = e => {
         var inputName = e.target.name
         var inputValue = e.target.value
-        if (inputName == 'service') {
-            setService(inputValue)
-        } else if (inputName == 'quantity') {
-            setQuantity(inputValue)
-        }
+        // if (inputName == 'service') {
+        //     setService(inputValue)
+        // } else if (inputName == 'quantity') {
+        //     setQuantity(inputValue)
+        // }
+        setData({
+            ...data,
+            [inputName]: inputValue
+        })
 
         handleDataChange({
-            index: index,
-            service: service,
-            quantity: quantity
+            ...data, 
+            index
         })
     }
 
@@ -88,7 +95,7 @@ function ServiceTableRow({ row, handleDataChange, deleteRow }) {
 
                         {options.map((item) => (
 
-                            <MenuItem key={item._id} value={item._id}>{item._id}</MenuItem>
+                            <MenuItem key={item.name} value={item}>{item.name}</MenuItem>
                         ))}
                     </Select>
                 </FormControl>
@@ -107,7 +114,7 @@ function ServiceTableRow({ row, handleDataChange, deleteRow }) {
             </TableCell>
             <TableCell variant="contained" color="secondary" component="td">
                 <Button type="button" variant="contained" color="secondary" className="btn btn-remove" onClick={removeRow}>
-                        &times;
+                    &times;
                 </Button>
             </TableCell>
         </TableRow>
@@ -116,24 +123,32 @@ function ServiceTableRow({ row, handleDataChange, deleteRow }) {
 
 function ServiceTable() {
     const classes = useStyles();
-
-    const [rows, setRows] = useState([{
-        index: 0,
-        service: "",
-        quantity: ""
-    }
-    ]);
+    // const [object, setObject] = useState(
+    //     {
+    //         index: 0,
+    //         service: {},
+    //         quantity: 0
+    //     }
+    // )
+    const [rows, setRows] = useState([]);
 
     // Receive data from TableRow 
     const handleChange = data => {
-        rows[data.index] = data
+        rows[data.index] = data;
+        console.log(data)  
     }
+
+    // const handleChange = (event) => {
+    //     setObject({...object, })
+    // }
+
+    // useEffect()
 
     // Add New Table Row
     const addNewRow = () => {
         tableRowIndex = parseFloat(tableRowIndex) + 1
         var updatedRows = [...rows]
-        updatedRows[tableRowIndex] = { index: tableRowIndex, service: "", quantity: "" }
+        updatedRows[tableRowIndex] = { index: tableRowIndex, service: {}, price: 0, quantity: 0 }
         setRows(updatedRows)
     }
 
@@ -147,6 +162,22 @@ function ServiceTable() {
                 setRows(updatedRows);
             }
         }
+    }
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        console.log('hit')
+        debugger
+        rows.map((row) => {
+            API.postPurchase({
+                service_id: row.service._id,
+                price: row.service.price,
+                quantity: row.quantity
+
+            })
+                .then(res => (console.log(res.data)))
+
+        })
     }
 
     return (
@@ -172,6 +203,9 @@ function ServiceTable() {
             </Table>
             <Button color="primary" onClick={addNewRow}>
                 + Add another service
+            </Button>
+            <Button variant="contained" color="primary" onClick={handleSubmit}>
+                Done
             </Button>
 
         </TableContainer>
