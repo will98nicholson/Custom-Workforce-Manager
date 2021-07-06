@@ -18,6 +18,9 @@ const User = new Schema({
             message: "{VALUE} is not a valid user type."
         },
         required: true,
+    },
+    purchased: {
+        type: mongoose.Schema.Types.ObjectId, ref: 'Service'
     }
 },
     {

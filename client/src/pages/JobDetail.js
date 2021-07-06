@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import {
     CssBaseline,
@@ -14,6 +14,8 @@ import JobsForm from '../components/JobsForm';
 import ClockIn from '../components/ClockIn';
 import ServiceTable from '../components/ServiceTable';
 import moment from 'moment';
+
+import API from '../utils/API'
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -77,12 +79,16 @@ const useStyles = makeStyles((theme) => ({
 // EMP JOB DETAIL: development //
 export default function JobDetail(props) {
     const classes = useStyles();
+    const [object, setObject] = React.useState({})
 
     //hook to access specific job
     const { id } = useParams();
-    console.log(id);
     const time = moment().format('h:mm:ss a');
 
+    useEffect(() => {
+        API.getJobById(id)
+            .then(res => setObject(res.data))
+    }, [])
     //NOTES: links in menu are not hidden for employee from job details page
     //       passed props.linkHidden in menu toolbar - not sure if useState would help
 
@@ -98,7 +104,7 @@ export default function JobDetail(props) {
                         <Typography variant='h5'>Job Detail</Typography>
                         <p className="App-clock">The time is {time}</p>
                         < ClockIn />
-                        <JobsForm id={id} {...props}/>
+                        <JobsForm id={id} {...props} job={object}/>
                         {/* <ServiceTable /> */}
                         <ServiceTable />
                     </Paper>
