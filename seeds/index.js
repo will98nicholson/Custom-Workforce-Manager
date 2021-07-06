@@ -2,6 +2,7 @@
 const jobSeeds = require('./jobs.json')
 const userSeeds = require('./users.json')
 const serviceSeeds = require('./services.json')
+const purchaseSeeds = require('./purchases.json')
 const mongoose = require('mongoose');
 const db = require('../models');
 
@@ -24,11 +25,14 @@ db.Service.deleteMany({})
                     .then(() => db.User.collection.insertMany(userSeeds))
                     .then((data) => {
                         console.log(data.result.n + ' users inserted')
-                        process.exit(0)
+                        db.Purchased.deleteMany({})
+                        .then(()=> db.Purchased.collection.insertMany(purchaseSeeds))
+                        .then((data) => {
+                            console.log(data.result.n + ' purchases inserted');
+                            process.exit(0)
+                        })
                     })
             })
-
-
     })
     .catch((err) => {
         console.log(err)

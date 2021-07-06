@@ -3,7 +3,7 @@
     "type": "Residential",
     "name": "Michel Pinks",
     "location": {
-      "streetAdress": "5024 Golf Course Crossing",
+      "streetAddress": "5024 Golf Course Crossing",
       "city": "Little Rock",
       "state": "AR",
       "zipcode": "72231"
@@ -23,7 +23,7 @@
     "type": "Residential",
     "name": "Crin Felix",
     "location": {
-      "streetAdress": "81 Loomis Alley",
+      "streetAddress": "81 Loomis Alley",
       "city": "White Plains",
       "state": "NY",
       "zipcode": "10633"
@@ -43,7 +43,7 @@
     "type": "Residential",
     "name": "Hans Coils",
     "location": {
-      "streetAdress": "9663 Messerschmidt Road",
+      "streetAddress": "9663 Messerschmidt Road",
       "city": "Birmingham",
       "state": "AL",
       "zipcode": "35254"
@@ -63,7 +63,7 @@
     "type": "Residential",
     "name": "Kassie Armitt",
     "location": {
-      "streetAdress": "726 Pankratz Terrace",
+      "streetAddress": "726 Pankratz Terrace",
       "city": "San Jose",
       "state": "CA",
       "zipcode": "95150"
@@ -83,7 +83,7 @@
     "type": "Residential",
     "name": "Rufe Charlick",
     "location": {
-      "streetAdress": "62 Grasskamp Junction",
+      "streetAddress": "62 Grasskamp Junction",
       "city": "Riverside",
       "state": "CA",
       "zipcode": "92513"
@@ -103,7 +103,7 @@
     "type": "Residential",
     "name": "Corry McGilbon",
     "location": {
-      "streetAdress": "10 Ramsey Street",
+      "streetAddress": "10 Ramsey Street",
       "city": "Sacramento",
       "state": "CA",
       "zipcode": "94263"
@@ -123,7 +123,7 @@
     "type": "Residential",
     "name": "Kirsteni Duffyn",
     "location": {
-      "streetAdress": "16 Morningstar Avenue",
+      "streetAddress": "16 Morningstar Avenue",
       "city": "Anaheim",
       "state": "CA",
       "zipcode": "92825"
@@ -143,7 +143,7 @@
     "type": "Residential",
     "name": "Pip Chrippes",
     "location": {
-      "streetAdress": "65946 Moose Road",
+      "streetAddress": "65946 Moose Road",
       "city": "El Paso",
       "state": "TX",
       "zipcode": "79945"
@@ -163,7 +163,7 @@
     "type": "Residential",
     "name": "Vivyanne Goode",
     "location": {
-      "streetAdress": "77472 Talisman Road",
+      "streetAddress": "77472 Talisman Road",
       "city": "Wichita",
       "state": "KS",
       "zipcode": "67210"
@@ -183,7 +183,7 @@
     "type": "Residential",
     "name": "Revkah Pinhorn",
     "location": {
-      "streetAdress": "63925 Sunfield Junction",
+      "streetAddress": "63925 Sunfield Junction",
       "city": "San Diego",
       "state": "CA",
       "zipcode": "92176"
@@ -205,7 +205,7 @@
     "type": "Commercial",
     "contact": "Iona MacGiolla Pheadair",
     "location": {
-      "streetAdress": "9643 Kings Crossing",
+      "streetAddress": "9643 Kings Crossing",
       "city": "Colorado Springs",
       "state": "CO",
       "zipcode": "80905"
@@ -226,7 +226,7 @@
     "type": "Commercial",
     "contact": "Patty Guerrero",
     "location": {
-      "streetAdress": "8 Harbort Pass",
+      "streetAddress": "8 Harbort Pass",
       "city": "Jacksonville",
       "state": "FL",
       "zipcode": "32225"
@@ -247,7 +247,7 @@
     "type": "Commercial",
     "contact": "Maddie Tattersdill",
     "location": {
-      "streetAdress": "65443 Cherokee Plaza",
+      "streetAddress": "65443 Cherokee Plaza",
       "city": "Houston",
       "state": "TX",
       "zipcode": "77020"
@@ -268,7 +268,7 @@
     "type": "Commercial",
     "contact": "Cherey Menchenton",
     "location": {
-      "streetAdress": "663 Pankratz Drive",
+      "streetAddress": "663 Pankratz Drive",
       "city": "Gainesville",
       "state": "FL",
       "zipcode": "32627"
@@ -289,7 +289,7 @@
     "type": "Commercial",
     "contact": "Averil Crummie",
     "location": {
-      "streetAdress": "15656 Schmedeman Road",
+      "streetAddress": "15656 Schmedeman Road",
       "city": "Pasadena",
       "state": "CA",
       "zipcode": "91131"
@@ -310,7 +310,7 @@
     "type": "Commercial",
     "contact": "Kandy Toderini",
     "location": {
-      "streetAdress": "2859 Becker Point",
+      "streetAddress": "2859 Becker Point",
       "city": "Arlington",
       "state": "TX",
       "zipcode": "76016"
@@ -331,7 +331,7 @@
     "type": "Commercial",
     "contact": "Raina Brigden",
     "location": {
-      "streetAdress": "02 Ridgeway Road",
+      "streetAddress": "02 Ridgeway Road",
       "city": "Orlando",
       "state": "FL",
       "zipcode": "32859"
@@ -352,7 +352,7 @@
     "type": "Commercial",
     "contact": "Rosabelle Gerhartz",
     "location": {
-      "streetAdress": "77794 Main Drive",
+      "streetAddress": "77794 Main Drive",
       "city": "Milwaukee",
       "state": "WI",
       "zipcode": "53277"
@@ -373,7 +373,7 @@
     "type": "Commercial",
     "contact": "Livvy Billham",
     "location": {
-      "streetAdress": "0 Pearson Crossing",
+      "streetAddress": "0 Pearson Crossing",
       "city": "Arlington",
       "state": "TX",
       "zipcode": "76004"
@@ -394,7 +394,7 @@
     "type": "Commercial",
     "contact": "Katha Thomassen",
     "location": {
-      "streetAdress": "605 Cottonwood Court",
+      "streetAddress": "605 Cottonwood Court",
       "city": "Lexington",
       "state": "KY",
       "zipcode": "40510"
