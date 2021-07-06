@@ -167,7 +167,6 @@ function ServiceTable() {
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log('hit')
-        debugger
         rows.map((row) => {
             API.postPurchase({
                 service_id: row.service._id,
