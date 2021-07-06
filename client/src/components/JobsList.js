@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 // import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import {
@@ -52,17 +52,30 @@ function createData ( id, client, address ) {
     };
 };
 
-const rows = [
-    createData( 26, "Cafe Istanbul", "123 Riverside Dr"),
-    createData( 88, "Mill Creek Cemetery", "456 Cemetary Rd"),
-    createData( 31, "Dublin Golf Club", "789 Dublic Rd")
-];
+// const rows = [
+//     createData( 26, "Cafe Istanbul", "123 Riverside Dr"),
+//     createData( 88, "Mill Creek Cemetery", "456 Cemetary Rd"),
+//     createData( 31, "Dublin Golf Club", "789 Dublic Rd")
+// ];
 
 export default function JobsList (props) {
     const classes = useStyles();
     const [ page, setPage ] = React.useState( 0 );
     const [ rowsPerPage, setRowsPerPage ] = React.useState( 10 );
+    const [rows, setRows] = React.useState([])
     // const [ user, setUser ] = React.useState(null);
+
+    useEffect(() => {
+        debugger
+        API.getJobs()
+            .then(res => {
+               const formattedJobs = res.data.map((job) => {
+                    return createData(job._id, job.client.name, job.client.location)
+                })
+                setRows(formattedJobs)
+                // console.log(formattedJobs)
+            })
+    }, [])
 
     const handleChangePage = ( event, newPage ) => {
         setPage( newPage );
@@ -93,8 +106,11 @@ export default function JobsList (props) {
                                         // console.log( value ); // TESTING
                                         return (
 
-                                            <TableCell className='white-text' key={column.id} align={column.align}>
-                                                {column.format && typeof value === 'number' ? column.format( value ) : value}
+                                            // <TableCell className='white-text' key={column.id} align={column.align}>
+                                            //     {column.format && typeof value === 'number' ? column.format( value ) : value}
+                                            // </TableCell>
+                                            <TableCell className='white-text' key={column.id}>
+                                                {column.label === "Client" ? row.client : row.address.streetAdress}
                                             </TableCell>
 
                                         );
