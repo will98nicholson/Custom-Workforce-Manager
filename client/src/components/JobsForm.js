@@ -95,7 +95,7 @@ export default function JobsForm ( props ) {
             setFormObject( {
                 name: res.data[ 0 ].client.name,
                 type: res.data[ 0 ].client.type,
-                location: res.data[ 0 ].client.location,
+                location: res.data[ 0 ].client.location.streetAddress,
                 contact: res.data[ 0 ].client.contact,
                 phone: res.data[ 0 ].client.phone,
                 email: res.data[ 0 ].client.email,
