@@ -46,12 +46,17 @@ export default function TimeWeather ( props ) {
         console.log( responseObj );
     };
 
+    const iconImgSrc = `http://openweathermap.org/img/w/${ responseObj.icon }.png`;
+
     return (
 
         <Paper elevation={3} className={classes.paper} id='module5'>
             <Typography variant='h5'><Moment format='ll, h:MM:ss a'>{currentDateTime}</Moment></Typography>
             <br /><br />
-            <p ></p>
+            <p>{responseObj.temp}</p>
+            <p>{responseObj.feelslike}</p>
+            <p>{responseObj.descr}</p>
+            <img src={iconImgSrc} alt='' className='weatherIcon'/>
 
         </Paper>
     );
