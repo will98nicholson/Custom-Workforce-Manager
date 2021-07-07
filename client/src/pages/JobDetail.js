@@ -68,7 +68,6 @@ export default function JobDetail(props) {
                         {/* <p className="App-clock">The time is {time}</p> */}
                         < ClockIn />
                         <JobsForm id={id} {...props} job={object} />
-                        <ServiceTable />
                         <Button variant="contained" color="primary" onClick={handleSubmit}>Mark Job Complete</Button>
                     </Paper>
                     <Copyright />
