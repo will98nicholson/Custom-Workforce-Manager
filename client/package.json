@@ -15,12 +15,13 @@
         "@testing-library/react": "^9.3.2",
         "@testing-library/user-event": "^7.1.2",
         "axios": "^0.18.0",
+        "dot-env": "0.0.1",
         "emoji-regex": "^7.0.3",
-        "moment": "^2.29.1",
         "react": "^16.13.1",
         "react-dom": "^16.13.1",
         "react-router-dom": "^5.1.2",
         "react-scripts": "3.4.3",
+        "react-spring": "^9.2.3",
         "react-text-mask": "^5.4.3"
     },
     "scripts": {

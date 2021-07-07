@@ -110,9 +110,29 @@ button:hover {
   color: white;
 }
 
-.MuiTableCell-root:nth-child(last){
+/* .MuiTableCell-root:nth-child(last){
  border-bottom: none;
+} */
+
+
+/* Crews Page + Components */
+
+.crewListWrapper{
+  display:flex;
+  margin:2%;
 }
+
+.list{
+  max-height: 65%;
+  min-width: 25%;
+
+}
+
+.job{
+  background-color:#ffffff;
+}
+
+
 
 
 @media (max-width: 900px) {

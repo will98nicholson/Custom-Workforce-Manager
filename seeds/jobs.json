@@ -1,261 +1,442 @@
 [{
-    "name": "Doors, Frames & Hardware",
-    "id": 88,
-    "services_id": ["mow only", "mulch"],
-    "client": {
-      "type": "Residential",
-      "name": "Edgetag",
-      "location": "07129 Harbort Terrace",
-      "phone": 2035602997,
-      "email": "abolens0@hugedomains.com"
+  "client": {
+    "type": "Residential",
+    "name": "Michel Pinks",
+    "location": {
+      "streetAdress": "5024 Golf Course Crossing",
+      "city": "Little Rock",
+      "state": "AR",
+      "zipcode": "72231"
     },
-    "notes": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien.",
-    "date": "11/24/2020"
-  }, {
-    "name": "Prefabricated Aluminum Metal Canopies",
-    "id": 98,
-    "services_id": ["mow & trim", "mulch"],
-    "client": {
-      "type": "Commercial",
-      "name": "Twimm",
-      "location": "6937 Birchwood Plaza",
-      "phone": 7500888828,
-      "email": "jgian1@addthis.com"
+    "phone": "501-938-9791",
+    "email": "mpinks0@indiegogo.com"
+  },
+  "quote_date": "11/4/2021",
+  "start_date": "12/18/2021",
+  "end_date": "11/25/2021",
+  "quote_price": "$631.78",
+  "description": "Proin risus. Praesent lectus.",
+  "notes": "In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante.",
+  "completed": false,
+  "crewAssignedToo": "Crew #1",
+  "dailyPosition": "1"
+}, {
+  "client": {
+    "type": "Residential",
+    "name": "Crin Felix",
+    "location": {
+      "streetAdress": "81 Loomis Alley",
+      "city": "White Plains",
+      "state": "NY",
+      "zipcode": "10633"
     },
-    "notes": "In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.",
-    "date": "07/18/2020"
-  }, {
-    "name": "Overhead Doors",
-    "id": 92,
-    "services_id": ["mow only", "mulch"],
-    "client": {
-      "type": "Residential",
-      "name": "Fivebridge",
-      "location": "6318 Hallows Court",
-      "phone": 6857889156,
-      "email": "gwindross2@yolasite.com"
+    "phone": "914-291-5419",
+    "email": "cfelix1@hubpages.com"
+  },
+  "quote_date": "10/3/2021",
+  "start_date": "10/2/2021",
+  "end_date": "12/1/2021",
+  "quote_price": "$53.71",
+  "description": "Nulla tellus. In sagittis dui vel nisl. Duis ac nibh.",
+  "notes": "In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.",
+  "completed": false,
+  "crewAssignedToo": "Crew #2",
+  "dailyPosition": "2"
+}, {
+  "client": {
+    "type": "Residential",
+    "name": "Hans Coils",
+    "location": {
+      "streetAdress": "9663 Messerschmidt Road",
+      "city": "Birmingham",
+      "state": "AL",
+      "zipcode": "35254"
     },
-    "notes": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
-    "date": "02/09/2021"
-  }, {
-    "name": "Roofing (Metal)",
-    "id": 31,
-    "services_id": ["mow only", "mulch"],
-    "client": {
-      "type": "Residential",
-      "name": "Jaxworks",
-      "location": "12 Merry Parkway",
-      "phone": 1437209257,
-      "email": "yerangy3@bbc.co.uk"
+    "phone": "205-995-1940",
+    "email": "hcoils2@homestead.com"
+  },
+  "quote_date": "12/24/2021",
+  "start_date": "11/2/2021",
+  "end_date": "12/30/2021",
+  "quote_price": "$600.88",
+  "description": "Praesent lectus.",
+  "notes": "Suspendisse potenti.",
+  "completed": false,
+  "crewAssignedToo": "Crew #3",
+  "dailyPosition": "2"
+}, {
+  "client": {
+    "type": "Residential",
+    "name": "Kassie Armitt",
+    "location": {
+      "streetAdress": "726 Pankratz Terrace",
+      "city": "San Jose",
+      "state": "CA",
+      "zipcode": "95150"
     },
-    "notes": "Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.",
-    "date": "05/09/2021"
-  }, {
-    "name": "Construction Clean and Final Clean",
-    "id": 26,
-    "services_id": ["mow only", "mulch"],
-    "client": {
-      "type": "Commercial",
-      "name": "Skiptube",
-      "location": "219 Gale Trail",
-      "phone": 7888184860,
-      "email": "jlivens4@free.fr"
+    "phone": "408-907-8152",
+    "email": "karmitt3@vistaprint.com"    
+  },
+  "quote_date": "12/2/2021",
+  "start_date": "11/8/2021",
+  "end_date": "7/5/2021",
+  "quote_price": "$544.64",
+  "description": "Integer a nibh. In quis justo. Maecenas rhoncus aliquam lacus.",
+  "notes": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio.",
+  "completed": false,
+  "crewAssignedToo": "Crew #4",
+  "dailyPosition": "1"
+}, {
+  "client": {
+    "type": "Residential",
+    "name": "Rufe Charlick",
+    "location": {
+      "streetAdress": "62 Grasskamp Junction",
+      "city": "Riverside",
+      "state": "CA",
+      "zipcode": "92513"
     },
-    "notes": "Cras in purus eu magna vulputate luctus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien.",
-    "date": "06/12/2021"
-  }, {
-    "name": "Masonry",
-    "id": 97,
-    "services_id": ["mow only", "mulch"],
-    "client": {
-      "type": "Commercial",
-      "name": "Fivespan",
-      "location": "441 Atwood Park",
-      "phone": 9092920888,
-      "email": "jsearch5@prweb.com"
+    "phone": "951-560-1621",
+    "email": "rcharlick4@newsvine.com"
+  },
+  "quote_date": "8/30/2021",
+  "start_date": "7/21/2021",
+  "end_date": "11/21/2021",
+  "quote_price": "$319.42",
+  "description": "In hac habitasse platea dictumst. Maecenas ut massa quis augue luctus tincidunt.",
+  "notes": "Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus. Suspendisse potenti.",
+  "completed": true,
+  "crewAssignedToo": "Crew #1",
+  "dailyPosition": "2"
+}, {
+  "client": {
+    "type": "Residential",
+    "name": "Corry McGilbon",
+    "location": {
+      "streetAdress": "10 Ramsey Street",
+      "city": "Sacramento",
+      "state": "CA",
+      "zipcode": "94263"
     },
-    "notes": "Nulla facilisi. Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit.",
-    "date": "11/11/2020"
-  }, {
-    "name": "Waterproofing & Caulking",
-    "id": 81,
-    "services_id": ["mow only", "mulch"],
-    "client": {
-      "type": "Commercial",
-      "name": "Rhynoodle",
-      "location": "23 Pepper Wood Pass",
-      "phone": 1213760574,
-      "email": "amcrill6@google.com.hk"
+    "phone": "916-103-5216",
+    "email": "cmcgilbon5@eventbrite.com"
+  },
+  "quote_date": "11/22/2021",
+  "start_date": "9/26/2021",
+  "end_date": "7/29/2021",
+  "quote_price": "$533.57",
+  "description": "Proin at turpis a pede posuere nonummy. Integer non velit.",
+  "notes": "Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim.",
+  "completed": true,
+  "crewAssignedToo": "Crew #1",
+  "dailyPosition": "3"
+}, {
+  "client": {
+    "type": "Residential",
+    "name": "Kirsteni Duffyn",
+    "location": {
+      "streetAdress": "16 Morningstar Avenue",
+      "city": "Anaheim",
+      "state": "CA",
+      "zipcode": "92825"
     },
-    "notes": "Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam.",
-    "date": "11/08/2020"
-  }, {
-    "name": "Electrical",
-    "id": 100,
-    "services_id": ["mow only", "mulch"],
-    "client": {
-      "type": "Commercial",
-      "name": "Blogpad",
-      "location": "47 Schlimgen Parkway",
-      "phone": 5099305207,
-      "email": "okinnett7@sakura.ne.jp"
+    "phone": "714-435-5710",
+    "email": "kduffyn6@constantcontact.com"
+  },
+  "quote_date": "12/8/2021",
+  "start_date": "12/9/2021",
+  "end_date": "10/5/2021",
+  "quote_price": "$82.51",
+  "description": "Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.",
+  "notes": "In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem. Duis aliquam convallis nunc.",
+  "completed": false,
+  "crewAssignedToo": "Crew #2",
+  "dailyPosition": "1"
+}, {
+  "client": {
+    "type": "Residential",
+    "name": "Pip Chrippes",
+    "location": {
+      "streetAdress": "65946 Moose Road",
+      "city": "El Paso",
+      "state": "TX",
+      "zipcode": "79945"
     },
-    "notes": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis. Duis consequat dui nec nisi volutpat eleifend.",
-    "date": "05/24/2021"
-  }, {
-    "name": "RF Shielding",
-    "id": 31,
-    "services_id": ["mow only", "mulch"],
-    "client": {
-      "type": "Commercial",
-      "name": "Flashpoint",
-      "location": "9936 Dennis Court",
-      "phone": 4346897170,
-      "email": "khamlett8@shop-pro.jp"
+    "phone": "915-511-7914",
+    "email": "pchrippes7@zdnet.com"
+  },
+  "quote_date": "10/28/2021",
+  "start_date": "7/30/2021",
+  "end_date": "11/9/2021",
+  "quote_price": "$796.47",
+  "description": "Integer a nibh. In quis justo.",
+  "notes": "Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy.",
+  "completed": true,
+  "crewAssignedToo": "Crew #2",
+  "dailyPosition": "3"
+}, {
+  "client": {
+    "type": "Residential",
+    "name": "Vivyanne Goode",
+    "location": {
+      "streetAdress": "77472 Talisman Road",
+      "city": "Wichita",
+      "state": "KS",
+      "zipcode": "67210"
     },
-    "notes": "Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.",
-    "date": "09/08/2020"
-  }, {
-    "name": "Waterproofing & Caulking",
-    "id": 52,
-    "services_id": ["mow only", "mulch"],
-    "client": {
-      "type": "Residential",
-      "name": "Meevee",
-      "location": "324 Carberry Road",
-      "phone": 8243667980,
-      "email": "stwaite9@addthis.com"
+    "phone": "316-578-8785",
+    "email": "vgoode8@ask.com"
+  },
+  "quote_date": "10/6/2021",
+  "start_date": "10/25/2021",
+  "end_date": "10/14/2021",
+  "quote_price": "$519.37",
+  "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue.",
+  "notes": "Ut at dolor quis odio consequat varius. Integer ac leo.",
+  "completed": false,
+  "crewAssignedToo": "Crew #2",
+  "dailyPosition": "4"
+}, {
+  "client": {
+    "type": "Residential",
+    "name": "Revkah Pinhorn",
+    "location": {
+      "streetAdress": "63925 Sunfield Junction",
+      "city": "San Diego",
+      "state": "CA",
+      "zipcode": "92176"
     },
-    "notes": "Nam tristique tortor eu pede.",
-    "date": "11/30/2020"
-  }, {
-    "name": "Epoxy Flooring",
-    "id": 100,
-    "services_id": ["mow only", "mulch"],
-    "client": {
-      "type": "Commercial",
-      "name": "Buzzbean",
-      "location": "127 Oak Point",
-      "phone": 9980770104,
-      "email": "cgiannottia@nature.com"
+    "phone": "619-434-7554",
+    "email": "rpinhorn9@e-recht24.de"
+  },
+  "quote_date": "9/29/2021",
+  "start_date": "11/2/2021",
+  "end_date": "7/30/2021",
+  "quote_price": "$781.62",
+  "description": "Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.",
+  "notes": "Nullam varius. Nulla facilisi.",
+  "completed": false,
+  "crewAssignedToo": "Crew #3",
+  "dailyPosition": "1"
+},
+{
+  "client": {
+    "name": "Mita",
+    "type": "Commercial",
+    "contact": "Iona MacGiolla Pheadair",
+    "location": {
+      "streetAdress": "9643 Kings Crossing",
+      "city": "Colorado Springs",
+      "state": "CO",
+      "zipcode": "80905"
     },
-    "notes": "Nullam varius. Nulla facilisi. Cras non velit nec nisi vulputate nonummy.",
-    "date": "02/11/2021"
-  }, {
-    "name": "Curb & Gutter",
-    "id": 32,
-    "services_id": ["mow only", "mulch"],
-    "client": {
-      "type": "Residential",
-      "name": "Youfeed",
-      "location": "5 Victoria Parkway",
-      "phone": 5700643930,
-      "email": "ocoodeb@addtoany.com"
+    "phone": "719-286-2897",
+    "email": "imacgiolla0@wikia.com"
+  },
+  "quote_date": "12/18/2021",
+  "start_date": "8/22/2021",
+  "end_date": "9/19/2021",
+  "quote_price": "$92.71",
+  "description": "Nulla suscipit ligula in lacus.",
+  "notes": "In congue.",
+  "completed": false,
+  "crewAssignedToo": "Crew #3",
+  "dailyPosition": "3"
+}, {
+  "client": {
+    "name": "Devshare",
+    "type": "Commercial",
+    "contact": "Patty Guerrero",
+    "location": {
+      "streetAdress": "8 Harbort Pass",
+      "city": "Jacksonville",
+      "state": "FL",
+      "zipcode": "32225"
     },
-    "notes": "Donec semper sapien a libero. Nam dui.",
-    "date": "06/05/2021"
-  }, {
-    "name": "Electrical",
-    "id": 22,
-    "services_id": ["mow only", "mulch"],
-    "client": {
-      "type": "Residential",
-      "name": "Blognation",
-      "location": "37502 Jay Pass",
-      "phone": 3480956072,
-      "email": "cdavittc@infoseek.co.jp"
+    "phone": "904-635-6718",
+    "email": "pguerrero1@statcounter.com"
+  },
+  "quote_date": "12/24/2021",
+  "start_date": "7/19/2021",
+  "end_date": "11/22/2021",
+  "quote_price": "$641.78",
+  "description": "Ut at dolor quis odio consequat varius.",
+  "notes": "Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.",
+  "completed": true,
+  "crewAssignedToo": "Crew #3",
+  "dailyPosition": "4"
+}, {
+  "client": {
+    "name": "Jabbercube",
+    "type": "Commercial",
+    "contact": "Maddie Tattersdill",
+    "location": {
+      "streetAdress": "65443 Cherokee Plaza",
+      "city": "Houston",
+      "state": "TX",
+      "zipcode": "77020"
     },
-    "notes": "Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue.",
-    "date": "08/31/2020"
-  }, {
-    "name": "Glass & Glazing",
-    "id": 4,
-    "services_id": ["mow only", "mulch"],
-    "client": {
-      "type": "Residential",
-      "name": "Fivechat",
-      "location": "15 Fieldstone Court",
-      "phone": 6636726075,
-      "email": "mpetyakovd@marriott.com"
+    "phone": "713-943-7677",
+    "email": "mtattersdill2@amazon.co.uk"
+  },
+  "quote_date": "7/17/2021",
+  "start_date": "9/14/2021",
+  "end_date": "11/10/2021",
+  "quote_price": "$783.94",
+  "description": "Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit.",
+  "notes": "Etiam faucibus cursus urna.",
+  "completed": false,
+  "crewAssignedToo": "Crew #4",
+  "dailyPosition": "2"
+}, {
+  "client": {
+    "name": "Topicblab",
+    "type": "Commercial",
+    "contact": "Cherey Menchenton",
+    "location": {
+      "streetAdress": "663 Pankratz Drive",
+      "city": "Gainesville",
+      "state": "FL",
+      "zipcode": "32627"
     },
-    "notes": "Donec dapibus. Duis at velit eu est congue elementum.",
-    "date": "05/12/2021"
-  }, {
-    "name": "Hard Tile & Stone",
-    "id": 57,
-    "services_id": ["mow only", "mulch"],
-    "client": {
-      "type": "Residential",
-      "name": "Yabox",
-      "location": "901 Maryland Point",
-      "phone": 9950089515,
-      "email": "gbosquete@marriott.com"
+    "phone": "352-372-8420",
+    "email": "cmenchenton3@slate.com"
+  },
+  "quote_date": "10/18/2021",
+  "start_date": "7/5/2021",
+  "end_date": "8/21/2021",
+  "quote_price": "$50.38",
+  "description": "Vivamus in felis eu sapien cursus vestibulum. Proin eu mi. Nulla ac enim.",
+  "notes": "Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa.",
+  "completed": true,
+  "crewAssignedToo": "Crew #4",
+  "dailyPosition": "3"
+}, {
+  "client": {
+    "name": "Abata",
+    "type": "Commercial",
+    "contact": "Averil Crummie",
+    "location": {
+      "streetAdress": "15656 Schmedeman Road",
+      "city": "Pasadena",
+      "state": "CA",
+      "zipcode": "91131"
     },
-    "notes": "Cras in purus eu magna vulputate luctus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien.",
-    "date": "06/03/2021"
-  }, {
-    "name": "Soft Flooring and Base",
-    "id": 20,
-    "services_id": ["mow only", "mulch"],
-    "client": {
-      "type": "Commercial",
-      "name": "Twimm",
-      "location": "63 Lindbergh Junction",
-      "phone": 4032082982,
-      "email": "rmathewsf@biglobe.ne.jp"
+    "phone": "626-536-6354",
+    "email": "acrummie4@posterous.com"
+  },
+  "quote_date": "7/18/2021",
+  "start_date": "9/11/2021",
+  "end_date": "12/21/2021",
+  "quote_price": "$332.52",
+  "description": "Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.",
+  "notes": "Praesent blandit. Nam nulla.",
+  "completed": false,
+  "crewAssignedToo": "Crew #4",
+  "dailyPosition": "4"
+}, {
+  "client": {
+    "name": "Voomm",
+    "type": "Commercial",
+    "contact": "Kandy Toderini",
+    "location": {
+      "streetAdress": "2859 Becker Point",
+      "city": "Arlington",
+      "state": "TX",
+      "zipcode": "76016"
     },
-    "notes": "Duis consequat dui nec nisi volutpat eleifend.",
-    "date": "04/25/2021"
-  }, {
-    "name": "Elevator",
-    "id": 30,
-    "services_id": ["mow only", "mulch"],
-    "client": {
-      "type": "Residential",
-      "name": "Viva",
-      "location": "35648 Huxley Place",
-      "phone": 2263955019,
-      "email": "cpetersong@weebly.com"
+    "phone": "817-712-5345",
+    "email": "ktoderini5@mozilla.com"
+  },
+  "quote_date": "8/12/2021",
+  "start_date": "9/15/2021",
+  "end_date": "9/26/2021",
+  "quote_price": "$100.01",
+  "description": "Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.",
+  "notes": "In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem. Duis aliquam convallis nunc.",
+  "completed": true
+}, {
+  "client": {
+    "name": "Leenti",
+    "type": "Commercial",
+    "contact": "Raina Brigden",
+    "location": {
+      "streetAdress": "02 Ridgeway Road",
+      "city": "Orlando",
+      "state": "FL",
+      "zipcode": "32859"
     },
-    "notes": "Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem. Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat.",
-    "date": "04/14/2021"
-  }, {
-    "name": "Doors, Frames & Hardware",
-    "id": 41,
-    "services_id": ["mow only", "mulch"],
-    "client": {
-      "type": "Commercial",
-      "name": "Leenti",
-      "location": "87 Bartelt Pass",
-      "phone": 5919829472,
-      "email": "bhalwellh@soundcloud.com"
+    "phone": "407-373-2816",
+    "email": "rbrigden6@ask.com"
+  },
+  "quote_date": "7/23/2021",
+  "start_date": "10/7/2021",
+  "end_date": "10/27/2021",
+  "quote_price": "$752.78",
+  "description": "Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.",
+  "notes": "Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla.",
+  "completed": false
+}, {
+  "client": {
+    "name": "Mydeo",
+    "type": "Commercial",
+    "contact": "Rosabelle Gerhartz",
+    "location": {
+      "streetAdress": "77794 Main Drive",
+      "city": "Milwaukee",
+      "state": "WI",
+      "zipcode": "53277"
     },
-    "notes": "Etiam faucibus cursus urna. Ut tellus. Nulla ut erat id mauris vulputate elementum.",
-    "date": "03/19/2021"
-  }, {
-    "name": "Framing (Steel)",
-    "id": 45,
-    "services_id": ["mow only", "mulch"],
-    "client": {
-      "type": "Commercial",
-      "name": "Fanoodle",
-      "location": "70522 Norway Maple Lane",
-      "phone": 9771992851,
-      "email": "jstellinoi@ebay.com"
+    "phone": "414-419-4380",
+    "email": "rgerhartz7@123-reg.co.uk"
+  },
+  "quote_date": "12/13/2021",
+  "start_date": "11/22/2021",
+  "end_date": "12/12/2021",
+  "quote_price": "$657.62",
+  "description": "Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.",
+  "notes": "Morbi a ipsum.",
+  "completed": false
+}, {
+  "client": {
+    "name": "Twitterbridge",
+    "type": "Commercial",
+    "contact": "Livvy Billham",
+    "location": {
+      "streetAdress": "0 Pearson Crossing",
+      "city": "Arlington",
+      "state": "TX",
+      "zipcode": "76004"
     },
-    "notes": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.",
-    "date": "12/02/2020"
-  }, {
-    "name": "Retaining Wall and Brick Pavers",
-    "id": 85,
-    "services_id": ["mow only", "mulch"],
-    "client": {
-      "type": "Residential",
-      "name": "Twitterlist",
-      "location": "4 Golden Leaf Junction",
-      "phone": 4900224944,
-      "email": "lrehmej@woothemes.com"
+    "phone": "817-831-9212",
+    "email": "lbillham8@blogs.com"
+  },
+  "quote_date": "8/17/2021",
+  "start_date": "10/9/2021",
+  "end_date": "7/8/2021",
+  "quote_price": "$255.89",
+  "description": "In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.",
+  "notes": "Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit.",
+  "completed": false
+}, {
+  "client": {
+    "name": "Yacero",
+    "type": "Commercial",
+    "contact": "Katha Thomassen",
+    "location": {
+      "streetAdress": "605 Cottonwood Court",
+      "city": "Lexington",
+      "state": "KY",
+      "zipcode": "40510"
     },
-    "notes": "Sed ante. Vivamus tortor. Duis mattis egestas metus.",
-    "date": "06/28/2020"
-  }]
+    "phone": "859-407-2386",
+    "email": "kthomassen9@nhs.uk"
+  },
+  "quote_date": "11/24/2021",
+  "start_date": "10/6/2021",
+  "end_date": "12/14/2021",
+  "quote_price": "$438.38",
+  "description": "Pellentesque viverra pede ac diam.",
+  "notes": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
+  "completed": true
+}]

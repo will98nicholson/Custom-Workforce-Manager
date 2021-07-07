@@ -5,13 +5,14 @@ import {
     Container,
     Paper,
     Typography,
-    // Button
+    Button
 } from '@material-ui/core';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import MenuToolbar from '../components/MenuToolbar';
 import Copyright from '../components/Copyright';
 import JobsForm from '../components/JobsForm';
 import ClockIn from '../components/ClockIn';
+import ServiceTable from '../components/ServiceTable';
 import moment from 'moment';
 
 const useStyles = makeStyles((theme) => ({
@@ -74,7 +75,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 // EMP JOB DETAIL: development //
-export default function JobDetail() {
+export default function JobDetail(props) {
     const classes = useStyles();
 
     //hook to access specific job
@@ -82,11 +83,13 @@ export default function JobDetail() {
     console.log(id);
     const time = moment().format('h:mm:ss a');
 
+    //NOTES: links in menu are not hidden for employee from job details page
+    //       passed props.linkHidden in menu toolbar - not sure if useState would help
 
     return (
         <div className={classes.root} id='job-detail-page'>
             <CssBaseline />
-            <MenuToolbar />
+            <MenuToolbar linkHidden={props.linkHidden }/>
             <main className={classes.content}>
                 <div className={classes.appBarSpacer} />
                 <Container maxWidth="lg" className={classes.container}>
@@ -95,10 +98,9 @@ export default function JobDetail() {
                         <Typography variant='h5'>Job Detail</Typography>
                         <p className="App-clock">The time is {time}</p>
                         < ClockIn />
-                        <JobsForm id={id} />
-                        {/* <Button className={classes.button} variant="contained" color="primary" onClick={handleSubmit}>
-                            Submit
-                        </Button> */}
+                        <JobsForm id={id} {...props}/>
+                        {/* <ServiceTable /> */}
+                        <ServiceTable />
                     </Paper>
                     <Copyright />
                 </Container>

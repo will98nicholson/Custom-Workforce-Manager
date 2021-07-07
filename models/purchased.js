@@ -2,23 +2,20 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const Purchased = new Schema({
-    _id: {
-        type: String, 
-        required: true
-    },
-    price: {
-        type: Number, 
-        required: true
+
+    service_id: {
+        type: mongoose.Schema.Types.ObjectId, ref: 'Service'
     },
     quantity: {
-        type:Number, 
+        type: Number,
         required: true
     },
-    job_id:{
+    job_id: {
         type: mongoose.Schema.Types.ObjectId, ref: 'Job',
-        required: true, 
+        required: true,
     }
-})
+}
+);
 
 module.exports = mongoose.model('Purchased', Purchased);
 
