@@ -45,11 +45,12 @@ export default function Dashboard() {
                 <Container maxWidth="lg" className={classes.container} >
                     <Paper className={classes.paper} id='module1'>
                         <Typography variant='h5'>Active Jobs</Typography>
-                        <JobsList />
+                        <JobsList status="active" />
                     </Paper>
                     {/* Completed Jobs */}
                     <Paper className={classes.paper} id='module2'>
                         <Typography variant='h5'>Completed Jobs</Typography>
+                        <JobsList status="completed"/>
                     </Paper>
                     <Copyright />
                 </Container>

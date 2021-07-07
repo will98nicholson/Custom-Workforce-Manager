@@ -1,6 +1,9 @@
 import axios from "axios";
 
 export default {
+    getCurrentUser: function () {
+        return axios.get("/api/current/")
+    },
     getJobs: function () {
         return axios.get("/api/jobs/")
     },

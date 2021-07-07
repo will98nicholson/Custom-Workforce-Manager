@@ -17,50 +17,66 @@ import DetailButton from '../assets/icons/view-details-color-vibrant.PNG';
 import API from '../utils/API';
 
 const columns = [
-    { id: 'client', label: 'Client', minWidth: 170 },
-    { id: 'address', label: 'Address', minWidth: 170 }
+    { id: 'client', label: 'Client' },
+    { id: 'address', label: 'Address' }
+    // , minWidth: 170
 ]
 const useStyles = makeStyles({
-  root: {
-    width: '100%',
-  },
-  container: {
-    maxHeight: 400,
-  },
+    root: {
+        width: '100%',
+    },
+    container: {
+        maxHeight: 400,
+    },
 });
-const getAssignedJob = API.getJobByUser().then( response => {
+const getAssignedJob = API.getJobByUser().then(response => {
     console.log(response.data)
-} );
-function createData ( id, client, address ) {
+});
+function createData(id, client, address, status) {
     return {
         id,
         client,
-        address
+        address,
+        status
     };
 };
 
-export default function JobsList ( props ) {
+export default function JobsList(props) {
 
     const classes = useStyles();
-    const [ page, setPage ] = React.useState( 0 );
-    const [ rowsPerPage, setRowsPerPage ] = React.useState( 10 );
+    const [page, setPage] = React.useState(0);
+    const [rowsPerPage, setRowsPerPage] = React.useState(10);
     const [rows, setRows] = React.useState([])
-    // const [ user, setUser ] = React.useState(null);
+    const [user, setUser] = React.useState('');
+
     useEffect(() => {
-        API.getJobs()
-            .then(res => {
-               const formattedJobs = res.data.map((job) => {
-                    return createData(job._id, job.client.name, job.client.location)
-                })
-                setRows(formattedJobs)
-            })
-    }, [])
-    const handleChangePage = ( event, newPage ) => {
-        setPage( newPage );
+        API.getCurrentUser()
+            .then(res => setUser(res.data.username))
+            .then(
+            API.getJobByUser(user)
+                .then(res => {
+                    const formattedJobs = res.data.map((job) => {
+                        return createData(job._id, job.client.name, job.client.location, job.completed)
+                    })
+                    setRows(formattedJobs)
+                }))
+    }, [user]);
+
+    // useEffect(() => {
+    //     API.getJobByUser(user)
+    //         .then(res => {
+    //             const formattedJobs = res.data.map((job) => {
+    //                 return createData(job._id, job.client.name, job.client.location, job.completed)
+    //             })
+    //             setRows(formattedJobs)
+    //         })
+    // }, [])
+    const handleChangePage = (event, newPage) => {
+        setPage(newPage);
     };
-    const handleChangeRowsPerPage = ( event ) => {
-        setRowsPerPage( +event.target.value );
-        setPage( 0 );
+    const handleChangeRowsPerPage = (event) => {
+        setRowsPerPage(+event.target.value);
+        setPage(0);
     };
 
     return (
@@ -70,18 +86,18 @@ export default function JobsList ( props ) {
                 <Table stickyHeader aria-label="sticky table" id='jobslist'>
                     <TableHead>
                         <TableRow>
-                        {/* columns headers go here if needed*/}
+                            {/* columns headers go here if needed*/}
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {rows.slice( page * rowsPerPage, page * rowsPerPage + rowsPerPage ).map( ( row, i ) => {
-                            console.log( row );
+                        {rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row, i) => {
+                            console.log(row);
 
                             return (
 
                                 <TableRow hover role="checkbox" tabIndex={-1} key={i}>
-                                    {columns.map( ( column ) => {
-                                        const value = row[ column.id ];
+                                    {columns.map((column) => {
+                                        const value = row[column.id];
 
                                         return (
 
@@ -89,15 +105,15 @@ export default function JobsList ( props ) {
                                                 {column.label === "Client" ? row.client : row.address.streetAddress + ', ' + row.address.city}
                                             </TableCell>
                                         );
-                                    } )}
+                                    })}
                                     <TableCell>
-                                        <Link to={'/jobdetail/'+ row.id}>
+                                        <Link to={'/jobdetail/' + row.id}>
                                             <img alt='' src={DetailButton} className='detail-button' />
                                         </Link>
                                     </TableCell>
                                 </TableRow>
                             );
-                        } )}
+                        })}
                     </TableBody>
                 </Table>
             </TableContainer>
