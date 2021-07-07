@@ -29,6 +29,7 @@ function App() {
     // const [job, setJob] = useState([]);
     useEffect(() => { getUser() }, [])
 
+
     const getUser = async () => {
         await axios({
             method: "GET",
@@ -41,6 +42,7 @@ function App() {
             .catch(err => console.log(err));
 
     };
+
     // API.getJob()
     //     .then((res) => {
     //         console.log(res)
@@ -61,22 +63,22 @@ function App() {
                 </Switch>}
             {user &&
                 <>
-                <MenuToolbar linkHidden={ user.type === "Administrator" ? false : true}/>
-                <Switch>
-                    <Route exact path={['/', '/dashboard']}>{user.type === "Administrator" ? <Dashboard /> : <EmpDash user={user} />}</Route>
-                    {/* <Route exact path='/employee'><EmpDash /></Route> */}
-                    <Route exact path='/createjob'>{user.type === "Administrator" ? <CreateJob /> : ""} </Route>
-                    <Route exact path='/crews'>{user.type === "Administrator" ? <Crews /> : ""} </Route>
-                <Route exact path='/jobdetail/:id'><JobDetail inputDisabled={ user.type === "Employee" ? true : false }/></Route>
+                    <MenuToolbar linkHidden={user.type === "Administrator" ? false : true} setUser={setUser} />
+                    <Switch>
+                        <Route exact path={['/', '/dashboard']}>{user.type === "Administrator" ? <Dashboard /> : <EmpDash user={user} />}</Route>
+                        {/* <Route exact path='/employee'><EmpDash /></Route> */}
+                        <Route exact path='/createjob'>{user.type === "Administrator" ? <CreateJob /> : ""} </Route>
+                        <Route exact path='/crews'>{user.type === "Administrator" ? <Crews /> : ""} </Route>
+                        <Route exact path='/jobdetail/:id'><JobDetail inputDisabled={user.type === "Employee" ? true : false} /></Route>
 
-                    {/* NOTE: empjobdetail page is for testing + development - figure out logic + props for rendering differently based on user-type */}
-                    {/* <Route path='/empjobdetail'>{user.type === "Employee" ? <EmpJobDetail /> : ""} </Route> */}
+                        {/* NOTE: empjobdetail page is for testing + development - figure out logic + props for rendering differently based on user-type */}
+                        {/* <Route path='/empjobdetail'>{user.type === "Employee" ? <EmpJobDetail /> : ""} </Route> */}
 
-                <Route exact path='/form'><Form /></Route>
-                    <Route exact path='/jobdetail' component={() => <JobDetail user={user} />}></Route>
-                <Redirect to="/"></Redirect>
-                </Switch>
-            </>
+                        <Route exact path='/form'><Form /></Route>
+                        <Route exact path='/jobdetail' component={() => <JobDetail user={user} />}></Route>
+                        <Redirect to="/"></Redirect>
+                    </Switch>
+                </>
             }
 
         </Router>
