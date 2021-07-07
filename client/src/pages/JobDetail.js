@@ -8,14 +8,11 @@ import {
     Button
 } from '@material-ui/core';
 import { useParams, Link } from 'react-router-dom';
-// import MenuToolbar from '../components/MenuToolbar';
 import Copyright from '../components/Copyright';
 import JobsForm from '../components/JobsForm';
 import ClockIn from '../components/ClockIn';
-import DetailInfo from '../components/DetailInfo';
 import ServiceTable from '../components/ServiceTable';
 import moment from 'moment';
-
 import API from '../utils/API'
 
 const useStyles = makeStyles((theme) => ({
@@ -41,43 +38,8 @@ const useStyles = makeStyles((theme) => ({
         overflow: 'auto',
         flexDirection: 'column',
     }
-}));
+} ) );
 
-
-// function handleSubmit () {
-//     console.log( 'submit' );
-// }
-
-
-// ORIG JOB DETAIL //
-
-// export default function JobDetail () {
-//     const classes = useStyles();
-//     return (
-//         <div className={classes.root} id='job-detail-page'>
-//             <CssBaseline />
-//             <MenuToolbar />
-//             <main className={classes.content}>
-//                 <div className={classes.appBarSpacer} />
-//                 <Container maxWidth="lg" className={classes.container}>
-//                     <Paper className={classes.paper}>
-//                         <Typography variant='h5'>Job Detail</Typography>
-//                         <JobsForm />
-//                         <Button className={classes.button} variant="contained" color="primary" onClick={handleSubmit}>
-//                             Submit
-//                         </Button>
-//                     </Paper>
-//                     <Copyright />
-//                 </Container>
-//             </main>
-//         </div >
-//     );
-// };
-
-// add assigned crew text area
-
-
-// EMP JOB DETAIL: development //
 export default function JobDetail(props) {
     const classes = useStyles();
     const [object, setObject] = React.useState({})
@@ -90,26 +52,18 @@ export default function JobDetail(props) {
         API.getJobById(id)
             .then(res => setObject(res.data))
     }, [])
-    //NOTES: links in menu are not hidden for employee from job details page
-    //       passed props.linkHidden in menu toolbar - not sure if useState would help
 
     return (
         <div className={classes.root} id='job-detail-page'>
             <CssBaseline />
-            {/* <MenuToolbar linkHidden={props.linkHidden }/> */}
             <main className={classes.content}>
                 <div className={classes.appBarSpacer} />
                 <Container maxWidth="lg" className={classes.container}>
                     <Paper className={classes.paper}>
-                        {/* props.rows.map[1] :: try to get customer name */}
                         <Typography variant='h5'>Job Detail</Typography>
                         <p className="App-clock">The time is {time}</p>
                         < ClockIn />
-                        {/* <EmpJob */}
-                        <DetailInfo id={id} />
-                        {console.log(object.client)}
-                        {/*  {...props} job={object} */}
-                        {/* <ServiceTable /> */}
+                        <JobsForm id={id} {...props} job={object} />
                         <ServiceTable />
                     </Paper>
                     <Copyright />
