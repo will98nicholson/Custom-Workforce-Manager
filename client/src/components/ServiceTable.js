@@ -70,7 +70,7 @@ function ServiceTableRow({ row, handleDataChange, deleteRow }) {
         })
 
         handleDataChange({
-            ...data, 
+            ...data,
             index
         })
     }
@@ -132,10 +132,10 @@ function ServiceTable() {
     // )
     const [rows, setRows] = useState([]);
 
-    // Receive data from TableRow 
+    // Receive data from TableRow
     const handleChange = data => {
         rows[data.index] = data;
-        console.log(data)  
+        console.log(data)
     }
 
     // const handleChange = (event) => {
@@ -167,7 +167,6 @@ function ServiceTable() {
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log('hit')
-        debugger
         rows.map((row) => {
             API.postPurchase({
                 service_id: row.service._id,
