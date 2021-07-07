@@ -1,40 +1,84 @@
-import React from "react"
+import React, { useState, useEffect, useRef } from "react"
+import Sortable from 'sortablejs';
 import API from "../../utils/API";
 import Jobs from "./Jobs";
 
+
 function List({ crew }) {
-    // if data is returning all jobs
-    // then we need to filter them by crewAssignedToo
-    // and give an option for "unnassigned"
-    // then we need to map the filtered jobs list through the Jobs component
-    // while sorting by position, adding the conditional of comparing lastUpdatedTime
-    // in case jobs have the same position after updating
+    // TODO :while sorting by position, adding the conditional of comparing lastUpdatedTime
+    // TODO :in case jobs have the same position after updating
 
-    // API call to find all jobs
-    const data = API.getJob().then(response => {
-        console.log(response.data)
-    })
+    const [jobs, setJobs] = useState([])
 
-    // // filtering API results by crew
-    // const filteredJobs = data.filter( dataObjs => dataObjs.crewAssignedToo === crew);
+    const listEl = useRef(null)
+    if (listEl.current !== null) {
+        const sortable = new Sortable(listEl.current, {
+            group: 'shared',
+            animation: 150,
+            onEnd: function (/**Event*/evt) {
+                var itemEl = evt.item;  // dragged HTMLElement
+                // evt.to;    // target list
+                // evt.from;  // previous list
+                // evt.oldIndex;  // element's old index within old parent
+                // evt.newIndex;  // element's new index within new parent
+                // evt.oldDraggableIndex; // element's old index within old parent, only counting draggable elements
+                // evt.newDraggableIndex; // element's new index within new parent, only counting draggable elements
+                // evt.clone // the clone element
+                // const cardId = evt.to.id
 
-    // // sorting filtered jobs in order assigned to render
-    // const sortedJobs = filteredJobs.sort()
+                const handleCrewChange = () => {
+                    const newCrew = {
+                        _id: itemEl.id,
+                        dailyPosition: evt.newIndex,
+                        crewAssignedToo: evt.to.id
+                    }
+                    handleJobUpdate(newCrew)
+                }
 
+                const handleJobUpdate = (crew) => {
+                    console.log(crew)
+                    fetch(`/api/jobs/${itemEl.id}`, {
+                        method: 'PUT',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(crew)
+                    })
+                        .then(res => res.json())
+                        .then(data => console.log(data))
+                        .catch(err => console.log(err))
+                }
 
-    // const jobs = data.map( job =>
-    //     <Jobs job={job}/>
-    // );
+                handleCrewChange();
 
+            }
+        })
+    }
 
-    return(
+    useEffect(() => {
+        loadJobs()
+    }, [])
+
+    // API call to find and sort all jobs
+    function loadJobs() {
+        API.getJobs()
+        .then(response => {
+            setJobs(response.data)
+        }).catch(err => console.log(err));
+    }
+
+    return (
         <>
-            <div className={data.crewName}>
-                <h2>{crew}</h2>
-                {/* {jobs} */}
+            <div className="list">
+                <h2 className="crew-header">{crew}</h2>
+                <div ref={listEl} className="job-list" id={crew}>
+                    {jobs
+                        .filter(dataObjs => dataObjs.crewAssignedToo === crew)
+                        .sort((a, b) => (a.dailyPosition > b.dailyPosition) ? 1 : -1)
+                        .map((job) => (
+                            <Jobs job={job} key={job._id} />
+                        ))}
+                </div>
             </div>
         </>
-
     )
 };
 

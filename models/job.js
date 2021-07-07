@@ -65,7 +65,6 @@ const Job = new Schema({
         type: Date,
         required: true
     },
-
     description: { 
         type: String, 
         required: false, 
@@ -77,7 +76,7 @@ const Job = new Schema({
     crewAssignedToo:{
         type: String,
         required: true,
-        default: "unassigned"
+        default: "Unassigned Jobs"
     },
     dailyPosition:{ 
         type: Number,
