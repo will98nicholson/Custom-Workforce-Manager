@@ -53,7 +53,9 @@ export default function Crews() {
                         <List crew={crew} key={i} />
                     ))}
                 </div>
-                    <List crew={"unassigned"} /> 
+                <div className={"unassigned-Wrapper"}>
+                    <List crew={"Unassigned Jobs"} /> 
+                </div>
                 <Copyright />
             </main>
         </div>

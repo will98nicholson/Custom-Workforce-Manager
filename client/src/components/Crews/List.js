@@ -68,12 +68,8 @@ function List({ crew }) {
     return (
         <>
             <div className="list">
-<<<<<<< HEAD
                 <h2 className="crew-header">{crew}</h2>
-=======
-                <h2>{crew}</h2>
->>>>>>> c87717d82c6bd77e64856a57c1ec28e0ad2ee909
-                <div ref={listEl} calsName="job-list" id={crew}>
+                <div ref={listEl} className="job-list" id={crew}>
                     {jobs
                         .filter(dataObjs => dataObjs.crewAssignedToo === crew)
                         .sort((a, b) => (a.dailyPosition > b.dailyPosition) ? 1 : -1)
