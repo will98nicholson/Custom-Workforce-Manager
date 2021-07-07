@@ -149,35 +149,37 @@ export default function JobsForm ( props ) {
 
                 {/* CLIENT NAME */}
                 <FormControl className={classes.formControl}>
-                    {/* <InputLabel shrink className={classes.formControl} htmlFor="clientName"> Client Name</InputLabel> */}
+                    <InputLabel shrink className={classes.formControl} htmlFor="clientName"> Client Name</InputLabel>
                     <FilledInput
                         id="clientName"
+                        label='Client Name'
                         name="name"
-                        onChange={handleInputChange}
-                        className={classes.input}
                         variant="filled"
                         // placeholder="Client Name"
                         // className='form-input-positioning'
+                        className={classes.input}
                         value={formObject.name}
-                        label='clientName'
+                        onChange={handleInputChange}
                         disabled={props.inputDisabled}
-
                     />
                 </FormControl>
 
                 {/* CLIENT TYPE */}
                 <FormControl variant="filled" className={classes.formControl}>
-                    {/* <InputLabel shrink variant='outlined' id="clientType">Client Type</InputLabel> */}
+                    <InputLabel shrink className={classes.formControl} id="clientType">Client Type</InputLabel>
                     <Select
-                        labelId="clientType"
                         id="clientType"
-                        name="type"
-                        onChange={handleInputChange}
                         label="Client Type"
-                        // className='form-input-positioning'
-                        placeholder='Client Type'
+                        labelId="clientType"
+                        name="type"
+
+                        // placeholder='Client Type'
+                        className={classes.input}
                         value={formObject.type}
+                        onChange={handleInputChange}
                         disabled={props.inputDisabled}
+
+                        label="Client Type"
                     >
                         <MenuItem value="">
                             <em>None</em>
