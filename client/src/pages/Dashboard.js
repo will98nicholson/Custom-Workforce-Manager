@@ -21,9 +21,6 @@ const useStyles = makeStyles((theme) => ({
         height: '100vh',
         overflow: 'auto',
     },
-    container: {
-        // margin: theme.spacing(2)
-    },
     button: {
         margin: theme.spacing(2)
     },

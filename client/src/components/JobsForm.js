@@ -11,12 +11,10 @@ import {
     Button,
     InputAdornment
 } from '@material-ui/core';
-
 import { Redirect, useLocation } from 'react-router-dom';
 import axios from 'axios';
 import InvoiceModal from '../components/InvoiceModal';
-
-
+import ServiceTable from '../components/ServiceTable';
 
 const useStyles = makeStyles( ( theme ) => ( {
     root: {
@@ -53,21 +51,9 @@ const useStyles = makeStyles( ( theme ) => ( {
     }
 } ) );
 
-/// *** NOTES: ***
-/// - auto increment job number
-/// - jobs form is same form for create job, edit job, and job details
-///     *use props to set different states for different editing accessiblity
-///     * admin create job + edit
-///     * employee - edit in job details: notes, job desc, action taken
-///         * maybe ability to send request for job to be edited
-
-
 export default function JobsForm ( props ) {
 
-    console.log()
-
     const classes = useStyles();
-
     const [ formObject, setFormObject ] = useState( {} );
     const location = useLocation();
     const handleInputChange = ( event ) => {
@@ -79,11 +65,9 @@ export default function JobsForm ( props ) {
     //set state for invoice modal
     //handleOpen + handleClose functions
     const [ open, setOpen ] = React.useState( false );
-
     const handleOpen = () => {
         setOpen( true );
     };
-
     const handleClose = () => {
         setOpen( false );
     };
@@ -91,7 +75,6 @@ export default function JobsForm ( props ) {
     const getJob = async () => {
         await axios( {
             method: "GET",
-
             url: `/api/jobs/${ props.id }`
         } ).then( res => {
             console.log( res.data );
@@ -112,9 +95,7 @@ export default function JobsForm ( props ) {
                 notes: res.data[ 0 ].notes
             } );
         } )
-
             .catch( err => console.log( err ) );
-
     };
     function handleSubmit ( event ) {
         event.preventDefault();
@@ -139,18 +120,10 @@ export default function JobsForm ( props ) {
             .then( ( res ) => console.log( res ) )
             // .then(<Redirect to="/admin"></Redirect>)
             .catch( ( err ) => console.log( err ) );
-    }
-
+    };
     return (
-        <div className={classes.root}>
+        <div className={classes.root} id='jobsform'>
             <form className='form-flex' name="job-details">
-
-                {/* <FormControl disabled>
-                    <InputLabel htmlFor="jobNumber">Job Number</InputLabel>
-                    <OutlinedInput id="jobNumber" name="job_number" className={classes.input} variant="filled" placeholder={jobNumber} />
-                </FormControl> */}
-
-                {/* CLIENT NAME */}
                 <FormControl className={classes.formControl}>
                     <InputLabel shrink className={classes.formControl} htmlFor="clientName"> Client Name</InputLabel>
                     <FilledInput
@@ -373,7 +346,7 @@ export default function JobsForm ( props ) {
                         value={formObject.notes}
                     />
                 </FormControl>
-
+                <ServiceTable />
                 <div className={classes.break} />
 
                 {/* SAVE / SUBMIT BUTTON */} {/* for create job */}
@@ -389,4 +362,4 @@ export default function JobsForm ( props ) {
             </form>
         </div>
     );
-}
+};

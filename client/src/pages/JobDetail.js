@@ -11,7 +11,6 @@ import { useParams, Link } from 'react-router-dom';
 import Copyright from '../components/Copyright';
 import JobsForm from '../components/JobsForm';
 import ClockIn from '../components/ClockIn';
-import ServiceTable from '../components/ServiceTable';
 import moment from 'moment';
 import API from '../utils/API'
 import axios from 'axios';
@@ -55,25 +54,22 @@ export default function JobDetail(props) {
         API.getJobById(id)
             .then(res => setObject(res.data))
     }, [])
-    //NOTES: links in menu are not hidden for employee from job details page
-    //       passed props.linkHidden in menu toolbar - not sure if useState would help
-    const handleSubmit = (event) => {
+        const handleSubmit = (event) => {
         event.preventDefault();
         axios.put("/api/jobs/" + id, {
             completed: true,
         });
       }
 
-    
+
     return (
-        <div className={classes.root} id='job-detail-page'>
+        <div className={classes.root}>
             <CssBaseline />
             <main className={classes.content}>
                 <div className={classes.appBarSpacer} />
                 <Container maxWidth="lg" className={classes.container}>
-                    <Paper className={classes.paper}>
-                        <Typography variant='h5'>Job Detail</Typography>
-                        <p className="App-clock">The time is {time}</p>
+                    <Paper className={classes.paper} id='job-detail-page'>
+                        <Typography variant='h5'>{/* Job Detail */}</Typography>
                         < ClockIn />
                         <JobsForm id={id} {...props} job={object} />
                         <ServiceTable />
