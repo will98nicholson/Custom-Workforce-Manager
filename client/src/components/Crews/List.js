@@ -11,7 +11,7 @@ function List({ crew }) {
     const [jobs, setJobs] = useState([])
 
     const listEl = useRef(null)
-    if (listEl.current !== null){
+    if (listEl.current !== null) {
         const sortable = new Sortable(listEl.current, {
             group: 'shared',
             animation: 150,
@@ -24,30 +24,31 @@ function List({ crew }) {
                 // evt.oldDraggableIndex; // element's old index within old parent, only counting draggable elements
                 // evt.newDraggableIndex; // element's new index within new parent, only counting draggable elements
                 // evt.clone // the clone element
-                
-                console.log(itemEl)
                 // const cardId = evt.to.id
 
-                // const handlePositionSave = () => {
-                //     const newPosition = {
-                //         id: itemEl.id,
-                //         card_id:cardId.substring(3),
-                //     };
-                //     console.log(newPosition)
-                //     savePosition(newPosition)
-                // };
+                const handleCrewChange = () => {
+                    const newCrew = {
+                        _id: itemEl.id,
+                        dailyPosition: evt.newIndex,
+                        crewAssignedToo: evt.to.id
+                    }
+                    handleJobUpdate(newCrew)
+                }
 
-                // const savePosition = (el) => {
-                //     fetch(`/api/tasks/${itemEl.id}`, {
-                //         method: 'PUT',
-                //         headers: {
-                //         'Content-Type': 'application/json',
-                //         },
-                //         body: JSON.stringify(el),
-                //     })
-                // }
+                const handleJobUpdate = (crew) => {
+                    console.log(crew)
+                    fetch(`/api/jobs/${itemEl.id}`, {
+                        method: 'PUT',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(crew)
+                    })
+                        .then(res => res.json())
+                        .then(data => console.log(data))
+                        .catch(err => console.log(err))
+                }
 
-                // handlePositionSave();
+                handleCrewChange();
+
             }
         })
     }
@@ -57,24 +58,25 @@ function List({ crew }) {
     }, [])
 
     // API call to find and sort all jobs
-    function loadJobs(){ API.getJob()
+    function loadJobs() {
+        API.getJob()
         .then(response => {
-        setJobs(response.data)   
+            setJobs(response.data)
         }).catch(err => console.log(err));
     }
-  
-    return(
+
+    return (
         <>
             <div className="list">
                 <h2>{crew}</h2>
-                <div ref={listEl} calsName="job-list" id={crew + "-jobs"}>
+                <div ref={listEl} calsName="job-list" id={crew}>
                     {jobs
-                    .filter( dataObjs => dataObjs.crewAssignedToo === crew)
-                    .sort((a, b) => (a.dailyPosition > b.dailyPosition) ? 1 : -1)
-                    .map( (job) => (
-                        <Jobs job={job} key={job._id}/>
-                    ))}
-                </div>    
+                        .filter(dataObjs => dataObjs.crewAssignedToo === crew)
+                        .sort((a, b) => (a.dailyPosition > b.dailyPosition) ? 1 : -1)
+                        .map((job) => (
+                            <Jobs job={job} key={job._id} />
+                        ))}
+                </div>
             </div>
         </>
     )
