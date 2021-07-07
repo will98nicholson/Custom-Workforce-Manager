@@ -9,7 +9,7 @@ import {
     Grid
 } from '@material-ui/core';
 // import { Link } from 'react-router-dom';
-import MenuToolbar from '../components/MenuToolbar';
+// import MenuToolbar from '../components/MenuToolbar';
 import Copyright from '../components/Copyright';
 import List from '../components/Crews/List'
 
@@ -45,7 +45,7 @@ export default function Crews() {
     return (
         <div className={classes.root}>
             <CssBaseline />
-            <MenuToolbar className="topToolbar" />
+            {/* <MenuToolbar className="topToolbar" /> */}
             <main className={classes.content}>
                 <div className={classes.appBarSpacer} />
                 <div className={"crewListWrapper"}>

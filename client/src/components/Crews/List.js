@@ -59,7 +59,7 @@ function List({ crew }) {
 
     // API call to find and sort all jobs
     function loadJobs() {
-        API.getJob()
+        API.getJobs()
         .then(response => {
             setJobs(response.data)
         }).catch(err => console.log(err));

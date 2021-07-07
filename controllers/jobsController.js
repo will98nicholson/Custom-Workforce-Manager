@@ -10,8 +10,9 @@ module.exports = {
     },
     findById: ( req, res ) => {
         console.log( req.params );
-        db.Job.find({ id: parseInt(req.params.id) }) //convert to string to get param
+        db.Job.find({ _id: req.params.id }) 
             .then((data) => {
+                console.log(data)
                 res.json(data)
             })
             .catch(err => console.log(err))

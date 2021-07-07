@@ -8,7 +8,7 @@ import {
     // Button
 } from '@material-ui/core';
 
-import MenuToolbar from '../components/MenuToolbar';
+// import MenuToolbar from '../components/MenuToolbar';
 import Copyright from '../components/Copyright';
 import JobsForm from '../components/JobsForm';
 
@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
         overflow: 'auto',
     },
     container: {
-        margin: theme.spacing(2)
+        // margin: theme.spacing(2)
     },
     button: {
         margin: theme.spacing(2),
@@ -41,13 +41,13 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-export default function CreateJob() {
+export default function CreateJob(props) {
     const classes = useStyles()
 
     return (
         <div className={classes.root}>
             <CssBaseline />
-            <MenuToolbar />
+            {/* <MenuToolbar /> */}
             <main className={classes.content}>
                 <div className={classes.appBarSpacer} />
                 <Container maxWidth="lg" className={classes.container}>
@@ -56,7 +56,7 @@ export default function CreateJob() {
                         {/* pass createJob API to JobsForm via props */}
                         {/* Other pages using JobsForm component will pass different API functions */}
                         {/* pass a blank defaultvalue to JobsForm (default value will be used in view/edit job) */}
-                        <JobsForm APIFunction={API.createJob} setDisable={false} setDefaultValue={""} />
+                        <JobsForm {...props} APIFunction={API.createJob} setDisable={false} setDefaultValue={""} />
                     </Paper>
                     <Copyright />
                 </Container>

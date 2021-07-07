@@ -4,15 +4,12 @@ import {
     CssBaseline,
     Container,
     Typography,
-    Paper,
-    // Button
+    Paper
 } from '@material-ui/core';
-// import { Link } from 'react-router-dom';
-import MenuToolbar from '../components/MenuToolbar';
-import Copyright from '../components/Copyright';
-import JobsList from '../components/JobsList';
-import API from '../utils/API';
 import TimeWeather from '../components/TimeWeather';
+import JobsList from '../components/JobsList';
+import Copyright from '../components/Copyright';
+import API from '../utils/API';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -23,9 +20,6 @@ const useStyles = makeStyles((theme) => ({
         flexGrow: 1,
         height: '100vh',
         overflow: 'auto',
-    },
-    container: {
-        margin: theme.spacing(2)
     },
     button: {
         margin: theme.spacing(2)
@@ -41,40 +35,14 @@ const useStyles = makeStyles((theme) => ({
 export default function Dashboard() {
     const classes = useStyles();
 
-    // const [user, setUser] = useState({});
-
-    // useEffect(() => {
-    //     getUser();
-    // }, []);
-
-    // function getUser() {
-    //     API.getUser()
-    //         .then(res => setUser(res.data))
-    //         .catch(err => console.log(err))
-
-    // }
-
     return (
         <div className={classes.root}>
             <CssBaseline />
-            <MenuToolbar className="topToolbar"/>
             <main className={classes.content}>
+
                 <div className={classes.appBarSpacer} />
-                <Container maxWidth="lg" className={classes.container} >
-                    <TimeWeather />
-
-                    {/* <Link to='/createjob'>
-                        <Button variant="contained" color="primary">
-                            Create New Job
-                        </Button>
-                    </Link> */}
-
-                    {/* ""} */}
-                    {/* Active Jobs */}
-                    {/* <Button variant="contained" color="primary" onClick={() => { window.location.replace('/createjob') }}>
-                        Create New Job
-                    </Button> */}
-
+                <TimeWeather />
+                <Container maxWidth="xl" className={classes.container} >
                     <Paper className={classes.paper} id='module1'>
                         <Typography variant='h5'>Active Jobs</Typography>
                         <JobsList />
@@ -85,6 +53,7 @@ export default function Dashboard() {
                     </Paper>
                     <Copyright />
                 </Container>
+
             </main>
         </div>
     );

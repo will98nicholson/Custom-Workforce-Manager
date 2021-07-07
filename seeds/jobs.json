@@ -3,10 +3,10 @@
     "type": "Residential",
     "name": "Michel Pinks",
     "location": {
-      "streetAdress": "5024 Golf Course Crossing",
-      "city": "Little Rock",
-      "state": "AR",
-      "zipcode": "72231"
+      "streetAddress": "5024 Golf Course Crossing",
+      "city": "Dublin",
+      "state": "OH",
+      "zipcode": "43017"
     },
     "phone": "501-938-9791",
     "email": "mpinks0@indiegogo.com"
@@ -25,10 +25,10 @@
     "type": "Residential",
     "name": "Crin Felix",
     "location": {
-      "streetAdress": "81 Loomis Alley",
-      "city": "White Plains",
-      "state": "NY",
-      "zipcode": "10633"
+      "streetAddress": "81 Loomis Alley",
+      "city": "Powell",
+      "state": "OH",
+      "zipcode": "43065"
     },
     "phone": "914-291-5419",
     "email": "cfelix1@hubpages.com"
@@ -47,10 +47,10 @@
     "type": "Residential",
     "name": "Hans Coils",
     "location": {
-      "streetAdress": "9663 Messerschmidt Road",
-      "city": "Birmingham",
-      "state": "AL",
-      "zipcode": "35254"
+      "streetAddress": "9663 Messerschmidt Road",
+      "city": "Hilliard",
+      "state": "OH",
+      "zipcode": "43026"
     },
     "phone": "205-995-1940",
     "email": "hcoils2@homestead.com"
@@ -69,10 +69,10 @@
     "type": "Residential",
     "name": "Kassie Armitt",
     "location": {
-      "streetAdress": "726 Pankratz Terrace",
-      "city": "San Jose",
-      "state": "CA",
-      "zipcode": "95150"
+      "streetAddress": "726 Pankratz Terrace",
+      "city": "Dublin",
+      "state": "OH",
+      "zipcode": "43017"
     },
     "phone": "408-907-8152",
     "email": "karmitt3@vistaprint.com"    
@@ -91,10 +91,10 @@
     "type": "Residential",
     "name": "Rufe Charlick",
     "location": {
-      "streetAdress": "62 Grasskamp Junction",
-      "city": "Riverside",
-      "state": "CA",
-      "zipcode": "92513"
+      "streetAddress": "62 Grasskamp Junction",
+      "city": "Powell",
+      "state": "OH",
+      "zipcode": "43065"
     },
     "phone": "951-560-1621",
     "email": "rcharlick4@newsvine.com"
@@ -113,10 +113,10 @@
     "type": "Residential",
     "name": "Corry McGilbon",
     "location": {
-      "streetAdress": "10 Ramsey Street",
-      "city": "Sacramento",
-      "state": "CA",
-      "zipcode": "94263"
+      "streetAddress": "10 Ramsey Street",
+      "city": "Hilliard",
+      "state": "OH",
+      "zipcode": "43026"
     },
     "phone": "916-103-5216",
     "email": "cmcgilbon5@eventbrite.com"
@@ -135,10 +135,10 @@
     "type": "Residential",
     "name": "Kirsteni Duffyn",
     "location": {
-      "streetAdress": "16 Morningstar Avenue",
-      "city": "Anaheim",
-      "state": "CA",
-      "zipcode": "92825"
+      "streetAddress": "16 Morningstar Avenue",
+      "city": "Dublin",
+      "state": "OH",
+      "zipcode": "43017"
     },
     "phone": "714-435-5710",
     "email": "kduffyn6@constantcontact.com"
@@ -157,10 +157,10 @@
     "type": "Residential",
     "name": "Pip Chrippes",
     "location": {
-      "streetAdress": "65946 Moose Road",
-      "city": "El Paso",
-      "state": "TX",
-      "zipcode": "79945"
+      "streetAddress": "65946 Moose Road",
+      "city": "Powell",
+      "state": "OH",
+      "zipcode": "43065"
     },
     "phone": "915-511-7914",
     "email": "pchrippes7@zdnet.com"
@@ -179,10 +179,10 @@
     "type": "Residential",
     "name": "Vivyanne Goode",
     "location": {
-      "streetAdress": "77472 Talisman Road",
-      "city": "Wichita",
-      "state": "KS",
-      "zipcode": "67210"
+      "streetAddress": "77472 Talisman Road",
+      "city": "Hilliard",
+      "state": "OH",
+      "zipcode": "43026"
     },
     "phone": "316-578-8785",
     "email": "vgoode8@ask.com"
@@ -201,10 +201,10 @@
     "type": "Residential",
     "name": "Revkah Pinhorn",
     "location": {
-      "streetAdress": "63925 Sunfield Junction",
-      "city": "San Diego",
-      "state": "CA",
-      "zipcode": "92176"
+      "streetAddress": "63925 Sunfield Junction",
+      "city": "Dublin",
+      "state": "OH",
+      "zipcode": "43017"
     },
     "phone": "619-434-7554",
     "email": "rpinhorn9@e-recht24.de"
@@ -225,10 +225,10 @@
     "type": "Commercial",
     "contact": "Iona MacGiolla Pheadair",
     "location": {
-      "streetAdress": "9643 Kings Crossing",
-      "city": "Colorado Springs",
-      "state": "CO",
-      "zipcode": "80905"
+      "streetAddress": "9643 Kings Crossing",
+      "city": "Powell",
+      "state": "OH",
+      "zipcode": "43065"
     },
     "phone": "719-286-2897",
     "email": "imacgiolla0@wikia.com"
@@ -248,10 +248,10 @@
     "type": "Commercial",
     "contact": "Patty Guerrero",
     "location": {
-      "streetAdress": "8 Harbort Pass",
-      "city": "Jacksonville",
-      "state": "FL",
-      "zipcode": "32225"
+      "streetAddress": "8 Harbort Pass",
+      "city": "Hilliard",
+      "state": "OH",
+      "zipcode": "43026"
     },
     "phone": "904-635-6718",
     "email": "pguerrero1@statcounter.com"
@@ -271,10 +271,10 @@
     "type": "Commercial",
     "contact": "Maddie Tattersdill",
     "location": {
-      "streetAdress": "65443 Cherokee Plaza",
-      "city": "Houston",
-      "state": "TX",
-      "zipcode": "77020"
+      "streetAddress": "65443 Cherokee Plaza",
+      "city": "Dublin",
+      "state": "OH",
+      "zipcode": "43017"
     },
     "phone": "713-943-7677",
     "email": "mtattersdill2@amazon.co.uk"
@@ -294,10 +294,10 @@
     "type": "Commercial",
     "contact": "Cherey Menchenton",
     "location": {
-      "streetAdress": "663 Pankratz Drive",
-      "city": "Gainesville",
-      "state": "FL",
-      "zipcode": "32627"
+      "streetAddress": "663 Pankratz Drive",
+      "city": "Powell",
+      "state": "OH",
+      "zipcode": "43065"
     },
     "phone": "352-372-8420",
     "email": "cmenchenton3@slate.com"
@@ -317,10 +317,10 @@
     "type": "Commercial",
     "contact": "Averil Crummie",
     "location": {
-      "streetAdress": "15656 Schmedeman Road",
-      "city": "Pasadena",
-      "state": "CA",
-      "zipcode": "91131"
+      "streetAddress": "15656 Schmedeman Road",
+      "city": "Hilliard",
+      "state": "OH",
+      "zipcode": "43026"
     },
     "phone": "626-536-6354",
     "email": "acrummie4@posterous.com"
@@ -340,10 +340,10 @@
     "type": "Commercial",
     "contact": "Kandy Toderini",
     "location": {
-      "streetAdress": "2859 Becker Point",
-      "city": "Arlington",
-      "state": "TX",
-      "zipcode": "76016"
+      "streetAddress": "2859 Becker Point",
+      "city": "Dublin",
+      "state": "OH",
+      "zipcode": "43017"
     },
     "phone": "817-712-5345",
     "email": "ktoderini5@mozilla.com"
@@ -361,10 +361,10 @@
     "type": "Commercial",
     "contact": "Raina Brigden",
     "location": {
-      "streetAdress": "02 Ridgeway Road",
-      "city": "Orlando",
-      "state": "FL",
-      "zipcode": "32859"
+      "streetAddress": "02 Ridgeway Road",
+      "city": "Powell",
+      "state": "OH",
+      "zipcode": "43065"
     },
     "phone": "407-373-2816",
     "email": "rbrigden6@ask.com"
@@ -382,10 +382,10 @@
     "type": "Commercial",
     "contact": "Rosabelle Gerhartz",
     "location": {
-      "streetAdress": "77794 Main Drive",
-      "city": "Milwaukee",
-      "state": "WI",
-      "zipcode": "53277"
+      "streetAddress": "77794 Main Drive",
+      "city": "Hilliard",
+      "state": "OH",
+      "zipcode": "43026"
     },
     "phone": "414-419-4380",
     "email": "rgerhartz7@123-reg.co.uk"
@@ -403,10 +403,10 @@
     "type": "Commercial",
     "contact": "Livvy Billham",
     "location": {
-      "streetAdress": "0 Pearson Crossing",
-      "city": "Arlington",
-      "state": "TX",
-      "zipcode": "76004"
+      "streetAddress": "0 Pearson Crossing",
+      "city": "Dublin",
+      "state": "OH",
+      "zipcode": "43017"
     },
     "phone": "817-831-9212",
     "email": "lbillham8@blogs.com"
@@ -424,10 +424,10 @@
     "type": "Commercial",
     "contact": "Katha Thomassen",
     "location": {
-      "streetAdress": "605 Cottonwood Court",
-      "city": "Lexington",
-      "state": "KY",
-      "zipcode": "40510"
+      "streetAddress": "605 Cottonwood Court",
+      "city": "Powell",
+      "state": "OH",
+      "zipcode": "43065"
     },
     "phone": "859-407-2386",
     "email": "kthomassen9@nhs.uk"
