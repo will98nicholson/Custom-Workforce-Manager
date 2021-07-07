@@ -137,7 +137,7 @@ export default function MenuToolbar(props) {
                     {/* <Typography component="h1" variant="h6" color="inherit" noWrap className={classes.title}>
                     </Typography> */}
                     <Typography className='app-bar-items' id='current-date' variant='h9'><Moment format='ll'>{currentDateTime}</Moment></Typography>
-                    <Typography className='app-bar-items' id='current-time' variant='h9'><Moment format='h:MM:ssa'>{currentDateTime}</Moment></Typography>
+                    <Typography className='app-bar-items' id='current-time' variant='h9'><Moment format='h:MMa'>{currentDateTime}</Moment></Typography>
                 </Toolbar>
             </AppBar>
             <Drawer
