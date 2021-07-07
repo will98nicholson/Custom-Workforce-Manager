@@ -24,22 +24,22 @@ import axios from 'axios';
 
 
 
-const handleLogout = async (event) => {
-    event.preventDefault();
-    console.log("route hit")
-    await axios({
-        method: "GET",
 
-        withCredentials: true,
-        url: '/auth/logout'
-    }).then(res => setUser(null))
-
-        .catch(err => console.log(err));
-};
 
 export default function MenuList(props) {
 
+    const handleLogout = async (event) => {
+        event.preventDefault();
+        console.log("route hit")
+        await axios({
+            method: "GET",
 
+            withCredentials: true,
+            url: '/auth/logout'
+        }).then(res => props.setUser(null))
+
+            .catch(err => console.log(err));
+    };
 
 
     return (

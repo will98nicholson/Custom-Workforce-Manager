@@ -63,7 +63,7 @@ function App() {
                 </Switch>}
             {user &&
                 <>
-                    <MenuToolbar linkHidden={user.type === "Administrator" ? false : true} />
+                    <MenuToolbar linkHidden={user.type === "Administrator" ? false : true} setUser={setUser} />
                     <Switch>
                         <Route exact path={['/', '/dashboard']}>{user.type === "Administrator" ? <Dashboard /> : <EmpDash user={user} />}</Route>
                         {/* <Route exact path='/employee'><EmpDash /></Route> */}

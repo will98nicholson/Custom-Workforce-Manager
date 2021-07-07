@@ -103,7 +103,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function MenuToolbar ( props ) {
+export default function MenuToolbar(props) {
 
     const classes = useStyles();
     const [open, setOpen] = React.useState(false);
@@ -152,7 +152,7 @@ export default function MenuToolbar ( props ) {
                         <ChevronLeft />
                     </IconButton>
                 </div>
-                <MenuList linkHidden={props.linkHidden} />
+                <MenuList  {...props} />
             </Drawer>
         </div>
     );
