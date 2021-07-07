@@ -5,9 +5,14 @@ import API from '../utils/API';
 export default function DetailInfo ( props ) {
     const [ object, setObject ] = React.useState( {} )
     useEffect( () => {
-        API.getJobById( props.id )
-            .then( res => setObject( res.data ) );
+        getJob()
+        console.log(object)
     }, [] )
+
+    const getJob = async () => {
+        await API.getJobById( props.id )
+            .then( res => setObject( res[0].data ) );
+    }
     //set state for invoice modal
     //handleOpen + handleClose functions
     const [ open, setOpen ] = React.useState( false );
@@ -24,8 +29,6 @@ export default function DetailInfo ( props ) {
         <div className='detail-info-wrapper'>
             <div>
                 <div>Client Name</div>
-                {/* <div>{ object.client.name }</div> */}
-                {console.log( object )}
             </div>
             <div>
                 <div>type</div>

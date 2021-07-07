@@ -72,7 +72,6 @@ export default function JobsList (props) {
                     return createData(job._id, job.client.name, job.client.location)
                 })
                 setRows(formattedJobs)
-                // console.log(formattedJobs)
             })
     }, [])
 

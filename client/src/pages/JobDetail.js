@@ -14,6 +14,7 @@ import ClockIn from '../components/ClockIn';
 import ServiceTable from '../components/ServiceTable';
 import moment from 'moment';
 import API from '../utils/API'
+import axios from 'axios';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -38,8 +39,10 @@ const useStyles = makeStyles((theme) => ({
         overflow: 'auto',
         flexDirection: 'column',
     }
-} ) );
+}));
 
+
+// EMP JOB DETAIL: development //
 export default function JobDetail(props) {
     const classes = useStyles();
     const [object, setObject] = React.useState({})
@@ -52,7 +55,16 @@ export default function JobDetail(props) {
         API.getJobById(id)
             .then(res => setObject(res.data))
     }, [])
+    //NOTES: links in menu are not hidden for employee from job details page
+    //       passed props.linkHidden in menu toolbar - not sure if useState would help
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        axios.put("/api/jobs/" + id, {
+            completed: true,
+        });
+      }
 
+    
     return (
         <div className={classes.root} id='job-detail-page'>
             <CssBaseline />
@@ -65,10 +77,11 @@ export default function JobDetail(props) {
                         < ClockIn />
                         <JobsForm id={id} {...props} job={object} />
                         <ServiceTable />
+                        <Button variant="contained" color="primary" onClick={handleSubmit}>Mark Job Complete</Button>
                     </Paper>
                     <Copyright />
                 </Container>
             </main>
         </div >
     );
-};
+}
