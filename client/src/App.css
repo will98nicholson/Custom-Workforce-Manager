@@ -70,6 +70,7 @@ header {
 #module5 {
   display: flex;
   flex-direction: column;
+  margin-top:5px;
 }
 .weather-text {
   display: flex;
@@ -100,7 +101,7 @@ header {
   display: flex;
   justify-content: center;
   border-radius: 50px!important;
-  border: 10px solid white;
+  /* border: 10px solid white; */
 }
 .weatherDescr {
   font-size: 1px;
@@ -130,9 +131,10 @@ header {
 
 
 /* ASSIGNED / ACTIVE JOBS MODULES */
-#jobslist,
-.transparent {
-  background-color: rgba(64, 65, 66, 0.505)!important;
+#jobslist
+/* .transparent */ {
+  background: rgba(64, 65, 66, 0.505)!important;
+  height: ;
 }
 /* .module-sub-head {
   font-family:
