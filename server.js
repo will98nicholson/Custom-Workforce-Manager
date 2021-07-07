@@ -37,6 +37,9 @@ app.use(passport.session());
 if (!isProduction) {
     app.use(errorHandler());
 }
+if (isProduction) {
+    app.use(express.static(path.join(__dirname, './client/build')));
+}
 
 //Configure Mongoose
 mongoose.connect(
@@ -75,6 +78,8 @@ mongoose.set('debug', true);
 //         },
 //     });
 // });
+// if we're in production, serve client/build as static assets
+
 app.use(routes);
 app.listen(PORT, () => {
     console.log(`App running on port ${PORT}!`);
