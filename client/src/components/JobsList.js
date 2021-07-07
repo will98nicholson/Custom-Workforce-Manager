@@ -66,7 +66,6 @@ export default function JobsList (props) {
     // const [ user, setUser ] = React.useState(null);
 
     useEffect(() => {
-        debugger
         API.getJobs()
             .then(res => {
                const formattedJobs = res.data.map((job) => {
