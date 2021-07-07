@@ -5,7 +5,7 @@
     --lightest-grey-txt: rgb(209, 217, 227);
     --lighter-grey-txt: rgb(188, 195, 205);
     --blue-txt: rgb(142, 204, 255);
-    --blue-txt-shadow: rgba(15, 147, 255, 0.409);
+    --blue-txt-shadow: rgba(15, 147, 255, 0.3);
 
     --green-icon: rgb(72,252,120);
     --yellow-icon: rgb(236,183,119);
@@ -47,31 +47,29 @@ header {
 /* global module styling */
 .module-header {
   margin: 0 5px 10px 5px !important;
+  display: flex;
+  justify-content: center;
 }
 
 /* ALL Dashboard MODULES */
-#module1,
-#module2,
-#module3,
-#module4,
-#module5 {
+#module-weather,
+#module-schedule,
+#module-activejobs,
+#module-completedjobs{
   background-color: var(--dark-background);
-  color: whitesmoke;
+  color: var(--lightest-grey-txt);
   margin: auto;
   margin-bottom: 5px;
-  width: 80vw;
+  width: 90vw;
   position: static;
 }
-/* jobs list text */
-.white-text {
-    color: var(--lightest-grey-txt)!important;
-}
 
-/* TIME + WEATHER MODULE */
-#module5 {
+/* WEATHER MODULE */
+#module-weather {
   display: flex;
   flex-direction: column;
   margin-top:5px;
+  height: 60vw!important;
 }
 .weather-text {
   display: flex;
@@ -130,15 +128,48 @@ header {
   justify-content: center;
 }
 
+/* SCHEDULE */
+#this-week {
+  font-size: 16px!important;
+  color: ;
+}
+#module-schedule {
+  padding: 10px 0 10px 0!important;
+}
+#schedule-img {
+  width: 90vw;
+  box-shadow: 1px 1px 2px black;
+}
 
 /* ASSIGNED / ACTIVE JOBS MODULES */
-/* #jobslist {
-  background: rgba(64, 65, 66, 0.505)!important;
+#active,
+#completed {
+  font-size: 22px!important;
+  /* text-transform: uppercase; */
+  font-weight: 400!important;
+  color: var(--yellow-icon);
+  padding-top: 0!important;
+  padding-bottom: 0!important;
+}
+#module-activejobs,
+#module-completedjobs {
+  font-size: ;
+}
+#component-jobslist {
   height: 50vw!important;
-} */
-/* .module-sub-head {
-  font-family:
-} */
+  background-color: rgba(9, 11, 25, 0.718);
+  margin-top: 5px;
+}
+.jobslist-row {
+  height: 10vw!important;
+}
+.jobslist-text {
+  color: var(--lightest-grey-txt)!important;
+  height: 15vw!important;
+  padding-top: 5px!important;
+  padding-bottom: 5px!important;
+}
+
 .detail-button {
   height: 20px;
   padding: 0;

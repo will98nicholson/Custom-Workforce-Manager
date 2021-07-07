@@ -23,10 +23,7 @@ const columns = [
 const useStyles = makeStyles({
   root: {
     width: '100%',
-  },
-  container: {
-    maxHeight: 400,
-  },
+  }
 });
 const getAssignedJob = API.getJobByUser().then( response => {
     console.log(response.data)
@@ -65,7 +62,7 @@ export default function JobsList ( props ) {
 
     return (
 
-        <Paper className={classes.root} id='module2'>
+        <Paper className={classes.root} id='component-jobslist'>
             <TableContainer className={classes.container}>
                 <Table stickyHeader aria-label="sticky table" id='jobslist'>
                     <TableHead>
@@ -79,13 +76,13 @@ export default function JobsList ( props ) {
 
                             return (
 
-                                <TableRow hover role="checkbox" tabIndex={-1} key={i}>
+                                <TableRow hover role="checkbox" tabIndex={-1} key={i} className='jobslist-row'>
                                     {columns.map( ( column ) => {
                                         const value = row[ column.id ];
 
                                         return (
 
-                                            <TableCell className='white-text' key={column.id}>
+                                            <TableCell className='jobslist-text' key={column.id}>
                                                 {column.label === "Client" ? row.client : row.address.streetAddress + ', ' + row.address.city}
                                             </TableCell>
                                         );
