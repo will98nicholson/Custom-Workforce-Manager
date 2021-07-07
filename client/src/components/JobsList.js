@@ -1,7 +1,6 @@
 /*** ACTIVE / ASSIGNED JOBS MODULE -- MODULE 2 ***/
 
 import React, { useEffect } from 'react';
-// import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import {
     Table,
@@ -21,7 +20,6 @@ const columns = [
     { id: 'client', label: 'Client', minWidth: 170 },
     { id: 'address', label: 'Address', minWidth: 170 }
 ]
-
 const useStyles = makeStyles({
   root: {
     width: '100%',
@@ -30,11 +28,9 @@ const useStyles = makeStyles({
     maxHeight: 400,
   },
 });
-
 const getAssignedJob = API.getJobByUser().then( response => {
     console.log(response.data)
 } );
-
 function createData ( id, client, address ) {
     return {
         id,
@@ -43,13 +39,13 @@ function createData ( id, client, address ) {
     };
 };
 
-export default function JobsList (props) {
+export default function JobsList ( props ) {
+
     const classes = useStyles();
     const [ page, setPage ] = React.useState( 0 );
     const [ rowsPerPage, setRowsPerPage ] = React.useState( 10 );
     const [rows, setRows] = React.useState([])
     // const [ user, setUser ] = React.useState(null);
-
     useEffect(() => {
         API.getJobs()
             .then(res => {
@@ -59,17 +55,16 @@ export default function JobsList (props) {
                 setRows(formattedJobs)
             })
     }, [])
-
     const handleChangePage = ( event, newPage ) => {
         setPage( newPage );
     };
-
     const handleChangeRowsPerPage = ( event ) => {
         setRowsPerPage( +event.target.value );
         setPage( 0 );
     };
 
     return (
+
         <Paper className={classes.root} id='module2'>
             <TableContainer className={classes.container}>
                 <Table stickyHeader aria-label="sticky table" id='jobslist'>
@@ -83,13 +78,15 @@ export default function JobsList (props) {
                             console.log( row );
 
                             return (
+
                                 <TableRow hover role="checkbox" tabIndex={-1} key={i}>
                                     {columns.map( ( column ) => {
                                         const value = row[ column.id ];
+
                                         return (
 
                                             <TableCell className='white-text' key={column.id}>
-                                                {column.label === "Client" ? row.client : row.address.streetAdress}
+                                                {column.label === "Client" ? row.client : row.address.streetAdress + ', ' + row.address.city + ', ' + row.address.state + ' ' + row.address.zipcode}
                                             </TableCell>
                                         );
                                     } )}
@@ -106,4 +103,4 @@ export default function JobsList (props) {
             </TableContainer>
         </Paper>
     );
-}
+};

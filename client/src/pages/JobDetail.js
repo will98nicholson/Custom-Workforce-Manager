@@ -65,7 +65,6 @@ export default function JobDetail(props) {
                 <Container maxWidth="lg" className={classes.container}>
                     <Paper className={classes.paper} id='job-detail-page'>
                         <Typography variant='h5'>{/* Job Detail */}</Typography>
-                        {/* <p className="App-clock">The time is {time}</p> */}
                         < ClockIn />
                         <JobsForm id={id} {...props} job={object} />
                         <Button variant="contained" color="primary" onClick={handleSubmit}>Mark Job Complete</Button>
