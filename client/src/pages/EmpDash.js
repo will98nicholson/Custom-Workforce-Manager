@@ -21,9 +21,6 @@ const useStyles = makeStyles( ( theme ) => ( {
         height: '100vh',
         overflow: 'auto',
     },
-    container: {
-        // margin: theme.spacing( 2 )
-    },
     button: {
         margin: theme.spacing( 2 )
     },
@@ -53,9 +50,7 @@ function EmpDash(props) {
                     <Paper className={classes.paper} id='module1'>
                         <Typography className='module-header' variant='h5'>Assigned Jobs</Typography>
                         <JobsList inputDisabled='true'/>
-                        {/*TODO: pass props through jobs list to render assigned jobs for specific crew or employee */}
                     </Paper>
-                    {/* Completed Jobs */}
                     <Paper className={classes.paper} id='module2'>
                         <Typography className='module-header' variant='h5'>Schedule</Typography>
                     </Paper>

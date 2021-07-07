@@ -11,12 +11,10 @@ import {
     Button,
     InputAdornment
 } from '@material-ui/core';
-
 import { Redirect, useLocation } from 'react-router-dom';
 import axios from 'axios';
 import InvoiceModal from '../components/InvoiceModal';
-
-
+import ServiceTable from '../components/ServiceTable';
 
 const useStyles = makeStyles( ( theme ) => ( {
     root: {
@@ -142,7 +140,7 @@ export default function JobsForm ( props ) {
     }
 
     return (
-        <div className={classes.root}>
+        <div className={classes.root} id='jobsform'>
             <form className='form-flex' name="job-details">
 
                 {/* <FormControl disabled>
@@ -373,7 +371,7 @@ export default function JobsForm ( props ) {
                         value={formObject.notes}
                     />
                 </FormControl>
-
+                <ServiceTable />
                 <div className={classes.break} />
 
                 {/* SAVE / SUBMIT BUTTON */} {/* for create job */}

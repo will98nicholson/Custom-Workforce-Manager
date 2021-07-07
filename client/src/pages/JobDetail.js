@@ -11,7 +11,6 @@ import { useParams, Link } from 'react-router-dom';
 import Copyright from '../components/Copyright';
 import JobsForm from '../components/JobsForm';
 import ClockIn from '../components/ClockIn';
-import ServiceTable from '../components/ServiceTable';
 import moment from 'moment';
 import API from '../utils/API'
 
@@ -54,17 +53,16 @@ export default function JobDetail(props) {
     }, [])
 
     return (
-        <div className={classes.root} id='job-detail-page'>
+        <div className={classes.root}>
             <CssBaseline />
             <main className={classes.content}>
                 <div className={classes.appBarSpacer} />
                 <Container maxWidth="lg" className={classes.container}>
-                    <Paper className={classes.paper}>
-                        <Typography variant='h5'>Job Detail</Typography>
-                        <p className="App-clock">The time is {time}</p>
+                    <Paper className={classes.paper} id='job-detail-page'>
+                        <Typography variant='h5'>{/* Job Detail */}</Typography>
+                        {/* <p className="App-clock">The time is {time}</p> */}
                         < ClockIn />
                         <JobsForm id={id} {...props} job={object} />
-                        <ServiceTable />
                     </Paper>
                     <Copyright />
                 </Container>
