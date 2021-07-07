@@ -1,0 +1,12 @@
+{
+  "short_name": "Three Leaves",
+  "name": "Three Leaves",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64",
+      "type": "image/png"
+    }
+  ],
+  "start_url": ""
+}
