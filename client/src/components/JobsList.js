@@ -108,7 +108,7 @@ export default function JobsList (props) {
                                             //     {column.format && typeof value === 'number' ? column.format( value ) : value}
                                             // </TableCell>
                                             <TableCell className='white-text' key={column.id}>
-                                                {column.label === "Client" ? row.client : row.address.streetAdress + ', ' + row.address.city + ', ' + row.address.state + ' ' + row.address.zipcode}
+                                                {column.label === "Client" ? row.client : row.address.streetAddress + ', ' + row.address.city}
                                             </TableCell>
 
                                         );

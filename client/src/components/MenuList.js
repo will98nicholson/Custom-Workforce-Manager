@@ -12,7 +12,8 @@ import {
     Notifications,
     Assessment,
     EventNote,
-    AttachMoney
+    AttachMoney,
+    MeetingRoom
 } from '@material-ui/icons';
 import {
     Divider,
@@ -122,7 +123,7 @@ export default function MenuList(props) {
                     <Button onClick={handleLogout}>
                         <ListItem>
                             <ListItemIcon>
-                                <AddBox />
+                                <MeetingRoom />
                             </ListItemIcon>
                             <ListItemText primary="Log Out" />
                         </ListItem>
