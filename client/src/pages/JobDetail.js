@@ -12,6 +12,7 @@ import { useParams, Link } from 'react-router-dom';
 import Copyright from '../components/Copyright';
 import JobsForm from '../components/JobsForm';
 import ClockIn from '../components/ClockIn';
+import DetailInfo from '../components/DetailInfo';
 import ServiceTable from '../components/ServiceTable';
 import moment from 'moment';
 
@@ -104,7 +105,10 @@ export default function JobDetail(props) {
                         <Typography variant='h5'>Job Detail</Typography>
                         <p className="App-clock">The time is {time}</p>
                         < ClockIn />
-                        <JobsForm id={id} {...props} job={object}/>
+                        {/* <EmpJob */}
+                        <DetailInfo id={id} />
+                        {console.log(object.client)}
+                        {/*  {...props} job={object} */}
                         {/* <ServiceTable /> */}
                         <ServiceTable />
                     </Paper>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import {
-    OutlinedInput,
+    FilledInput,
     InputLabel,
     FormControl,
     MenuItem,
@@ -15,6 +15,7 @@ import {
 import { Redirect, useLocation } from 'react-router-dom';
 import axios from 'axios';
 import InvoiceModal from '../components/InvoiceModal';
+
 
 
 const useStyles = makeStyles( ( theme ) => ( {
@@ -143,18 +144,18 @@ export default function JobsForm ( props ) {
 
                 {/* <FormControl disabled>
                     <InputLabel htmlFor="jobNumber">Job Number</InputLabel>
-                    <OutlinedInput id="jobNumber" name="job_number" className={classes.input} variant="outlined" placeholder={jobNumber} />
+                    <OutlinedInput id="jobNumber" name="job_number" className={classes.input} variant="filled" placeholder={jobNumber} />
                 </FormControl> */}
 
                 {/* CLIENT NAME */}
                 <FormControl className={classes.formControl}>
-                    <InputLabel shrink className={classes.formControl} htmlFor="clientName"> Client Name</InputLabel>
-                    <OutlinedInput
+                    {/* <InputLabel shrink className={classes.formControl} htmlFor="clientName"> Client Name</InputLabel> */}
+                    <FilledInput
                         id="clientName"
                         name="name"
                         onChange={handleInputChange}
                         className={classes.input}
-                        variant="outlined"
+                        variant="filled"
                         // placeholder="Client Name"
                         // className='form-input-positioning'
                         value={formObject.name}
@@ -165,8 +166,8 @@ export default function JobsForm ( props ) {
                 </FormControl>
 
                 {/* CLIENT TYPE */}
-                <FormControl variant="outlined" className={classes.formControl}>
-                    <InputLabel shrink variant='outlined' id="clientType">Client Type</InputLabel>
+                <FormControl variant="filled" className={classes.formControl}>
+                    {/* <InputLabel shrink variant='outlined' id="clientType">Client Type</InputLabel> */}
                     <Select
                         labelId="clientType"
                         id="clientType"
@@ -190,11 +191,11 @@ export default function JobsForm ( props ) {
 
                 {/* QUOTE DATE */}
                 <FormControl>
-                    <TextField variant="outlined"
+                    <TextField variant="filled"
                         id="quoteDate"
                         name="quote"
                         onChange={handleInputChange}
-                        label="Quote Date"
+                        // label="Quote Date"
                         type="date"
                         defaultValue={new Date()}
                         className={classes.textField}
@@ -210,14 +211,14 @@ export default function JobsForm ( props ) {
                 {/* QUOTE PRICE */}
                 <FormControl>
                     <InputLabel shrink htmlFor="quotePrice">Quote Price</InputLabel>
-                    <OutlinedInput
+                    <FilledInput
                         id="quotePrice"
                         name="price"
                         onChange={handleInputChange}
                         className={classes.input}
-                        variant="outlined"
+                        variant="filled"
                         startAdornment={<InputAdornment position="start">$</InputAdornment>}
-                        label="Quote Price"
+                        // label="Quote Price"
                         value={formObject.quote_price}
                         disabled={props.inputDisabled}
                     />
@@ -227,11 +228,11 @@ export default function JobsForm ( props ) {
 
                 {/* JOB START */}
                 <FormControl>
-                    <TextField variant="outlined"
+                    <TextField variant="filled"
                         id="startDate"
                         name="start"
                         onChange={handleInputChange}
-                        label="Job Start"
+                        // label="Job Start"
                         type="datetime-local"
                         defaultValue={new Date()}
                         className={classes.textField}
@@ -245,11 +246,11 @@ export default function JobsForm ( props ) {
 
                 {/* JOB END */}
                 <FormControl>
-                    <TextField variant="outlined"
+                    <TextField variant="filled"
                         id="endDate"
                         name="end"
                         onChange={handleInputChange}
-                        label="Job End"
+                        // label="Job End"
                         type="datetime-local"
                         defaultValue={new Date()}
                         className={classes.textField}
@@ -269,13 +270,13 @@ export default function JobsForm ( props ) {
                 {/* CONTACT NAME*/}
                 <FormControl>
                     <InputLabel shrink htmlFor="contactName">Point of Contact</InputLabel>
-                    <OutlinedInput
+                    <FilledInput
                         id="contactName"
                         name="contact"
                         onChange={handleInputChange}
                         className={classes.input}
-                        variant="outlined"
-                        label="Point of Contact"
+                        variant="filled"
+                        // label="Point of Contact"
                         value={formObject.contact}
                         disabled={props.inputDisabled}
                     />
@@ -284,13 +285,13 @@ export default function JobsForm ( props ) {
                 {/* CONTACT PHONE */}
                 <FormControl>
                     <InputLabel shrink htmlFor="contactPhone">Contact Phone</InputLabel>
-                    <OutlinedInput
+                    <FilledInput
                         id="contactPhone"
                         name="phone"
                         onChange={handleInputChange}
                         className={classes.input}
-                        variant="outlined"
-                        label="Contact Phone"
+                        variant="filled"
+                        // label="Contact Phone"
                         value={formObject.phone}
                         disabled={props.inputDisabled}
                     />
@@ -299,12 +300,12 @@ export default function JobsForm ( props ) {
                 {/* CONTACT EMAIL */}
                 <FormControl>
                     <InputLabel shrink htmlFor="contactEmail">Contact Email</InputLabel>
-                    <OutlinedInput
+                    <FilledInput
                         id="contactEmail"
                         name="email"
                         onChange={handleInputChange}
                         className={classes.input}
-                        variant="outlined"
+                        variant="filled"
                         label="Contact Email"
                         value={formObject.email}
                         disabled={props.inputDisabled}
@@ -324,7 +325,7 @@ export default function JobsForm ( props ) {
                         onChange={handleInputChange}
                         className={classes.TextField}
                         placeholder="123 Lawncare Lane, Greenville, OH 45331"
-                        variant="outlined"
+                        variant="filled"
                         value={formObject.location}
                         disabled={props.inputDisabled}
                     />
@@ -344,7 +345,7 @@ export default function JobsForm ( props ) {
                         multiline
                         rows={4}
                         placeholder="Describe Approved Work"
-                        variant="outlined"
+                        variant="filled"
                         value={formObject.description}
                         disabled={props.inputDisabled}
                     />
@@ -363,7 +364,7 @@ export default function JobsForm ( props ) {
                         multiline
                         rows={4}
                         placeholder="Directions, special considerations, etc."
-                        variant="outlined"
+                        variant="filled"
                         value={formObject.notes}
                     />
                 </FormControl>
