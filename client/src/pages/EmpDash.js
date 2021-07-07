@@ -6,8 +6,9 @@ import {
     Typography,
     Paper
 } from '@material-ui/core';
-import Copyright from '../components/Copyright';
+import TimeWeather from '../components/TimeWeather';
 import JobsList from '../components/JobsList';
+import Copyright from '../components/Copyright';
 import API from '../utils/API';
 
 const useStyles = makeStyles( ( theme ) => ( {
@@ -41,23 +42,12 @@ function EmpDash(props) {
 
     const [ user, setUser ] = useState( {} );
 
-    // useEffect( () => {
-    //     getUser();
-    // }, [] );
-
-    // function getUser () {
-    //     API.getUser()
-    //         .then( res => setUser( res.data ) )
-    //         .catch( err => console.log( err ) );
-    // }
-
-
     return (
         <div className={classes.root}>
             <CssBaseline />
-            {/* <MenuToolbar className="topToolbar" linkHidden='true'/> */}
             <main className={classes.content}>
                 <div className={classes.appBarSpacer} />
+                <TimeWeather />
                 <Container maxWidth="lg" className={classes.container} >
 
                     <Paper className={classes.paper} id='module1'>

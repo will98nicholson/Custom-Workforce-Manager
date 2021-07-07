@@ -38,19 +38,6 @@ const useStyles = makeStyles((theme) => ({
 export default function Dashboard() {
     const classes = useStyles();
 
-    // const [user, setUser] = useState({});
-
-    // useEffect(() => {
-    //     getUser();
-    // }, []);
-
-    // function getUser() {
-    //     API.getUser()
-    //         .then(res => setUser(res.data))
-    //         .catch(err => console.log(err))
-
-    // }
-
     return (
         <div className={classes.root}>
             <CssBaseline />
