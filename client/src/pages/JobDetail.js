@@ -91,7 +91,6 @@ export default function JobDetail(props) {
     }, [])
     //NOTES: links in menu are not hidden for employee from job details page
     //       passed props.linkHidden in menu toolbar - not sure if useState would help
-
     return (
         <div className={classes.root} id='job-detail-page'>
             <CssBaseline />
@@ -105,8 +104,8 @@ export default function JobDetail(props) {
                         <p className="App-clock">The time is {time}</p>
                         < ClockIn />
                         <JobsForm id={id} {...props} job={object}/>
-                        {/* <ServiceTable /> */}
                         <ServiceTable />
+                        <Button></Button>
                     </Paper>
                     <Copyright />
                 </Container>
