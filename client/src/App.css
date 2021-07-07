@@ -70,6 +70,7 @@ header {
 #module5 {
   display: flex;
   flex-direction: column;
+  margin-top: 75px;
 }
 .weather-text {
   display: flex;
@@ -100,7 +101,7 @@ header {
   display: flex;
   justify-content: center;
   border-radius: 50px!important;
-  border: 10px solid white;
+  /* border: 10px solid white; */
 }
 .weatherDescr {
   font-size: 1px;

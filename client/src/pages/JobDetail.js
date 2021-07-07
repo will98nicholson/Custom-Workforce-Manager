@@ -46,7 +46,7 @@ export default function JobDetail(props) {
 
     //hook to access specific job
     const { id } = useParams();
-    const time = moment().format('h:mm:ss a');
+    const time = moment().format('h:mm a');
 
     useEffect(() => {
         API.getJobById(id)

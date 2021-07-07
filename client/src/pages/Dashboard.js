@@ -4,15 +4,11 @@ import {
     CssBaseline,
     Container,
     Typography,
-    Paper,
-    // Button
+    Paper
 } from '@material-ui/core';
-// import { Link } from 'react-router-dom';
-// import MenuToolbar from '../components/MenuToolbar';
 import Copyright from '../components/Copyright';
 import JobsList from '../components/JobsList';
 import API from '../utils/API';
-import TimeWeather from '../components/TimeWeather';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -25,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
         overflow: 'auto',
     },
     container: {
-        margin: theme.spacing(2)
+        // margin: theme.spacing(2)
     },
     button: {
         margin: theme.spacing(2)
@@ -57,24 +53,11 @@ export default function Dashboard() {
     return (
         <div className={classes.root}>
             <CssBaseline />
-            {/* <MenuToolbar className="topToolbar"/> */}
             <main className={classes.content}>
+
                 <div className={classes.appBarSpacer} />
+
                 <Container maxWidth="lg" className={classes.container} >
-                    <TimeWeather />
-
-                    {/* <Link to='/createjob'>
-                        <Button variant="contained" color="primary">
-                            Create New Job
-                        </Button>
-                    </Link> */}
-
-                    {/* ""} */}
-                    {/* Active Jobs */}
-                    {/* <Button variant="contained" color="primary" onClick={() => { window.location.replace('/createjob') }}>
-                        Create New Job
-                    </Button> */}
-
                     <Paper className={classes.paper} id='module1'>
                         <Typography variant='h5'>Active Jobs</Typography>
                         <JobsList />
@@ -85,6 +68,7 @@ export default function Dashboard() {
                     </Paper>
                     <Copyright />
                 </Container>
+
             </main>
         </div>
     );

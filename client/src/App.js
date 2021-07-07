@@ -2,15 +2,14 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import Login from './pages/Login';
 import MenuToolbar from './components/MenuToolbar';
+import TimeWeather from './components/TimeWeather';
 import Dashboard from './pages/Dashboard';
 import EmpDash from './pages/EmpDash';
 import CreateJob from './pages/CreateJob';
-import EditJob from './pages/EditJob';
+// import EditJob from './pages/EditJob';
 import Form from './pages/Form'
 import JobDetail from './pages/JobDetail';
-// import EmpJobDetail from './pages/EmpJobDetail';
 import Crews from './pages/Crews';
-// import API from '.utils/API';
 import axios from 'axios';
 
 import {
@@ -18,12 +17,9 @@ import {
     Switch,
     Redirect,
     Route,
-    // Link
 } from 'react-router-dom';
 import { useRadioGroup } from '@material-ui/core';
-// import Review from '.pages/JobDetail';
 
-// TODO: get react router working
 function App() {
     const [user, setUser] = useState(null);
     // const [job, setJob] = useState([]);
@@ -43,16 +39,7 @@ function App() {
 
     };
 
-    // API.getJob()
-    //     .then((res) => {
-    //         console.log(res)
-    //         setJob(res.data)
-    //     })
-    //     .catch(err => console.log(err));
-
     console.log(user);
-
-    // console.log(user.type)
 
     return (
         <Router>
@@ -63,7 +50,8 @@ function App() {
                 </Switch>}
             {user &&
                 <>
-                    <MenuToolbar linkHidden={user.type === "Administrator" ? false : true} setUser={setUser} />
+                <MenuToolbar linkHidden={user.type === "Administrator" ? false : true} setUser={setUser} />
+                <TimeWeather />
                     <Switch>
                         <Route exact path={['/', '/dashboard']}>{user.type === "Administrator" ? <Dashboard /> : <EmpDash user={user} />}</Route>
                         {/* <Route exact path='/employee'><EmpDash /></Route> */}
