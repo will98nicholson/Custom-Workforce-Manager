@@ -63,6 +63,9 @@ const useStyles = makeStyles( ( theme ) => ( {
 
 
 export default function JobsForm ( props ) {
+
+    console.log()
+
     const classes = useStyles();
 
     const [ formObject, setFormObject ] = useState( {} );
@@ -375,7 +378,7 @@ export default function JobsForm ( props ) {
 
                 {/* SAVE / SUBMIT BUTTON */} {/* for create job */}
                 {/* passing user status to add job button - '&&' is a way to short circut and escape the turnary operator as we don't want to render anything in it's place */}
-                {props.user === 'Employee' && <Button display="none" className={classes.button} variant="contained" color="primary" onClick={handleSubmit}>
+                {props.user?.type === 'Administrator' && <Button className={classes.button} variant="contained" color="primary" onClick={handleSubmit}>
                     Add Job
                 </Button>}
                 {/* if create job submit to database - if job detail create invoice */}

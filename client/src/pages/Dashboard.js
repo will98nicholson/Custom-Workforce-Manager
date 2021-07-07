@@ -6,8 +6,9 @@ import {
     Typography,
     Paper
 } from '@material-ui/core';
-import Copyright from '../components/Copyright';
+import TimeWeather from '../components/TimeWeather';
 import JobsList from '../components/JobsList';
+import Copyright from '../components/Copyright';
 import API from '../utils/API';
 
 const useStyles = makeStyles((theme) => ({
@@ -56,7 +57,7 @@ export default function Dashboard() {
             <main className={classes.content}>
 
                 <div className={classes.appBarSpacer} />
-
+                <TimeWeather />
                 <Container maxWidth="lg" className={classes.container} >
                     <Paper className={classes.paper} id='module1'>
                         <Typography variant='h5'>Active Jobs</Typography>

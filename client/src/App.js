@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import Login from './pages/Login';
 import MenuToolbar from './components/MenuToolbar';
-import TimeWeather from './components/TimeWeather';
 import Dashboard from './pages/Dashboard';
 import EmpDash from './pages/EmpDash';
 import CreateJob from './pages/CreateJob';
@@ -51,16 +50,11 @@ function App() {
             {user &&
                 <>
                 <MenuToolbar linkHidden={user.type === "Administrator" ? false : true} setUser={setUser} />
-                <TimeWeather />
                     <Switch>
                         <Route exact path={['/', '/dashboard']}>{user.type === "Administrator" ? <Dashboard /> : <EmpDash user={user} />}</Route>
-                        {/* <Route exact path='/employee'><EmpDash /></Route> */}
-                        <Route exact path='/createjob'>{user.type === "Administrator" ? <CreateJob /> : ""} </Route>
+                    <Route exact path='/createjob'>{user.type === "Administrator" ? <CreateJob user={user} /> : ""} </Route>
                         <Route exact path='/crews'>{user.type === "Administrator" ? <Crews /> : ""} </Route>
                         <Route exact path='/jobdetail/:id'><JobDetail inputDisabled={user.type === "Employee" ? true : false} /></Route>
-
-                        {/* NOTE: empjobdetail page is for testing + development - figure out logic + props for rendering differently based on user-type */}
-                        {/* <Route path='/empjobdetail'>{user.type === "Employee" ? <EmpJobDetail /> : ""} </Route> */}
 
                         <Route exact path='/form'><Form /></Route>
                         <Route exact path='/jobdetail' component={() => <JobDetail user={user} />}></Route>
