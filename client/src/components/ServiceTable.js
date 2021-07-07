@@ -63,7 +63,7 @@ function ServiceTableRow({ row, handleDataChange, deleteRow }) {
         })
 
         handleDataChange({
-            ...data, 
+            ...data,
             index
         })
     }
@@ -118,10 +118,10 @@ function ServiceTable() {
 
     const [rows, setRows] = useState([]);
 
-    // Receive data from TableRow 
+    // Receive data from TableRow
     const handleChange = data => {
         rows[data.index] = data;
-        console.log(data)  
+        console.log(data)
     }
 
     // Add New Table Row
