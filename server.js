@@ -1,3 +1,4 @@
+require('dotenv').config();
 const path = require('path');
 const express = require('express');
 const logger = require('morgan');
@@ -41,10 +42,10 @@ if (!isProduction) {
 mongoose.connect(
     process.env.MONGODB_URI || 'mongodb://localhost/fleetsheets',
     {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-      useCreateIndex: true,
-      useFindAndModify: false
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+        useCreateIndex: true,
+        useFindAndModify: false
     }
 )
 
