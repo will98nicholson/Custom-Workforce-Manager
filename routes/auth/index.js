@@ -13,7 +13,7 @@ router.post('/login',
             if (err) {
                 return next(err);
             }
-            res.redirect('/');
+            res.json(req.user);
         });
     }
 );
