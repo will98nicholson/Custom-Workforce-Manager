@@ -22,7 +22,9 @@
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
     "react-moment": "^1.1.1",
-    "react-text-mask": "^5.4.3"
+    "react-sortablejs": "^6.0.0",
+    "react-text-mask": "^5.4.3",
+    "sortablejs": "^1.14.0"
   },
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
