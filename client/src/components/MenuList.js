@@ -16,12 +16,29 @@ import {
 } from '@material-ui/icons';
 import {
     Divider,
+    Button,
     List
 } from '@material-ui/core';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 
-export default function MenuList( props ) {
+
+const handleLogout = async (event) => {
+    event.preventDefault();
+    console.log("route hit")
+    await axios({
+        method: "GET",
+
+        withCredentials: true,
+        url: '/auth/logout'
+    }).then(res => setUser(null))
+
+        .catch(err => console.log(err));
+};
+
+export default function MenuList(props) {
+
 
 
 
@@ -30,87 +47,89 @@ export default function MenuList( props ) {
         <div>
             <Divider />
             <List>
-            <div>
-                <Link to='/dashboard'>
-                    <ListItem >
-                        <ListItemIcon>
-                            <Dashboard />
-                        </ListItemIcon>
-                        <ListItemText primary="Dashboard" />
-                    </ListItem>
-                </Link>
+                <div>
+                    <Link to='/dashboard'>
+                        <ListItem >
+                            <ListItemIcon>
+                                <Dashboard />
+                            </ListItemIcon>
+                            <ListItemText primary="Dashboard" />
+                        </ListItem>
+                    </Link>
 
-                {/* <Link to='/createjob'> */}
+                    {/* <Link to='/createjob'> */}
                     <ListItem >
                         <ListItemIcon>
                             <EventNote />
                         </ListItemIcon>
                         <ListItemText primary="Schedule" />
                     </ListItem>
-                {/* </Link> */}
+                    {/* </Link> */}
 
-                <ListItem >
-                    <ListItemIcon>
-                        <ChatBubbleIcon />
-                    </ListItemIcon>
-                    <ListItemText primary="Chat" />
-                </ListItem>
+                    <ListItem >
+                        <ListItemIcon>
+                            <ChatBubbleIcon />
+                        </ListItemIcon>
+                        <ListItemText primary="Chat" />
+                    </ListItem>
                 </div>
             </List>
             <Divider />
             <List>
-            <div>
-            <ListSubheader inset></ListSubheader>
-                <Link to='' hidden={props.linkHidden}>
-                    <ListItem  >
-                        <ListItemIcon>
-                            <Assessment />
-                        </ListItemIcon>
-                        <ListItemText primary="Reports" />
-                    </ListItem>
-                </Link>
-                <Link to='/form' hidden={props.linkHidden}>
-                    <ListItem >
-                        <ListItemIcon>
-                            <AttachMoney />
-                        </ListItemIcon>
-                        <ListItemText primary="Invoices" />
-                    </ListItem>
-                </Link>
-                <Link to='/crews' hidden={props.linkHidden}>
-                    <ListItem >
-                        <ListItemIcon>
-                            <People />
-                        </ListItemIcon>
-                        <ListItemText primary="Crews" />
-                    </ListItem>
-                </Link>
-                <Link to=''>
-                    <ListItem >
-                        <ListItemIcon>
-                            <LibraryBooksIcon />
-                        </ListItemIcon>
-                        <ListItemText primary="Jobs" />
-                    </ListItem>
-                </Link>
-                <Link to='/createjob' hidden={props.linkHidden}>
-                    <ListItem >
-                        <ListItemIcon>
-                            <AddBox />
-                        </ListItemIcon>
-                        <ListItemText primary="New Job" />
-                    </ListItem>
+                <div>
+                    <ListSubheader inset></ListSubheader>
+                    <Link to='' hidden={props.linkHidden}>
+                        <ListItem  >
+                            <ListItemIcon>
+                                <Assessment />
+                            </ListItemIcon>
+                            <ListItemText primary="Reports" />
+                        </ListItem>
                     </Link>
-                    <Link to='/'>
+                    <Link to='/form' hidden={props.linkHidden}>
                         <ListItem >
+                            <ListItemIcon>
+                                <AttachMoney />
+                            </ListItemIcon>
+                            <ListItemText primary="Invoices" />
+                        </ListItem>
+                    </Link>
+                    <Link to='/crews' hidden={props.linkHidden}>
+                        <ListItem >
+                            <ListItemIcon>
+                                <People />
+                            </ListItemIcon>
+                            <ListItemText primary="Crews" />
+                        </ListItem>
+                    </Link>
+                    <Link to=''>
+                        <ListItem >
+                            <ListItemIcon>
+                                <LibraryBooksIcon />
+                            </ListItemIcon>
+                            <ListItemText primary="Jobs" />
+                        </ListItem>
+                    </Link>
+                    <Link to='/createjob' hidden={props.linkHidden}>
+                        <ListItem >
+                            <ListItemIcon>
+                                <AddBox />
+                            </ListItemIcon>
+                            <ListItemText primary="New Job" />
+                        </ListItem>
+                    </Link>
+
+                    <Button onClick={handleLogout}>
+                        <ListItem>
                             <ListItemIcon>
                                 <AddBox />
                             </ListItemIcon>
                             <ListItemText primary="Log Out" />
                         </ListItem>
-                    </Link>
+                    </Button>
+
                 </div>
             </List>
         </div>
     );
-};
+}
