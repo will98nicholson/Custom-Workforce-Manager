@@ -72,7 +72,6 @@ export default function JobDetail(props) {
                         <Typography variant='h5'>{/* Job Detail */}</Typography>
                         < ClockIn />
                         <JobsForm id={id} {...props} job={object} />
-                        <ServiceTable />
                         <Button variant="contained" color="primary" onClick={handleSubmit}>Mark Job Complete</Button>
                     </Paper>
                     <Copyright />
