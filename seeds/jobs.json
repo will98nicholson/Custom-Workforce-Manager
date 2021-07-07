@@ -17,7 +17,9 @@
   "quote_price": "$631.78",
   "description": "Proin risus. Praesent lectus.",
   "notes": "In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante.",
-  "completed": false
+  "completed": false,
+  "crewAssignedToo": "Crew #1",
+  "dailyPosition": "1"
 }, {
   "client": {
     "type": "Residential",
@@ -37,7 +39,9 @@
   "quote_price": "$53.71",
   "description": "Nulla tellus. In sagittis dui vel nisl. Duis ac nibh.",
   "notes": "In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.",
-  "completed": false
+  "completed": false,
+  "crewAssignedToo": "Crew #2",
+  "dailyPosition": "2"
 }, {
   "client": {
     "type": "Residential",
@@ -57,7 +61,9 @@
   "quote_price": "$600.88",
   "description": "Praesent lectus.",
   "notes": "Suspendisse potenti.",
-  "completed": false
+  "completed": false,
+  "crewAssignedToo": "Crew #3",
+  "dailyPosition": "2"
 }, {
   "client": {
     "type": "Residential",
@@ -69,7 +75,7 @@
       "zipcode": "43017"
     },
     "phone": "408-907-8152",
-    "email": "karmitt3@vistaprint.com"
+    "email": "karmitt3@vistaprint.com"    
   },
   "quote_date": "12/2/2021",
   "start_date": "11/8/2021",
@@ -77,7 +83,9 @@
   "quote_price": "$544.64",
   "description": "Integer a nibh. In quis justo. Maecenas rhoncus aliquam lacus.",
   "notes": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio.",
-  "completed": false
+  "completed": false,
+  "crewAssignedToo": "Crew #4",
+  "dailyPosition": "1"
 }, {
   "client": {
     "type": "Residential",
@@ -97,7 +105,9 @@
   "quote_price": "$319.42",
   "description": "In hac habitasse platea dictumst. Maecenas ut massa quis augue luctus tincidunt.",
   "notes": "Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus. Suspendisse potenti.",
-  "completed": true
+  "completed": true,
+  "crewAssignedToo": "Crew #1",
+  "dailyPosition": "2"
 }, {
   "client": {
     "type": "Residential",
@@ -117,7 +127,9 @@
   "quote_price": "$533.57",
   "description": "Proin at turpis a pede posuere nonummy. Integer non velit.",
   "notes": "Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim.",
-  "completed": true
+  "completed": true,
+  "crewAssignedToo": "Crew #1",
+  "dailyPosition": "3"
 }, {
   "client": {
     "type": "Residential",
@@ -137,7 +149,9 @@
   "quote_price": "$82.51",
   "description": "Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.",
   "notes": "In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem. Duis aliquam convallis nunc.",
-  "completed": false
+  "completed": false,
+  "crewAssignedToo": "Crew #2",
+  "dailyPosition": "1"
 }, {
   "client": {
     "type": "Residential",
@@ -157,7 +171,9 @@
   "quote_price": "$796.47",
   "description": "Integer a nibh. In quis justo.",
   "notes": "Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy.",
-  "completed": true
+  "completed": true,
+  "crewAssignedToo": "Crew #2",
+  "dailyPosition": "3"
 }, {
   "client": {
     "type": "Residential",
@@ -177,7 +193,9 @@
   "quote_price": "$519.37",
   "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue.",
   "notes": "Ut at dolor quis odio consequat varius. Integer ac leo.",
-  "completed": false
+  "completed": false,
+  "crewAssignedToo": "Crew #2",
+  "dailyPosition": "4"
 }, {
   "client": {
     "type": "Residential",
@@ -197,7 +215,9 @@
   "quote_price": "$781.62",
   "description": "Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.",
   "notes": "Nullam varius. Nulla facilisi.",
-  "completed": false
+  "completed": false,
+  "crewAssignedToo": "Crew #3",
+  "dailyPosition": "1"
 },
 {
   "client": {
@@ -219,7 +239,9 @@
   "quote_price": "$92.71",
   "description": "Nulla suscipit ligula in lacus.",
   "notes": "In congue.",
-  "completed": false
+  "completed": false,
+  "crewAssignedToo": "Crew #3",
+  "dailyPosition": "3"
 }, {
   "client": {
     "name": "Devshare",
@@ -240,7 +262,9 @@
   "quote_price": "$641.78",
   "description": "Ut at dolor quis odio consequat varius.",
   "notes": "Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.",
-  "completed": true
+  "completed": true,
+  "crewAssignedToo": "Crew #3",
+  "dailyPosition": "4"
 }, {
   "client": {
     "name": "Jabbercube",
@@ -261,7 +285,9 @@
   "quote_price": "$783.94",
   "description": "Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit.",
   "notes": "Etiam faucibus cursus urna.",
-  "completed": false
+  "completed": false,
+  "crewAssignedToo": "Crew #4",
+  "dailyPosition": "2"
 }, {
   "client": {
     "name": "Topicblab",
@@ -282,7 +308,9 @@
   "quote_price": "$50.38",
   "description": "Vivamus in felis eu sapien cursus vestibulum. Proin eu mi. Nulla ac enim.",
   "notes": "Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa.",
-  "completed": true
+  "completed": true,
+  "crewAssignedToo": "Crew #4",
+  "dailyPosition": "3"
 }, {
   "client": {
     "name": "Abata",
@@ -303,7 +331,9 @@
   "quote_price": "$332.52",
   "description": "Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.",
   "notes": "Praesent blandit. Nam nulla.",
-  "completed": false
+  "completed": false,
+  "crewAssignedToo": "Crew #4",
+  "dailyPosition": "4"
 }, {
   "client": {
     "name": "Voomm",

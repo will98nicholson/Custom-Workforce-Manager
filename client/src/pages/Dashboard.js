@@ -42,7 +42,7 @@ export default function Dashboard() {
 
                 <div className={classes.appBarSpacer} />
                 <TimeWeather />
-                <Container maxWidth="lg" className={classes.container} >
+                <Container maxWidth="xl" className={classes.container} >
                     <Paper className={classes.paper} id='module1'>
                         <Typography variant='h5'>Active Jobs</Typography>
                         <JobsList status="active" />
