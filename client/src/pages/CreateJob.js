@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
         overflow: 'auto',
     },
     container: {
-        margin: theme.spacing(2)
+        // margin: theme.spacing(2)
     },
     button: {
         margin: theme.spacing(2),
@@ -41,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-export default function CreateJob() {
+export default function CreateJob(props) {
     const classes = useStyles()
 
     return (
@@ -56,7 +56,7 @@ export default function CreateJob() {
                         {/* pass createJob API to JobsForm via props */}
                         {/* Other pages using JobsForm component will pass different API functions */}
                         {/* pass a blank defaultvalue to JobsForm (default value will be used in view/edit job) */}
-                        <JobsForm APIFunction={API.createJob} setDisable={false} setDefaultValue={""} />
+                        <JobsForm {...props} APIFunction={API.createJob} setDisable={false} setDefaultValue={""} />
                     </Paper>
                     <Copyright />
                 </Container>

@@ -7,8 +7,6 @@ import {
     Typography,
     Button
 } from '@material-ui/core';
-
-// import MenuToolbar from '../components/MenuToolbar';
 import Copyright from '../components/Copyright';
 import JobsForm from '../components/JobsForm';
 
@@ -23,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
         overflow: 'auto',
     },
     container: {
-        margin: theme.spacing(2)
+        // margin: theme.spacing(2)
     },
     button: {
         margin: theme.spacing(2),

@@ -8,14 +8,11 @@ import {
     Button
 } from '@material-ui/core';
 import { useParams, Link } from 'react-router-dom';
-// import MenuToolbar from '../components/MenuToolbar';
 import Copyright from '../components/Copyright';
 import JobsForm from '../components/JobsForm';
 import ClockIn from '../components/ClockIn';
-import DetailInfo from '../components/DetailInfo';
 import ServiceTable from '../components/ServiceTable';
 import moment from 'moment';
-
 import API from '../utils/API'
 import axios from 'axios';
 
@@ -52,7 +49,7 @@ export default function JobDetail(props) {
 
     //hook to access specific job
     const { id } = useParams();
-    const time = moment().format('h:mm:ss a');
+    const time = moment().format('h:mm a');
 
     useEffect(() => {
         API.getJobById(id)
@@ -71,21 +68,14 @@ export default function JobDetail(props) {
     return (
         <div className={classes.root} id='job-detail-page'>
             <CssBaseline />
-            {/* <MenuToolbar linkHidden={props.linkHidden }/> */}
             <main className={classes.content}>
                 <div className={classes.appBarSpacer} />
                 <Container maxWidth="lg" className={classes.container}>
                     <Paper className={classes.paper}>
-                        {/* props.rows.map[1] :: try to get customer name */}
                         <Typography variant='h5'>Job Detail</Typography>
                         <p className="App-clock">The time is {time}</p>
                         < ClockIn />
-                        {/* <EmpJob */}
-                        {/* <DetailInfo id={id} /> */}
-                        <JobsForm />
-                        {console.log(object.client)}
-                        {/*  {...props} job={object} */}
-                        {/* <ServiceTable /> */}
+                        <JobsForm id={id} {...props} job={object} />
                         <ServiceTable />
                         <Button variant="contained" color="primary" onClick={handleSubmit}>Mark Job Complete</Button>
                     </Paper>

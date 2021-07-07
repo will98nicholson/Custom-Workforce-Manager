@@ -15,7 +15,6 @@
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "concurrently": "^4.1.2",
     "css-loader": "^5.2.6",
-    "dotenv": "^10.0.0",
     "html-webpack-plugin": "^5.3.2",
     "mini-css-extract-plugin": "^2.0.0",
     "nodemon": "^1.18.7",
@@ -31,6 +30,7 @@
     "bcrypt": "^5.0.0",
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
     "errorhandler": "^1.5.1",
     "express": "^4.17.1",
     "express-session": "^1.17.2",
@@ -51,7 +51,6 @@
     "client": "cd client && npm run start",
     "install": "cd client && npm install",
     "build": "cd client && npm run build",
-    "heroku-postbuild": "npm run build",
     "seed": "node seeds/index.js"
   }
 }

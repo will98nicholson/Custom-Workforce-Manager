@@ -4,15 +4,12 @@ import {
     CssBaseline,
     Container,
     Typography,
-    Paper,
-    // Button
+    Paper
 } from '@material-ui/core';
-// import { Link } from 'react-router-dom';
-// import MenuToolbar from '../components/MenuToolbar';
-import Copyright from '../components/Copyright';
-import JobsList from '../components/JobsList';
-import API from '../utils/API';
 import TimeWeather from '../components/TimeWeather';
+import JobsList from '../components/JobsList';
+import Copyright from '../components/Copyright';
+import API from '../utils/API';
 
 const useStyles = makeStyles( ( theme ) => ( {
     root: {
@@ -25,7 +22,7 @@ const useStyles = makeStyles( ( theme ) => ( {
         overflow: 'auto',
     },
     container: {
-        margin: theme.spacing( 2 )
+        // margin: theme.spacing( 2 )
     },
     button: {
         margin: theme.spacing( 2 )
@@ -45,37 +42,13 @@ function EmpDash(props) {
 
     const [ user, setUser ] = useState( {} );
 
-    // useEffect( () => {
-    //     getUser();
-    // }, [] );
-
-    // function getUser () {
-    //     API.getUser()
-    //         .then( res => setUser( res.data ) )
-    //         .catch( err => console.log( err ) );
-    // }
-
-
     return (
         <div className={classes.root}>
             <CssBaseline />
-            {/* <MenuToolbar className="topToolbar" linkHidden='true'/> */}
             <main className={classes.content}>
                 <div className={classes.appBarSpacer} />
+                <TimeWeather />
                 <Container maxWidth="lg" className={classes.container} >
-                    <TimeWeather />
-
-                    {/* <Link to='/createjob'>
-                        <Button variant="contained" color="primary">
-                            Create New Job
-                        </Button>
-                    </Link> */}
-
-                    {/* ""} */}
-                    {/* Active Jobs */}
-                    {/* <Button variant="contained" color="primary" onClick={() => { window.location.replace('/createjob') }}>
-                        Create New Job
-                    </Button> */}
 
                     <Paper className={classes.paper} id='module1'>
                         <Typography className='module-header' variant='h5'>Assigned Jobs</Typography>

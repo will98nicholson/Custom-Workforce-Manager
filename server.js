@@ -1,3 +1,4 @@
+require('dotenv').config();
 const path = require('path');
 const express = require('express');
 const logger = require('morgan');
@@ -30,21 +31,24 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(require('cookie-parser')());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(session({ secret: 'passport-tutorial', cookie: { maxAge: 600000 }, resave: false, saveUninitialized: false }));
+app.use(session({ secret: 'passport-tutorial', cookie: { }, resave: false, saveUninitialized: false }));
 app.use(passport.initialize());
 app.use(passport.session());
 if (!isProduction) {
     app.use(errorHandler());
+}
+if (isProduction) {
+    app.use(express.static(path.join(__dirname, './client/build')));
 }
 
 //Configure Mongoose
 mongoose.connect(
     process.env.MONGODB_URI || 'mongodb://localhost/fleetsheets',
     {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-      useCreateIndex: true,
-      useFindAndModify: false
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+        useCreateIndex: true,
+        useFindAndModify: false
     }
 )
 
@@ -74,6 +78,8 @@ mongoose.set('debug', true);
 //         },
 //     });
 // });
+// if we're in production, serve client/build as static assets
+
 app.use(routes);
 app.listen(PORT, () => {
     console.log(`App running on port ${PORT}!`);
