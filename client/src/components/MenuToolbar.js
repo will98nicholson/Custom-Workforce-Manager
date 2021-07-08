@@ -19,9 +19,10 @@ import '../App.css';
 import MenuList from './MenuList';
 import moment from 'moment';
 import Moment from 'react-moment';
+import Logo from '../assets/icons/logo-w-name.PNG';
 
 
-const drawerWidth = 240;
+const drawerWidth = 135;
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -141,6 +142,7 @@ export default function MenuToolbar(props) {
                 </Toolbar>
             </AppBar>
             <Drawer
+                id='menu-drawer'
                 variant="temporary"
                 classes={{
                     paper: clsx(classes.drawerPaper, !open && classes.drawerPaperClose),
@@ -148,8 +150,9 @@ export default function MenuToolbar(props) {
                 open={open}
             >
                 <div className={classes.toolbarIcon}>
-                    <IconButton onClick={handleDrawerClose}>
-                        <ChevronLeft />
+                    <IconButton id='menu-header' onClick={handleDrawerClose}>
+                        <img src={Logo} alt='' id='menu-logo'></img>
+                        <ChevronLeft color='primary' />
                     </IconButton>
                 </div>
                 <MenuList  {...props} />
