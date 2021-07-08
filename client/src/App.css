@@ -60,7 +60,7 @@ color:  var(--lighter-grey-txt);
   color: var(--lightest-grey-txt);
   margin: auto;
   margin-bottom: 5px;
-  width: 90vw;
+  width: 92vw;
   position: static;
 }
 
@@ -137,7 +137,7 @@ justify-content: center;
   padding: 10px 0 10px 0!important;
 }
 #schedule-img {
-  width: 90vw;
+  width: 91.9vw;
   box-shadow: 1px 1px 2px black;
 }
 
