@@ -127,7 +127,7 @@ CURRENT ASSIGNMENTS:
 
 -->
 
-# Fleet-Sheets
+# Custom Workforce Manager
 ## Progressive Web Application (Mobile/Tablet First)
 
 ### Extra Information/Resources
@@ -160,6 +160,9 @@ CURRENT ASSIGNMENTS:
 * Express
 * React (w/ hooks)
 * Node.Js
+* Passport.Js
+* Sortable Js
+* Moment
 * Tailwind CSS &&|| react-material-ui (or something new)
 
 ### Desired PWA Functionalities
@@ -171,11 +174,4 @@ CURRENT ASSIGNMENTS:
 * Mobile app look/feel
 * Push Notifications (mobile + desktop)
 
-    "seed": "node scripts/seedDB.js",
-
-      "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
+  
