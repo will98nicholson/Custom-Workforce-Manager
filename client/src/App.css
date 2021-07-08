@@ -223,13 +223,13 @@ label#clientType {
   left: -10px;
 }
 
-/* PUNCH CLOCK */
+/* PUNCH CLOCK *//* CLOCK IN */
 .Stopwatch {
   margin: auto;
   border: 0.5px solid grey;
   border-radius: 4px;
   padding: 20px;
-  width: 200px;
+  width: 100vw;
   background-color: var(--dark-background);
   /* box-shadow: 0 3px 6px rgb(12, 12, 12); */
   display: flex!important;
