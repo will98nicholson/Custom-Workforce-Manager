@@ -1,7 +1,7 @@
 :root{
     --app-background: rgb(53, 53, 76);
     --dark-background: rgba(9, 11, 25, 0.718);
-    --darker-background: rgba(9, 11, 25, 0.848);
+    --darker-background: rgba(9, 11, 25, 0.937);
     --lightest-grey-txt: rgb(209, 217, 227);
     --lighter-grey-txt: rgb(188, 195, 205);
     --blue-txt: rgb(142, 204, 255);
@@ -246,10 +246,44 @@ input#qty {
   background:rgba(40, 52, 71, 0.293)!important;
   margin-left: -10px!important;
   margin-right: -10px!important;
+  font-size: 14px;
+  color: var(--lightest-grey-txt);
 }
-/* .btn-remove {
-  width: 10px!important;
-} */
+textarea#Description {
+  color: var(--lightest-grey-txt)!important;
+}
+#service-button-wrapper {
+  display: flex;
+}
+#add-serv-btn,
+#save-btn {
+  display: flex;
+
+}
+#add-serv-btn {
+  margin-left: 0;
+  margin-bottom: 20px;
+  color: var(--hot-pink-icon);
+}
+#save-btn {
+  margin-right: 15px;
+  margin-left: auto;
+  margin-top: 15px;
+  margin-bottom: 30px;
+  background-color: var(--green-icon);
+}
+#invoice-btn {
+  width: 87vw;
+  background-color: var(--blue-icon);
+  display: inline-flex;
+  margin: 40px 0 0 0;
+  position: relative;
+  left: -15px;
+
+}
+#job-complete-btn {
+  background-color: var(--blue-icon);
+}
 
 /* PUNCH CLOCK *//* CLOCK IN */
 .Stopwatch {

@@ -20,7 +20,7 @@ import API from '../utils/API';
 
 const useStyles = makeStyles((theme) => ({
     table: {
-        width: "60vw",
+        width: "70vw",
     },
     formControl: {
         margin: theme.spacing(1),
@@ -77,7 +77,7 @@ function ServiceTableRow({ row, handleDataChange, deleteRow }) {
             <TableCell component="td">
                 {/* <input type="text" name="service" className="service" placeholder="Service" value={service} onChange={updateValues}></input> */}
                 <FormControl className={classes.formControl}>
-                    <InputLabel id="serviceLabel">Service</InputLabel>
+                    <InputLabel shrink id="serviceLabel">Service</InputLabel>
                     <Select
                         name="service"
                         labelId="serviceLabel"
@@ -93,16 +93,17 @@ function ServiceTableRow({ row, handleDataChange, deleteRow }) {
                 </FormControl>
             </TableCell>
             <TableCell component="td">
-                {/* <input type="text" name="quantity" className="quantity" placeholder="Quantity" value={quantity} onChange={updateValues}></input> */}
-                <TextField
-                    name="quantity"
-                    id="qty"
-                    placeholder="Quantity"
-                    onChange={updateValues}
-                    type="number"
-                    align="right"
-                    variant="filled"
-                />
+                <FormControl className={classes.formControl}>
+                    <InputLabel shrink id="serviceQtyLabel">Qty</InputLabel>
+                    <TextField
+                        name="quantity"
+                        id="qty"
+                        onChange={updateValues}
+                        type="number"
+                        align="right"
+                        variant="filled"
+                    />
+                </FormControl>
             </TableCell>
             <TableCell variant="contained" color="secondary" component="td">
                 <Button type="button" variant="contained" color="secondary" className="btn btn-remove " onClick={removeRow}>
@@ -180,13 +181,14 @@ function ServiceTable() {
                     }
                 </TableBody>
             </Table>
-            <Button color="primary" onClick={addNewRow}>
-                + Add Service
-            </Button>
-            <Button variant="contained" color="primary" onClick={handleSubmit}>
-                Done
-            </Button>
-
+            <div id='service-button-wrapper'>
+                <Button id='add-serv-btn' onClick={addNewRow}>
+                    + Add Service
+                </Button>
+                <Button id='save-btn' variant="contained" onClick={handleSubmit}>
+                    Save
+                </Button>
+            </div>
         </TableContainer>
     );
 }
