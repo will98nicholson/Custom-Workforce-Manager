@@ -174,4 +174,13 @@ CURRENT ASSIGNMENTS:
 * Mobile app look/feel
 * Push Notifications (mobile + desktop)
 
-  
+### Links:
+* Deployed Application: https://custom-workforce-manager.herokuapp.com/
+
+* Contributors:
+
+- Michael Kotte: https://github.com/mkotte
+- Kathryn Wilkinson: https://github.com/NAHco-code
+- William Nicholson: https://github.com/will98nicholson
+- Brandon King: https://github.com/thebsking
+- Corrinne Worden: https://github.com/CorrinneW
