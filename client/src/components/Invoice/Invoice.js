@@ -16,8 +16,8 @@ function Invoice({formObject}) {
                 {/* TODO: continue working on logo / styles */}
                 {/* <Logo style="" /> */}
                 <Header data={formObject}/>
-                {/* <Table invoiceData={invoiceData}/>
-                <Notes invoiceData={invoiceData}/> */}
+                {/* <Table invoiceData={invoiceData}/>*/}
+                <Notes data={formObject}/> 
             </Page>
         </Document>
     );
