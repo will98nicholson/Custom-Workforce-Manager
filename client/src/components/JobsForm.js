@@ -173,12 +173,14 @@ export default function JobsForm ( props ) {
                         variant="filled"
                         placeholder={formObject.type}
                         className={classes.input}
-                        defaultValue={formObject.type}
+                        value={formObject.type}
                         onChange={handleInputChange}
                         disabled={props.inputDisabled}
                         label="Client Type"
+                        displayEmpty
+                        renderValue={( value ) => value}
                     >
-                        <MenuItem placeholder={formObject.type ? formObject.type : ""}>
+                        <MenuItem value={''}>
                         </MenuItem>
                         <MenuItem value={"Residential"}>Residential</MenuItem>
                         <MenuItem value={"Commercial"}>Commercial</MenuItem>

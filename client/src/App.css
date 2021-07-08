@@ -55,6 +55,65 @@ span.PrivateSwitchBase-root-11 {
   color: rgb(175, 175, 175)!important;
 }
 
+/* MENU */
+#menu-drawer {
+  width: 20vw!important;
+}
+.makeStyles-drawerPaper-25 {
+  background-image: url('./assets/images/sign-in-gradient.JPG');
+}
+#menu-logo {
+  width: 45px!important;
+}
+.MuiSvgIcon-root {
+  background-color: var(--lighter-grey)!important;
+}
+.menu-link,
+.menu-button {
+  text-decoration: none!important;
+}
+.MuiTypography-body1 {
+  font-size: 10px!important;
+}
+.menu-li {
+  display: flex;
+  flex-direction: column;
+}
+.nav-menu-icon {
+  display: flex;
+  justify-content: center;
+  font-size: 35px!important;
+}
+.nav-menu-txt,
+.menu-button {
+  display: flex!important;
+  justify-content: center;
+  margin: auto!important;
+  text-transform: capitalize;
+  color: var(--lighter-grey-txt);
+}
+
+svg#dashboard-icon,
+svg#crews-icon,
+svg#newjob-icon,
+svg#logout-icon {
+  font-size: 38px!important;
+  height: 45px!important;
+}
+
+svg#dashboard-icon {
+  color: var(--blue-icon);
+}
+svg#crews-icon {
+ color: var(--yellow-icon);
+}
+svg#newjob-icon {
+  color: var(--hot-pink-icon);
+}
+svg#logout-icon {
+  color: var(--purple-icon);
+}
+
 /* BODY */
 body {
 background-color: var(--app-background)!important;
