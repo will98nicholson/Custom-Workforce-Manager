@@ -26,7 +26,7 @@ const useStyles = makeStyles( ( theme ) => ( {
         },
     },
     input: {
-        width: '60vw',
+        width: '70vw',
         margin: theme.spacing( 1, 2, 1, 0 ),
         [ theme.breakpoints.up( 'md' ) ]: {
             width: '40vw'
@@ -36,7 +36,7 @@ const useStyles = makeStyles( ( theme ) => ( {
         }
     },
     TextField: {
-        width: '60vw',
+        width: '70vw',
         margin: theme.spacing( 1, 2, 1, 0 )
     },
     button: {
@@ -112,7 +112,8 @@ export default function JobsForm ( props ) {
             setDataObject( {
                 data: res.data[0]
             } );
-        } )
+            console.log( formObject );
+        } ).then( (data) => ( console.log(data)))
             .catch( err => console.log( err ) );
     };
 
@@ -156,7 +157,7 @@ export default function JobsForm ( props ) {
                         // placeholder="Client Name"
                         // className='form-input-positioning'
                         className={classes.input}
-                        value={formObject.name}
+                        value={''}
                         onChange={handleInputChange}
                         disabled={props.inputDisabled}
                     />
@@ -370,11 +371,11 @@ export default function JobsForm ( props ) {
 
                 {/* SAVE / SUBMIT BUTTON */} {/* for create job */}
                 {/* passing user status to add job button - '&&' is a way to short circut and escape the turnary operator as we don't want to render anything in it's place */}
-                {props.user?.type === 'Administrator' && <Button className={classes.button} variant="contained" color="primary" onClick={handleSubmit}>
+                {props.user?.type === 'Administrator' && <Button id='add-job-btn' className={classes.button} variant="contained" onClick={handleSubmit}>
                     Add Job
                 </Button>}
                 {/* if create job submit to database - if job detail create invoice */}
-                <Button className={classes.button} variant="contained" color="primary" onClick={ handleOpen }>
+                <Button id='invoice-btn' className={classes.button} variant="contained" onClick={ handleOpen }>
                     Create Invoice
                 </Button>
                 <InvoiceModal open={open} handleClose={handleClose} formObject={dataObject}/>

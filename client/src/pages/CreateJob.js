@@ -47,12 +47,11 @@ export default function CreateJob(props) {
     return (
         <div className={classes.root}>
             <CssBaseline />
-            {/* <MenuToolbar /> */}
             <main className={classes.content}>
                 <div className={classes.appBarSpacer} />
                 <Container maxWidth="lg" className={classes.container}>
-                    <Paper className={classes.paper}>
-                        <Typography variant='h5'>Create New Job</Typography>
+                    <Paper className={classes.paper} id='new-job-page'>
+                        <Typography variant='h5' id='new-job-title'>New Job</Typography>
                         {/* pass createJob API to JobsForm via props */}
                         {/* Other pages using JobsForm component will pass different API functions */}
                         {/* pass a blank defaultvalue to JobsForm (default value will be used in view/edit job) */}
