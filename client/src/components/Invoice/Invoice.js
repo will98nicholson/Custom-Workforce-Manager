@@ -19,6 +19,7 @@ function Invoice({formObject}) {
         flexDirection: 'column',
         },
         logo: {
+            paddingTop:20,
             width: 74,
             height: 66,
             marginLeft: 'auto',
@@ -32,7 +33,7 @@ function Invoice({formObject}) {
                 {/* TODO: continue working on logo / styles */}
                 <Image style={styles.logo} src={logo}/>
                 <Header data={formObject}/>
-                {/* <Table invoiceData={invoiceData}/>*/}
+                <Table data={formObject}/>
                 <Notes data={formObject}/> 
             </Page>
         </Document>
