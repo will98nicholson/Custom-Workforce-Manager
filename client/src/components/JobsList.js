@@ -21,11 +21,21 @@ const columns = [
     { id: 'address', label: 'Address', minWidth: 113 },
     { id: 'crew', label: 'Assigned Crew', minWidth: 113 }
 ]
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
     root: {
         width: '100%',
+    },
+    listFont: {
+        color: "#D1D9E3",
+        fontSize: "0.7rem",
+        [ theme.breakpoints.up( 'md' ) ]: {
+                fontSize: '1rem'
+            },
+        [ theme.breakpoints.up( 'lg' ) ]: {
+                fontSize: "2rem"
+            }
     }
-});
+}));
 // const getAssignedJob = API.getJobByUser().then(response => {
 //     console.log(response.data)
 // } );
@@ -88,7 +98,7 @@ export default function JobsList( {user} ) {
 
                                             return (
 
-                                                <TableCell className='jobslist-text' key={column.id}>
+                                                <TableCell className={classes.listFont}  key={column.id}>
                                                     {column.label === "Client" ? row.client : column.label === 'Address' ? row.address.streetAddress + ', ' + row.address.city : row.crew}
                                                 </TableCell>
                                             );

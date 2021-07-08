@@ -12,6 +12,7 @@ import {
     Button,
     InputAdornment
 } from '@material-ui/core';
+import Icon from '@material-ui/icons'
 import { Redirect, useLocation } from 'react-router-dom';
 import axios from 'axios';
 import InvoiceModal from '../components/InvoiceModal';
@@ -26,22 +27,22 @@ const useStyles = makeStyles( ( theme ) => ( {
         },
     },
     input: {
-        width: '70vw',
+        width: '100%',
         margin: theme.spacing( 1, 2, 1, 0 ),
         [ theme.breakpoints.up( 'md' ) ]: {
-            width: '40vw'
+            width: '100%'
         },
         [ theme.breakpoints.up( 'lg' ) ]: {
-            width: '20vw'
+            width: '100%'
         }
     },
     TextField: {
-        width: '70vw',
+        width: '100%',
         margin: theme.spacing( 1, 2, 1, 0 )
     },
     button: {
         margin: theme.spacing( 2 ),
-        width: '7rem'
+        width: '100%'
     },
     container: {
         margin: theme.spacing( 2 )
@@ -118,11 +119,14 @@ export default function JobsForm ( props ) {
     console.log( dataObject );
     function handleSubmit ( event ) {
         event.preventDefault();
+        // console.log( formObject.location );
         props.APIFunction( {
             client: {
                 type: formObject.type,
                 name: formObject.name,
-                location: formObject.location,
+                location: {
+                    streetAddress: formObject.location,
+                },
                 // contact: formObject.contact,
                 phone: formObject.phone,
                 email: formObject.email,
@@ -140,6 +144,7 @@ export default function JobsForm ( props ) {
             .catch( ( err ) => console.log( err ) );
     };
     console.log( formObject );
+    console.log( dataObject )
     return (
 
         <div className={classes.root} id='jobsform'>
@@ -172,12 +177,14 @@ export default function JobsForm ( props ) {
                         variant="filled"
                         placeholder={formObject.type}
                         className={classes.input}
-                        defaultValue={formObject.type}
+                        value={formObject.type}
                         onChange={handleInputChange}
                         disabled={props.inputDisabled}
                         label="Client Type"
+                        displayEmpty
+                        renderValue={( value ) => value}
                     >
-                        <MenuItem placeholder={formObject.type ? formObject.type : ""}>
+                        <MenuItem value={''}>
                         </MenuItem>
                         <MenuItem value={"Residential"}>Residential</MenuItem>
                         <MenuItem value={"Commercial"}>Commercial</MenuItem>
@@ -364,7 +371,7 @@ export default function JobsForm ( props ) {
                         value={formObject.notes}
                     />
                 </FormControl>
-                <ServiceTable jobData={dataObject.data} />
+                <ServiceTable jobData={dataObject} />
                 <div className={classes.break} />
 
                 {/* SAVE / SUBMIT BUTTON */} {/* for create job */}
