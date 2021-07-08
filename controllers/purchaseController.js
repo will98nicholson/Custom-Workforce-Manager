@@ -2,7 +2,7 @@ const db = require('../models');
 
 module.exports = {
     findAllPos: (req, res) => {
-        db.Purchased.find().populate('service_id').populate('job_id').exec()
+        db.Purchased.find()
             .then(data => res.json(data))
             .catch(error => console.log(error))
     },

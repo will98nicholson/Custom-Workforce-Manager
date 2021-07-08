@@ -29,7 +29,7 @@ function Invoice({formObject}) {
 
     return(
         <Document>
-            <Page size="A4" styles={styles.page}>
+            <Page size="A4" style={styles.page}>
                 {/* TODO: continue working on logo / styles */}
                 <Image style={styles.logo} src={logo}/>
                 <Header data={formObject}/>

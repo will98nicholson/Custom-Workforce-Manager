@@ -1,7 +1,8 @@
-import React from "react";
-import {Text, View, StyleSheet } from '@react-pdf/renderer';
+import React, { useState, useEffect } from "react";
+import { Text, View, StyleSheet } from '@react-pdf/renderer';
 import TableRows from "./TableRows";
 import Calculator from "./Calculator";
+import API from "../../utils/API";
 
 
 function Table( {data} ) {
@@ -45,8 +46,19 @@ function Table( {data} ) {
         },
     });
 
-//    console.log(invoiceData)
-
+    const [ tableData, setTableData ] = useState([])
+    
+    useEffect(() => {
+        loadPurchases()
+    }, [])
+    function loadPurchases() {
+        API.getPurchases()
+        .then(response => {
+            setTableData(response.data)
+        }).catch(err => console.log(err));
+    }
+    console.log(tableData);
+    
     return (
         <View style={styles.table}>
             <View style={styles.tableWrapper}>
@@ -55,8 +67,8 @@ function Table( {data} ) {
                 <Text style={styles.rate}>Rate</Text>
                 <Text style={styles.amount}>Amount</Text>
             </View>
-            <TableRows items={data.data.products} rows={3} />
-            <Calculator />
+            {/* <TableRows items={tableData} rows={3} /> */}
+            {/* <Calculator /> */}
         </View>
     )
 };

@@ -31,5 +31,8 @@ export default {
     //post selected services to purchased.db
     postPurchase: function (purchaseData) {
         return axios.post("/api/purchases", purchaseData)
+    },
+    getPurchases: function (purchases) {
+        return axios.get('/api/purchases', purchases)
     }
 }
