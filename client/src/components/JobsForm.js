@@ -26,7 +26,7 @@ const useStyles = makeStyles( ( theme ) => ( {
         },
     },
     input: {
-        width: '60vw',
+        width: '70vw',
         margin: theme.spacing( 1, 2, 1, 0 ),
         [ theme.breakpoints.up( 'md' ) ]: {
             width: '40vw'
@@ -36,7 +36,7 @@ const useStyles = makeStyles( ( theme ) => ( {
         }
     },
     TextField: {
-        width: '60vw',
+        width: '70vw',
         margin: theme.spacing( 1, 2, 1, 0 )
     },
     button: {
@@ -56,21 +56,27 @@ export default function JobsForm ( props ) {
 
     const classes = useStyles();
     const [ formObject, setFormObject ] = useState( {} );
+    const [ dataObject, setDataObject ] = useState({})
     const location = useLocation();
     const handleInputChange = ( event ) => {
         const { name, value } = event.target;
         setFormObject( { ...formObject, [ name ]: value } );
     };
     useEffect( () => { if(props.id) getJob(); }, [] ); //only run useEffect if coming from jobdetail page
+    useEffect( () => { if(props.id) getJob2(); }, [] );
+
 
     //set state for invoice modal //handleOpen + handleClose functions
     const [ open, setOpen ] = React.useState( false );
+
     const handleOpen = () => {
         setOpen( true );
     };
+
     const handleClose = () => {
         setOpen( false );
     };
+
     //async api call - get job by id
     const getJob = async () => {
         await axios( {
@@ -79,11 +85,38 @@ export default function JobsForm ( props ) {
         } ).then( res => {
             console.log( res.data );
             setFormObject( {
-                data: res.data[0]
+                name: res.data[ 0 ].client.name,
+                type: res.data[ 0 ].client.type,
+                location: res.data[ 0 ].client.location.streetAddress,
+                contact: res.data[ 0 ].client.contact,
+                phone: res.data[ 0 ].client.phone,
+                email: res.data[ 0 ].client.email,
+                quote_date: res.data[ 0 ].quote,
+                quote_price: res.data[ 0 ].price,
+                start_date: res.data[ 0 ].start,
+                end_date: res.data[ 0 ].end,
+                description: res.data[ 0 ].work,
+                notes: res.data[ 0 ].notes
             } );
         } )
             .catch( err => console.log( err ) );
     };
+
+
+    const getJob2 = async () => {
+        await axios( {
+            method: "GET",
+            url: `/api/jobs/${ props.id }`
+        } ).then( res => {
+            console.log( res.data );
+            setDataObject( {
+                data: res.data[0]
+            } );
+            console.log( formObject );
+        } ).then( (data) => ( console.log(data)))
+            .catch( err => console.log( err ) );
+    };
+
     function handleSubmit ( event ) {
         event.preventDefault();
         props.APIFunction( {
@@ -124,7 +157,7 @@ export default function JobsForm ( props ) {
                         // placeholder="Client Name"
                         // className='form-input-positioning'
                         className={classes.input}
-                        value={formObject.name}
+                        value={''}
                         onChange={handleInputChange}
                         disabled={props.inputDisabled}
                     />
@@ -333,19 +366,19 @@ export default function JobsForm ( props ) {
                         value={formObject.notes}
                     />
                 </FormControl>
-                <ServiceTable jobData={formObject.data} />
+                <ServiceTable jobData={dataObject.data} />
                 <div className={classes.break} />
 
                 {/* SAVE / SUBMIT BUTTON */} {/* for create job */}
                 {/* passing user status to add job button - '&&' is a way to short circut and escape the turnary operator as we don't want to render anything in it's place */}
-                {props.user?.type === 'Administrator' && <Button className={classes.button} variant="contained" color="primary" onClick={handleSubmit}>
+                {props.user?.type === 'Administrator' && <Button id='add-job-btn' className={classes.button} variant="contained" onClick={handleSubmit}>
                     Add Job
                 </Button>}
                 {/* if create job submit to database - if job detail create invoice */}
-                <Button className={classes.button} variant="contained" color="primary" onClick={ handleOpen }>
+                <Button id='invoice-btn' className={classes.button} variant="contained" onClick={ handleOpen }>
                     Create Invoice
                 </Button>
-                <InvoiceModal open={open} handleClose={handleClose} formObject={formObject}/>
+                <InvoiceModal open={open} handleClose={handleClose} formObject={dataObject}/>
             </form>
         </div>
     );
