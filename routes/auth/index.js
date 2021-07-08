@@ -1,20 +1,18 @@
 const express = require('express');
 const router = express.Router();
 const db = require('../../models');
-const passport = require('../../middleware/passport');
-
-router.post('/login',
-    passport.authenticate('local', { failureRedirect: '/' }),
-    function (req, res) {
-        console.log(req.user);
-        // admin(req.user);
-        // res.json(req.user);
-        req.session.save((err) => {
-            if (err) {
-                return next(err);
-            }
-            res.json(req.user);
-        });
+const passport = require('../../middleware/passport.js');
+console.log(passport.authenticate('local'));
+router.post('/login', passport.authenticate('local'), function (req, res) {
+    console.log("User:" + req.user);
+    // admin(req.user);
+    // res.json(req.user);
+    req.session.save((err) => {
+        if (err) {
+            return res.json(err).status(500);
+        }
+        res.json(req.user);
+    });
     }
 );
 

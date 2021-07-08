@@ -50,7 +50,7 @@ export default function Dashboard({user}) {
                 {/* <Container maxWidth="lg" className={classes.container} > */}
                 <Paper className={classes.paper} id='module-activejobs'>
                     <Typography variant='h5' className='module-header' id='active'>Active</Typography>
-                    <JobsList user={user} />
+                    <JobsList user={user}/>
                 </Paper>
                 {/* Completed Jobs */}
                 <Paper className={classes.paper} id='module-completedjobs'>

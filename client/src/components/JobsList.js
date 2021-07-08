@@ -38,7 +38,7 @@ function createData(id, client, address, crew) {
     };
 };
 
-export default function JobsList({user}) {
+export default function JobsList( {user} ) {
 
     const classes = useStyles();
     const [page, setPage] = React.useState(0);
@@ -46,17 +46,6 @@ export default function JobsList({user}) {
     const [rows, setRows] = React.useState([])
 
     console.log(user)
-
-    // const getAssignedJobs = () => {
-    //     API.getJobByUser(user)
-    //     .then(res => {
-    //         const formattedJobs = res.data.map((job) => {
-    //             return createData(job._id, job.client.name, job.client.location, job.crewAssignedToo)
-    //         })
-    //         setRows(formattedJobs)
-    //     })
-    // }
-
     useEffect(() => {
         API.getJobs()
             .then(res => {                
