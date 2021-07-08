@@ -165,7 +165,7 @@ justify-content: center;
   /* font-size: ; */
   /* text-transform: uppercase; */
   font-weight: 400!important;
-  color: var(--yellow-icon);
+  /* color: var(--yellow-icon); */
   padding-top: 0!important;
   padding-bottom: 0!important;
 }
