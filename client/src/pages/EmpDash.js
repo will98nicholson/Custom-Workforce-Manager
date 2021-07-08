@@ -44,7 +44,7 @@ function EmpDash(props) {
         <div className={classes.root}>
             <CssBaseline />
             <main className={classes.content}>
-
+        
                 <div className={classes.appBarSpacer} />
                 <Weather id='module-weather'/>
                 {/* <Container maxWidth="lg" className={classes.container} > */}
@@ -53,10 +53,10 @@ function EmpDash(props) {
                     <Schedule />
                 </Paper>
                 <Paper className={classes.paper} id='module-activejobs'>
-                    <Typography variant='h5' className='module-header'>Active</Typography>
-                    <JobsList inputDisabled='true'/>
+                    <Typography variant='h5' className='module-header'>{props.user.username} Active Jobs</Typography>
+                    <JobsList inputDisabled='true' user={props.user.username}/>
                 </Paper>
-                <Paper className={classes.paper} id='module-completedjobs'>
+                <Paper className={classes.paper} id='   module-completedjobs'>
                     <Typography variant='h5' className='module-header'>Completed</Typography>
                 </Paper>
                 <Copyright />

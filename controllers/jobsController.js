@@ -18,7 +18,7 @@ module.exports = {
             .catch(err => console.log(err))
     },
     findByName: (req, res) => {
-        db.Job.find(req.params.user)
+        db.Job.find({crewAssignedToo: req.params.user})
             .then((data) => {
                 res.json(data)
             })
