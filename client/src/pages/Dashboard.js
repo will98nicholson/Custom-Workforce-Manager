@@ -6,10 +6,11 @@ import {
     Typography,
     Paper
 } from '@material-ui/core';
-import TimeWeather from '../components/TimeWeather';
+import Weather from '../components/Weather';
 import JobsList from '../components/JobsList';
 import Copyright from '../components/Copyright';
 import API from '../utils/API';
+import Schedule from '../components/Schedule';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -41,18 +42,22 @@ export default function Dashboard() {
             <main className={classes.content}>
 
                 <div className={classes.appBarSpacer} />
-                <TimeWeather />
-                <Container maxWidth="xl" className={classes.container} >
-                    <Paper className={classes.paper} id='module1'>
-                        <Typography variant='h5'>Active Jobs</Typography>
-                        <JobsList />
-                    </Paper>
-                    {/* Completed Jobs */}
-                    <Paper className={classes.paper} id='module2'>
-                        <Typography variant='h5'>Completed Jobs</Typography>
-                    </Paper>
-                    <Copyright />
-                </Container>
+                <Weather id='module-weather' />
+                <Paper className={classes.paper} id='module-schedule'>
+                    <Typography variant='h5' className='module-header' id='this-week'>This Week</Typography>
+                    <Schedule />
+                </Paper>
+                {/* <Container maxWidth="lg" className={classes.container} > */}
+                <Paper className={classes.paper} id='module-activejobs'>
+                    <Typography variant='h5' className='module-header' id='active'>Active</Typography>
+                    <JobsList />
+                </Paper>
+                {/* Completed Jobs */}
+                <Paper className={classes.paper} id='module-completedjobs'>
+                    <Typography variant='h5' className='module-header' id='completed'>Completed</Typography>
+                </Paper>
+                <Copyright />
+                {/* </Container> */}
 
             </main>
         </div>

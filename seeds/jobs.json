@@ -47,7 +47,7 @@
     "type": "Residential",
     "name": "Hans Coils",
     "location": {
-      "streetAddress": "9663 Messerschmidt Road",
+      "streetAddress": "9663 Messer Rd",
       "city": "Hilliard",
       "state": "OH",
       "zipcode": "43026"
@@ -75,7 +75,7 @@
       "zipcode": "43017"
     },
     "phone": "408-907-8152",
-    "email": "karmitt3@vistaprint.com"    
+    "email": "karmitt3@vistaprint.com"
   },
   "quote_date": "12/2/2021",
   "start_date": "11/8/2021",
