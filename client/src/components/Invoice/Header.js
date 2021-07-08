@@ -5,9 +5,15 @@ import { View, Text, StyleSheet } from "@react-pdf/renderer"
 function Header( {data} ) {
     console.log(data)
     const styles = StyleSheet.create({
-        companyInfo: {},
-        invoiceHeader: {},
-        billingInfo:{},
+        companyInfo: {
+            paddingTop:10,
+            paddingLeft:45,
+            paddingBottom:20,
+        },
+        billingInfo:{
+            paddingTop:10,
+            paddingLeft:45,
+            paddingBottom:20,},
         invoiceInfo:{}
     });
     
@@ -32,12 +38,8 @@ function Header( {data} ) {
                 <Text>United States</Text>
             </View>
 
-            <View style={styles.invoiceHeader}>
-                <Text>INVOICE</Text>
-            </View>
-
             <View style={styles.billingInfo}>
-                <Text>Bill To:</Text>
+                <Text>Billed To:</Text>
                 <Text>{data.data.client.name}</Text>
                 <Text>{data.data.client.location.streetAddress}</Text>
                 <Text>{data.data.client.location.city}, {data.data.client.location.state} {data.data.client.location.zipcode}</Text>

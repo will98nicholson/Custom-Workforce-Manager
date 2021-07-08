@@ -25,7 +25,7 @@ function Table({ data }) {
 
     return (
         <>
-            <View>
+            <View style="">
                 <Text>Item Description</Text>
                 <Text>Qty</Text>
                 <Text>Rate</Text>

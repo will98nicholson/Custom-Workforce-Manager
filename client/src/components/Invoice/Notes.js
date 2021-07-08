@@ -3,8 +3,16 @@ import { View, Text, StyleSheet } from "@react-pdf/renderer"
 
 function Notes({data}) {
     const styles = StyleSheet.create({
-        notes:{},
-        notesBox:{}
+        notes:{
+            paddingRight: 45,
+            paddingBottom:10,
+            paddingTop:10,
+            paddingLeft:45,
+        },
+        notesBox:{
+            backgroundColor:'#d3d3d3',
+            padding: 4,
+        }
     })
     
     return (
