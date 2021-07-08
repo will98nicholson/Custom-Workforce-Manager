@@ -107,16 +107,15 @@ export default function JobsForm ( props ) {
         await axios( {
             method: "GET",
             url: `/api/jobs/${ props.id }`
-        } ).then( res => {
+        }).then( res => {
             console.log( res.data );
             setDataObject( {
                 data: res.data[0]
             } );
-            console.log( formObject );
-        } ).then( (data) => ( console.log(data)))
-            .catch( err => console.log( err ) );
+            
+        }).catch( err => console.log( err ) );
     };
-
+    console.log( dataObject );
     function handleSubmit ( event ) {
         event.preventDefault();
         props.APIFunction( {

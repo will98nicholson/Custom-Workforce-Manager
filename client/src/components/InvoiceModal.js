@@ -72,7 +72,7 @@ export default function InvoiceModal ({open, handleClose, formObject}) {
                 <Fade in={open}>
                     <div className={classes.paper}>
                         {/* <button onClick={handleClose}>Close</button> */}
-                        <Form data={ formObject }/>
+                        <Form formObject={ formObject }/>
 
                     </div>
                 </Fade>

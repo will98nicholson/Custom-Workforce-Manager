@@ -6,16 +6,16 @@ import { Page, Document, Image, StyleSheet } from '@react-pdf/renderer';
 
 
 
-function Invoice({data}) { 
+function Invoice({formObject}) { 
 
     const styles=StyleSheet.create({});
-    console.log(data)
+
     return(
         <Document>
             <Page>
                 {/* TODO: continue working on logo / styles */}
                 {/* <Logo style="" /> */}
-                <Header data={data}/>
+                <Header data={formObject}/>
                 {/* <Table invoiceData={invoiceData}/>
                 <Notes invoiceData={invoiceData}/> */}
             </Page>
