@@ -51,7 +51,7 @@ function App() {
                 <>
                 <MenuToolbar linkHidden={user.type === "Administrator" ? false : true} setUser={setUser} />
                     <Switch>
-                        <Route exact path={['/', '/dashboard']}>{user.type === "Administrator" ? <Dashboard /> : <EmpDash user={user} />}</Route>
+                        <Route exact path={['/', '/dashboard']}>{user.type === "Administrator" ? <Dashboard user={user} /> : <EmpDash user={user} />}</Route>
                     <Route exact path='/createjob'>{user.type === "Administrator" ? <CreateJob user={user} /> : ""} </Route>
                         <Route exact path='/crews'>{user.type === "Administrator" ? <Crews /> : ""} </Route>
                         <Route exact path='/jobdetail/:id'><JobDetail inputDisabled={user.type === "Employee" ? true : false} /></Route>

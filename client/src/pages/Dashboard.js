@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-export default function Dashboard() {
+export default function Dashboard({user}) {
     const classes = useStyles();
 
     return (
@@ -50,7 +50,7 @@ export default function Dashboard() {
                 {/* <Container maxWidth="lg" className={classes.container} > */}
                 <Paper className={classes.paper} id='module-activejobs'>
                     <Typography variant='h5' className='module-header' id='active'>Active</Typography>
-                    <JobsList />
+                    <JobsList user={user} />
                 </Paper>
                 {/* Completed Jobs */}
                 <Paper className={classes.paper} id='module-completedjobs'>

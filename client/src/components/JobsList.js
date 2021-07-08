@@ -19,17 +19,17 @@ import API from '../utils/API';
 const columns = [
     { id: 'client', label: 'Client', minWidth: 113 },
     { id: 'address', label: 'Address', minWidth: 113 },
-    { id: 'crew', label: 'Assigned Crew', minWidth: 113}
+    { id: 'crew', label: 'Assigned Crew', minWidth: 113 }
 ]
 const useStyles = makeStyles({
-  root: {
-    width: '100%',
-  }
+    root: {
+        width: '100%',
+    }
 });
-const getAssignedJob = API.getJobByUser().then(response => {
-    console.log(response.data)
-} );
-function createData ( id, client, address, crew ) {
+// const getAssignedJob = API.getJobByUser().then(response => {
+//     console.log(response.data)
+// } );
+function createData(id, client, address, crew) {
     return {
         id,
         client,
@@ -38,21 +38,37 @@ function createData ( id, client, address, crew ) {
     };
 };
 
-export default function JobsList(props) {
+export default function JobsList({user}) {
 
     const classes = useStyles();
     const [page, setPage] = React.useState(0);
     const [rowsPerPage, setRowsPerPage] = React.useState(10);
     const [rows, setRows] = React.useState([])
-    const [user, setUser] = React.useState("")
+
+    console.log(user)
+
+    // const getAssignedJobs = () => {
+    //     API.getJobByUser(user)
+    //     .then(res => {
+    //         const formattedJobs = res.data.map((job) => {
+    //             return createData(job._id, job.client.name, job.client.location, job.crewAssignedToo)
+    //         })
+    //         setRows(formattedJobs)
+    //     })
+    // }
 
     useEffect(() => {
-        API.getCurrentUser()
-            .then(res => setUser(res.data))
         API.getJobs()
             .then(res => {
-               const formattedJobs = res.data.map((job) => {
-                    return createData(job._id, job.client.name, job.client.location, job.crewAssignedToo)
+                const formattedJobs = res.data.map(job)
+                
+                const formattedJobs = res.data.filter(jobData => jobData.crewAssignedToo === job.crew
+                    // if (job.crewAssignedToo === user.username) {
+                        // console.log(job.crewAssignedToo)
+                        // console.log(user.username)
+                        // return createData(job._id, job.client.name, job.client.location, job.crewAssignedToo)
+                    // }
+                    
                 })
                 setRows(formattedJobs)
             })
@@ -84,25 +100,25 @@ export default function JobsList(props) {
 
                                 return (
 
-                                <TableRow hover role="checkbox" tabIndex={-1} key={i} className='jobslist-row'>
-                                    {columns.map( ( column ) => {
-                                        const value = row[ column.id ];
+                                    <TableRow hover role="checkbox" tabIndex={-1} key={i} className='jobslist-row'>
+                                        {columns.map((column) => {
+                                            const value = row[column.id];
 
                                             return (
 
-                                            <TableCell className='jobslist-text' key={column.id}>
-                                                {column.label === "Client" ? row.client : column.label === 'Address' ? row.address.streetAddress + ', ' + row.address.city : row.crew}
-                                            </TableCell>
-                                        );
-                                    } )}
-                                    <TableCell>
-                                        <Link to={'/jobdetail/'+ row.id}>
-                                            <img alt='' src={DetailButton} className='detail-button' />
-                                        </Link>
-                                    </TableCell>
-                                </TableRow>
-                            );
-                        } )}
+                                                <TableCell className='jobslist-text' key={column.id}>
+                                                    {column.label === "Client" ? row.client : column.label === 'Address' ? row.address.streetAddress + ', ' + row.address.city : row.crew}
+                                                </TableCell>
+                                            );
+                                        })}
+                                        <TableCell>
+                                            <Link to={'/jobdetail/' + row.id}>
+                                                <img alt='' src={DetailButton} className='detail-button' />
+                                            </Link>
+                                        </TableCell>
+                                    </TableRow>
+                                );
+                            })}
                     </TableBody>
                 </Table>
             </TableContainer>
