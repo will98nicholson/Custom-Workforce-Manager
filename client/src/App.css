@@ -202,7 +202,7 @@ border-bottom: none;
 
 /* JOB DETAIL PAGE */
 #job-detail-page {
-background-color: var(--dark-background)!important;
+background-color:rgba(18, 20, 39, 0.793)!important;
 }
 /* CREATE JOB PAGE *//* NEW JOB */
 
@@ -233,6 +233,23 @@ input {
 #notes {
   color: var(--blue-txt)!important;
 }
+#serice-table-head {
+  display: flex;
+}
+.service-table-header {
+  color:  rgb(232, 238, 244)!important;
+  display: flex;
+  justify-content: space-between;
+}
+div#service,
+input#qty {
+  background:rgba(40, 52, 71, 0.293)!important;
+  margin-left: -10px!important;
+  margin-right: -10px!important;
+}
+/* .btn-remove {
+  width: 10px!important;
+} */
 
 /* PUNCH CLOCK *//* CLOCK IN */
 .Stopwatch {
