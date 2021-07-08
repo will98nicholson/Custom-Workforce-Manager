@@ -140,7 +140,7 @@ export default function JobsForm ( props ) {
             // .then(<Redirect to="/admin"></Redirect>)
             .catch( ( err ) => console.log( err ) );
     };
-
+    console.log( formObject );
     return (
 
         <div className={classes.root} id='jobsform'>
@@ -171,14 +171,14 @@ export default function JobsForm ( props ) {
                         labelId="clientType"
                         name="type"
                         variant="filled"
+                        placeholder={formObject.type}
                         className={classes.input}
-                        value={formObject.type}
+                        defaultValue={formObject.type}
                         onChange={handleInputChange}
                         disabled={props.inputDisabled}
                         label="Client Type"
                     >
-                        <MenuItem value={formObject.type}>
-                            {/* <em>None</em> */}
+                        <MenuItem placeholder={formObject.type ? formObject.type : ""}>
                         </MenuItem>
                         <MenuItem value={"Residential"}>Residential</MenuItem>
                         <MenuItem value={"Commercial"}>Commercial</MenuItem>
