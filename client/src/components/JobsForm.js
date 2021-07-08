@@ -79,20 +79,7 @@ export default function JobsForm ( props ) {
         } ).then( res => {
             console.log( res.data );
             setFormObject( {
-                name: res.data[ 0 ].client.name,
-                type: res.data[ 0 ].client.type,
-                location: res.data[ 0 ].client.location.streetAddress,
-                contact: res.data[ 0 ].client.contact,
-                phone: res.data[ 0 ].client.phone,
-                email: res.data[ 0 ].client.email,
-
-                quote_date: res.data[ 0 ].quote,
-                quote_price: res.data[ 0 ].price,
-                start_date: res.data[ 0 ].start,
-                end_date: res.data[ 0 ].end,
-
-                description: res.data[ 0 ].work,
-                notes: res.data[ 0 ].notes
+                data: res.data[0]
             } );
         } )
             .catch( err => console.log( err ) );
@@ -346,7 +333,7 @@ export default function JobsForm ( props ) {
                         value={formObject.notes}
                     />
                 </FormControl>
-                <ServiceTable />
+                <ServiceTable jobData={formObject.data} />
                 <div className={classes.break} />
 
                 {/* SAVE / SUBMIT BUTTON */} {/* for create job */}

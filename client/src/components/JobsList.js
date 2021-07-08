@@ -26,7 +26,7 @@ const useStyles = makeStyles({
     width: '100%',
   }
 });
-const getAssignedJob = API.getJobByUser().then( response => {
+const getAssignedJob = API.getJobByUser().then(response => {
     console.log(response.data)
 } );
 function createData ( id, client, address, crew ) {
@@ -38,14 +38,17 @@ function createData ( id, client, address, crew ) {
     };
 };
 
-export default function JobsList ( props ) {
+export default function JobsList(props) {
 
     const classes = useStyles();
-    const [ page, setPage ] = React.useState( 0 );
-    const [ rowsPerPage, setRowsPerPage ] = React.useState( 10 );
+    const [page, setPage] = React.useState(0);
+    const [rowsPerPage, setRowsPerPage] = React.useState(10);
     const [rows, setRows] = React.useState([])
-    // const [ user, setUser ] = React.useState(null);
+    const [user, setUser] = React.useState("")
+
     useEffect(() => {
+        API.getCurrentUser()
+            .then(res => setUser(res.data))
         API.getJobs()
             .then(res => {
                const formattedJobs = res.data.map((job) => {
@@ -54,12 +57,13 @@ export default function JobsList ( props ) {
                 setRows(formattedJobs)
             })
     }, [])
-    const handleChangePage = ( event, newPage ) => {
-        setPage( newPage );
+
+    const handleChangePage = (event, newPage) => {
+        setPage(newPage);
     };
-    const handleChangeRowsPerPage = ( event ) => {
-        setRowsPerPage( +event.target.value );
-        setPage( 0 );
+    const handleChangeRowsPerPage = (event) => {
+        setRowsPerPage(+event.target.value);
+        setPage(0);
     };
 
     return (
@@ -69,20 +73,22 @@ export default function JobsList ( props ) {
                 <Table stickyHeader aria-label="sticky table" id='jobslist'>
                     <TableHead>
                         <TableRow>
-                        {/* columns headers go here if needed*/}
+                            {/* columns headers go here if needed*/}
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {rows.slice( page * rowsPerPage, page * rowsPerPage + rowsPerPage ).map( ( row, i ) => {
-                            console.log( row );
+                        {rows
+                            .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                            .map((row, i) => {
+                                console.log(row);
 
-                            return (
+                                return (
 
                                 <TableRow hover role="checkbox" tabIndex={-1} key={i} className='jobslist-row'>
                                     {columns.map( ( column ) => {
                                         const value = row[ column.id ];
 
-                                        return (
+                                            return (
 
                                             <TableCell className='jobslist-text' key={column.id}>
                                                 {column.label === "Client" ? row.client : column.label === 'Address' ? row.address.streetAddress + ', ' + row.address.city : row.crew}

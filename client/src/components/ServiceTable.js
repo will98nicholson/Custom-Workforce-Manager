@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import {
     Table,
@@ -30,18 +30,17 @@ const useStyles = makeStyles((theme) => ({
 
 var tableRowIndex = 0;
 
-function ServiceTableRow({ row, handleDataChange, deleteRow }) {
+function ServiceTableRow({ row, handleDataChange, deleteRow, serviceEl, quantityEl }) {
     const classes = useStyles();
 
     const index = row.index
 
-    const [data, setData] = useState({
-        service: {},
-        quantity: 0
-    })
+    const [data, setData] = useState([])
 
     //used in api call to get service options
     const [options, setOptions] = useState([])
+
+
 
     //API call to get all services from db.services
     useEffect(() => {
@@ -54,19 +53,32 @@ function ServiceTableRow({ row, handleDataChange, deleteRow }) {
             .catch((err) => console.log(err))
     }, []);
 
-    const updateValues = e => {
-        var inputName = e.target.name
-        var inputValue = e.target.value
+    const updateServiceValues = e => {
+        //  console.log(quantityEl.current.children[0].children[0].value)
+        // var inputName = e.target.name
+        // var inputValue = e.target.value
         setData({
             ...data,
-            [inputName]: inputValue
+            service: e.target.value
         })
-
+        console.log(data)
         handleDataChange({
             ...data,
             index
         })
     }
+
+    // const updateQuantityValues = () => {
+    //     setData({
+    //         ...data,
+    //         quantity: quantityEl.current.children[0].children[0].value
+    //     })
+    //     console.log(data);
+    //     handleDataChange({
+    //         ...data,
+    //         index
+    //     })
+    // }
 
     const removeRow = () => {
         deleteRow(index)
@@ -79,15 +91,16 @@ function ServiceTableRow({ row, handleDataChange, deleteRow }) {
                 <FormControl className={classes.formControl}>
                     <InputLabel id="serviceLabel">Service</InputLabel>
                     <Select
+                        ref={serviceEl}
                         name="service"
                         labelId="serviceLabel"
                         id="service"
                         variant="filled"
-                        onChange={updateValues}
+                        onChange={updateServiceValues}
                     >
 
                         {options.map((item) => (
-                            <MenuItem key={item.name} value={item}>{item.name}</MenuItem>
+                            <MenuItem key={item.name} value={JSON.stringify(item)}>{item.name}</MenuItem>
                         ))}
                     </Select>
                 </FormControl>
@@ -95,10 +108,11 @@ function ServiceTableRow({ row, handleDataChange, deleteRow }) {
             <TableCell component="td">
                 {/* <input type="text" name="quantity" className="quantity" placeholder="Quantity" value={quantity} onChange={updateValues}></input> */}
                 <TextField
+                    ref={quantityEl}
                     name="quantity"
                     id="qty"
                     placeholder="Quantity"
-                    onChange={updateValues}
+                    // onChange={updateQuantityValues}
                     type="number"
                     align="right"
                     variant="filled"
@@ -113,10 +127,24 @@ function ServiceTableRow({ row, handleDataChange, deleteRow }) {
     )
 }
 
-function ServiceTable() {
+function ServiceTable({ jobData }) {
     const classes = useStyles();
 
-    const [rows, setRows] = useState([]);
+    const quantityEl = useRef(null)
+    const serviceEl = useRef(null)
+
+    // const [rows, setRows] = useState([]);
+
+    const [rows, setRows] = useState([{
+        index: 0,
+        service: {},
+        quantity: ""
+    }
+    ]);
+
+    // const [dataObject, setDataObject] = useState([])
+
+
 
     // Receive data from TableRow
     const handleChange = data => {
@@ -146,18 +174,20 @@ function ServiceTable() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log('hit')
-        rows.map((row) => {
-            API.postPurchase({
-                service_id: row.service.name,
-                price: row.service.price,
-                quantity: row.quantity,
-                // job_id:
-            })
-                .then(res => (console.log(res.data)))
+        console.log(serviceEl.current.children[1].value, quantityEl.current.children[0].children[0].value)
+        let service = JSON.parse(serviceEl.current.children[1].value)
+        let dataObject = {
+            service_id: service.name,
+            price: service.price,
+            quantity: quantityEl.current.children[0].children[0].value,
+            job_id: jobData._id
+        }
 
-        })
+        API.postPurchase(dataObject)
+            .then(data => (console.log(data)))
+            .catch(err => (console.log(err)))
     }
+
 
     return (
         <TableContainer>
@@ -174,7 +204,7 @@ function ServiceTable() {
                         rows.map((row, index) => {
                             if (row)
                                 return (
-                                    <ServiceTableRow key={index} row={row} handleDataChange={handleChange} deleteRow={deleteRow}></ServiceTableRow>
+                                    <ServiceTableRow serviceEl={serviceEl} quantityEl={quantityEl} key={index} row={row} handleDataChange={handleChange} deleteRow={deleteRow}></ServiceTableRow>
                                 )
                         })
                     }
