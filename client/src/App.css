@@ -193,9 +193,18 @@ header {
   flex-direction: column;
 }
 #jobsform {
-
+ color: var(--lightest-grey-txt);
 }
-
+label {
+  color: var(--lighter-grey-txt)!important;
+  padding: 0!important;
+  margin: 0!important;
+  position: relative!important;
+}
+label#clientType {
+  position: relative!important;
+  left: -10px;
+}
 
 /* PUNCH CLOCK */
 .Stopwatch {
