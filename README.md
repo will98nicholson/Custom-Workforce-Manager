@@ -127,12 +127,9 @@ CURRENT ASSIGNMENTS:
 
 -->
 
-# Fleet-Sheets
+# Custom Workforce Manager
 ## Progressive Web Application (Mobile/Tablet First)
 
-### Extra Information/Resources
-
-* [Introduction to PWA's](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Introduction)
 
 ### User Story
 
@@ -154,15 +151,18 @@ CURRENT ASSIGNMENTS:
     - have the ability to continue to work while remote and offline
     SO THAT I can continue to complete my job expectations in an easy and organized fashion.
 
-### Technology To Use (MERN Stack)
+### Technology Used (MERN Stack)
 
 * MongoDb
 * Express
 * React (w/ hooks)
 * Node.Js
+* Passport.Js
+* Sortable Js
+* Moment
 * Tailwind CSS &&|| react-material-ui (or something new)
 
-### Desired PWA Functionalities
+### PWA Functionalities
 
 * Available offline
 * Downloadable to android + ios homescreen's
@@ -171,11 +171,13 @@ CURRENT ASSIGNMENTS:
 * Mobile app look/feel
 * Push Notifications (mobile + desktop)
 
-    "seed": "node scripts/seedDB.js",
+### Links:
+* Deployed Application: https://custom-workforce-manager.herokuapp.com/
 
-      "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
+* Contributors:
+
+- Michael Kotte: https://github.com/mkotte
+- Kathryn Wilkinson: https://github.com/NAHco-code
+- William Nicholson: https://github.com/will98nicholson
+- Brandon King: https://github.com/thebsking
+- Corrinne Worden: https://github.com/CorrinneW
