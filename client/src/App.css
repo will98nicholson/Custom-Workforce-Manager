@@ -59,7 +59,10 @@ span.PrivateSwitchBase-root-11 {
 #menu-drawer {
   width: 20vw!important;
 }
-.makeStyles-drawerPaper-24 {
+.makeStyles-drawerPaper-24,
+.makeStyles-drawerPaper-87,
+.makeStyles-drawerPaper-25,
+.makeStyles-drawerPaper-179 {
   background-image: url('./assets/images/sign-in-gradient.JPG');
 }
 #menu-logo {
