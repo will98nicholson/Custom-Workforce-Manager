@@ -215,26 +215,37 @@ flex-direction: column;
  color: var(--lightest-grey-txt);
 }
 label {
-  color: var(--lighter-grey-txt)!important;
+  color: rgb(219, 153, 0)!important;
   padding: 0!important;
-  margin: 0!important;
-  position: relative!important;
+  margin: 5px 0 0 5px!important;
+  /* position: relative!important; */
+
 }
-label#clientType {
-  position: relative!important;
-  left: -10px;
+input {
+  color: var(--lightest-grey-txt)!important;
+  font-size: 20px!important;
+  /* margin-bottom: 7px!important; */
+}
+.jobform-divider {
+  color: var(--blue-txt)!important;
+  width: 80vw;
+}
+#notes {
+  color: var(--blue-txt)!important;
 }
 
 /* PUNCH CLOCK *//* CLOCK IN */
 .Stopwatch {
   margin: auto;
-  border: 0.5px solid grey;
+  /* border: 0.5px solid grey; */
   border-radius: 4px;
   padding: 20px;
-  width: 100vw;
-  background-color: var(--dark-background);
+  width: 80vw;
+  background-color: transparent;
   /* box-shadow: 0 3px 6px rgb(12, 12, 12); */
   display: flex!important;
+  justify-content: center;
+  flex-direction: column;
 }
 .Stopwatch-header {
   font-size: 16px;
@@ -244,32 +255,34 @@ label#clientType {
   justify-content: center;
 }
 .Stopwatch-display {
-  padding: 40px 0;
+  padding: 5px 0;
   font-size: 22px;
   color: white;
   display: flex!important;
   justify-content: center;
 }
 button {
-  background-color: #202b33;
+  background-color: var(--blue-icon);
   border: solid 1px transparent;
   border-radius: 4px;
-  padding: 10px 20px;
+  padding: 5px 10px;
   color: #ffffff;
   font-size: 12px;
   margin: auto;
   cursor: pointer;
 }
 button:hover {
-  background-color: #106ba3;
+  background-color: rgb(1, 171, 46);
   transition-duration: 1s;
 }
 .Stopwatch button {
-  padding: 12px 32px;
-  font-size: 12px;
+  margin-top: 3px;
+  font-size: 11px;
 }
 .Stopwatch-text {
   color: white;
+  font-family: 'Oxygen', sans-serif;
+  font-smooth: subpixel-antialiased;
 }
 
 

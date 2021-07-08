@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import {
     FilledInput,
+    Input,
     InputLabel,
     FormControl,
     MenuItem,
@@ -128,10 +129,11 @@ export default function JobsForm ( props ) {
                 <FormControl className={classes.formControl}>
                     <InputLabel shrink className={classes.formControl} htmlFor="clientName"> Client Name</InputLabel>
                     <FilledInput
+
                         id="clientName"
                         label='Client Name'
                         name="name"
-                        variant="filled"
+                        variant="standard"
                         // placeholder="Client Name"
                         // className='form-input-positioning'
                         className={classes.input}
@@ -142,21 +144,21 @@ export default function JobsForm ( props ) {
                 </FormControl>
 
                 {/* CLIENT TYPE */}
-                <FormControl variant="filled" className={classes.formControl}>
+                <FormControl  className={classes.formControl}>
                     <InputLabel shrink className={classes.formControl} id="clientType">Client Type</InputLabel>
                     <Select
                         id="clientType"
                         label="Client Type"
                         labelId="clientType"
                         name="type"
-                        // placeholder='Client Type'
+                        variant="filled"
                         className={classes.input}
                         value={formObject.type}
                         onChange={handleInputChange}
                         disabled={props.inputDisabled}
                         label="Client Type"
                     >
-                        <MenuItem value="">
+                        <MenuItem value={formObject.type}>
                             <em>None</em>
                         </MenuItem>
                         <MenuItem value={"Residential"}>Residential</MenuItem>
@@ -168,11 +170,11 @@ export default function JobsForm ( props ) {
 
                 {/* QUOTE DATE */}
                 <FormControl>
+                    <InputLabel shrink className={classes.formControl} id="clientType">Quote Date</InputLabel>
                     <TextField variant="filled"
                         id="quoteDate"
                         name="quote"
                         onChange={handleInputChange}
-                        // label="Quote Date"
                         type="date"
                         defaultValue={new Date()}
                         className={classes.textField}
@@ -193,9 +195,8 @@ export default function JobsForm ( props ) {
                         name="price"
                         onChange={handleInputChange}
                         className={classes.input}
-                        variant="filled"
+                        variant="standard"
                         startAdornment={<InputAdornment position="start">$</InputAdornment>}
-                        // label="Quote Price"
                         value={formObject.quote_price}
                         disabled={props.inputDisabled}
                     />
@@ -205,11 +206,11 @@ export default function JobsForm ( props ) {
 
                 {/* JOB START */}
                 <FormControl>
+                    <InputLabel shrink>Job Start</InputLabel>
                     <TextField variant="filled"
                         id="startDate"
                         name="start"
                         onChange={handleInputChange}
-                        // label="Job Start"
                         type="datetime-local"
                         defaultValue={new Date()}
                         className={classes.textField}
@@ -223,11 +224,11 @@ export default function JobsForm ( props ) {
 
                 {/* JOB END */}
                 <FormControl>
+                    <InputLabel shrink>Job End</InputLabel>
                     <TextField variant="filled"
                         id="endDate"
                         name="end"
                         onChange={handleInputChange}
-                        // label="Job End"
                         type="datetime-local"
                         defaultValue={new Date()}
                         className={classes.textField}
@@ -240,9 +241,8 @@ export default function JobsForm ( props ) {
                 </FormControl>
 
                 <div className={classes.break} />
-
-                {/* CONTACT INFO */}
-                <Typography variant="body1">Contact Information:</Typography>
+                <hr className='jobform-divider'></hr>
+                <div className={classes.break} />
 
                 {/* CONTACT NAME*/}
                 <FormControl>
@@ -252,7 +252,7 @@ export default function JobsForm ( props ) {
                         name="contact"
                         onChange={handleInputChange}
                         className={classes.input}
-                        variant="filled"
+                        variant="standard"
                         // label="Point of Contact"
                         value={formObject.contact}
                         disabled={props.inputDisabled}
@@ -267,7 +267,7 @@ export default function JobsForm ( props ) {
                         name="phone"
                         onChange={handleInputChange}
                         className={classes.input}
-                        variant="filled"
+                        variant="standard"
                         // label="Contact Phone"
                         value={formObject.phone}
                         disabled={props.inputDisabled}
@@ -282,7 +282,7 @@ export default function JobsForm ( props ) {
                         name="email"
                         onChange={handleInputChange}
                         className={classes.input}
-                        variant="filled"
+                        variant="standard"
                         label="Contact Email"
                         value={formObject.email}
                         disabled={props.inputDisabled}
@@ -290,13 +290,14 @@ export default function JobsForm ( props ) {
                 </FormControl>
 
                 <div className={classes.break} />
-
-                {/* JOB LOCATION INFO */}
-                <Typography variant="body1">Job Location:</Typography>
+                <hr className='jobform-divider'></hr>
+                <div className={classes.break} />
 
                 {/* JOB LOCATION / ADDRESS */}
                 <FormControl>
+                    <InputLabel shrink htmlFor="jobLocation">Site Location</InputLabel>
                     <TextField
+                        variant='filled'
                         id="jobLocation"
                         name="location"
                         onChange={handleInputChange}
@@ -310,11 +311,11 @@ export default function JobsForm ( props ) {
 
                 <div className={classes.break} />
 
-                <Typography variant="body1">Job Description:</Typography>
-
                 {/* JOB DESCRIPTION */}
                 <FormControl>
+                    <InputLabel shrink htmlFor="Description">Job Description</InputLabel>
                     <TextField
+                        variant='filled'
                         id="Description"
                         name="description"
                         onChange={handleInputChange}
