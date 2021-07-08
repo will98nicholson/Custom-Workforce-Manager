@@ -45,16 +45,16 @@ export default function MenuList(props) {
 
     return (
 
-        <div>
+        <div id='menu-wrapper'>
             <Divider />
             <List>
                 <div>
-                    <Link to='/dashboard'>
-                        <ListItem >
-                            <ListItemIcon>
-                                <Dashboard />
+                    <Link to='/dashboard' className='menu-link'>
+                        <ListItem className='menu-li'>
+                            <ListItemIcon className='nav-menu-icon'>
+                                <Dashboard id='dashboard-icon'/>
                             </ListItemIcon>
-                            <ListItemText primary="Dashboard" />
+                            <ListItemText className='nav-menu-txt' primary="Dashboard" />
                         </ListItem>
                     </Link>
 
@@ -95,12 +95,12 @@ export default function MenuList(props) {
                             <ListItemText primary="Invoices" />
                         </ListItem>
                     </Link> */}
-                    <Link to='/crews' hidden={props.linkHidden}>
-                        <ListItem >
-                            <ListItemIcon>
-                                <People />
+                    <Link to='/crews' hidden={props.linkHidden} className='menu-link'>
+                        <ListItem className='menu-li'>
+                            <ListItemIcon className='nav-menu-icon' >
+                                <People id='crews-icon'/>
                             </ListItemIcon>
-                            <ListItemText primary="Crews" />
+                            <ListItemText className='nav-menu-txt' primary="Crews" />
                         </ListItem>
                     </Link>
                     {/* <Link to=''>
@@ -111,21 +111,21 @@ export default function MenuList(props) {
                             <ListItemText primary="Jobs" />
                         </ListItem>
                     </Link> */}
-                    <Link to='/createjob' hidden={props.linkHidden}>
-                        <ListItem >
-                            <ListItemIcon>
-                                <AddBox />
+                    <Link to='/createjob' hidden={props.linkHidden} className='menu-link'>
+                        <ListItem className='menu-li'>
+                            <ListItemIcon className='nav-menu-icon' >
+                                <AddBox id='newjob-icon'/>
                             </ListItemIcon>
-                            <ListItemText primary="New Job" />
+                            <ListItemText className='nav-menu-txt' primary="New Job" />
                         </ListItem>
                     </Link>
 
-                    <Button id={"log-out"} onClick={handleLogout}>
-                        <ListItem>
-                            <ListItemIcon>
-                                <MeetingRoom />
+                    <Button id={"log-out"} onClick={handleLogout} className='menu-button'>
+                        <ListItem className='menu-li'>
+                            <ListItemIcon className='nav-menu-icon' >
+                                <MeetingRoom id='logout-icon'/>
                             </ListItemIcon>
-                            <ListItemText primary="Log Out" />
+                            <ListItemText className='nav-menu-txt' primary="Log Out" />
                         </ListItem>
                     </Button>
 
