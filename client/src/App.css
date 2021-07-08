@@ -24,6 +24,8 @@ font-smooth: subpixel-antialiased;
 /* LOGIN PAGE */
 #login-page {
   background-color: var(--app-background)!important;
+  background-image: url('./assets/images/sign-in-gradient.JPG');
+  background-size: cover;
 }
 #sign-in-txt {
   color: var(--blue-txt)!important;
@@ -34,12 +36,10 @@ font-smooth: subpixel-antialiased;
   color: var(--dark-background)!important;
   margin-top: 7px!important;
   background-color: transparent!important;
+  background: transparent!important;
   /* border-top: 2px solid var(--lighter-grey-txt); */
 }
-label#username,
-label#password {
-  color: var(--dark-background)!important;
-}
+
 #sign-in-btn {
   background-color: rgb(77, 175, 255);
   color: white;
@@ -50,6 +50,9 @@ label#password {
 }
 span.PrivateSwitchBase-root-11 {
   color: var(--lighter-grey-txt)!important;
+}
+#copyright {
+  color: rgb(175, 175, 175)!important;
 }
 
 /* BODY */

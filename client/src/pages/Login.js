@@ -18,10 +18,10 @@ import API from '../utils/API';
 //TODO: find photos to add to rotating side photos on signin page
 function Copyright() {
     return (
-        <Typography variant="body2" color="textSecondary" align="center">
+        <Typography id='copyright' variant="body2" color="textSecondary" align="center">
             {'Copyright © '}
             <Link color="inherit" href="https://material-ui.com/">
-                FleetSheets
+                MKCWB Group
             </Link>{' '}
             {new Date().getFullYear()}
             {'.'}
