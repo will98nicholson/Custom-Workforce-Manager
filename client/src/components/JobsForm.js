@@ -85,17 +85,17 @@ export default function JobsForm ( props ) {
         } ).then( res => {
             console.log( res.data );
             setFormObject( {
-                name: res.data[ 0 ].client.name,
                 type: res.data[ 0 ].client.type,
+                name: res.data[ 0 ].client.name,
                 location: res.data[ 0 ].client.location.streetAddress,
-                contact: res.data[ 0 ].client.contact,
+                // contact: res.data[ 0 ].client.contact,
                 phone: res.data[ 0 ].client.phone,
                 email: res.data[ 0 ].client.email,
-                quote_date: res.data[ 0 ].quote,
-                quote_price: res.data[ 0 ].price,
-                start_date: res.data[ 0 ].start,
-                end_date: res.data[ 0 ].end,
-                description: res.data[ 0 ].work,
+                quote: res.data[ 0 ].quote_date,
+                quote: res.data[ 0 ].quote_price,
+                start: res.data[ 0 ].start_date,
+                end: res.data[ 0 ].end_date,
+                description: res.data[ 0 ].description,
                 notes: res.data[ 0 ].notes
             } );
         } )
@@ -124,16 +124,15 @@ export default function JobsForm ( props ) {
                 type: formObject.type,
                 name: formObject.name,
                 location: formObject.location,
-                contact: formObject.contact,
+                // contact: formObject.contact,
                 phone: formObject.phone,
                 email: formObject.email,
             },
 
             quote_date: formObject.quote,
-            quote_price: formObject.price,
             start_date: formObject.start,
             end_date: formObject.end,
-
+            quote_price: formObject.price,
             description: formObject.description,
             notes: formObject.notes
         } )
@@ -153,11 +152,11 @@ export default function JobsForm ( props ) {
                         id="clientName"
                         label='Client Name'
                         name="name"
-                        variant="standard"
+                        variant="filled"
                         // placeholder="Client Name"
                         // className='form-input-positioning'
                         className={classes.input}
-                        value={''}
+                        value={formObject.name}
                         onChange={handleInputChange}
                         disabled={props.inputDisabled}
                     />
@@ -179,7 +178,7 @@ export default function JobsForm ( props ) {
                         label="Client Type"
                     >
                         <MenuItem value={formObject.type}>
-                            <em>None</em>
+                            {/* <em>None</em> */}
                         </MenuItem>
                         <MenuItem value={"Residential"}>Residential</MenuItem>
                         <MenuItem value={"Commercial"}>Commercial</MenuItem>
@@ -208,7 +207,7 @@ export default function JobsForm ( props ) {
                 </FormControl>
 
                 {/* QUOTE PRICE */}
-                <FormControl>
+                {/* <FormControl>
                     <InputLabel shrink htmlFor="quotePrice">Quote Price</InputLabel>
                     <FilledInput
                         id="quotePrice"
@@ -220,7 +219,7 @@ export default function JobsForm ( props ) {
                         value={formObject.quote_price}
                         disabled={props.inputDisabled}
                     />
-                </FormControl>
+                </FormControl> */}
 
                 <div className={classes.break} />
 
@@ -265,7 +264,7 @@ export default function JobsForm ( props ) {
                 <div className={classes.break} />
 
                 {/* CONTACT NAME*/}
-                <FormControl>
+                {/* <FormControl>
                     <InputLabel shrink htmlFor="contactName">Point of Contact</InputLabel>
                     <FilledInput
                         id="contactName"
@@ -277,7 +276,7 @@ export default function JobsForm ( props ) {
                         value={formObject.contact}
                         disabled={props.inputDisabled}
                     />
-                </FormControl>
+                </FormControl> */}
 
                 {/* CONTACT PHONE */}
                 <FormControl>

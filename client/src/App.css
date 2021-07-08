@@ -21,6 +21,37 @@ font-family: 'Oxygen', sans-serif;
 font-smooth: subpixel-antialiased;
 }
 
+/* LOGIN PAGE */
+#login-page {
+  background-color: var(--app-background)!important;
+}
+#sign-in-txt {
+  color: var(--blue-txt)!important;
+  text-shadow: -2px 2px 0  var(--blue-txt-shadow);
+}
+#username-label,
+#password-label {
+  color: var(--dark-background)!important;
+  margin-top: 7px!important;
+  background-color: transparent!important;
+  /* border-top: 2px solid var(--lighter-grey-txt); */
+}
+label#username,
+label#password {
+  color: var(--dark-background)!important;
+}
+#sign-in-btn {
+  background-color: rgb(77, 175, 255);
+  color: white;
+  text-shadow: -2px 2px 0  var(--blue-txt-shadow);
+}
+#remember-me {
+  color: rgba(0, 162, 255, 0.765)!important;
+}
+span.PrivateSwitchBase-root-11 {
+  color: var(--lighter-grey-txt)!important;
+}
+
 /* BODY */
 body {
 background-color: var(--app-background)!important;
@@ -211,6 +242,10 @@ background-color:rgba(18, 20, 39, 0.793)!important;
   text-align: center;
   color: var(--blue-txt);
 }
+/* input#contactEmail,
+input#jobLocation {
+  background-color: var(--dark-background)!important;
+} */
 
 
 /* JOBS FORM */
@@ -225,6 +260,7 @@ label {
   color: rgb(219, 153, 0)!important;
   padding: 0!important;
   margin: 5px 0 0 5px!important;
+  z-index: 5;
   /* position: relative!important; */
 
 }
@@ -260,7 +296,8 @@ input#qty {
   font-size: 14px;
   color: var(--lightest-grey-txt);
 }
-textarea#Description {
+textarea#Description,
+div#clientType {
   color: var(--lightest-grey-txt)!important;
 }
 #service-button-wrapper {
