@@ -17,27 +17,23 @@ import DetailButton from '../assets/icons/view-details-color-vibrant.PNG';
 import API from '../utils/API';
 
 const columns = [
-    { id: 'client', label: 'Client' },
-    { id: 'address', label: 'Address' }
-    // , minWidth: 170
+    { id: 'client', label: 'Client', minWidth: 113 },
+    { id: 'address', label: 'Address', minWidth: 113 },
+    { id: 'crew', label: 'Assigned Crew', minWidth: 113}
 ]
 const useStyles = makeStyles({
-    root: {
-        width: '100%',
-    },
-    container: {
-        maxHeight: 400,
-    },
+  root: {
+    width: '100%',
+  }
 });
 const getAssignedJob = API.getJobByUser().then(response => {
     console.log(response.data)
-});
-function createData(id, client, address, status, crew) {
+} );
+function createData ( id, client, address, crew ) {
     return {
         id,
         client,
         address,
-        status,
         crew
     };
 };
@@ -55,13 +51,8 @@ export default function JobsList(props) {
             .then(res => setUser(res.data))
         API.getJobs()
             .then(res => {
-                const formattedJobs = res.data.map((job) => {
-                    return createData(
-                        job._id, 
-                        job.client.name, 
-                        job.client.location, 
-                        job.completed, 
-                        job.crewAssignedToo)
+               const formattedJobs = res.data.map((job) => {
+                    return createData(job._id, job.client.name, job.client.location, job.crewAssignedToo)
                 })
                 setRows(formattedJobs)
             })
@@ -77,7 +68,7 @@ export default function JobsList(props) {
 
     return (
 
-        <Paper className={classes.root} id='module2'>
+        <Paper className={classes.root} id='component-jobslist'>
             <TableContainer className={classes.container}>
                 <Table stickyHeader aria-label="sticky table" id='jobslist'>
                     <TableHead>
@@ -93,25 +84,25 @@ export default function JobsList(props) {
 
                                 return (
 
-                                    <TableRow hover role="checkbox" tabIndex={-1} key={i}>
-                                        {columns.map((column) => {
-                                            const value = row[column.id];
+                                <TableRow hover role="checkbox" tabIndex={-1} key={i} className='jobslist-row'>
+                                    {columns.map( ( column ) => {
+                                        const value = row[ column.id ];
 
                                             return (
 
-                                                <TableCell className='white-text' key={column.id}>
-                                                    {column.label === "Client" ? row.client : row.address.streetAddress + ', ' + row.address.city}
-                                                </TableCell>
-                                            );
-                                        })}
-                                        <TableCell>
-                                            <Link to={'/jobdetail/' + row.id}>
-                                                <img alt='' src={DetailButton} className='detail-button' />
-                                            </Link>
-                                        </TableCell>
-                                    </TableRow>
-                                );
-                            })}
+                                            <TableCell className='jobslist-text' key={column.id}>
+                                                {column.label === "Client" ? row.client : column.label === 'Address' ? row.address.streetAddress + ', ' + row.address.city : row.crew}
+                                            </TableCell>
+                                        );
+                                    } )}
+                                    <TableCell>
+                                        <Link to={'/jobdetail/'+ row.id}>
+                                            <img alt='' src={DetailButton} className='detail-button' />
+                                        </Link>
+                                    </TableCell>
+                                </TableRow>
+                            );
+                        } )}
                     </TableBody>
                 </Table>
             </TableContainer>
