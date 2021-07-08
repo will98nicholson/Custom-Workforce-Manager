@@ -219,8 +219,8 @@ justify-content: center;
 .jobslist-text {
   color: var(--lightest-grey-txt)!important;
   height: 15vw!important;
-  padding-top: 5px!important;
-  padding-bottom: 5px!important;
+  padding-top: 1rem!important;
+  padding-bottom: 1rem!important;
 }
 
 .detail-button {

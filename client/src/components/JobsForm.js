@@ -12,6 +12,7 @@ import {
     Button,
     InputAdornment
 } from '@material-ui/core';
+import Icon from '@material-ui/icons'
 import { Redirect, useLocation } from 'react-router-dom';
 import axios from 'axios';
 import InvoiceModal from '../components/InvoiceModal';
@@ -28,16 +29,16 @@ const useStyles = makeStyles( ( theme ) => ( {
     input: {
         width: '70vw',
         margin: theme.spacing( 1, 2, 1, 0 ),
-        [ theme.breakpoints.up( 'md' ) ]: {
-            width: '40vw'
-        },
-        [ theme.breakpoints.up( 'lg' ) ]: {
-            width: '20vw'
-        }
+        // [ theme.breakpoints.up( 'md' ) ]: {
+        //     width: '40vw'
+        // },
+        // [ theme.breakpoints.up( 'lg' ) ]: {
+        //     width: '20vw'
+        // }
     },
     TextField: {
         width: '70vw',
-        margin: theme.spacing( 1, 2, 1, 0 )
+        margin: theme.spacing( 1, 2, 1, 0 ),
     },
     button: {
         margin: theme.spacing( 2 ),
@@ -119,11 +120,14 @@ export default function JobsForm ( props ) {
 
     function handleSubmit ( event ) {
         event.preventDefault();
+        // console.log( formObject.location );
         props.APIFunction( {
             client: {
                 type: formObject.type,
                 name: formObject.name,
-                location: formObject.location,
+                location: {
+                    streetAddress: formObject.location,
+                },
                 // contact: formObject.contact,
                 phone: formObject.phone,
                 email: formObject.email,
@@ -141,6 +145,7 @@ export default function JobsForm ( props ) {
             .catch( ( err ) => console.log( err ) );
     };
     console.log( formObject );
+    console.log( dataObject )
     return (
 
         <div className={classes.root} id='jobsform'>
@@ -365,7 +370,7 @@ export default function JobsForm ( props ) {
                         value={formObject.notes}
                     />
                 </FormControl>
-                <ServiceTable jobData={dataObject.data} />
+                <ServiceTable jobData={dataObject} />
                 <div className={classes.break} />
 
                 {/* SAVE / SUBMIT BUTTON */} {/* for create job */}
