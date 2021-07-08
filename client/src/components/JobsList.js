@@ -19,17 +19,17 @@ import API from '../utils/API';
 const columns = [
     { id: 'client', label: 'Client', minWidth: 113 },
     { id: 'address', label: 'Address', minWidth: 113 },
-    { id: 'crew', label: 'Assigned Crew', minWidth: 113}
+    { id: 'crew', label: 'Assigned Crew', minWidth: 113 }
 ]
 const useStyles = makeStyles({
-  root: {
-    width: '100%',
-  }
+    root: {
+        width: '100%',
+    }
 });
-const getAssignedJob = API.getJobByUser().then(response => {
-    console.log(response.data)
-} );
-function createData ( id, client, address, crew ) {
+// const getAssignedJob = API.getJobByUser().then(response => {
+//     console.log(response.data)
+// } );
+function createData(id, client, address, crew) {
     return {
         id,
         client,
@@ -48,11 +48,10 @@ export default function JobsList( {user} ) {
     console.log(user)
     useEffect(() => {
         API.getJobs()
-            .then(res => {
-               const formattedJobs = res.data
-               .map((job) => {
-                    return createData(job._id, job.client.name, job.client.location, job.crewAssignedToo)
-                })
+            .then(res => {                
+                const filteredJobs = res.data.filter(jobData => jobData.crewAssignedToo === user.username)
+                const formattedJobs = filteredJobs.map(job => {return createData(job._id, job.client.name, job.client.location, job.crewAssignedToo)})
+
                 setRows(formattedJobs)
             })
     }, [])
@@ -83,25 +82,25 @@ export default function JobsList( {user} ) {
 
                                 return (
 
-                                <TableRow hover role="checkbox" tabIndex={-1} key={i} className='jobslist-row'>
-                                    {columns.map( ( column ) => {
-                                        const value = row[ column.id ];
+                                    <TableRow hover role="checkbox" tabIndex={-1} key={i} className='jobslist-row'>
+                                        {columns.map((column) => {
+                                            const value = row[column.id];
 
                                             return (
 
-                                            <TableCell className='jobslist-text' key={column.id}>
-                                                {column.label === "Client" ? row.client : column.label === 'Address' ? row.address.streetAddress + ', ' + row.address.city : row.crew}
-                                            </TableCell>
-                                        );
-                                    } )}
-                                    <TableCell>
-                                        <Link to={'/jobdetail/'+ row.id}>
-                                            <img alt='' src={DetailButton} className='detail-button' />
-                                        </Link>
-                                    </TableCell>
-                                </TableRow>
-                            );
-                        } )}
+                                                <TableCell className='jobslist-text' key={column.id}>
+                                                    {column.label === "Client" ? row.client : column.label === 'Address' ? row.address.streetAddress + ', ' + row.address.city : row.crew}
+                                                </TableCell>
+                                            );
+                                        })}
+                                        <TableCell>
+                                            <Link to={'/jobdetail/' + row.id}>
+                                                <img alt='' src={DetailButton} className='detail-button' />
+                                            </Link>
+                                        </TableCell>
+                                    </TableRow>
+                                );
+                            })}
                     </TableBody>
                 </Table>
             </TableContainer>
