@@ -16,8 +16,8 @@ function TableRows( {items} ) {
             <Text>{item.quantity * item.rate}</Text>
         </View>
     );
-
-    return(<Fragment>{rows}</Fragment>);
+// {rows}
+    return(<Fragment><></></Fragment>);
 }
 
 export default TableRows;
