@@ -146,10 +146,11 @@ justify-content: center;
 }
 
 /* SCHEDULE */
-#this-week {
+/* #this-week {
   font-size: ;
   color: ;
-}
+} */
+
 #module-schedule {
   padding: 10px 0 10px 0!important;
 }
@@ -161,7 +162,7 @@ justify-content: center;
 /* ASSIGNED / ACTIVE JOBS MODULES */
 #active,
 #completed {
-  font-size: ;
+  /* font-size: ; */
   /* text-transform: uppercase; */
   font-weight: 400!important;
   color: var(--yellow-icon);
@@ -169,9 +170,10 @@ justify-content: center;
   padding-bottom: 0!important;
 }
 #module-activejobs,
-#module-completedjobs {
+/* #module-completedjobs {
   font-size: ;
-}
+} */
+
 #component-jobslist {
   /* height: 50vw!important; */
   background-color: rgba(9, 11, 25, 0.718);
