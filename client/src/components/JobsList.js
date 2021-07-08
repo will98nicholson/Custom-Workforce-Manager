@@ -32,12 +32,13 @@ const useStyles = makeStyles({
 const getAssignedJob = API.getJobByUser().then(response => {
     console.log(response.data)
 });
-function createData(id, client, address, status) {
+function createData(id, client, address, status, crew) {
     return {
         id,
         client,
         address,
-        status
+        status,
+        crew
     };
 };
 
@@ -47,30 +48,25 @@ export default function JobsList(props) {
     const [page, setPage] = React.useState(0);
     const [rowsPerPage, setRowsPerPage] = React.useState(10);
     const [rows, setRows] = React.useState([])
-    const [user, setUser] = React.useState('');
+    const [user, setUser] = React.useState("")
 
     useEffect(() => {
         API.getCurrentUser()
-            .then(res => setUser(res.data.username))
-            .then(
-            API.getJobByUser(user)
-                .then(res => {
-                    const formattedJobs = res.data.map((job) => {
-                        return createData(job._id, job.client.name, job.client.location, job.completed)
-                    })
-                    setRows(formattedJobs)
-                }))
-    }, [user]);
+            .then(res => setUser(res.data))
+        API.getJobs()
+            .then(res => {
+                const formattedJobs = res.data.map((job) => {
+                    return createData(
+                        job._id, 
+                        job.client.name, 
+                        job.client.location, 
+                        job.completed, 
+                        job.crewAssignedToo)
+                })
+                setRows(formattedJobs)
+            })
+    }, [])
 
-    // useEffect(() => {
-    //     API.getJobByUser(user)
-    //         .then(res => {
-    //             const formattedJobs = res.data.map((job) => {
-    //                 return createData(job._id, job.client.name, job.client.location, job.completed)
-    //             })
-    //             setRows(formattedJobs)
-    //         })
-    // }, [])
     const handleChangePage = (event, newPage) => {
         setPage(newPage);
     };
@@ -90,30 +86,32 @@ export default function JobsList(props) {
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row, i) => {
-                            console.log(row);
+                        {rows
+                            .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                            .map((row, i) => {
+                                console.log(row);
 
-                            return (
+                                return (
 
-                                <TableRow hover role="checkbox" tabIndex={-1} key={i}>
-                                    {columns.map((column) => {
-                                        const value = row[column.id];
+                                    <TableRow hover role="checkbox" tabIndex={-1} key={i}>
+                                        {columns.map((column) => {
+                                            const value = row[column.id];
 
-                                        return (
+                                            return (
 
-                                            <TableCell className='white-text' key={column.id}>
-                                                {column.label === "Client" ? row.client : row.address.streetAddress + ', ' + row.address.city}
-                                            </TableCell>
-                                        );
-                                    })}
-                                    <TableCell>
-                                        <Link to={'/jobdetail/' + row.id}>
-                                            <img alt='' src={DetailButton} className='detail-button' />
-                                        </Link>
-                                    </TableCell>
-                                </TableRow>
-                            );
-                        })}
+                                                <TableCell className='white-text' key={column.id}>
+                                                    {column.label === "Client" ? row.client : row.address.streetAddress + ', ' + row.address.city}
+                                                </TableCell>
+                                            );
+                                        })}
+                                        <TableCell>
+                                            <Link to={'/jobdetail/' + row.id}>
+                                                <img alt='' src={DetailButton} className='detail-button' />
+                                            </Link>
+                                        </TableCell>
+                                    </TableRow>
+                                );
+                            })}
                     </TableBody>
                 </Table>
             </TableContainer>
