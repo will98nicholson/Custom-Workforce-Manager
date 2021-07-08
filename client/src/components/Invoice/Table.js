@@ -4,7 +4,7 @@ import TableRows from "./TableRows";
 import Calculator from "./Calculator";
 
 
-function Table( {invoiceData} ) {
+function Table( {data} ) {
     const styles = StyleSheet.create({
 
     })
@@ -19,7 +19,7 @@ function Table( {invoiceData} ) {
                 <Text>Rate</Text>
                 <Text>Amount</Text>
             </View>
-            <TableRows items={invoiceData.items} rows={3} />
+            <TableRows items={data.data.products} rows={3} />
             <Calculator />
         </>
     )
