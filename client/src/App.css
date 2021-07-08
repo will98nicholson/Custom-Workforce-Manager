@@ -1,11 +1,11 @@
 :root{
-  --app-background: rgb(53, 53, 76);
-  --dark-background: rgba(9, 11, 25, 0.718);
-  --darker-background: rgba(9, 11, 25, 0.848);
-  --lightest-grey-txt: rgb(209, 217, 227);
-  --lighter-grey-txt: rgb(188, 195, 205);
-  --blue-txt: rgb(142, 204, 255);
-  --blue-txt-shadow: rgba(15, 147, 255, 0.409);
+    --app-background: rgb(53, 53, 76);
+    --dark-background: rgba(9, 11, 25, 0.718);
+    --darker-background: rgba(9, 11, 25, 0.848);
+    --lightest-grey-txt: rgb(209, 217, 227);
+    --lighter-grey-txt: rgb(188, 195, 205);
+    --blue-txt: rgb(142, 204, 255);
+    --blue-txt-shadow: rgba(15, 147, 255, 0.3);
 
   --green-icon: rgb(72,252,120);
   --yellow-icon: rgb(236,183,119);
@@ -46,32 +46,30 @@ color:  var(--lighter-grey-txt);
 
 /* global module styling */
 .module-header {
-margin: 0 5px 10px 5px !important;
+  margin: 0 5px 10px 5px !important;
+  display: flex;
+  justify-content: center;
 }
 
 /* ALL Dashboard MODULES */
-#module1,
-#module2,
-#module3,
-#module4,
-#module5 {
-background-color: var(--dark-background);
-color: whitesmoke;
-margin: auto;
-margin-bottom: 5px;
-width: 80vw;
-position: static;
-}
-/* jobs list text */
-.white-text {
-  color: var(--lightest-grey-txt)!important;
+#module-weather,
+#module-schedule,
+#module-activejobs,
+#module-completedjobs{
+  background-color: var(--dark-background);
+  color: var(--lightest-grey-txt);
+  margin: auto;
+  margin-bottom: 5px;
+  width: 90vw;
+  position: static;
 }
 
-/* TIME + WEATHER MODULE */
-#module5 {
-display: flex;
-flex-direction: column;
-margin-top:5px;
+/* WEATHER MODULE */
+#module-weather {
+  display: flex;
+  flex-direction: column;
+  margin-top:5px;
+  height: 60vw!important;
 }
 .weather-text {
 display: flex;
@@ -130,15 +128,48 @@ font-size: 14px;
 justify-content: center;
 }
 
+/* SCHEDULE */
+#this-week {
+  font-size: 16px!important;
+  color: ;
+}
+#module-schedule {
+  padding: 10px 0 10px 0!important;
+}
+#schedule-img {
+  width: 90vw;
+  box-shadow: 1px 1px 2px black;
+}
 
 /* ASSIGNED / ACTIVE JOBS MODULES */
-/* #jobslist {
-background: rgba(64, 65, 66, 0.505)!important;
-height: 50vw!important;
-} */
-/* .module-sub-head {
-font-family:
-} */
+#active,
+#completed {
+  font-size: 22px!important;
+  /* text-transform: uppercase; */
+  font-weight: 400!important;
+  color: var(--yellow-icon);
+  padding-top: 0!important;
+  padding-bottom: 0!important;
+}
+#module-activejobs,
+#module-completedjobs {
+  font-size: ;
+}
+#component-jobslist {
+  height: 50vw!important;
+  background-color: rgba(9, 11, 25, 0.718);
+  margin-top: 5px;
+}
+.jobslist-row {
+  height: 10vw!important;
+}
+.jobslist-text {
+  color: var(--lightest-grey-txt)!important;
+  height: 15vw!important;
+  padding-top: 5px!important;
+  padding-bottom: 5px!important;
+}
+
 .detail-button {
 height: 20px;
 padding: 0;
@@ -162,9 +193,18 @@ display: flex;
 flex-direction: column;
 }
 #jobsform {
-
+ color: var(--lightest-grey-txt);
 }
-
+label {
+  color: var(--lighter-grey-txt)!important;
+  padding: 0!important;
+  margin: 0!important;
+  position: relative!important;
+}
+label#clientType {
+  position: relative!important;
+  left: -10px;
+}
 
 /* PUNCH CLOCK */
 .Stopwatch {
@@ -256,7 +296,7 @@ color: white;
   display:flex;
   justify-content: space-between;
   align-items: center;
-  
+
 }
 
 
@@ -286,7 +326,7 @@ color: white;
 }
 .unassigned-Wrapper{
   margin: 0 20px;
-  
+
 }
 
 .unassigned-Wrapper > .list{
@@ -317,7 +357,7 @@ color: white;
 /* scrollbar customization */
 .unassigned-Wrapper > .list > .job-list::-webkit-scrollbar{
   height: 12px;
-  
+
 }
 
 .unassigned-Wrapper > .list > .job-list::-webkit-scrollbar-track{
@@ -327,20 +367,20 @@ color: white;
 .unassigned-Wrapper > .list > .job-list::-webkit-scrollbar-thumb{
   background-color: var(--dark-background);
   border-radius: 20px;
-  
+
   background-clip: content-box;
 }
 
 
 @media (max-width: 900px) {
-.Timers {
-  flex-direction: column;
+  .Timers {
+    flex-direction: column;
 
-  align-items: center;
-}
+    align-items: center;
+  }
 }
 @media (max-width: 900px) {
-.Stopwatch {
-  margin-bottom: 40px;
-}
+  .Stopwatch {
+    margin-bottom: 40px;
+  }
 }

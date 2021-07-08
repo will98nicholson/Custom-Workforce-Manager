@@ -6,10 +6,11 @@ import {
     Typography,
     Paper
 } from '@material-ui/core';
-import TimeWeather from '../components/TimeWeather';
+import Weather from '../components/Weather';
 import JobsList from '../components/JobsList';
 import Copyright from '../components/Copyright';
 import API from '../utils/API';
+import Schedule from '../components/Schedule';
 
 const useStyles = makeStyles( ( theme ) => ( {
     root: {
@@ -43,19 +44,24 @@ function EmpDash(props) {
         <div className={classes.root}>
             <CssBaseline />
             <main className={classes.content}>
-                <div className={classes.appBarSpacer} />
-                <TimeWeather />
-                <Container maxWidth="lg" className={classes.container} >
 
-                    <Paper className={classes.paper} id='module1'>
-                        <Typography className='module-header' variant='h5'>Assigned Jobs</Typography>
-                        <JobsList inputDisabled='true'/>
-                    </Paper>
-                    <Paper className={classes.paper} id='module2'>
-                        <Typography className='module-header' variant='h5'>Schedule</Typography>
-                    </Paper>
-                    <Copyright />
-                </Container>
+                <div className={classes.appBarSpacer} />
+                <Weather id='module-weather'/>
+                {/* <Container maxWidth="lg" className={classes.container} > */}
+                <Paper className={classes.paper} id='module-schedule'>
+                    <Typography variant='h5' className='module-header'>This Week</Typography>
+                    <Schedule />
+                </Paper>
+                <Paper className={classes.paper} id='module-activejobs'>
+                    <Typography variant='h5' className='module-header'>Active</Typography>
+                    <JobsList inputDisabled='true'/>
+                </Paper>
+                <Paper className={classes.paper} id='module-completedjobs'>
+                    <Typography variant='h5' className='module-header'>Completed</Typography>
+                </Paper>
+                <Copyright />
+                {/* </Container> */}
+
             </main>
         </div>
     );
