@@ -26,22 +26,22 @@ const useStyles = makeStyles( ( theme ) => ( {
         },
     },
     input: {
-        width: '70vw',
+        width: '100%',
         margin: theme.spacing( 1, 2, 1, 0 ),
         [ theme.breakpoints.up( 'md' ) ]: {
-            width: '40vw'
+            width: '100%'
         },
         [ theme.breakpoints.up( 'lg' ) ]: {
-            width: '20vw'
+            width: '100%'
         }
     },
     TextField: {
-        width: '70vw',
+        width: '100%',
         margin: theme.spacing( 1, 2, 1, 0 )
     },
     button: {
         margin: theme.spacing( 2 ),
-        width: '7rem'
+        width: '100%'
     },
     container: {
         margin: theme.spacing( 2 )

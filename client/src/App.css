@@ -63,7 +63,9 @@ span.PrivateSwitchBase-root-11 {
   background-image: url('./assets/images/sign-in-gradient.JPG');
 }
 #menu-logo {
-  width: 45px!important;
+  width: 70px!important;
+  position: relative;
+  right: -12px;
 }
 .MuiSvgIcon-root {
   background-color: var(--lighter-grey)!important;
@@ -314,9 +316,11 @@ input#jobLocation {
 .form-flex {
 display: flex;
 flex-direction: column;
+width: 100%;
 }
 #jobsform {
  color: var(--lightest-grey-txt);
+ width: 100%;
 }
 label {
   color: rgb(219, 153, 0)!important;
@@ -387,7 +391,7 @@ div#clientType {
 }
 #invoice-btn,
 #add-job-btn {
-  width: 87vw;
+  width: 100%;
   background-color: var(--blue-icon);
   display: inline-flex;
   margin: 40px 0 0 0;
