@@ -59,7 +59,7 @@ export default function MenuList(props) {
                     </Link>
 
                     {/* <Link to='/createjob'> */}
-                    <ListItem >
+                    {/* <ListItem >
                         <ListItemIcon>
                             <EventNote />
                         </ListItemIcon>
@@ -67,34 +67,34 @@ export default function MenuList(props) {
                     </ListItem>
                     {/* </Link> */}
 
-                    <ListItem >
+                    {/* <ListItem >
                         <ListItemIcon>
                             <ChatBubbleIcon />
                         </ListItemIcon>
                         <ListItemText primary="Chat" />
-                    </ListItem>
+                    </ListItem>  */}
                 </div>
             </List>
             <Divider />
             <List>
                 <div>
                     <ListSubheader inset></ListSubheader>
-                    <Link to='' hidden={props.linkHidden}>
+                    {/* <Link to='' hidden={props.linkHidden}>
                         <ListItem  >
                             <ListItemIcon>
                                 <Assessment />
                             </ListItemIcon>
                             <ListItemText primary="Reports" />
                         </ListItem>
-                    </Link>
-                    <Link to='/form' hidden={props.linkHidden}>
+                    </Link> */}
+                    {/* <Link to='/form' hidden={props.linkHidden}>
                         <ListItem >
                             <ListItemIcon>
                                 <AttachMoney />
                             </ListItemIcon>
                             <ListItemText primary="Invoices" />
                         </ListItem>
-                    </Link>
+                    </Link> */}
                     <Link to='/crews' hidden={props.linkHidden}>
                         <ListItem >
                             <ListItemIcon>
@@ -103,14 +103,14 @@ export default function MenuList(props) {
                             <ListItemText primary="Crews" />
                         </ListItem>
                     </Link>
-                    <Link to=''>
+                    {/* <Link to=''>
                         <ListItem >
                             <ListItemIcon>
                                 <LibraryBooksIcon />
                             </ListItemIcon>
                             <ListItemText primary="Jobs" />
                         </ListItem>
-                    </Link>
+                    </Link> */}
                     <Link to='/createjob' hidden={props.linkHidden}>
                         <ListItem >
                             <ListItemIcon>
@@ -120,7 +120,7 @@ export default function MenuList(props) {
                         </ListItem>
                     </Link>
 
-                    <Button onClick={handleLogout}>
+                    <Button id={"log-out"} onClick={handleLogout}>
                         <ListItem>
                             <ListItemIcon>
                                 <MeetingRoom />
