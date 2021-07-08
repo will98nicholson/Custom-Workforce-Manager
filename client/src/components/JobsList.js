@@ -59,17 +59,10 @@ export default function JobsList({user}) {
 
     useEffect(() => {
         API.getJobs()
-            .then(res => {
-                const formattedJobs = res.data.map(job)
-                
-                const formattedJobs = res.data.filter(jobData => jobData.crewAssignedToo === job.crew
-                    // if (job.crewAssignedToo === user.username) {
-                        // console.log(job.crewAssignedToo)
-                        // console.log(user.username)
-                        // return createData(job._id, job.client.name, job.client.location, job.crewAssignedToo)
-                    // }
-                    
-                })
+            .then(res => {                
+                const filteredJobs = res.data.filter(jobData => jobData.crewAssignedToo === user.username)
+                const formattedJobs = filteredJobs.map(job => {return createData(job._id, job.client.name, job.client.location, job.crewAssignedToo)})
+
                 setRows(formattedJobs)
             })
     }, [])
