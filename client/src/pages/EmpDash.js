@@ -33,13 +33,13 @@ const useStyles = makeStyles( ( theme ) => ( {
     }
 } ) );
 
-function EmpDash(props) {
-    console.log( props );
+function EmpDash({user}) {
+    
 
     const classes = useStyles();
 
-    const [ user, setUser ] = useState( {} );
-
+    // const [ user, setUser ] = useState( {} );
+    console.log(user)
     return (
         <div className={classes.root}>
             <CssBaseline />
@@ -54,7 +54,7 @@ function EmpDash(props) {
                 </Paper>
                 <Paper className={classes.paper} id='module-activejobs'>
                     <Typography variant='h5' className='module-header' id='active'>Active</Typography>
-                    <JobsList inputDisabled='true'/>
+                    <JobsList user={user} inputDisabled='true'/>
                 </Paper>
                 <Paper className={classes.paper} id='module-completedjobs'>
                     <Typography variant='h5' className='module-header' id='completed'>Completed</Typography>

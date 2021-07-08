@@ -38,20 +38,19 @@ function createData ( id, client, address, crew ) {
     };
 };
 
-export default function JobsList(props) {
+export default function JobsList( {user} ) {
 
     const classes = useStyles();
     const [page, setPage] = React.useState(0);
     const [rowsPerPage, setRowsPerPage] = React.useState(10);
     const [rows, setRows] = React.useState([])
-    const [user, setUser] = React.useState("")
 
+    console.log(user)
     useEffect(() => {
-        API.getCurrentUser()
-            .then(res => setUser(res.data))
         API.getJobs()
             .then(res => {
-               const formattedJobs = res.data.map((job) => {
+               const formattedJobs = res.data
+               .map((job) => {
                     return createData(job._id, job.client.name, job.client.location, job.crewAssignedToo)
                 })
                 setRows(formattedJobs)

@@ -15,10 +15,10 @@ const Purchased = new Schema({
         type: Number,
         required: true
     },
-    job_id: {
-        type: mongoose.Schema.Types.ObjectId, ref: 'Job',
-        // required: true,
-    }
+    // job_id: {
+    //     type: mongoose.Schema.Types.ObjectId, ref: 'Job',
+    //     // required: true,
+    // }
 }
 );
 
