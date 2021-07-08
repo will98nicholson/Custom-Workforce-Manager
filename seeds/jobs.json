@@ -15,8 +15,8 @@
   "start_date": "12/18/2021",
   "end_date": "11/25/2021",
   "quote_price": "$631.78",
-  "description": "Proin risus. Praesent lectus.",
-  "notes": "In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante.",
+  "description": "Weekly Mow & Trim",
+  "notes": "Mowing height: 2 inches",
   "completed": false,
   "crewAssignedToo": "Crew #1",
   "dailyPosition": "1"
@@ -37,8 +37,8 @@
   "start_date": "10/2/2021",
   "end_date": "12/1/2021",
   "quote_price": "$53.71",
-  "description": "Nulla tellus. In sagittis dui vel nisl. Duis ac nibh.",
-  "notes": "In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.",
+  "description": "Weekly Mow & Trim",
+  "notes": "Mowing height: 2 inches",
   "completed": false,
   "crewAssignedToo": "Crew #2",
   "dailyPosition": "2"
@@ -59,8 +59,8 @@
   "start_date": "11/2/2021",
   "end_date": "12/30/2021",
   "quote_price": "$600.88",
-  "description": "Praesent lectus.",
-  "notes": "Suspendisse potenti.",
+  "description": "Weekly Mow & Trim",
+  "notes": "Mowing height: 2 inches",
   "completed": false,
   "crewAssignedToo": "Crew #3",
   "dailyPosition": "2"
@@ -81,8 +81,8 @@
   "start_date": "11/8/2021",
   "end_date": "7/5/2021",
   "quote_price": "$544.64",
-  "description": "Integer a nibh. In quis justo. Maecenas rhoncus aliquam lacus.",
-  "notes": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio.",
+  "description": "Weekly Mow & Trim",
+  "notes": "Mowing height: 2 inches",
   "completed": false,
   "crewAssignedToo": "Crew #4",
   "dailyPosition": "1"
@@ -103,8 +103,8 @@
   "start_date": "7/21/2021",
   "end_date": "11/21/2021",
   "quote_price": "$319.42",
-  "description": "In hac habitasse platea dictumst. Maecenas ut massa quis augue luctus tincidunt.",
-  "notes": "Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus. Suspendisse potenti.",
+  "description": "Weekly Mow & Trim",
+  "notes": "Mowing height: 2 inches",
   "completed": true,
   "crewAssignedToo": "Crew #1",
   "dailyPosition": "2"
@@ -125,8 +125,8 @@
   "start_date": "9/26/2021",
   "end_date": "7/29/2021",
   "quote_price": "$533.57",
-  "description": "Proin at turpis a pede posuere nonummy. Integer non velit.",
-  "notes": "Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim.",
+  "description": "Weekly Mow & Trim",
+  "notes": "Mowing height: 2 inches",
   "completed": true,
   "crewAssignedToo": "Crew #1",
   "dailyPosition": "3"
@@ -147,8 +147,8 @@
   "start_date": "12/9/2021",
   "end_date": "10/5/2021",
   "quote_price": "$82.51",
-  "description": "Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.",
-  "notes": "In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem. Duis aliquam convallis nunc.",
+  "description": "Weekly Mow & Trim",
+  "notes": "Mowing height: 2 inches",
   "completed": false,
   "crewAssignedToo": "Crew #2",
   "dailyPosition": "1"
@@ -169,8 +169,8 @@
   "start_date": "7/30/2021",
   "end_date": "11/9/2021",
   "quote_price": "$796.47",
-  "description": "Integer a nibh. In quis justo.",
-  "notes": "Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy.",
+  "description": "Weekly Mow & Trim",
+  "notes": "Mowing height: 2 inches",
   "completed": true,
   "crewAssignedToo": "Crew #2",
   "dailyPosition": "3"
@@ -191,8 +191,8 @@
   "start_date": "10/25/2021",
   "end_date": "10/14/2021",
   "quote_price": "$519.37",
-  "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue.",
-  "notes": "Ut at dolor quis odio consequat varius. Integer ac leo.",
+  "description": "Weekly Mow & Trim",
+  "notes": "Mowing height: 2 inches",
   "completed": false,
   "crewAssignedToo": "Crew #2",
   "dailyPosition": "4"
@@ -213,8 +213,8 @@
   "start_date": "11/2/2021",
   "end_date": "7/30/2021",
   "quote_price": "$781.62",
-  "description": "Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.",
-  "notes": "Nullam varius. Nulla facilisi.",
+  "description": "Weekly Mow & Trim",
+  "notes": "Mowing height: 2 inches",
   "completed": false,
   "crewAssignedToo": "Crew #3",
   "dailyPosition": "1"
@@ -237,8 +237,8 @@
   "start_date": "8/22/2021",
   "end_date": "9/19/2021",
   "quote_price": "$92.71",
-  "description": "Nulla suscipit ligula in lacus.",
-  "notes": "In congue.",
+  "description": "Weekly Mow & Trim",
+  "notes": "Mowing height: 2 inches",
   "completed": false,
   "crewAssignedToo": "Crew #3",
   "dailyPosition": "3"
@@ -260,8 +260,8 @@
   "start_date": "7/19/2021",
   "end_date": "11/22/2021",
   "quote_price": "$641.78",
-  "description": "Ut at dolor quis odio consequat varius.",
-  "notes": "Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.",
+  "description": "Weekly Mow & Trim",
+  "notes": "Mowing height: 2 inches",
   "completed": true,
   "crewAssignedToo": "Crew #3",
   "dailyPosition": "4"
@@ -283,8 +283,8 @@
   "start_date": "9/14/2021",
   "end_date": "11/10/2021",
   "quote_price": "$783.94",
-  "description": "Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit.",
-  "notes": "Etiam faucibus cursus urna.",
+  "description": "Weekly Mow & Trim",
+  "notes": "Mowing height: 2 inches",
   "completed": false,
   "crewAssignedToo": "Crew #4",
   "dailyPosition": "2"
@@ -306,8 +306,8 @@
   "start_date": "7/5/2021",
   "end_date": "8/21/2021",
   "quote_price": "$50.38",
-  "description": "Vivamus in felis eu sapien cursus vestibulum. Proin eu mi. Nulla ac enim.",
-  "notes": "Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa.",
+  "description": "Weekly Mow & Trim",
+  "notes": "Mowing height: 2 inches",
   "completed": true,
   "crewAssignedToo": "Crew #4",
   "dailyPosition": "3"
@@ -329,8 +329,8 @@
   "start_date": "9/11/2021",
   "end_date": "12/21/2021",
   "quote_price": "$332.52",
-  "description": "Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.",
-  "notes": "Praesent blandit. Nam nulla.",
+  "description": "Weekly Mow & Trim",
+  "notes": "Mowing height: 2 inches",
   "completed": false,
   "crewAssignedToo": "Crew #4",
   "dailyPosition": "4"
@@ -352,8 +352,8 @@
   "start_date": "9/15/2021",
   "end_date": "9/26/2021",
   "quote_price": "$100.01",
-  "description": "Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.",
-  "notes": "In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem. Duis aliquam convallis nunc.",
+  "description": "Weekly Mow & Trim",
+  "notes": "Mowing height: 2 inches",
   "completed": true
 }, {
   "client": {
@@ -373,8 +373,8 @@
   "start_date": "10/7/2021",
   "end_date": "10/27/2021",
   "quote_price": "$752.78",
-  "description": "Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.",
-  "notes": "Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla.",
+  "description": "Weekly Mow & Trim",
+  "notes": "Mowing height: 2 inches",
   "completed": false
 }, {
   "client": {
@@ -394,8 +394,8 @@
   "start_date": "11/22/2021",
   "end_date": "12/12/2021",
   "quote_price": "$657.62",
-  "description": "Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.",
-  "notes": "Morbi a ipsum.",
+  "description": "Weekly Mow & Trim",
+  "notes": "Mowing height: 2 inches",
   "completed": false
 }, {
   "client": {
@@ -415,8 +415,8 @@
   "start_date": "10/9/2021",
   "end_date": "7/8/2021",
   "quote_price": "$255.89",
-  "description": "In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.",
-  "notes": "Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit.",
+  "description": "Weekly Mow & Trim",
+  "notes": "Mowing height: 2 inches",
   "completed": false
 }, {
   "client": {
@@ -436,7 +436,7 @@
   "start_date": "10/6/2021",
   "end_date": "12/14/2021",
   "quote_price": "$438.38",
-  "description": "Pellentesque viverra pede ac diam.",
-  "notes": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
+  "description": "Weekly Mow & Trim",
+  "notes": "Mowing height: 2 inches",
   "completed": true
 }]
