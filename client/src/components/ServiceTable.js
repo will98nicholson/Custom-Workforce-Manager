@@ -58,7 +58,7 @@ function ServiceTableRow({ row, handleDataChange, deleteRow }) {
         var inputName = e.target.name
         var inputValue = e.target.value
         setData({
-            //...data,
+            ...data,
             [inputName]: inputValue
         })
 
