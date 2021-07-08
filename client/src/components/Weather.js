@@ -21,7 +21,7 @@ const useStyles = makeStyles( ( theme ) => ( {
         flexDirection: 'column',
     }
 } ) );
-export default function TimeWeather ( props ) {
+export default function Weather ( props ) {
 
     const classes = useStyles();
     // const currentDateTime = moment();
@@ -53,7 +53,7 @@ export default function TimeWeather ( props ) {
 
     return (
 
-        <Paper elevation={3} className={classes.paper} id='module5'>
+        <Paper elevation={3} className={classes.paper} id='module-weather'>
 
             <div className='weather-text' id=''>
                 <span id='feels-like'>Feels like</span>
