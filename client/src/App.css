@@ -577,6 +577,20 @@ button:hover {
   background-clip: content-box;
 }
 
+::-webkit-scrollbar{
+  height: 12px;
+
+}
+
+::-webkit-scrollbar-track{
+  background: none;
+}
+
+::-webkit-scrollbar-thumb{
+  background-color: var(--dark-background);
+  border-radius: 20px;
+  background-clip: content-box;
+}
 
 @media (max-width: 900px) {
   .Timers {
