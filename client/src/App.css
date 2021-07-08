@@ -201,10 +201,17 @@ border-bottom: none;
 /* COMPLETED JOBS MODULE */
 
 /* JOB DETAIL PAGE */
-#job-detail-page {
+#job-detail-page,
+#new-job-page {
 background-color:rgba(18, 20, 39, 0.793)!important;
 }
+
 /* CREATE JOB PAGE *//* NEW JOB */
+#new-job-title {
+  text-align: center;
+  color: var(--blue-txt);
+}
+
 
 /* JOBS FORM */
 .form-flex {
@@ -229,6 +236,10 @@ input {
 .jobform-divider {
   color: var(--blue-txt)!important;
   width: 80vw;
+  position: relative;
+  left: -15px;
+  margin-left: 15px;
+  margin-right: 15px;
 }
 #notes {
   color: var(--blue-txt)!important;
@@ -260,19 +271,23 @@ textarea#Description {
   display: flex;
 
 }
-#add-serv-btn {
+#save-btn {
   margin-left: 0;
   margin-bottom: 20px;
-  color: var(--hot-pink-icon);
+  margin-top: 15px;
+  background-color: var(--green-icon);
+  padding: 0 10px;
+  height: 30px;
 }
-#save-btn {
+#add-serv-btn {
   margin-right: 15px;
   margin-left: auto;
   margin-top: 15px;
   margin-bottom: 30px;
-  background-color: var(--green-icon);
+  color: var(--hot-pink-icon);
 }
-#invoice-btn {
+#invoice-btn,
+#add-job-btn {
   width: 87vw;
   background-color: var(--blue-icon);
   display: inline-flex;

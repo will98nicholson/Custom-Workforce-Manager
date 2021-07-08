@@ -81,7 +81,8 @@ export default function JobsForm ( props ) {
             setFormObject( {
                 data: res.data[0]
             } );
-        } )
+            console.log( formObject );
+        } ).then( (data) => ( console.log(data)))
             .catch( err => console.log( err ) );
     };
     function handleSubmit ( event ) {
@@ -124,7 +125,7 @@ export default function JobsForm ( props ) {
                         // placeholder="Client Name"
                         // className='form-input-positioning'
                         className={classes.input}
-                        value={formObject.name}
+                        value={''}
                         onChange={handleInputChange}
                         disabled={props.inputDisabled}
                     />

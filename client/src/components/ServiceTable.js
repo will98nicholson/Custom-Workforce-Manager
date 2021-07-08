@@ -212,11 +212,11 @@ function ServiceTable({ jobData }) {
                 </TableBody>
             </Table>
             <div id='service-button-wrapper'>
-                <Button id='add-serv-btn' onClick={addNewRow}>
-                    + Add Service
-                </Button>
                 <Button id='save-btn' variant="contained" onClick={handleSubmit}>
                     Save
+                </Button>
+                <Button id='add-serv-btn' onClick={addNewRow}>
+                    + Add Service
                 </Button>
             </div>
         </TableContainer>
