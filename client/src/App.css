@@ -30,18 +30,35 @@ background-size: cover;
 /* TOP MENU BAR */
 header {
 background-color: var(--darker-background)!important;
+width: 100vw;
+display: flex;
+
 }
 #menu-icon {
-color: var(--lightest-grey-txt);
+  margin: auto;
+  color: var(--lightest-grey-txt);
+  display: flex;
+  justify-content: flex-start;
+  width: auto;
+  padding-right: 15px;
 }
 #current-date {
-margin: 0 55px 0 70px;
-color: var(--lighter-grey-txt);
+  margin: auto;
+  color: var(--lighter-grey-txt);
+  white-space: nowrap;
+  display: flex;
+  justify-content: center;
+  width: auto;
 }
 
 #current-time {
-margin: 0 0 0 0;
-color:  var(--lighter-grey-txt);
+  margin: auto;
+  color:  var(--lighter-grey-txt);
+  white-space: nowrap;
+  display: flex;
+  justify-content: flex-end;
+  width: auto;
+  padding-left: 15px;
 }
 
 /* global module styling */
@@ -69,7 +86,7 @@ color:  var(--lighter-grey-txt);
   display: flex;
   flex-direction: column;
   margin-top:5px;
-  height: 60vw!important;
+  height: auto!important;
 }
 .weather-text {
 display: flex;
@@ -130,7 +147,7 @@ justify-content: center;
 
 /* SCHEDULE */
 #this-week {
-  font-size: 16px!important;
+  font-size: ;
   color: ;
 }
 #module-schedule {
@@ -144,7 +161,7 @@ justify-content: center;
 /* ASSIGNED / ACTIVE JOBS MODULES */
 #active,
 #completed {
-  font-size: 22px!important;
+  font-size: ;
   /* text-transform: uppercase; */
   font-weight: 400!important;
   color: var(--yellow-icon);
@@ -156,7 +173,7 @@ justify-content: center;
   font-size: ;
 }
 #component-jobslist {
-  height: 50vw!important;
+  /* height: 50vw!important; */
   background-color: rgba(9, 11, 25, 0.718);
   margin-top: 5px;
 }
@@ -208,44 +225,49 @@ label#clientType {
 
 /* PUNCH CLOCK */
 .Stopwatch {
-margin: auto;
-border: 0.5px solid grey;
-border-radius: 4px;
-padding: 20px;
-width: 200px;
-background-color: var(--dark-background);
-/* box-shadow: 0 3px 6px rgb(12, 12, 12); */
+  margin: auto;
+  border: 0.5px solid grey;
+  border-radius: 4px;
+  padding: 20px;
+  width: 200px;
+  background-color: var(--dark-background);
+  /* box-shadow: 0 3px 6px rgb(12, 12, 12); */
+  display: flex!important;
 }
 .Stopwatch-header {
-font-size: 16px;
-font-weight: bold;
-color: var(--blue-txt);
-}
-button {
-background-color: #202b33;
-border: solid 1px transparent;
-border-radius: 4px;
-padding: 10px 20px;
-color: #ffffff;
-font-size: 12px;
-margin: auto;
-cursor: pointer;
-}
-button:hover {
-background-color: #106ba3;
-transition-duration: 1s;
-}
-.Stopwatch button {
-padding: 12px 32px;
-font-size: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--blue-txt);
+  display: flex!important;
+  justify-content: center;
 }
 .Stopwatch-display {
-padding: 40px 0;
-font-size: 22px;
-color: white;
+  padding: 40px 0;
+  font-size: 22px;
+  color: white;
+  display: flex!important;
+  justify-content: center;
+}
+button {
+  background-color: #202b33;
+  border: solid 1px transparent;
+  border-radius: 4px;
+  padding: 10px 20px;
+  color: #ffffff;
+  font-size: 12px;
+  margin: auto;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #106ba3;
+  transition-duration: 1s;
+}
+.Stopwatch button {
+  padding: 12px 32px;
+  font-size: 12px;
 }
 .Stopwatch-text {
-color: white;
+  color: white;
 }
 
 

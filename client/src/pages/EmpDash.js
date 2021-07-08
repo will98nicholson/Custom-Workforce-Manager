@@ -49,15 +49,15 @@ function EmpDash(props) {
                 <Weather id='module-weather'/>
                 {/* <Container maxWidth="lg" className={classes.container} > */}
                 <Paper className={classes.paper} id='module-schedule'>
-                    <Typography variant='h5' className='module-header'>This Week</Typography>
+                    <Typography variant='h5' className='module-header' id='this-week'>This Week</Typography>
                     <Schedule />
                 </Paper>
                 <Paper className={classes.paper} id='module-activejobs'>
-                    <Typography variant='h5' className='module-header'>Active</Typography>
+                    <Typography variant='h5' className='module-header' id='active'>Active</Typography>
                     <JobsList inputDisabled='true'/>
                 </Paper>
                 <Paper className={classes.paper} id='module-completedjobs'>
-                    <Typography variant='h5' className='module-header'>Completed</Typography>
+                    <Typography variant='h5' className='module-header' id='completed'>Completed</Typography>
                 </Paper>
                 <Copyright />
                 {/* </Container> */}
