@@ -17,8 +17,9 @@ import DetailButton from '../assets/icons/view-details-color-vibrant.PNG';
 import API from '../utils/API';
 
 const columns = [
-    { id: 'client', label: 'Client', minWidth: 170 },
-    { id: 'address', label: 'Address', minWidth: 170 }
+    { id: 'client', label: 'Client', minWidth: 113 },
+    { id: 'address', label: 'Address', minWidth: 113 },
+    { id: 'crew', label: 'Assigned Crew', minWidth: 113}
 ]
 const useStyles = makeStyles({
   root: {
@@ -28,11 +29,12 @@ const useStyles = makeStyles({
 const getAssignedJob = API.getJobByUser().then( response => {
     console.log(response.data)
 } );
-function createData ( id, client, address ) {
+function createData ( id, client, address, crew ) {
     return {
         id,
         client,
-        address
+        address,
+        crew
     };
 };
 
@@ -47,7 +49,7 @@ export default function JobsList ( props ) {
         API.getJobs()
             .then(res => {
                const formattedJobs = res.data.map((job) => {
-                    return createData(job._id, job.client.name, job.client.location)
+                    return createData(job._id, job.client.name, job.client.location, job.crewAssignedToo)
                 })
                 setRows(formattedJobs)
             })
@@ -83,7 +85,7 @@ export default function JobsList ( props ) {
                                         return (
 
                                             <TableCell className='jobslist-text' key={column.id}>
-                                                {column.label === "Client" ? row.client : row.address.streetAddress + ', ' + row.address.city}
+                                                {column.label === "Client" ? row.client : column.label === 'Address' ? row.address.streetAddress + ', ' + row.address.city : row.crew}
                                             </TableCell>
                                         );
                                     } )}
