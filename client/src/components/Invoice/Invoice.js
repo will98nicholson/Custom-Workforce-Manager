@@ -18,6 +18,8 @@ function Invoice({formObject}) {
                 <Header data={formObject}/>
                 <Table data={formObject}/>
                 {/* <Notes invoiceData={invoiceData}/> */}
+                {/* <Table invoiceData={invoiceData}/>*/}
+                <Notes data={formObject}/> 
             </Page>
         </Document>
     );
