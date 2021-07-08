@@ -94,7 +94,7 @@ const Login = ({ setUser }) => {
                     <Typography component="h1" variant="h5">
                         Sign in
                     </Typography>
-                    <form className={classes.form} noValidate>
+                    <form onSubmit={handleLogin} className={classes.form} noValidate>
                         <TextField
                             variant="outlined"
                             margin="normal"
@@ -128,7 +128,7 @@ const Login = ({ setUser }) => {
                             fullWidth
                             variant="contained"
                             color="primary"
-                            onClick={handleLogin}
+                            // onClick={handleLogin}
                             className={classes.submit}
                         >
                             Sign In

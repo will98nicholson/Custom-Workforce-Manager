@@ -3,14 +3,11 @@ const path = require('path');
 const express = require('express');
 const logger = require('morgan');
 const mongoose = require('mongoose');
-const passport = require('./middleware/passport');
+const passport = require("./middleware/passport.js");
 const session = require('express-session');
 const cors = require('cors');
 const errorHandler = require('errorhandler');
 const routes = require('./routes');
-
-
-
 
 //Configure mongoose's promise to global promise
 mongoose.promise = global.Promise;
@@ -30,8 +27,8 @@ app.use(logger('dev'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(require('cookie-parser')());
-app.use(express.static(path.join(__dirname, 'public')));
-app.use(session({ secret: 'passport-tutorial', cookie: { }, resave: false, saveUninitialized: false }));
+// app.use(express.static(path.join(__dirname, 'public')));
+app.use(session({ secret: 'passport-tutorial', cookie: {}, resave: false, saveUninitialized: false }));
 app.use(passport.initialize());
 app.use(passport.session());
 if (!isProduction) {
