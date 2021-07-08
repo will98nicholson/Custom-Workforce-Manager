@@ -175,6 +175,7 @@ function ServiceTable({ jobData }) {
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log(serviceEl.current.children[1].value, quantityEl.current.children[0].children[0].value)
+        console.log(jobData)
         let service = JSON.parse(serviceEl.current.children[1].value)
         let dataObject = {
             service_id: service.name,

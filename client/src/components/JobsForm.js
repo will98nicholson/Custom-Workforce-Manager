@@ -56,21 +56,27 @@ export default function JobsForm ( props ) {
 
     const classes = useStyles();
     const [ formObject, setFormObject ] = useState( {} );
+    const [ dataObject, setDataObject ] = useState({})
     const location = useLocation();
     const handleInputChange = ( event ) => {
         const { name, value } = event.target;
         setFormObject( { ...formObject, [ name ]: value } );
     };
     useEffect( () => { if(props.id) getJob(); }, [] ); //only run useEffect if coming from jobdetail page
+    useEffect( () => { if(props.id) getJob2(); }, [] );
+
 
     //set state for invoice modal //handleOpen + handleClose functions
     const [ open, setOpen ] = React.useState( false );
+
     const handleOpen = () => {
         setOpen( true );
     };
+
     const handleClose = () => {
         setOpen( false );
     };
+
     //async api call - get job by id
     const getJob = async () => {
         await axios( {
@@ -79,11 +85,37 @@ export default function JobsForm ( props ) {
         } ).then( res => {
             console.log( res.data );
             setFormObject( {
+                name: res.data[ 0 ].client.name,
+                type: res.data[ 0 ].client.type,
+                location: res.data[ 0 ].client.location.streetAddress,
+                contact: res.data[ 0 ].client.contact,
+                phone: res.data[ 0 ].client.phone,
+                email: res.data[ 0 ].client.email,
+                quote_date: res.data[ 0 ].quote,
+                quote_price: res.data[ 0 ].price,
+                start_date: res.data[ 0 ].start,
+                end_date: res.data[ 0 ].end,
+                description: res.data[ 0 ].work,
+                notes: res.data[ 0 ].notes
+            } );
+        } )
+            .catch( err => console.log( err ) );
+    };
+
+
+    const getJob2 = async () => {
+        await axios( {
+            method: "GET",
+            url: `/api/jobs/${ props.id }`
+        } ).then( res => {
+            console.log( res.data );
+            setDataObject( {
                 data: res.data[0]
             } );
         } )
             .catch( err => console.log( err ) );
     };
+
     function handleSubmit ( event ) {
         event.preventDefault();
         props.APIFunction( {
@@ -333,7 +365,7 @@ export default function JobsForm ( props ) {
                         value={formObject.notes}
                     />
                 </FormControl>
-                <ServiceTable jobData={formObject.data} />
+                <ServiceTable jobData={dataObject.data} />
                 <div className={classes.break} />
 
                 {/* SAVE / SUBMIT BUTTON */} {/* for create job */}
@@ -345,7 +377,7 @@ export default function JobsForm ( props ) {
                 <Button className={classes.button} variant="contained" color="primary" onClick={ handleOpen }>
                     Create Invoice
                 </Button>
-                <InvoiceModal open={open} handleClose={handleClose} formObject={formObject}/>
+                <InvoiceModal open={open} handleClose={handleClose} formObject={dataObject}/>
             </form>
         </div>
     );
