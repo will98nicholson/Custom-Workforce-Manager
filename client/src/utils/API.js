@@ -17,6 +17,10 @@ export default {
     createJob: function (jobData) {
         return axios.post("/api/jobs", jobData)
     },
+    //update job with complete status, notes, etc.
+    updateJob: function (id, jobData) {
+        return axios.put("/api/jobs" + id, jobData)
+    },
     //get services for display in selector menu
     getServices: function () {
         return axios.get("/api/services")

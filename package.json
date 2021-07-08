@@ -13,9 +13,8 @@
     "@babel/preset-react": "^7.14.5",
     "@babel/runtime": "^7.14.6",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
-    "concurrently": "^4.1.0",
+    "concurrently": "^4.1.2",
     "css-loader": "^5.2.6",
-    "dotenv": "^10.0.0",
     "html-webpack-plugin": "^5.3.2",
     "mini-css-extract-plugin": "^2.0.0",
     "nodemon": "^1.18.7",
@@ -23,16 +22,14 @@
     "style-loader": "^3.0.0",
     "terser-webpack-plugin": "^5.1.4",
     "url-loader": "^4.1.1",
-    "webpack": "^5.41.1",
-    "webpack-cli": "^4.7.2",
-    "webpack-dev-server": "^3.11.2"
+    "webpack-cli": "^4.7.2"
   },
   "dependencies": {
     "axios": "^0.18.0",
-    "babel-loader": "8.1.0",
     "bcrypt": "^5.0.0",
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
     "errorhandler": "^1.5.1",
     "express": "^4.17.1",
     "express-session": "^1.17.2",
@@ -44,7 +41,9 @@
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
     "react-moment": "^1.1.1",
-    "react-text-mask": "^5.4.3"
+    "react-sortablejs": "^6.0.0",
+    "react-text-mask": "^5.4.3",
+    "sortablejs": "^1.14.0"
   },
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
@@ -53,7 +52,6 @@
     "client": "cd client && npm run start",
     "install": "cd client && npm install",
     "build": "cd client && npm run build",
-    "heroku-postbuild": "npm run build",
     "seed": "node seeds/index.js"
   }
 }

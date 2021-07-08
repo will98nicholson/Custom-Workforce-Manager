@@ -1,4 +1,5 @@
 // TODO: find a generator to generate fake yet realistic client / job information!
+require('dotenv').config();
 const jobSeeds = require('./jobs.json')
 const userSeeds = require('./users.json')
 const serviceSeeds = require('./services.json')
@@ -6,7 +7,7 @@ const purchaseSeeds = require('./purchases.json')
 const mongoose = require('mongoose');
 const db = require('../models');
 
-mongoose.connect('mongodb://localhost/fleetsheets', {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/fleetsheets', {
     useNewUrlParser: true,
     useFindAndModify: false,
     useUnifiedTopology: true,
@@ -26,11 +27,11 @@ db.Service.deleteMany({})
                     .then((data) => {
                         console.log(data.result.n + ' users inserted')
                         db.Purchased.deleteMany({})
-                        .then(()=> db.Purchased.collection.insertMany(purchaseSeeds))
-                        .then((data) => {
-                            console.log(data.result.n + ' purchases inserted');
-                            process.exit(0)
-                        })
+                            .then(() => db.Purchased.collection.insertMany(purchaseSeeds))
+                            .then((data) => {
+                                console.log(data.result.n + ' purchases inserted');
+                                process.exit(0)
+                            })
                     })
             })
     })

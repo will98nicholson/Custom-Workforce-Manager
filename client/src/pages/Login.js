@@ -79,7 +79,8 @@ const Login = ({ setUser }) => {
         }).then(res => setUser(res.data))
 
             .catch(err => console.log(err));
-    }
+    };
+
 
     return (
         <Grid container component="main" className={classes.root}>

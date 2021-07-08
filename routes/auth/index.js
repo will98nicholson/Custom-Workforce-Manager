@@ -8,7 +8,13 @@ router.post('/login',
     function (req, res) {
         console.log(req.user);
         // admin(req.user);
-        res.json(req.user);
+        // res.json(req.user);
+        req.session.save((err) => {
+            if (err) {
+                return next(err);
+            }
+            res.json(req.user);
+        });
     }
 );
 
@@ -20,12 +26,12 @@ router.get('/user',
 
     }
 );
-router.get('/login',
-    function (req, res) {
-
-        req.user;
-    }
-);
+// router.get('/login',
+//     function (req, res) {
+//         req.session.logged_in = true;
+//         req.user;
+//     }
+// );
 
 router.post('/register',
     function (req, res) {
@@ -37,11 +43,14 @@ router.post('/register',
     }
 );
 
-router.get('/logout',
-    function (req, res) {
-        req.logout;
-        res.json({ msg: "logged out user" });
-    }
-);
+router.get('/logout', (req, res) => {
+    req.logout();
+    req.session.save((err) => {
+        if (err) {
+            return next(err);
+        }
+        res.json('logged out');
+    });
+});
 
 module.exports = router;

@@ -4,15 +4,13 @@ import {
     CssBaseline,
     Container,
     Typography,
-    Paper,
-    // Button
+    Paper
 } from '@material-ui/core';
-// import { Link } from 'react-router-dom';
-// import MenuToolbar from '../components/MenuToolbar';
-import Copyright from '../components/Copyright';
+import Weather from '../components/Weather';
 import JobsList from '../components/JobsList';
+import Copyright from '../components/Copyright';
 import API from '../utils/API';
-import TimeWeather from '../components/TimeWeather';
+import Schedule from '../components/Schedule';
 
 const useStyles = makeStyles( ( theme ) => ( {
     root: {
@@ -23,9 +21,6 @@ const useStyles = makeStyles( ( theme ) => ( {
         flexGrow: 1,
         height: '100vh',
         overflow: 'auto',
-    },
-    container: {
-        margin: theme.spacing( 2 )
     },
     button: {
         margin: theme.spacing( 2 )
@@ -45,49 +40,28 @@ function EmpDash(props) {
 
     const [ user, setUser ] = useState( {} );
 
-    // useEffect( () => {
-    //     getUser();
-    // }, [] );
-
-    // function getUser () {
-    //     API.getUser()
-    //         .then( res => setUser( res.data ) )
-    //         .catch( err => console.log( err ) );
-    // }
-
-
     return (
         <div className={classes.root}>
             <CssBaseline />
-            {/* <MenuToolbar className="topToolbar" linkHidden='true'/> */}
             <main className={classes.content}>
+
                 <div className={classes.appBarSpacer} />
-                <Container maxWidth="lg" className={classes.container} >
-                    <TimeWeather />
+                <Weather id='module-weather'/>
+                {/* <Container maxWidth="lg" className={classes.container} > */}
+                <Paper className={classes.paper} id='module-schedule'>
+                    <Typography variant='h5' className='module-header'>This Week</Typography>
+                    <Schedule />
+                </Paper>
+                <Paper className={classes.paper} id='module-activejobs'>
+                    <Typography variant='h5' className='module-header'>Active</Typography>
+                    <JobsList inputDisabled='true'/>
+                </Paper>
+                <Paper className={classes.paper} id='module-completedjobs'>
+                    <Typography variant='h5' className='module-header'>Completed</Typography>
+                </Paper>
+                <Copyright />
+                {/* </Container> */}
 
-                    {/* <Link to='/createjob'>
-                        <Button variant="contained" color="primary">
-                            Create New Job
-                        </Button>
-                    </Link> */}
-
-                    {/* ""} */}
-                    {/* Active Jobs */}
-                    {/* <Button variant="contained" color="primary" onClick={() => { window.location.replace('/createjob') }}>
-                        Create New Job
-                    </Button> */}
-
-                    <Paper className={classes.paper} id='module1'>
-                        <Typography className='module-header' variant='h5'>Assigned Jobs</Typography>
-                        <JobsList inputDisabled='true'/>
-                        {/*TODO: pass props through jobs list to render assigned jobs for specific crew or employee */}
-                    </Paper>
-                    {/* Completed Jobs */}
-                    <Paper className={classes.paper} id='module2'>
-                        <Typography className='module-header' variant='h5'>Schedule</Typography>
-                    </Paper>
-                    <Copyright />
-                </Container>
             </main>
         </div>
     );

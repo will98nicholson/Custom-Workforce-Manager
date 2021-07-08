@@ -34,8 +34,6 @@ function ServiceTableRow({ row, handleDataChange, deleteRow }) {
     const classes = useStyles();
 
     const index = row.index
-    // const [service, setService] = useState(row.service);
-    // const [quantity, setQuantity] = useState(row.quantity);
 
     const [data, setData] = useState({
         service: {},
@@ -59,18 +57,13 @@ function ServiceTableRow({ row, handleDataChange, deleteRow }) {
     const updateValues = e => {
         var inputName = e.target.name
         var inputValue = e.target.value
-        // if (inputName == 'service') {
-        //     setService(inputValue)
-        // } else if (inputName == 'quantity') {
-        //     setQuantity(inputValue)
-        // }
         setData({
-            ...data,
+            //...data,
             [inputName]: inputValue
         })
 
         handleDataChange({
-            ...data, 
+            ...data,
             index
         })
     }
@@ -94,7 +87,6 @@ function ServiceTableRow({ row, handleDataChange, deleteRow }) {
                     >
 
                         {options.map((item) => (
-
                             <MenuItem key={item.name} value={item}>{item.name}</MenuItem>
                         ))}
                     </Select>
@@ -123,26 +115,14 @@ function ServiceTableRow({ row, handleDataChange, deleteRow }) {
 
 function ServiceTable() {
     const classes = useStyles();
-    // const [object, setObject] = useState(
-    //     {
-    //         index: 0,
-    //         service: {},
-    //         quantity: 0
-    //     }
-    // )
+
     const [rows, setRows] = useState([]);
 
-    // Receive data from TableRow 
+    // Receive data from TableRow
     const handleChange = data => {
         rows[data.index] = data;
-        console.log(data)  
+        console.log(data)
     }
-
-    // const handleChange = (event) => {
-    //     setObject({...object, })
-    // }
-
-    // useEffect()
 
     // Add New Table Row
     const addNewRow = () => {
@@ -167,13 +147,12 @@ function ServiceTable() {
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log('hit')
-        
         rows.map((row) => {
             API.postPurchase({
-                service_id: row.service._id,
+                service_id: row.service.name,
                 price: row.service.price,
-                quantity: row.quantity
-
+                quantity: row.quantity,
+                // job_id:
             })
                 .then(res => (console.log(res.data)))
 
