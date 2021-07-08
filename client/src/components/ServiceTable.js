@@ -77,12 +77,12 @@ function ServiceTableRow({ row, handleDataChange, deleteRow }) {
             <TableCell component="td">
                 {/* <input type="text" name="service" className="service" placeholder="Service" value={service} onChange={updateValues}></input> */}
                 <FormControl className={classes.formControl}>
-                    <InputLabel variant="outlined" id="serviceLabel">Service</InputLabel>
+                    <InputLabel id="serviceLabel">Service</InputLabel>
                     <Select
                         name="service"
                         labelId="serviceLabel"
                         id="service"
-                        variant="outlined"
+                        variant="filled"
                         onChange={updateValues}
                     >
 
@@ -101,11 +101,11 @@ function ServiceTableRow({ row, handleDataChange, deleteRow }) {
                     onChange={updateValues}
                     type="number"
                     align="right"
-                    variant="outlined"
+                    variant="filled"
                 />
             </TableCell>
             <TableCell variant="contained" color="secondary" component="td">
-                <Button type="button" variant="contained" color="secondary" className="btn btn-remove" onClick={removeRow}>
+                <Button type="button" variant="contained" color="secondary" className="btn btn-remove " onClick={removeRow}>
                     &times;
                 </Button>
             </TableCell>
@@ -162,11 +162,11 @@ function ServiceTable() {
     return (
         <TableContainer>
             <Table component="table" className={classes.table} aria-label="services rendered">
-                <TableHead>
+                <TableHead id='service-table-head'>
                     <TableRow>
-                        <TableCell>Select Service</TableCell>
-                        <TableCell>Qty.</TableCell>
-                        <TableCell>Delete</TableCell>
+                        <TableCell className='service-table-header'>Select Service</TableCell>
+                        <TableCell className='service-table-header'>Qty.</TableCell>
+                        <TableCell className='service-table-header'>Delete</TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
@@ -181,7 +181,7 @@ function ServiceTable() {
                 </TableBody>
             </Table>
             <Button color="primary" onClick={addNewRow}>
-                + Add another service
+                + Add Service
             </Button>
             <Button variant="contained" color="primary" onClick={handleSubmit}>
                 Done
