@@ -174,7 +174,11 @@ CURRENT ASSIGNMENTS:
 ### Links:
 * Deployed Application: https://custom-workforce-manager.herokuapp.com/
 
-* Contributors:
+### Login Information: 
+* Admin Username: Crew #1 | Password: 4CfkVBoxV
+* Employee Username: Crew #2 | Password: Ggjz4t1
+
+### Contributors:
 
 - Michael Kotte: https://github.com/mkotte
 - Kathryn Wilkinson: https://github.com/NAHco-code
