@@ -162,14 +162,14 @@ CURRENT ASSIGNMENTS:
 * Moment
 * Tailwind CSS &&|| react-material-ui (or something new)
 
-### PWA Functionalities
+<!-- ### PWA Functionalities
 
 * Available offline
 * Downloadable to android + ios homescreen's
 * Device camera functionality / implementation
 * Fast load speeds
 * Mobile app look/feel
-* Push Notifications (mobile + desktop)
+* Push Notifications (mobile + desktop) -->
 
 ### Links:
 * Deployed Application: https://custom-workforce-manager.herokuapp.com/
