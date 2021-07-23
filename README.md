@@ -160,7 +160,7 @@ CURRENT ASSIGNMENTS:
 * Passport.Js
 * Sortable Js
 * Moment
-* Tailwind CSS &&|| react-material-ui (or something new)
+* Material-UI
 
 <!-- ### PWA Functionalities
 
