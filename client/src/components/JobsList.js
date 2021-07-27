@@ -59,7 +59,7 @@ export default function JobsList( {user} ) {
     useEffect(() => {
         API.getJobs()
             .then(res => {                
-                const filteredJobs = res.data.filter(jobData => jobData.crewAssignedToo === user.username)
+                const filteredJobs = res.data.filter(jobData => jobData.crewAssignedToo === user.username).sort((a, b) => (a.dailyPosition > b.dailyPosition) ? 1 : -1)
                 const formattedJobs = filteredJobs.map(job => {return createData(job._id, job.client.name, job.client.location, job.crewAssignedToo)})
 
                 setRows(formattedJobs)
