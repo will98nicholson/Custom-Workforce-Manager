@@ -43,10 +43,10 @@ export default function Dashboard({user}) {
 
                 <div className={classes.appBarSpacer} />
                 <Weather id='module-weather' />
-                <Paper className={classes.paper} id='module-schedule'>
+                {/* <Paper className={classes.paper} id='module-schedule'>
                     <Typography variant='h5' className='module-header' id='this-week'>This Week</Typography>
                     <Schedule />
-                </Paper>
+                </Paper> */}
                 {/* <Container maxWidth="lg" className={classes.container} > */}
                 <Paper className={classes.paper} id='module-activejobs'>
                     <Typography variant='h5' className='module-header' id='active'>Active</Typography>
