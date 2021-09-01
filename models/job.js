@@ -112,6 +112,9 @@ const Job = new Schema({
     //  services {
     //         services/products sold get appended here including, quantity, price
     //  }
+},
+{
+    timestamps:true
 });
 
 // add user_id to pair jobs with employees

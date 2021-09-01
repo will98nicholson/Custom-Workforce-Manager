@@ -60,8 +60,12 @@ export default function JobsList( {user} ) {
         API.getJobs()
             .then(res => {                
                 const filteredJobs = res.data.filter(jobData => jobData.crewAssignedToo === user.username)
+                    .sort(function (a, b) {
+                    return (+(a.dailyPosition > b.dailyPosition) || +(a.dailyPosition === b.dailyPosition) - 1) ||
+                        (+(a.updatedAt < b.updatedAt) || +(a.updatedAt === b.updatedAt) - 1);
+                    });
                 const formattedJobs = filteredJobs.map(job => {return createData(job._id, job.client.name, job.client.location, job.crewAssignedToo)})
-
+                
                 setRows(formattedJobs)
             })
     }, [])

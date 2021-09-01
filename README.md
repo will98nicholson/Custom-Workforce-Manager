@@ -160,21 +160,25 @@ CURRENT ASSIGNMENTS:
 * Passport.Js
 * Sortable Js
 * Moment
-* Tailwind CSS &&|| react-material-ui (or something new)
+* Material-UI
 
-### PWA Functionalities
+<!-- ### PWA Functionalities
 
 * Available offline
 * Downloadable to android + ios homescreen's
 * Device camera functionality / implementation
 * Fast load speeds
 * Mobile app look/feel
-* Push Notifications (mobile + desktop)
+* Push Notifications (mobile + desktop) -->
 
 ### Links:
 * Deployed Application: https://custom-workforce-manager.herokuapp.com/
 
-* Contributors:
+### Login Information: 
+* Admin Username: Crew #1 | Password: 4CfkVBoxV
+* Employee Username: Crew #2 | Password: Ggjz4t1
+
+### Contributors:
 
 - Michael Kotte: https://github.com/mkotte
 - Kathryn Wilkinson: https://github.com/NAHco-code
