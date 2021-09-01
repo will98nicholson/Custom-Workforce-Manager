@@ -1,21 +1,15 @@
 <!--
 Job Details Page:
 (Admin)
-  - Switch to be able to edit, starts at employee view-only 
-  - Clock in, Clock Out, Complete 
-  - Services + Products sold/completed/used 
-
-
-
-
-
+  - Switch to be able to edit, starts at employee view-only
+  - Clock in, Clock Out, Complete
+  - Services + Products sold/completed/used
 
 MODELS:
   - jobs [done/inprogress] - needs refactored: divide info b/w job and customer models
       *add site info (site address, site contact, site phone, site email)
   - users [done/inprogress]
   - customers [TODO: id, cust name, company name, cust address, work phone, home phone, email, payment info(?)]
-
 
 PAGES:
   - login
@@ -57,25 +51,17 @@ TODO:
 - working links in popout menu
 - put button for edit job on job details page + render edit details for that specific job
 
-TODO:
-- where to put invoice form
-- authentication
-- create components
-  -
-  -
-- connect components + render in App
-- logout (?) / back button
-
-FIX:
+TODO / FIX:
+- fix authentication functionality
 - edit job page - render information already stored in job page if there is any + make editable
+- PWA functionality
 
 CURRENT ASSIGNMENTS:
 
 - Will:
-  *Password Auth - using passport npm package[done]
-  *login functionality [by tues]
+*Password Auth - using passport npm package[done]
   - auth util:
-  - declare logged in user sessionid/user is + type (admin or employee)
+    - declare logged in user sessionid/user is + type (admin or employee)
 
 - Corrine:
   * emp and admin dash with if/else functionality
@@ -130,6 +116,18 @@ CURRENT ASSIGNMENTS:
 # Custom Workforce Manager
 ## Progressive Web Application (Mobile/Tablet First)
 
+![License: Apache](https://img.shields.io/badge/License-Apache2.0-yellow.svg)
+
+## Table of Contents
+
+- [User Story](#user-story)
+- [Technology](#technology)
+- [Visuals](#visuals)
+- [Future Development](#future-development)
+- [Links](#links)
+- [Contribute](#contribute)
+- [Contact Me](#questions)
+- [License](#license)
 
 ### User Story
 
@@ -140,7 +138,6 @@ CURRENT ASSIGNMENTS:
     - assign jobs to employees
     - monitor employee Job progress
     SO THAT I can efficently operate and manage my small / medium sized business's fleet employees.
-
 
     AS AN EMPLOYEE
     I WANT to be able to
@@ -160,9 +157,16 @@ CURRENT ASSIGNMENTS:
 * Passport.Js
 * Sortable Js
 * Moment
-* Tailwind CSS &&|| react-material-ui (or something new)
+* react-material-ui
 
-### PWA Functionalities
+### Visuals
+
+![sign-in](./client/src/assets/images/project-screenshots/custom-workforce-manager-sign-in.PNG) ![admin-dashboard](./client/src/assets/images/project-screenshots/custom-workforce-manager-admin-dash.PNG)
+![job-assignment](./client/src/assets/images/project-screenshots/custom-workforce-manager-job-assignment.PNG) ![job-detail](./client/src/assets/images/project-screenshots/custom-workforce-manager-job-detail.PNG)
+![invoice](./client/src/assets/images/project-screenshots/custom-workforce-manager-invoice.PNG)
+
+### Future Development
+#### PWA Functionalities (in progress)
 
 * Available offline
 * Downloadable to android + ios homescreen's
@@ -171,13 +175,36 @@ CURRENT ASSIGNMENTS:
 * Mobile app look/feel
 * Push Notifications (mobile + desktop)
 
-### Links:
-* Deployed Application: https://custom-workforce-manager.herokuapp.com/
+### Links
 
-* Contributors:
+* Deployed Application: <https://custom-workforce-manager.herokuapp.com/>
 
-- Michael Kotte: https://github.com/mkotte
-- Kathryn Wilkinson: https://github.com/NAHco-code
-- William Nicholson: https://github.com/will98nicholson
-- Brandon King: https://github.com/thebsking
-- Corrinne Worden: https://github.com/CorrinneW
+### Contribute
+
+Creators:
+- Michael Kotte: <https://github.com/mkotte>
+- Kathryn Wilkinson: <https://github.com/NAHco-code>
+- William Nicholson: <https://github.com/will98nicholson>
+- Brandon King: <https://github.com/thebsking>
+- Corrinne Worden: <https://github.com/CorrinneW>
+
+If you have something you'd like to contribute, make a pull request!
+
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.0-4baaaa.svg)](code_of_conduct.md)
+
+## Questions?
+
+Please feel free to contact us with any questions via email.
+
+- [michaelkotte1@gmail.com](michaelkotte1@gmail.com)
+- [kathrynxwilk@gmail.com](kathrynxwilk@gmail.com)
+- [will98nicholson@gmail.com](will98nicholson@gmail.com)
+- [brandonscottking@gmail.com](brandonscottking@gmail.com)
+- [corrinneworden@gmail.com](corrinneworden@gmail.com)
+
+## License
+
+This project is licensed under the Apache 2.0 License.
+For more information, please visit: [Apache Explained](https://choosealicense.com/licenses/apache-2.0/)
+
+&copy; 2021 m.kotte |k.wilkinson | w.nicholson | b.king | c.worden
