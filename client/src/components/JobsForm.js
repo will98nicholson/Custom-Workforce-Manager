@@ -84,7 +84,6 @@ export default function JobsForm ( props ) {
             method: "GET",
             url: `/api/jobs/${ props.id }`
         } ).then( res => {
-            console.log( res.data );
             setFormObject( {
                 type: res.data[ 0 ].client.type,
                 name: res.data[ 0 ].client.name,
@@ -143,8 +142,8 @@ export default function JobsForm ( props ) {
             // .then(<Redirect to="/admin"></Redirect>)
             .catch( ( err ) => console.log( err ) );
     };
-    console.log( formObject );
-    console.log( dataObject )
+    // console.log( formObject );
+    // console.log( dataObject )
     return (
 
         <div className={classes.root} id='jobsform'>
@@ -167,7 +166,7 @@ export default function JobsForm ( props ) {
                 </FormControl>
 
                 {/* CLIENT TYPE */}
-                <FormControl  className={classes.formControl}>
+                {/* <FormControl  className={classes.formControl}>
                     <InputLabel shrink className={classes.formControl} id="clientType">Client Type</InputLabel>
                     <Select
                         id="clientType"
@@ -191,10 +190,10 @@ export default function JobsForm ( props ) {
                     </Select>
                 </FormControl>
 
-                <div className={classes.break} />
+                <div className={classes.break} /> */}
 
                 {/* QUOTE DATE */}
-                <FormControl>
+                {/* <FormControl>
                     <InputLabel shrink className={classes.formControl} id="clientType">Quote Date</InputLabel>
                     <TextField variant="filled"
                         id="quoteDate"
@@ -210,7 +209,7 @@ export default function JobsForm ( props ) {
                             shrink: true,
                         }}
                     />
-                </FormControl>
+                </FormControl> */}
 
                 {/* QUOTE PRICE */}
                 {/* <FormControl>
@@ -227,10 +226,10 @@ export default function JobsForm ( props ) {
                     />
                 </FormControl> */}
 
-                <div className={classes.break} />
+                {/* <div className={classes.break} /> */}
 
                 {/* JOB START */}
-                <FormControl>
+                {/* <FormControl>
                     <InputLabel shrink>Job Start</InputLabel>
                     <TextField variant="filled"
                         id="startDate"
@@ -245,10 +244,10 @@ export default function JobsForm ( props ) {
                             shrink: true,
                         }}
                     />
-                </FormControl>
+                </FormControl> */}
 
                 {/* JOB END */}
-                <FormControl>
+                {/* <FormControl>
                     <InputLabel shrink>Job End</InputLabel>
                     <TextField variant="filled"
                         id="endDate"
@@ -263,7 +262,7 @@ export default function JobsForm ( props ) {
                             shrink: true,
                         }}
                     />
-                </FormControl>
+                </FormControl> */}
 
                 <div className={classes.break} />
                 <hr className='jobform-divider'></hr>

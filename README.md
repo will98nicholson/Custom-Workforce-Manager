@@ -165,6 +165,10 @@ CURRENT ASSIGNMENTS:
 ![job-assignment](./client/src/assets/images/project-screenshots/custom-workforce-manager-job-assignment.PNG) ![job-detail](./client/src/assets/images/project-screenshots/custom-workforce-manager-job-detail.PNG)
 ![invoice](./client/src/assets/images/project-screenshots/custom-workforce-manager-invoice.PNG)
 
+### Login Information:
+* Admin Username: Crew #1 | Password: 4CfkVBoxV
+* Employee Username: Crew #2 | Password: Ggjz4t1
+
 ### Future Development
 #### PWA Functionalities (in progress)
 

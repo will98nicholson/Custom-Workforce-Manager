@@ -29,7 +29,7 @@ function List({ crew }) {
                 const handleCrewChange = () => {
                     const newCrew = {
                         _id: itemEl.id,
-                        dailyPosition: evt.newIndex,
+                        dailyPosition: evt.newIndex + 1,
                         crewAssignedToo: evt.to.id
                     }
                     handleJobUpdate(newCrew)
@@ -72,7 +72,10 @@ function List({ crew }) {
                 <div ref={listEl} className="job-list" id={crew}>
                     {jobs
                         .filter(dataObjs => dataObjs.crewAssignedToo === crew)
-                        .sort((a, b) => (a.dailyPosition > b.dailyPosition) ? 1 : -1)
+                        .sort(function (a, b) {
+                            return (+(a.dailyPosition > b.dailyPosition) || +(a.dailyPosition === b.dailyPosition) - 1) ||
+                                (+(a.updatedAt < b.updatedAt) || +(a.updatedAt === b.updatedAt) - 1);
+                            })
                         .map((job) => (
                             <Jobs job={job} key={job._id} />
                         ))}
