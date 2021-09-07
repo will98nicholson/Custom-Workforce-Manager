@@ -123,8 +123,9 @@ CURRENT ASSIGNMENTS:
 - [User Story](#user-story)
 - [Technology](#technology)
 - [Visuals](#visuals)
-- [Future Development](#future-development)
 - [Links](#links)
+- [Installation](#installation)
+- [Future Development](#future-development)
 - [Contribute](#contribute)
 - [Contact Me](#questions)
 - [License](#license)
@@ -165,23 +166,33 @@ CURRENT ASSIGNMENTS:
 ![job-assignment](./client/src/assets/images/project-screenshots/custom-workforce-manager-job-assignment.PNG) ![job-detail](./client/src/assets/images/project-screenshots/custom-workforce-manager-job-detail.PNG)
 ![invoice](./client/src/assets/images/project-screenshots/custom-workforce-manager-invoice.PNG)
 
-### Login Information:
-* Admin Username: Crew #1 | Password: 4CfkVBoxV
-* Employee Username: Crew #2 | Password: Ggjz4t1
-
-### Future Development
-#### PWA Functionalities (in progress)
-
-* Available offline
-* Downloadable to android + ios homescreen's
-* Device camera functionality / implementation
-* Fast load speeds
-* Mobile app look/feel
-* Push Notifications (mobile + desktop)
-
 ### Links
 
 * Deployed Application: <https://custom-workforce-manager.herokuapp.com/>
+
+### Installation
+
+This program can be run through a browser using the above link to the the deployed application. Alternatively, to run this application locally you will need to:
+
+Clone this repository to receive all of the files
+Set up your environment variables in a .env file
+Run "npm install" in the command line of your terminal to set up all of the dependencies
+Populate the existing database items by running "npm run seed" in your terminal
+Run "npm start" to start the application's connection
+Go to the url of the application (http//:localhost:3000) to begin using it
+  #### Login Information
+  * Admin Username: Crew #1 | Password: 4CfkVBoxV
+  * Employee Username: Crew #2 | Password: Ggjz4t1
+
+### Future Development
+  #### PWA Functionalities (in progress)
+
+  * Available offline
+  * Downloadable to android + ios homescreen's
+  * Device camera functionality / implementation
+  * Fast load speeds
+  * Mobile app look/feel
+  * Push Notifications (mobile + desktop)
 
 ### Contribute
 
@@ -211,4 +222,4 @@ Please feel free to contact us with any questions via email.
 This project is licensed under the Apache 2.0 License.
 For more information, please visit: [Apache Explained](https://choosealicense.com/licenses/apache-2.0/)
 
-&copy; 2021 m.kotte |k.wilkinson | w.nicholson | b.king | c.worden
+&copy; 2021 k.wilkinson | m.kotte | w.nicholson | b.king | c.worden

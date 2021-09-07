@@ -1,5 +1,5 @@
 #Personal
-_DS.Store
+.DS_Store
 node_modules
 
 # Logs
