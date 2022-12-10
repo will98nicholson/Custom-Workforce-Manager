@@ -24,12 +24,12 @@ router.get('/user',
 
     }
 );
-// router.get('/login',
-//     function (req, res) {
-//         req.session.logged_in = true;
-//         req.user;
-//     }
-// );
+router.get('/login',
+    function (req, res) {
+        req.session.logged_in = true;
+        req.user;
+    }
+);
 
 router.post('/register',
     function (req, res) {

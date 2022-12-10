@@ -1,12 +1,9 @@
 <!--
 Job Details Page:
 (Admin)
-  - Switch to be able to edit, starts at employee view-only 
-  - Clock in, Clock Out, Complete 
-  - Services + Products sold/completed/used 
-
-
-
+  - Switch to be able to edit, starts at employee view-only
+  - Clock in, Clock Out, Complete
+  - Services + Products sold/completed/used
 
 
 
@@ -128,10 +125,10 @@ CURRENT ASSIGNMENTS:
 -->
 
 # Custom Workforce Manager
-## Progressive Web Application (Mobile/Tablet First)
 
+<!-- ## Progressive Web Application (Mobile/Tablet First) -->
 
-### User Story
+## User Story
 
     AS AN ADMINISTRATOR
     I WANT to be able to
@@ -151,7 +148,7 @@ CURRENT ASSIGNMENTS:
     - have the ability to continue to work while remote and offline
     SO THAT I can continue to complete my job expectations in an easy and organized fashion.
 
-### Technology Used (MERN Stack)
+## Technologies Used (MERN Stack)
 
 * MongoDb
 * Express
@@ -171,14 +168,24 @@ CURRENT ASSIGNMENTS:
 * Mobile app look/feel
 * Push Notifications (mobile + desktop) -->
 
-### Links:
+<!--
+To Run Locally:
+
+- npm install --force
+- when running npm start, getting login error - refer to pages/login.js
+
+ -->
+
+### Links
+
 * Deployed Application: https://custom-workforce-manager.herokuapp.com/
 
-### Login Information: 
+### Login Information
+
 * Admin Username: Crew #1 | Password: 4CfkVBoxV
 * Employee Username: Crew #2 | Password: Ggjz4t1
 
-### Contributors:
+### Contributors
 
 - Michael Kotte: https://github.com/mkotte
 - Kathryn Wilkinson: https://github.com/NAHco-code
