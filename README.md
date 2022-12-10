@@ -5,14 +5,11 @@ Job Details Page:
   - Clock in, Clock Out, Complete
   - Services + Products sold/completed/used
 
-
-
 MODELS:
   - jobs [done/inprogress] - needs refactored: divide info b/w job and customer models
       *add site info (site address, site contact, site phone, site email)
   - users [done/inprogress]
   - customers [TODO: id, cust name, company name, cust address, work phone, home phone, email, payment info(?)]
-
 
 PAGES:
   - login
@@ -178,7 +175,7 @@ To Run Locally:
 
 ### Links
 
-* Deployed Application: https://custom-workforce-manager.herokuapp.com/
+* Deployed Application: <https://custom-workforce-manager.herokuapp.com/>
 
 ### Login Information
 
@@ -187,8 +184,8 @@ To Run Locally:
 
 ### Contributors
 
-- Michael Kotte: https://github.com/mkotte
-- Kathryn Wilkinson: https://github.com/NAHco-code
-- William Nicholson: https://github.com/will98nicholson
-- Brandon King: https://github.com/thebsking
-- Corrinne Worden: https://github.com/CorrinneW
+* Michael Kotte: <https://github.com/mkotte>
+* Kathryn Wilkinson: <https://github.com/NAHco-code>
+* William Nicholson: <https://github.com/will98nicholson>
+* Brandon King: <https://github.com/thebsking>
+* Corrinne Worden: <https://github.com/CorrinneW>
